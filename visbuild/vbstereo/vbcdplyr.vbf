@@ -1,0 +1,232 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: VBCDPlayer,,VB
+//VBGeneratedFiles: VBCDPlyr.cpp, VBCDPlyr.cp
+//VBDependsOnFiles: vbmm.vbe
+//VBParents: public IMultiCellCanvas
+//VBIncludes: "VBCDPlyr.hpp" _VBCDPLAYER_
+//VBConstructor: VBCDPlayer(unsigned long id, IWindow* parent = IWindow::desktopWindow(), IWindow* owner = IWindow::desktopWindow(), const IRectangle& rect = IRectangle(), const IMultiCellCanvas::Style& style = IMultiCellCanvas::defaultStyle())
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBSubpart: VBCDPlayer,MultiCellCanvas,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas,AnimatedButton1,IAnimatedButton*,p
+//VBSubpart: MultiCellCanvas,Canvas1,ICanvas*,p
+//VBSubpart: Canvas1,StaticText1,IStaticText*,p
+//VBSubpart: Canvas1,StaticText2,IStaticText*,p
+//VBSubpart: Canvas1,StaticText3,IStaticText*,p
+//VBSubpart: Canvas1,StaticText6,IStaticText*,p
+//VBSubpart: Canvas1,StaticText7,IStaticText*,p
+//VBSubpart: MultiCellCanvas,MultiCellCanvas1,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas1,PushButton1,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,PushButton2,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,PushButton3,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,PushButton4,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,PushButton5,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,PushButton6,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,PushButton7,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,PushButton8,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,PushButton9,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,PushButton10,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,PushButton11,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,StaticText5,IStaticText*,p
+//VBSubpart: MultiCellCanvas,StaticText4,IStaticText*,p
+//VBSubpart: MultiCellCanvas,StaticText41,IStaticText*,p
+//VBSubpart: MultiCellCanvas,SetCanvas2,ISetCanvas*,p
+//VBSubpart: SetCanvas2,AnimatedButton2,IAnimatedButton*,p
+//VBSubpart: SetCanvas2,MMPlayerPanel1,IMMPlayerPanel*,p
+//VBSubpart: SetCanvas2,AnimatedButton3,IAnimatedButton*,p
+//VBSubpart: VBCDPlayer,trackNumberAsString,IVBStringPart*,p
+//VBSubpart: VBCDPlayer,trackNumberAsUnsignedLong,IVBUnsignedLongPart*,p
+//VBSubpart: VBCDPlayer,MMAudioCD2,IMMAudioCD*,p
+//VBSubpart: VBCDPlayer,CDTime,IMMTrackMinSecFrameTime*,v
+//VBSubpart: VBCDPlayer,VBFlyText1,IVBFlyText*,p
+//VBConnection: EA,15,p,p,AnimatedButton1,buttonClickEvent,MMAudioCD2,openDoor
+//VBConnection: EC,23,p,p,PushButton10,buttonClickEvent,trackNumberAsString,customLogic,"",void,(if (target->value() == \"\")
+//VB:{
+//VB:    target->setValue( source->text() );
+//VB:}
+//VB:else
+//VB:{
+//VB:      target->setValue(target->valueCopy().operator += (source->text()));
+//VB:}   )
+//VBConnection: EC,14,p,p,PushButton9,buttonClickEvent,trackNumberAsString,customLogic,"",void,(if (target->value() == \"\")
+//VB:{
+//VB:    target->setValue( source->text() );
+//VB:}
+//VB:else
+//VB:{
+//VB:      target->setValue(target->valueCopy().operator += (source->text()));
+//VB:}   )
+//VBConnection: EC,25,p,p,PushButton8,buttonClickEvent,trackNumberAsString,customLogic,"",void,(if (target->value() == \"\")
+//VB:{
+//VB:    target->setValue( source->text() );
+//VB:}
+//VB:else
+//VB:{
+//VB:      target->setValue(target->valueCopy().operator += (source->text()));
+//VB:}   )
+//VBConnection: EC,16,p,p,PushButton7,buttonClickEvent,trackNumberAsString,customLogic,"",void,(if (target->value() == \"\")
+//VB:{
+//VB:    target->setValue( source->text() );
+//VB:}
+//VB:else
+//VB:{
+//VB:      target->setValue(target->valueCopy().operator += (source->text()));
+//VB:}   )
+//VBConnection: EC,17,p,p,PushButton6,buttonClickEvent,trackNumberAsString,customLogic,"",void,(if (target->value() == \"\")
+//VB:{
+//VB:    target->setValue( source->text() );
+//VB:}
+//VB:else
+//VB:{
+//VB:      target->setValue(target->valueCopy().operator += (source->text()));
+//VB:}   )
+//VBConnection: EC,18,p,p,PushButton5,buttonClickEvent,trackNumberAsString,customLogic,"",void,(if (target->value() == \"\")
+//VB:{
+//VB:    target->setValue( source->text() );
+//VB:}
+//VB:else
+//VB:{
+//VB:      target->setValue(target->valueCopy().operator += (source->text()));
+//VB:}   )
+//VBConnection: EC,19,p,p,PushButton4,buttonClickEvent,trackNumberAsString,customLogic,"",void,(if (target->value() == \"\")
+//VB:{
+//VB:    target->setValue( source->text() );
+//VB:}
+//VB:else
+//VB:{
+//VB:      target->setValue(target->valueCopy().operator += (source->text()));
+//VB:}   )
+//VBConnection: EC,30,p,p,PushButton3,buttonClickEvent,trackNumberAsString,customLogic,"",void,(if (target->value() == \"\")
+//VB:{
+//VB:    target->setValue( source->text() );
+//VB:}
+//VB:else
+//VB:{
+//VB:      target->setValue(target->valueCopy().operator += (source->text()));
+//VB:}   )
+//VBConnection: EC,31,p,p,PushButton2,buttonClickEvent,trackNumberAsString,customLogic,"",void,(if (target->value() == \"\")
+//VB:{
+//VB:    target->setValue( source->text() );
+//VB:}
+//VB:else
+//VB:{
+//VB:      target->setValue(target->valueCopy().operator += (source->text()));
+//VB:}   )
+//VBConnection: EC,32,p,p,PushButton1,buttonClickEvent,trackNumberAsString,customLogic,"",void,(if (target->value() == \"\")
+//VB:{
+//VB:    target->setValue( source->text() );
+//VB:}
+//VB:else
+//VB:{
+//VB:      target->setValue(target->valueCopy().operator += (source->text()));
+//VB:}   )
+//VBConnection: EA,24,p,p,PushButton11,buttonClickEvent,MMAudioCD2,goToEntry
+//VBConnection: AA,35,p,p,trackNumberAsString,value,trackNumberAsUnsignedLong,valueAsText
+//VBConnection: EC,29,p,p,,ready,trackNumberAsString,customLogic,"",void,(target->setValue(\"\");)
+//VBConnection: EA,50,p,p,MMAudioCD2,positionTimerEvent,CDTime,this
+//VBConnection: AA,40,c,p,24,index,trackNumberAsUnsignedLong,value
+//VBConnection: EC,60,p,p,PushButton11,buttonClickEvent,trackNumberAsString,customLogic,"",void,(target->setValue(\"\");)
+//VBConnection: AA,20,p,p,MMAudioCD2,this,MMPlayerPanel1,playableDevice
+//VBConnection: EA,21,p,p,AnimatedButton2,buttonClickEvent,MMAudioCD2,trackBackward
+//VBConnection: EA,22,p,p,AnimatedButton3,buttonClickEvent,MMAudioCD2,trackForward
+//VBConnection: EA,70,p,p,MMAudioCD2,positionTimerEvent,StaticText7,valueAsInt
+//VBConnection: AA,41,c,p,70,newValue,CDTime,seconds
+//VBConnection: EA,42,p,p,MMAudioCD2,positionTimerEvent,StaticText3,valueAsInt
+//VBConnection: AA,33,c,p,42,newValue,CDTime,minutes
+//VBConnection: EA,34,p,p,MMAudioCD2,positionTimerEvent,StaticText2,valueAsInt
+//VBConnection: AA,45,c,p,34,newValue,CDTime,track
+//VBPartValue: VBCDPlayer,primaryPart,partRef,MultiCellCanvas
+//VBPartValue: MultiCellCanvas,framingSpec,position1,(9,0,453,235,9,328,453,235)
+//VBPartValue: MultiCellCanvas,canvasLayout,mclayout,(rowAttr(3,true,),rowAttr(6,true,),rowAttr(7,true,),colAttr(1,true,),colAttr(2,true,),colAttr(3,true,),colAttr(4,true,),colAttr(5,true,),colAttr(20,,),ctlAttr("AnimatedButton1",3,3,1,1),ctlAttr("Canvas1",3,3,3,3),ctlAttr("MultiCellCanvas1",6,6,3,4),ctlAttr("StaticText4",6,6,8,8),ctlAttr("StaticText41",6,6,10,10),ctlAttr("SetCanvas2",4,4,3,3))
+//VBPartValue: MultiCellCanvas,backgroundColor,color,(name,paleGray)
+//VBPartValue: AnimatedButton1,avlFlyOverShortText,string,"Eject"
+//VBPartValue: AnimatedButton1,text,string,""
+//VBPartValue: AnimatedButton1,minimumSize,minsize,(46,32,false)
+//VBPartValue: AnimatedButton1,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"eject",))
+//VBPartValue: Canvas1,font,font,(Times New Roman,28,Bold,Vector)
+//VBPartValue: Canvas1,backgroundColor,color,(name,black)
+//VBPartValue: StaticText1,font,font,(Small Fonts,7,Bold)
+//VBPartValue: StaticText1,text,string,"Track"
+//VBPartValue: StaticText1,framingSpec,position1,(28,7,57,13,28,80,57,13)
+//VBPartValue: StaticText1,foregroundColor,color,(name,darkGreen)
+//VBPartValue: StaticText2,font,font,(Times New Roman,28,Bold,Vector)
+//VBPartValue: StaticText2,text,string,"00"
+//VBPartValue: StaticText2,framingSpec,position1,(25,20,64,59,25,21,64,59)
+//VBPartValue: StaticText2,foregroundColor,color,(name,darkGreen)
+//VBPartValue: StaticText3,font,font,(Times New Roman,28,Bold,Vector)
+//VBPartValue: StaticText3,text,string,"00"
+//VBPartValue: StaticText3,framingSpec,position1,(129,20,62,54,129,26,62,54)
+//VBPartValue: StaticText3,foregroundColor,color,(name,darkGreen)
+//VBPartValue: StaticText6,text,string,":"
+//VBPartValue: StaticText6,framingSpec,position1,(189,20,21,52,189,28,21,52)
+//VBPartValue: StaticText6,foregroundColor,color,(name,darkGreen)
+//VBPartValue: StaticText7,font,font,(Times New Roman,28,Bold,Vector)
+//VBPartValue: StaticText7,text,string,"00"
+//VBPartValue: StaticText7,framingSpec,position1,(221,19,62,54,221,27,62,54)
+//VBPartValue: StaticText7,foregroundColor,color,(name,darkGreen)
+//VBPartValue: MultiCellCanvas1,avlFlyOverLongText,string,"Track Select"
+//VBPartValue: MultiCellCanvas1,canvasLayout,mclayout,(rowAttr(6,,),colAttr(10,,),ctlAttr("PushButton1",1,1,3,3),ctlAttr("PushButton2",1,1,4,4),ctlAttr("PushButton3",1,1,5,5),ctlAttr("PushButton4",1,1,6,6),ctlAttr("PushButton5",1,1,7,7),ctlAttr("PushButton6",2,2,3,3),ctlAttr("PushButton7",2,2,4,4),ctlAttr("PushButton8",2,2,5,5),ctlAttr("PushButton9",2,2,6,6),ctlAttr("PushButton10",2,2,7,7),ctlAttr("PushButton11",2,2,8,8),ctlAttr("StaticText5",5,6,4,8))
+//VBPartValue: MultiCellCanvas1,backgroundColor,color,(name,paleGray)
+//VBPartValue: PushButton1,text,string,"1"
+//VBPartValue: PushButton1,minimumSize,minsize,(40,22,false)
+//VBPartValue: PushButton2,text,string,"2"
+//VBPartValue: PushButton2,minimumSize,minsize,(40,22,false)
+//VBPartValue: PushButton3,text,string,"3"
+//VBPartValue: PushButton3,minimumSize,minsize,(40,22,false)
+//VBPartValue: PushButton4,text,string,"4"
+//VBPartValue: PushButton4,minimumSize,minsize,(40,22,false)
+//VBPartValue: PushButton5,text,string,"5"
+//VBPartValue: PushButton5,minimumSize,minsize,(40,22,false)
+//VBPartValue: PushButton6,text,string,"6"
+//VBPartValue: PushButton6,minimumSize,minsize,(40,22,false)
+//VBPartValue: PushButton7,text,string,"7"
+//VBPartValue: PushButton7,minimumSize,minsize,(40,22,false)
+//VBPartValue: PushButton8,text,string,"8"
+//VBPartValue: PushButton8,minimumSize,minsize,(40,22,false)
+//VBPartValue: PushButton9,text,string,"9"
+//VBPartValue: PushButton9,minimumSize,minsize,(40,22,false)
+//VBPartValue: PushButton10,text,string,"0"
+//VBPartValue: PushButton10,minimumSize,minsize,(40,22,false)
+//VBPartValue: PushButton11,text,string,"Enter"
+//VBPartValue: PushButton11,minimumSize,minsize,(69,22,false)
+//VBPartValue: StaticText5,font,font,(Times New Roman,12,Bold,Italic,Fixed,Vector)
+//VBPartValue: StaticText5,alignment,enum,(IStaticText::Alignment,"centerCenter")
+//VBPartValue: StaticText5,text,string,"Compact Disc"
+//VBPartValue: StaticText5,foregroundColor,color,(name,red)
+//VBPartValue: StaticText5,minimumSize,minsize,(33,20,false)
+//VBPartValue: StaticText4,font,font,(System Proportional,10,Bold,Italic)
+//VBPartValue: StaticText4,alignment,enum,(IStaticText::Alignment,"bottomCenter")
+//VBPartValue: StaticText4,text,string,"                                                         "
+//VBPartValue: StaticText4,foregroundColor,color,(name,red)
+//VBPartValue: StaticText4,minimumSize,minsize,(311,34,false)
+//VBPartValue: StaticText41,text,string,"      CD Player"
+//VBPartValue: StaticText41,font,font,(System Proportional,10,Bold,Italic)
+//VBPartValue: StaticText41,foregroundColor,color,(name,paleGray)
+//VBPartValue: StaticText41,backgroundColor,color,(name,paleGray)
+//VBPartValue: StaticText41,alignment,enum,(IStaticText::Alignment,"bottomCenter")
+//VBPartValue: StaticText41,minimumSize,minsize,(251,54,false)
+//VBPartValue: SetCanvas2,deckCount,integer,1
+//VBPartValue: SetCanvas2,backgroundColor,color,(name,paleGray)
+//VBPartValue: AnimatedButton2,avlFlyOverShortText,string,"Go To Beginning"
+//VBPartValue: AnimatedButton2,minimumSize,minsize,(37,24,false)
+//VBPartValue: AnimatedButton2,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"trackReverse",))
+//VBPartValue: MMPlayerPanel1,avlFlyOverShortText,string,"Rev, Stop, Pause, Play, FF"
+//VBPartValue: MMPlayerPanel1,minimumSize,minsize,(161,33,false)
+//VBPartValue: AnimatedButton3,avlFlyOverShortText,string,"Go To End"
+//VBPartValue: AnimatedButton3,minimumSize,minsize,(37,24,false)
+//VBPartValue: AnimatedButton3,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"trackAdvance",))
+//VBPartValue: CDTime,avlDeferCreation,boolean,false
+//VBPartValue: CDTime,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBPartLayout: main,VBCDPlayer,(initWidgetSize,rectangle,(16,127,776,766))
+//VBPartLayout: part,trackNumberAsString,(framingSpec,position2,(73,348,40,40))
+//VBPartLayout: part,trackNumberAsUnsignedLong,(framingSpec,position2,(188,425,40,40))
+//VBPartLayout: part,MMAudioCD2,(framingSpec,position2,(323,373,40,40))
+//VBPartLayout: part,CDTime,(framingSpec,position2,(478,338,58,58))
+//VBPartLayout: part,VBFlyText1,(framingSpec,position2,(505,29,40,40))
+//VBPartLayout: eventconnection,70,(midPoints,collection,(point,(583,280)))
+//VBPartLayout: eventconnection,42,(midPoints,collection,(point,(541,265)))
+//VBPartLayout: eventconnection,34,(midPoints,collection,(point,(435,268)))
+//VBEndPartInfo: VBCDPlayer
+
+

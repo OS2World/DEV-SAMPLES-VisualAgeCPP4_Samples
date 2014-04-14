@@ -1,0 +1,66 @@
+public:
+  virtual const IString& contractorID() const;
+  virtual OAContractor& setContractorID(const IString& aContractorID );
+  virtual OAContractor& setContractorID();
+  virtual const IString& firstName() const;
+  virtual OAContractor& setFirstName(const IString& aFirstName);
+  virtual const IString& lastName() const;
+  virtual OAContractor& setLastName(const IString& aLastName);
+  virtual const IString& middleInitial() const;
+  virtual OAContractor& setMiddleInitial(const IString& aMiddleInitial);
+  virtual const IString& phoneNumber() const;
+  virtual OAContractor& setPhoneNumber(const IString& aPhoneNumber );
+  virtual const IString& startDate() const;
+  virtual OAContractor& setStartDate(const IString& aStartDate );
+  virtual const IString& endDate() const;
+  virtual OAContractor& setEndDate(const IString& aEndDate );
+  virtual const IString& homeStreet() const;
+  virtual OAContractor& setHomeStreet(const IString& aHomeStreet );
+  virtual const IString& homeCity() const;
+  virtual OAContractor& setHomeCity(const IString& aHomeCity );
+  virtual const IString& homeState() const;
+  virtual OAContractor& setHomeState(const IString& aHomeState );
+  virtual const IString& homeZip() const;
+  virtual OAContractor& setHomeZip(const IString& aHomeZip );
+  virtual const IString& accountNum() const;
+  virtual OAContractor& setAccountNum(const IString& aAccountNum );
+  virtual bool isActiveStatus() const;
+  virtual OAContractor& enableActiveStatus(const bool enable = true );
+  virtual OAContractor& enableActiveStatus(IString aValue );
+  virtual bool isIDvalid() const;
+  virtual OAContractor& enableIDvalid(const bool enable = false );
+
+  virtual OAContractor& parseName(const IString& aName);
+  OAContractor(const OAContractor& aContractor);
+  void clear();
+
+  static const INotificationId _Import contractorIDId;
+  static const INotificationId _Import firstNameId;
+  static const INotificationId _Import lastNameId;
+  static const INotificationId _Import middleInitialId;
+  static const INotificationId _Import phoneNumberId;
+  static const INotificationId _Import startDateId;
+  static const INotificationId _Import endDateId;
+  static const INotificationId _Import homeStreetId;
+  static const INotificationId _Import homeCityId;
+  static const INotificationId _Import homeStateId;
+  static const INotificationId _Import homeZipId;
+  static const INotificationId _Import accountNumId;
+  static const INotificationId _Import activeStatusId;
+  static const INotificationId _Import IDvalidId;
+
+private:
+  IString iContractorID;
+  IString iFirstName;
+  IString iLastName;
+  IString iMiddleInitial;
+  IString iPhoneNumber;
+  IString iStartDate;
+  IString iEndDate;
+  IString iHomeStreet;
+  IString iHomeCity;
+  IString iHomeState;
+  IString iHomeZip;
+  IString iAccountNum;
+  bool iActiveStatus;
+  bool iIDvalid;

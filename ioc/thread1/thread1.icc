@@ -1,0 +1,64 @@
+option
+    link(debug, no),
+    link(pmtype,PM),
+    link(linkwithmultithreadlib, yes),
+    link(linkwithsharedlib, yes),
+    link(extdictionary, no),
+    link(map, no),
+    gen(rtti, yes),
+    link(padding, no)
+{
+    target "mandel.exe"
+    {
+        option
+            lang(nokeyword, "bool"),
+            lang(nokeyword, "true"),
+            lang(nokeyword, "false"),
+            lang(staticinlinelinkage, no),
+            lang(staticconstlinkage, no),
+            define("_IOC_VERSION_40_", "1"),
+            define("IC_LANG_BOOL", "0"),
+            define("USE_IPF", "1")
+        {
+            option macros(global, yes)
+            {
+                source "ibcolor.hpp"
+                source "icmdhdr.hpp"
+                source "icoordsy.hpp"
+                source "iexcbase.hpp"
+                source "iexgrprt.hpp"
+                source "ifiledlg.hpp"
+                source "ifont.hpp"
+                source "iframe.hpp"
+                source "igimage.hpp"
+                source "igraph2d.hpp"
+                source "igrport.hpp"
+                source "ihandle.hpp"
+                source "ihandler.hpp"
+                source "iimage.hpp"
+                source "imcelcv.hpp"
+                source "imenubar.hpp"
+                source "imoushdr.hpp"
+                source "imsgbox.hpp"
+                source "ipainhdr.hpp"
+                source "ipushbut.hpp"
+                source "islider.hpp"
+                source "isysmenu.hpp"
+                source "ithread.hpp"
+                source "itimer.hpp"
+
+                source "complex.h"
+                source "stdlib.h"
+                source "stdio.h"
+
+                source "mandel.h"
+            }
+
+            source "mandim.cpp"
+            source "mwin.cpp"
+            source "progdial.cpp"
+
+            source "mandel.rc"
+        }
+    }
+}

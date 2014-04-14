@@ -1,0 +1,99 @@
+/******************************************************************************
+* .FILE:        suscnrmf.cpp                                                  *
+*                                                                             *
+* .DESCRIPTION: Implementation of additional member functions for the class   *
+*               ISuspectCnrView                                               *
+*                                                                             *
+* .CLASSES:                                                                   *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1996 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+******************************************************************************/
+#include <itrace.hpp>
+#include <ivseq.h>
+#include <icnrolst.hpp>
+
+//***************************************************************************
+// Additional events for ISuspectCnrView
+//***************************************************************************
+INotificationId ISuspectCnrView::suspectToOpenId = "ISuspectCnrView::suspectToOpen";
+
+
+//***************************************************************************
+// Additional member functions for ISuspectCnrView
+//***************************************************************************
+/*------------------------------------------------------------------------------
+ | ISuspectCnrView selectAllSuspects(IContainerControl*, Boolean)
+ -----------------------------------------------------------------------------*/
+ISuspectCnrView & ISuspectCnrView :: selectAllSuspects(IContainerControl* aCnr,
+                                                       bool select)
+{
+   IFUNCTRACE_DEVELOP();
+   try
+   {
+      ICnrObjectSet CnrObjs = aCnr->objectList();
+      ICnrObjectSet::Cursor aCursor(CnrObjs);
+      forCursor(aCursor)
+         aCnr->setSelected(CnrObjs.elementAt(aCursor), select);
+   }
+   catch (IException& exc) {};
+   return *this;
+}
+
+/*------------------------------------------------------------------------------
+ | ISuspectCnrView openTargetSuspects(IVSequence &)
+ -----------------------------------------------------------------------------*/
+ISuspectCnrView & ISuspectCnrView :: openSuspects(
+   IVSequence<ISuspect*> *aSuspectList)
+{
+   IFUNCTRACE_DEVELOP();
+   try
+   {
+      ITRACE_DEVELOP("The number of elements to open: " +
+                     IString(aSuspectList->numberOfElements()));
+      IVSequence<ISuspect*>::Cursor aCursor(*aSuspectList);
+      forCursor(aCursor)
+         setSuspectToOpen(aSuspectList->elementAt(aCursor));
+   }
+   catch (IException& exc) {};
+   return *this;
+}
+
+//***************************************************************************
+// Access member functions for additional data members for ISuspectCnrView
+//***************************************************************************
+/*------------------------------------------------------------------------------
+ | ISuspect * suspectToOpen() const
+ -----------------------------------------------------------------------------*/
+ISuspect * ISuspectCnrView::suspectToOpen() const
+{
+  return iSuspectToOpen;
+}
+
+/*------------------------------------------------------------------------------
+ | ISuspectCnrView & setSuspectToOpen(ISuspect *) const
+ -----------------------------------------------------------------------------*/
+ISuspectCnrView & ISuspectCnrView::setSuspectToOpen(ISuspect * aSuspect)
+{
+  if (iSuspectToOpen != aSuspect)
+  {
+    iSuspectToOpen = aSuspect;
+  }
+  /* always fire the event */
+  notifyObservers(INotificationEvent(ISuspectCnrView::suspectToOpenId, *this));
+  return *this;
+}
+

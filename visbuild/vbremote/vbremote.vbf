@@ -1,0 +1,291 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: VBRemote,"Remote control player",VB
+//VBGeneratedFiles: VBRemote.cpp, VBRemote.cp
+//VBDependsOnFiles: vbmm.vbe
+//VBParents: public IFrameWindow
+//VBIncludes: "VBRemote.hpp" _VBREMOTE_
+//VBConstructor: VBRemote(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle ( ), const char* title = 0)
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBAttribute: FileMediaTime,,IMMTime*,IMMTime* FileMediaTime() const,VBRemote& setFileMediaTime(const IMMTime* aFileMediaTime),FileMediaTimeId
+//VBSubpart: VBRemote,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,Canvas,ICanvas*,p
+//VBSubpart: Canvas,Canvas1,ICanvas*,p
+//VBSubpart: Canvas1,StaticText1,IStaticText*,p
+//VBSubpart: Canvas1,EntryField1,IEntryField*,p
+//VBSubpart: Canvas1,StaticText2,IStaticText*,p
+//VBSubpart: Canvas1,EntryField2,IEntryField*,p
+//VBSubpart: Canvas1,StaticText3,IStaticText*,p
+//VBSubpart: Canvas1,MinuteDisplay,IEntryField*,p
+//VBSubpart: Canvas1,StaticText4,IStaticText*,p
+//VBSubpart: Canvas1,SecondDisplay,IEntryField*,p
+//VBSubpart: Canvas,AnimatedButton1,IAnimatedButton*,p
+//VBSubpart: Canvas,AnimatedButton2,IAnimatedButton*,p
+//VBSubpart: Canvas,AnimatedButton3,IAnimatedButton*,p
+//VBSubpart: Canvas,AnimatedButton4,IAnimatedButton*,p
+//VBSubpart: Canvas,AnimatedButton5,IAnimatedButton*,p
+//VBSubpart: Canvas,AnimatedButton6,IAnimatedButton*,p
+//VBSubpart: Canvas,AnimatedButton7,IAnimatedButton*,p
+//VBSubpart: FrameWindow,ToolBar1,IToolBar*,p
+//VBSubpart: ToolBar1,CDSelectorButton,IToolBarButton*,p
+//VBSubpart: ToolBar1,VideoSelectorButton,IToolBarButton*,p
+//VBSubpart: ToolBar1,WaveSelectorButton,IToolBarButton*,p
+//VBSubpart: ToolBar1,MIDISelectorButton,IToolBarButton*,p
+//VBSubpart: FrameWindow,ToolBar2,IToolBar*,p
+//VBSubpart: ToolBar2,ToolBarButton,IToolBarButton*,p
+//VBSubpart: VBRemote,VBFileDialog1,IVBFileDialog*,p
+//VBSubpart: VBRemote,CD,IMMAudioCD*,p
+//VBSubpart: VBRemote,CDTime,IMMTrackMinSecFrameTime*,v
+//VBSubpart: VBRemote,MMPlayableDevice1,IMMPlayableDevice*,v
+//VBSubpart: VBRemote,Wave_Video_MIDI_Files,IMMFileMedia*,v
+//VBSubpart: VBRemote,VBFlyText1,IVBFlyText*,p
+//VBSubpart: VBRemote,MessageBox1,IMessageBox*,p
+//VBSubpart: VBRemote,Wave,IMMWaveAudio*,p
+//VBSubpart: VBRemote,Video,IMMDigitalVideo*,p
+//VBSubpart: VBRemote,MIDI,IMMSequencer*,p
+//VBSubpart: VBRemote,MMTime1,IMMTime*,v
+//VBConnection: EA,24,p,p,AnimatedButton4,buttonClickEvent,AnimatedButton6,stopAnimation
+//VBConnection: EA,32,p,p,AnimatedButton7,buttonClickEvent,AnimatedButton7,startAnimation
+//VBConnection: EA,25,p,p,AnimatedButton7,buttonClickEvent,AnimatedButton6,stopAnimation
+//VBConnection: EA,26,p,p,AnimatedButton5,buttonClickEvent,AnimatedButton6,stopAnimation
+//VBConnection: EA,30,p,p,AnimatedButton3,buttonClickEvent,AnimatedButton3,startAnimation
+//VBConnection: EA,31,p,p,AnimatedButton6,buttonClickEvent,AnimatedButton3,stopAnimation
+//VBConnection: EA,15,p,p,VideoSelectorButton,buttonClickEvent,MMPlayableDevice1,this
+//VBConnection: AA,36,c,p,15,this,Video,this
+//VBConnection: EA,37,p,p,CD,positionTimerEvent,CDTime,this
+//VBConnection: EA,40,p,p,CDSelectorButton,buttonClickEvent,MMPlayableDevice1,this
+//VBConnection: AA,21,c,p,40,this,CD,this
+//VBConnection: EA,22,p,p,WaveSelectorButton,buttonClickEvent,MMPlayableDevice1,this
+//VBConnection: AA,43,c,p,22,this,Wave,this
+//VBConnection: EA,34,p,p,MIDISelectorButton,buttonClickEvent,MMPlayableDevice1,this
+//VBConnection: AA,35,c,p,34,this,MIDI,this
+//VBConnection: EA,28,p,p,AnimatedButton3,buttonClickEvent,MMPlayableDevice1,seekToStart
+//VBConnection: EA,27,p,p,AnimatedButton3,buttonClickEvent,AnimatedButton6,stopAnimation
+//VBConnection: EA,49,p,p,AnimatedButton5,buttonClickEvent,MMPlayableDevice1,pause
+//VBConnection: EA,50,p,p,AnimatedButton4,buttonClickEvent,MMPlayableDevice1,stop
+//VBConnection: EA,41,p,p,AnimatedButton7,buttonClickEvent,MMPlayableDevice1,seekToEnd
+//VBConnection: EA,33,p,p,AnimatedButton7,buttonClickEvent,AnimatedButton7,stopAnimation
+//VBConnection: EA,42,p,p,AnimatedButton1,buttonClickEvent,CD,trackBackward
+//VBConnection: EA,53,p,p,AnimatedButton2,buttonClickEvent,CD,trackForward
+//VBConnection: EA,57,p,p,VideoSelectorButton,buttonClickEvent,Wave_Video_MIDI_Files,this
+//VBConnection: EA,16,p,p,VideoSelectorButton,buttonClickEvent,VBFileDialog1,fileName
+//VBConnection: EA,17,p,p,VideoSelectorButton,buttonClickEvent,VBFileDialog1,showModally
+//VBConnection: AA,48,c,p,57,this,Video,this
+//VBConnection: EA,59,p,p,WaveSelectorButton,buttonClickEvent,Wave_Video_MIDI_Files,this
+//VBConnection: AA,60,c,p,59,this,Wave,this
+//VBConnection: EA,51,p,p,MIDISelectorButton,buttonClickEvent,Wave_Video_MIDI_Files,this
+//VBConnection: AA,52,c,p,51,this,MIDI,this
+//VBConnection: EA,73,p,p,WaveSelectorButton,buttonClickEvent,VBFileDialog1,fileName
+//VBConnection: EA,54,p,p,WaveSelectorButton,buttonClickEvent,VBFileDialog1,showModally
+//VBConnection: EA,45,p,p,MIDISelectorButton,buttonClickEvent,VBFileDialog1,fileName
+//VBConnection: EA,46,p,p,MIDISelectorButton,buttonClickEvent,VBFileDialog1,showModally
+//VBConnection: EC,47,p,p,CDSelectorButton,buttonClickEvent,EntryField1,customLogic,"",void,(target->setText(\"Compact Disc\");)
+//VBConnection: EA,58,p,p,VBFileDialog1,pressedOkEvent,EntryField1,text
+//VBConnection: AA,69,c,p,58,text,VBFileDialog1,fileName
+//VBConnection: EA,67,p,p,VBFileDialog1,pressedOkEvent,Wave_Video_MIDI_Files,filename
+//VBConnection: AA,68,c,p,67,filename,VBFileDialog1,fileName
+//VBConnection: EA,89,p,p,EntryField1,text,AnimatedButton6,stopAnimation
+//VBConnection: EA,113,p,p,AnimatedButton6,buttonClickEvent,AnimatedButton7,stopAnimation
+//VBConnection: EA,62,p,p,AnimatedButton6,buttonClickEvent,MinuteDisplay,text
+//VBConnection: EA,63,p,p,AnimatedButton6,buttonClickEvent,SecondDisplay,text
+//VBConnection: EA,23,p,p,AnimatedButton6,buttonClickEvent,AnimatedButton6,startAnimation
+//VBConnection: EA,84,p,p,AnimatedButton6,buttonClickEvent,MMPlayableDevice1,play
+//VBConnection: EA,70,p,p,VBFileDialog1,pressedOkEvent,MIDI,timeFormat
+//VBConnection: EA,71,p,p,VBFileDialog1,pressedOkEvent,Video,timeFormat
+//VBConnection: EC,82,p,p,VBFileDialog1,pressedOkEvent,EntryField2,customLogic,"",void,(target->setText(\" \");)
+//VBConnection: EC,83,p,p,MMPlayableDevice1,positionChangeEvent,,customLogic,"",void,(unsigned long position;
+//VB:
+//VB:position = ((IMMPositionChangeEvent *) event->eventData().asUnsignedLong())->position();
+//VB://target->setTarget(new IMMTime(position)); when connect back to variable
+//VB:iMMTime1()->setTarget(new IMMTime(position));  // When connected to Freeform
+//VB:)
+//VBConnection: EA,96,p,p,MIDISelectorButton,buttonClickEvent,MMPlayableDevice1,startPositionTracking
+//VBConnection: EA,77,p,p,AnimatedButton4,buttonClickEvent,MMPlayableDevice1,stopPositionTracking
+//VBConnection: EA,93,p,p,WaveSelectorButton,buttonClickEvent,MMPlayableDevice1,startPositionTracking
+//VBConnection: EA,64,p,p,VideoSelectorButton,buttonClickEvent,MMPlayableDevice1,startPositionTracking
+//VBConnection: EA,95,c,p,84,exceptionOccurred,MessageBox1,showException
+//VBConnection: EA,76,p,p,ToolBarButton,buttonClickEvent,FrameWindow,close
+//VBConnection: EA,94,p,p,CD,positionTimerEvent,SecondDisplay,valueAsInt
+//VBConnection: AA,85,c,p,94,newValue,CDTime,seconds
+//VBConnection: EA,105,p,p,CD,positionTimerEvent,MinuteDisplay,valueAsInt
+//VBConnection: AA,66,c,p,105,newValue,CDTime,minutes
+//VBConnection: EA,86,p,p,CD,positionTimerEvent,EntryField2,valueAsInt
+//VBConnection: AA,87,c,p,86,newValue,CDTime,track
+//VBConnection: EA,88,p,p,,ready,MMTime1,autoDeleteTarget
+//VBConnection: EA,103,p,p,VBFileDialog1,pressedOkEvent,Wave,timeFormat
+//VBConnection: EA,74,p,p,MMPlayableDevice1,positionChangeEvent,SecondDisplay,valueAsInt
+//VBConnection: AA,65,c,p,74,newValue,MMTime1,seconds
+//VBConnection: EA,106,p,p,MMPlayableDevice1,positionChangeEvent,MinuteDisplay,valueAsInt
+//VBConnection: AA,97,c,p,106,newValue,MMTime1,minutes
+//VBPartValue: VBRemote,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,inactiveColor,color,(name,paleGray)
+//VBPartValue: FrameWindow,style,bitflag,(true,IFrameWindow::Style,(("IFrameWindow","maximizeButton",false),("IFrameWindow","minimizeButton",false),("IFrameWindow","sizingBorder",false),("IFrameWindow","systemMenu",false)))
+//VBPartValue: FrameWindow,title,string,"                                        Remote Control"
+//VBPartValue: FrameWindow,client,partRef,Canvas
+//VBPartValue: FrameWindow,activeColor,color,(name,paleGray)
+//VBPartValue: FrameWindow,backgroundColor,color,(name,black)
+//VBPartValue: FrameWindow,borderColor,color,(name,paleGray)
+//VBPartValue: FrameWindow,framingSpec,position1,(140,15,647,236,140,390,647,236)
+//VBPartValue: FrameWindow,shadowColor,color,(name,paleGray)
+//VBPartValue: FrameWindow,foregroundColor,color,(name,paleGray)
+//VBPartValue: FrameWindow,disabledBackgroundColor,color,(name,paleGray)
+//VBPartValue: Canvas,id,code,((IC_FRAME_CLIENT_ID))
+//VBPartValue: Canvas,backgroundColor,color,(name,paleGray)
+//VBPartValue: Canvas1,framingSpec,position1,(32,8,494,127,32,79,494,127)
+//VBPartValue: Canvas1,backgroundColor,color,(name,black)
+//VBPartValue: StaticText1,font,font,(System Default,,Bold,Fixed,Vector)
+//VBPartValue: StaticText1,text,string,"Now Playing:"
+//VBPartValue: StaticText1,framingSpec,position1,(4,13,null,null,4,92,113,22)
+//VBPartValue: StaticText1,foregroundColor,color,(name,paleGray)
+//VBPartValue: EntryField1,style,bitflag,(true,IEntryField::Style,(("IEntryField","margin",false)))
+//VBPartValue: EntryField1,borderColor,color,(name,darkGreen)
+//VBPartValue: EntryField1,framingSpec,position1,(129,9,334,31,129,87,334,31)
+//VBPartValue: EntryField1,backgroundColor,color,(name,paleGray)
+//VBPartValue: EntryField1,limit,integer,256
+//VBPartValue: EntryField1,foregroundColor,color,(name,black)
+//VBPartValue: StaticText2,alignment,enum,(IStaticText::Alignment,"centerRight")
+//VBPartValue: StaticText2,text,string,"Track:"
+//VBPartValue: StaticText2,framingSpec,position1,(61,51,56,22,61,54,56,22)
+//VBPartValue: StaticText2,foregroundColor,color,(name,paleGray)
+//VBPartValue: EntryField2,style,bitflag,(true,IEntryField::Style,(("IEntryField","margin",false)))
+//VBPartValue: EntryField2,borderColor,color,(name,darkGreen)
+//VBPartValue: EntryField2,framingSpec,position1,(129,47,44,31,129,49,44,31)
+//VBPartValue: EntryField2,backgroundColor,color,(name,paleGray)
+//VBPartValue: EntryField2,limit,integer,2
+//VBPartValue: EntryField2,foregroundColor,color,(name,black)
+//VBPartValue: StaticText3,text,string,"Min:"
+//VBPartValue: StaticText3,framingSpec,position1,(231,54,,,231,51,33,22)
+//VBPartValue: StaticText3,foregroundColor,color,(name,paleGray)
+//VBPartValue: MinuteDisplay,style,bitflag,(true,IEntryField::Style,(("IEntryField","margin",false)))
+//VBPartValue: MinuteDisplay,borderColor,color,(name,darkGreen)
+//VBPartValue: MinuteDisplay,framingSpec,position1,(270,49,44,31,270,47,44,31)
+//VBPartValue: MinuteDisplay,backgroundColor,color,(name,paleGray)
+//VBPartValue: MinuteDisplay,limit,integer,2
+//VBPartValue: MinuteDisplay,foregroundColor,color,(name,black)
+//VBPartValue: StaticText4,text,string,"Sec:"
+//VBPartValue: StaticText4,framingSpec,position1,(369,54,,,369,51,39,22)
+//VBPartValue: StaticText4,foregroundColor,color,(name,paleGray)
+//VBPartValue: SecondDisplay,style,bitflag,(true,IEntryField::Style,(("IEntryField","margin",false)))
+//VBPartValue: SecondDisplay,borderColor,color,(name,darkGreen)
+//VBPartValue: SecondDisplay,framingSpec,position1,(419,50,44,31,419,46,44,31)
+//VBPartValue: SecondDisplay,backgroundColor,color,(name,paleGray)
+//VBPartValue: SecondDisplay,limit,integer,2
+//VBPartValue: SecondDisplay,foregroundColor,color,(name,black)
+//VBPartValue: AnimatedButton1,avlFlyOverShortText,string,"Previous CD Track"
+//VBPartValue: AnimatedButton1,framingSpec,position1,(378,143,54,60,378,11,54,60)
+//VBPartValue: AnimatedButton1,backgroundColor,color,(name,paleGray)
+//VBPartValue: AnimatedButton1,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"trackReverse",))
+//VBPartValue: AnimatedButton2,avlFlyOverShortText,string,"Next CD Track"
+//VBPartValue: AnimatedButton2,framingSpec,position1,(432,143,54,60,432,11,54,60)
+//VBPartValue: AnimatedButton2,backgroundColor,color,(name,paleGray)
+//VBPartValue: AnimatedButton2,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"trackAdvance",))
+//VBPartValue: AnimatedButton3,avlFlyOverShortText,string,"Rewind"
+//VBPartValue: AnimatedButton3,framingSpec,position1,(96,143,54,60,96,11,54,60)
+//VBPartValue: AnimatedButton3,backgroundColor,color,(name,paleGray)
+//VBPartValue: AnimatedButton3,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"rewind",))
+//VBPartValue: AnimatedButton4,avlFlyOverShortText,string,"Stop"
+//VBPartValue: AnimatedButton4,framingSpec,position1,(200,143,54,60,200,11,54,60)
+//VBPartValue: AnimatedButton4,backgroundColor,color,(name,paleGray)
+//VBPartValue: AnimatedButton4,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"stop",))
+//VBPartValue: AnimatedButton5,avlFlyOverShortText,string,"Pause"
+//VBPartValue: AnimatedButton5,framingSpec,position1,(149,143,54,60,149,11,54,60)
+//VBPartValue: AnimatedButton5,backgroundColor,color,(name,paleGray)
+//VBPartValue: AnimatedButton5,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"pause",))
+//VBPartValue: AnimatedButton6,avlFlyOverShortText,string,"Play"
+//VBPartValue: AnimatedButton6,framingSpec,position1,(254,143,62,60,254,11,62,60)
+//VBPartValue: AnimatedButton6,backgroundColor,color,(name,paleGray)
+//VBPartValue: AnimatedButton6,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"play",))
+//VBPartValue: AnimatedButton7,avlFlyOverShortText,string,"Fast Forward"
+//VBPartValue: AnimatedButton7,framingSpec,position1,(320,143,54,60,320,11,54,60)
+//VBPartValue: AnimatedButton7,backgroundColor,color,(name,paleGray)
+//VBPartValue: AnimatedButton7,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"fastForward",))
+//VBPartValue: ToolBar1,style,bitflag,(true,IToolBar::Style,())
+//VBPartValue: ToolBar1,location,enum,(IToolBar::Location,"rightOfClient")
+//VBPartValue: ToolBar1,backgroundColor,color,(name,paleGray)
+//VBPartValue: CDSelectorButton,style,bitflag,(true,IToolBarButton::Style,(("IWindow","group",true)))
+//VBPartValue: CDSelectorButton,resourceId,resourceid,(2001,"vbrres")
+//VBPartValue: CDSelectorButton,avlFlyOverShortText,string,"Play a CD"
+//VBPartValue: CDSelectorButton,text,string,"CD"
+//VBPartValue: CDSelectorButton,minimumSize,minsize,(64,39,false)
+//VBPartValue: VideoSelectorButton,style,bitflag,(true,IToolBarButton::Style,(("IWindow","group",false)))
+//VBPartValue: VideoSelectorButton,resourceId,resourceid,(2002,"vbrres")
+//VBPartValue: VideoSelectorButton,avlFlyOverShortText,string,"Play a video"
+//VBPartValue: VideoSelectorButton,minimumSize,minsize,(64,39,false)
+//VBPartValue: WaveSelectorButton,style,bitflag,(true,IToolBarButton::Style,(("IWindow","group",false)))
+//VBPartValue: WaveSelectorButton,resourceId,resourceid,(2003,"vbrres")
+//VBPartValue: WaveSelectorButton,avlFlyOverShortText,string,"Play a wave form"
+//VBPartValue: WaveSelectorButton,text,string,"Wave"
+//VBPartValue: WaveSelectorButton,minimumSize,minsize,(64,39,false)
+//VBPartValue: MIDISelectorButton,style,bitflag,(true,IToolBarButton::Style,(("IWindow","group",false)))
+//VBPartValue: MIDISelectorButton,resourceId,resourceid,(2004,"vbrres")
+//VBPartValue: MIDISelectorButton,avlFlyOverShortText,string,"Play a MIDI file"
+//VBPartValue: MIDISelectorButton,text,string,"MIDI"
+//VBPartValue: MIDISelectorButton,minimumSize,minsize,(64,39,false)
+//VBPartValue: ToolBar2,style,bitflag,(true,IToolBar::Style,(("IToolBar","buttonTextVisible",true)))
+//VBPartValue: ToolBar2,location,enum,(IToolBar::Location,"rightOfClient")
+//VBPartValue: ToolBar2,backgroundColor,color,(name,black)
+//VBPartValue: ToolBar2,groupWithPreceding,boolean,true
+//VBPartValue: ToolBarButton,style,bitflag,(true,IToolBarButton::Style,(("IWindow","group",true)))
+//VBPartValue: ToolBarButton,resourceId,resourceid,(2005,"vbrres")
+//VBPartValue: ToolBarButton,backgroundColor,color,(name,paleGray)
+//VBPartValue: CD,continuousPlayEnabled,boolean,true
+//VBPartValue: CDTime,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBPartValue: MMPlayableDevice1,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBPartValue: Wave_Video_MIDI_Files,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBPartValue: MMTime1,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBConnValue: 16,fileName,string,"*.avi"
+//VBConnValue: 73,fileName,string,"*.wav"
+//VBConnValue: 45,fileName,string,"*.mid"
+//VBConnValue: 62,text,string," "
+//VBConnValue: 63,text,string," "
+//VBConnValue: 70,timeFormat,enum,(IMMTime::Format,"milliseconds")
+//VBConnValue: 71,timeFormat,enum,(IMMTime::Format,"milliseconds")
+//VBConnValue: 96,timeInterval,code,((1000))
+//VBConnValue: 93,timeInterval,code,((1000))
+//VBConnValue: 64,timeInterval,code,((1000))
+//VBConnValue: 88,autoDeleteTarget,boolean,true
+//VBConnValue: 103,timeFormat,enum,(IMMTime::Format,"milliseconds")
+//VBPartLayout: main,VBRemote,(initWidgetSize,rectangle,(56,150,1129,865))
+//VBPartLayout: part,VBFileDialog1,(framingSpec,position2,(15,88,91,68))
+//VBPartLayout: eventconnection,16,(midPoints,array,(point,(418,44)))
+//VBPartLayout: eventconnection,17,(midPoints,collection,(point,(132,99)))
+//VBPartLayout: part,CD,(framingSpec,position2,(847,275,40,40))
+//VBPartLayout: part,CDTime,(framingSpec,position2,(853,110,58,58))
+//VBPartLayout: eventconnection,15,(midPoints,collection,(point,(771,396)))
+//VBPartLayout: part,MMPlayableDevice1,(framingSpec,position2,(658,491,58,58))
+//VBPartLayout: eventconnection,40,(midPoints,collection,(point,(665,276)))
+//VBPartLayout: eventconnection,22,(midPoints,array,(point,(686,292)))
+//VBPartLayout: eventconnection,34,(midPoints,collection,(point,(741,407)))
+//VBPartLayout: eventconnection,41,(midPoints,array,(point,(563,329)))
+//VBPartLayout: part,Wave_Video_MIDI_Files,(framingSpec,position2,(49,305,58,58))
+//VBPartLayout: eventconnection,57,(midPoints,collection,(point,(255,363)))
+//VBPartLayout: eventconnection,59,(midPoints,collection,(point,(299,323)))
+//VBPartLayout: eventconnection,51,(midPoints,collection,(point,(236,442)))
+//VBPartLayout: eventconnection,70,(midPoints,collection,(point,(194,366)))
+//VBPartLayout: eventconnection,73,(midPoints,array,(point,(417,67)))
+//VBPartLayout: eventconnection,54,(midPoints,collection,(point,(421,78)))
+//VBPartLayout: eventconnection,45,(midPoints,collection,(point,(327,163)))
+//VBPartLayout: eventconnection,58,(midPoints,array,(point,(79,42)))
+//VBPartLayout: eventconnection,67,(midPoints,collection,(point,(56,285)))
+//VBPartLayout: part,VBFlyText1,(framingSpec,position2,(818,28,40,40))
+//VBPartLayout: part,MessageBox1,(framingSpec,position2,(828,370,40,40))
+//VBPartLayout: part,Wave,(framingSpec,position2,(217,273,40,40))
+//VBPartLayout: part,Video,(framingSpec,position2,(425,372,40,40))
+//VBPartLayout: part,MIDI,(framingSpec,position2,(374,425,40,40))
+//VBPartLayout: part,MMTime1,(framingSpec,position2,(137,519,58,58))
+//VBPartLayout: eventconnection,64,(midPoints,collection,(point,(634,310)))
+//VBPartLayout: eventconnection,49,(midPoints,collection,(point,(527,308)))
+//VBPartLayout: eventconnection,33,(midPoints,collection,(point,(580,289),point,(510,193)))
+//VBPartLayout: eventconnection,96,(midPoints,collection,(point,(729,337)))
+//VBPartLayout: eventconnection,25,(midPoints,collection,(point,(422,289)))
+//VBPartLayout: eventconnection,113,(midPoints,collection,(point,(474,272)))
+//VBPartLayout: eventconnection,84,(midPoints,collection,(point,(588,321)))
+//VBPartLayout: eventconnection,94,(midPoints,collection,(point,(829,139)))
+//VBPartLayout: eventconnection,105,(midPoints,collection,(point,(801,97)))
+//VBPartLayout: eventconnection,86,(midPoints,collection,(point,(796,151)))
+//VBPartLayout: eventconnection,74,(midPoints,collection,(point,(426,529)))
+//VBPartLayout: eventconnection,106,(midPoints,collection,(point,(359,576)))
+//VBEndPartInfo: VBRemote
+
+

@@ -1,0 +1,18 @@
+//VBInitializeStream: 4.B.1
+
+//VBBeginPartInfo: OASkillBase,"OASearch class to manage skill instances",VB
+//VBGeneratedFiles: skillb.cpp
+//VBParents: public IStandardNotifier
+//VBIncludes: "skillb.hpp" _OASkillBase_,<iprofile.hpp>,<ivseq.h>,<istring.hpp>,"skill.hpp"
+//VBConstructor: OASkillBase()
+//VBComposerInfo: nonvisual
+//VBGeneratorValues: userHpp(true),userCpp(true),userH(false),userRC(false)
+//VBEvent: ready,, IVBMiscellaneousIds::readyId
+//VBEvent: queryFound,"Skill matching this description was found in database", queryFoundId
+//VBAction: initializePart,"initializePart",,OASkillBase& initializePart(),noconnect
+//VBAction: putSkill,"Save this skill record to the database",OASkillBase,virtual OASkillBase& putSkill(OASkill* aSkill),preferred
+//VBAction: getSkill,"Retrieve records on this skill from the database",OASkillBase,virtual OASkillBase& getSkill(const IString& aSkillName, IVSequence<OASkill*>* aList),preferred
+//VBPartLayout: main,OASkillBase,(initWidgetSize,rectangle,(96,53,1120,873))
+//VBEndPartInfo: OASkillBase
+
+

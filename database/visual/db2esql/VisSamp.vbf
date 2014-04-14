@@ -1,0 +1,20 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: VisSamp,,VB
+//VBGeneratedFiles: VisSamp.cpp
+//VBDependsOnFiles: MainView.vbf
+//VBParents: public IVBMain
+//VBIncludes: "VisSamp.hpp" _VisSamp_
+//VBConstructor: VisSamp()
+//VBComposerInfo: nonvisual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBSubpart: VisSamp,IVBMain1,IVBMain*,p
+//VBSubpart: VisSamp,MainView1,MainView*,p
+//VBConnection: EA,0,p,p,,ready,MainView1,show
+//VBPartValue: VisSamp,primaryPart,partRef,IVBMain1
+//VBPartValue: MainView1,framingSpec,position1,(134,105,,,134,45,706,536)
+//VBPartLayout: main,VisSamp,(initWidgetSize,rectangle,(104,76,923,690))
+//VBPartLayout: part,IVBMain1,(framingSpec,position2,(32,22,48,48))
+//VBEndPartInfo: VisSamp
+
+

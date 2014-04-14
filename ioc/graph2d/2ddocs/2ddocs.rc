@@ -1,0 +1,112 @@
+// Revision: 39  1.4.1.4  samples/graph2d/2ddocs/2ddocs.rcx, ocsamples-L1, ioc.v400, 981111  
+/*
+--------------------------------------------------------------------------------
+Copyright (c) IBM Corporation 1997.
+All rights reserved.
+
+Permission is granted to copy, use, modify, and merge this software into
+your applications and to permit others to do any of the foregoing. You must
+include this permission and copyright notice in all copies and modified
+versions of this software. THIS SOFTWARE IS PROVIDED IN ITS 'AS IS'
+CONDITION. IBM DISCLAIMS ANY LIABILITY OF ANY KIND FOR DAMAGES
+WHATSOEVER RESULTING FROM THE USE OF THIS SOFTWARE.
+--------------------------------------------------------------------------------
+*/
+
+#include "icconst.h"
+#include "2ddocs.h"
+
+#ifdef IC_PM
+#include <os2.h>
+#define IC_ID_BUTTONSEPARATOR1 MIS_BUTTONSEPARATOR
+#define IC_ID_BUTTONSEPARATOR2 MIS_BUTTONSEPARATOR
+#define IC_ID_BUTTONSEPARATOR3 MIS_BUTTONSEPARATOR
+#define IC_ID_BUTTONSEPARATOR4 MIS_BUTTONSEPARATOR
+#else
+#ifdef IC_MOTIF
+#define IC_ID_BUTTONSEPARATOR1 0x1001
+#define IC_ID_BUTTONSEPARATOR2 0x1002
+#define IC_ID_BUTTONSEPARATOR3 0x1003
+#define IC_ID_BUTTONSEPARATOR4 0x1004
+#else
+#define IC_ID_BUTTONSEPARATOR1
+#define IC_ID_BUTTONSEPARATOR2
+#define IC_ID_BUTTONSEPARATOR3
+#define IC_ID_BUTTONSEPARATOR4
+#endif
+#endif
+
+
+STRINGTABLE
+  BEGIN
+    IC_ID_WND_MAIN                ,    "2D Graphics Samples"
+    IC_ID_EXIT                    ,    "Quit the program"
+    IC_ID_EXAMPLE_BOLT            ,    "Subclassing IMGraphic"
+    IC_ID_EXAMPLE_STAR_ROTATE_CENTER,    "Rotation around center of graphic"
+    IC_ID_EXAMPLE_STAR_ROTATE_VIEWORIGIN,    "Rotation around view origin"
+    IC_ID_EXAMPLE_STAR_ROTATE_ARBITRARYPOINT,    "Rotation around point (0,200)"
+    IC_ID_EXAMPLE_STAR_SCALE_CENTER,    "Scaling around center of graphic"
+    IC_ID_EXAMPLE_STAR_SCALE_VIEWORIGIN,    "Scaling around view origin"
+    IC_ID_EXAMPLE_STAR_SCALE_ARBITRARYPOINT,    "Scaling around point (0,200)"
+    IC_ID_EXAMPLE_STAR_MIRRORX    ,    "Mirroring around the x-axis"
+    IC_ID_EXAMPLE_STAR_MIRRORY    ,    "Mirroring around the y-axis"
+    IC_ID_EXAMPLE_STAR_MIRRORXY   ,    "Mirroring around both axes"
+    IC_ID_EXAMPLE_STAR_TRANSLATE  ,    "Translation"
+    IC_ID_EXAMPLE_WAGON           ,    "Constructing and detecting hits in graphic groups"
+    IC_ID_EXAMPLE_CAG_ARBITRARY   ,    "Arbitrary constructive area geometry"
+    IC_ID_EXAMPLE_CAG_APPLE       ,    "Apple-shaped constructive area geometry"
+    IC_ID_EXAMPLE_CAG_BANANA      ,    "Banana-shaped constructive area geometry"
+    IC_ID_EXAMPLE_CAG_L           ,    "L-shaped constructive area geometry"
+    IC_ID_EXAMPLE_PIPELINE_SIMPLE_LINKED,    "Using linked attribute port"
+    IC_ID_EXAMPLE_PIPELINE_SIMPLE_BUNDLE,    "Using bundle argument"
+    IC_ID_EXAMPLE_PIPELINE_COMPLEX_CLIP,    "Using a clipping area"
+    IC_ID_EXAMPLE_PIPELINE_COMPLEX_CONCAT,    "Concatenating bundle and model matrix"
+    IC_ID_EXAMPLE_PIPELINE_COMPLEX_MULTILINKED,    "Using multiple linked ports"
+    IC_ID_EXAMPLE_PIPELINE_DIRECT ,    "Drawing directly to the screen"
+    IC_ID_EXAMPLE_PIPELINE_DIRECT_CLIP,    "Drawing directly to the screen using clipping area"
+    IC_ID_ERROR_NO_EXAMPLE_SELECTED,    "No example selected"
+  END
+
+MENU  IC_ID_WND_MAIN
+  BEGIN
+    SUBMENU   "~Example"                 , IC_ID_BUTTONSEPARATOR1
+      BEGIN
+        MENUITEM  "~Bolt"                    ,  IC_ID_EXAMPLE_BOLT
+        SUBMENU   "~Star"                    ,IC_ID_BUTTONSEPARATOR2
+          BEGIN
+            MENUITEM  "~1 Rotate around center"       ,  IC_ID_EXAMPLE_STAR_ROTATE_CENTER
+            MENUITEM  "~2 Rotate around view origin"       ,  IC_ID_EXAMPLE_STAR_ROTATE_VIEWORIGIN
+            MENUITEM  "~3 Rotate around (0,200)"       ,  IC_ID_EXAMPLE_STAR_ROTATE_ARBITRARYPOINT
+            MENUITEM  SEPARATOR
+            MENUITEM  "~4 Scale from center"       ,  IC_ID_EXAMPLE_STAR_SCALE_CENTER
+            MENUITEM  "~5 Scale from view origin"       ,  IC_ID_EXAMPLE_STAR_SCALE_VIEWORIGIN
+            MENUITEM  "~6 Scale from (0,200)"       ,  IC_ID_EXAMPLE_STAR_SCALE_ARBITRARYPOINT
+            MENUITEM  SEPARATOR
+            MENUITEM  "~7 Mirror about X-axis"       ,  IC_ID_EXAMPLE_STAR_MIRRORX
+            MENUITEM  "~8 Mirror about Y-axis"       ,  IC_ID_EXAMPLE_STAR_MIRRORY
+            MENUITEM  "~9 Mirror about both axes"       ,  IC_ID_EXAMPLE_STAR_MIRRORXY
+            MENUITEM  SEPARATOR
+            MENUITEM  "~0 Translate"             ,  IC_ID_EXAMPLE_STAR_TRANSLATE
+          END
+        MENUITEM  "~Wagon (+hit detection)"       ,  IC_ID_EXAMPLE_WAGON
+        SUBMENU   "~C.A.G."                  , IC_ID_BUTTONSEPARATOR3
+          BEGIN
+            MENUITEM  "~1 Arbitrary Area"        ,  IC_ID_EXAMPLE_CAG_ARBITRARY
+            MENUITEM  "~2 Apple"                 ,  IC_ID_EXAMPLE_CAG_APPLE
+            MENUITEM  "~3 Banana"                ,  IC_ID_EXAMPLE_CAG_BANANA
+            MENUITEM  "~4 Letter 'L'"            ,  IC_ID_EXAMPLE_CAG_L
+          END
+        SUBMENU   "~Rendering Pipeline"       , IC_ID_BUTTONSEPARATOR4
+          BEGIN
+            MENUITEM  "~1 Simple using linked port"       ,  IC_ID_EXAMPLE_PIPELINE_SIMPLE_LINKED
+            MENUITEM  "~2 Simple using bundle"       ,  IC_ID_EXAMPLE_PIPELINE_SIMPLE_BUNDLE
+            MENUITEM  "~3 Complex with clip area"       ,  IC_ID_EXAMPLE_PIPELINE_COMPLEX_CLIP
+            MENUITEM  "~4 Complex with concatenated objects"       ,  IC_ID_EXAMPLE_PIPELINE_COMPLEX_CONCAT
+            MENUITEM  "~5 Complex with multiple linked ports"       ,  IC_ID_EXAMPLE_PIPELINE_COMPLEX_MULTILINKED
+            MENUITEM  "~6 Direct to screen"       ,  IC_ID_EXAMPLE_PIPELINE_DIRECT
+            MENUITEM  "~7 Direct to screen with clip area"       ,  IC_ID_EXAMPLE_PIPELINE_DIRECT_CLIP
+          END
+        MENUITEM  SEPARATOR
+        MENUITEM  "E~xit"                    ,  IC_ID_EXIT
+      END
+  END

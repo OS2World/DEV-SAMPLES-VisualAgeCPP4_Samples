@@ -1,0 +1,10 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ICalcFunction,"Function Operation Parent Part",interface
+//VBConstraints:  noGen
+//VBParents: IStandardNotifier
+//VBIncludes: <icalcfnc.hpp> _ICALCFUNC_
+//VBConstructor: ICalcFunction()
+//VBComposerInfo: nonvisual
+//VBEndPartInfo: ICalcFunction
+

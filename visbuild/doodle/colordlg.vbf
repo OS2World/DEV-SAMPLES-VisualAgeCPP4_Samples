@@ -1,0 +1,134 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: IColorDialog,"Color Dialog",VB
+//VBGeneratedFiles: ClrDalog.cpp, ClrDalog.cp
+//VBParents: public IFrameWindow
+//VBIncludes: "ClrDalog.hpp" _ICOLORDIALOG_
+//VBConstructor: IColorDialog(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle ( ), const char* title = 0)
+//VBComposerInfo: visual
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(false),userCtor((ITRACE_DEVELOP(\" ***MDH*** In IColorDialog constructor ***\");)),userDtor((ITRACE_DEVELOP(\" ***MDH*** In IColorDialog destructor ***\");))
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: redVariable,(7101,"cppres"),IVBUnsignedShortPart*,IVBUnsignedShortPart* getRedVariable() const,IColorDialog& setRedVariable(IVBUnsignedShortPart* target),redVariableId,RedVariable,this
+//VBPromotedAttribute: greenVariable,(7101,"cppres"),IVBUnsignedShortPart*,IVBUnsignedShortPart* getGreenVariable() const,IColorDialog& setGreenVariable(IVBUnsignedShortPart* target),greenVariableId,GreenVariable,this
+//VBPromotedAttribute: blueVariable,(7101,"cppres"),IVBUnsignedShortPart*,IVBUnsignedShortPart* getBlueVariable() const,IColorDialog& setBlueVariable(IVBUnsignedShortPart* target),blueVariableId,BlueVariable,this
+//VBSubpart: IColorDialog,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,Canvas,ICanvas*,p
+//VBSubpart: Canvas,RedSwatch,IStaticText*,p
+//VBSubpart: Canvas,RedValue,IStaticText*,p
+//VBSubpart: Canvas,RedSlider,ISlider*,p
+//VBSubpart: Canvas,GreenSwatch,IStaticText*,p
+//VBSubpart: Canvas,GreenValue,IStaticText*,p
+//VBSubpart: Canvas,GreenSlider,ISlider*,p
+//VBSubpart: Canvas,BlueSwatch,IStaticText*,p
+//VBSubpart: Canvas,BlueValue,IStaticText*,p
+//VBSubpart: Canvas,BlueSlider,ISlider*,p
+//VBSubpart: Canvas,SetButton,IPushButton*,p
+//VBSubpart: Canvas,CancelButton,IPushButton*,p
+//VBSubpart: Canvas,ResetButton,IPushButton*,p
+//VBSubpart: Canvas,ColorLabel,IStaticText*,p
+//VBSubpart: Canvas,ColorSwatch,IStaticText*,p
+//VBSubpart: IColorDialog,RedVariable,IVBUnsignedShortPart*,v
+//VBSubpart: IColorDialog,GreenVariable,IVBUnsignedShortPart*,v
+//VBSubpart: IColorDialog,BlueVariable,IVBUnsignedShortPart*,v
+//VBSubpart: IColorDialog,TempColor,IColor*,p
+//VBConnection: EA,0,p,p,CancelButton,buttonClickEvent,FrameWindow,close
+//VBConnection: AA,13,p,p,RedSlider,armTickOffset,RedValue,valueAsUnsigned
+//VBConnection: AA,3,p,p,GreenSlider,armTickOffset,GreenValue,valueAsUnsigned
+//VBConnection: AA,4,p,p,BlueSlider,armTickOffset,BlueValue,valueAsUnsigned
+//VBConnection: EA,17,p,p,ResetButton,buttonClickEvent,BlueSlider,armTickOffset
+//VBConnection: EA,19,p,p,ResetButton,buttonClickEvent,GreenSlider,armTickOffset
+//VBConnection: EA,21,p,p,ResetButton,buttonClickEvent,RedSlider,armTickOffset
+//VBConnection: AA,22,c,p,21,armTickOffset,RedVariable,value
+//VBConnection: AA,20,c,p,19,armTickOffset,GreenVariable,value
+//VBConnection: AA,18,c,p,17,armTickOffset,BlueVariable,value
+//VBConnection: EC,36,p,p,,ready,,customLogic,"",void,(iColorSwatch()->setFillColor(*iTempColor());)
+//VBConnection: AA,43,p,p,RedSlider,armTickOffset,TempColor,redMix
+//VBConnection: AA,44,p,p,GreenSlider,armTickOffset,TempColor,greenMix
+//VBConnection: AA,45,p,p,BlueSlider,armTickOffset,TempColor,blueMix
+//VBConnection: EC,46,p,p,RedSlider,armTickOffset,,customLogic,"",void,(iColorSwatch()->setFillColor(*iTempColor());)
+//VBConnection: EC,57,p,p,GreenSlider,armTickOffset,,customLogic,"",void,(iColorSwatch()->setFillColor(*iTempColor());)
+//VBConnection: EC,48,p,p,BlueSlider,armTickOffset,,customLogic,"",void,(iColorSwatch()->setFillColor(*iTempColor());)
+//VBConnection: AA,28,p,p,BlueVariable,value,BlueSlider,armTickOffset
+//VBConnection: AA,29,p,p,GreenVariable,value,GreenSlider,armTickOffset
+//VBConnection: AA,30,p,p,RedVariable,value,RedSlider,armTickOffset
+//VBConnection: EA,31,p,p,SetButton,buttonClickEvent,RedVariable,apply
+//VBConnection: EA,32,p,p,SetButton,buttonClickEvent,GreenVariable,apply
+//VBConnection: EA,23,p,p,SetButton,buttonClickEvent,BlueVariable,apply
+//VBConnection: EA,1,p,p,SetButton,buttonClickEvent,FrameWindow,close
+//VBPartValue: IColorDialog,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,style,bitflag,(true,IFrameWindow::Style,(("IFrameWindow","dialogBackground",true),("IFrameWindow","dialogBorder",true),("IFrameWindow","hideButton",false),("IFrameWindow","maximizeButton",false),("IFrameWindow","minimizeButton",false),("IFrameWindow","sizingBorder",false)))
+//VBPartValue: FrameWindow,client,partRef,Canvas
+//VBPartValue: FrameWindow,framingSpec,position1,(57,78,388,241,57,232,388,241)
+//VBPartValue: FrameWindow,title,string,"Set Color"
+//VBPartValue: RedSwatch,style,bitflag,(true,IStaticText::Style,(("IWindow","group",true),("IWindow","tabStop",false)))
+//VBPartValue: RedSwatch,fillColor,color,(name,red)
+//VBPartValue: RedSwatch,alignment,enum,(IStaticText::Alignment,"centerCenter")
+//VBPartValue: RedSwatch,backgroundColor,color,(name,red)
+//VBPartValue: RedSwatch,framingSpec,position1,(20,55,18,21,20,135,18,21)
+//VBPartValue: RedSwatch,foregroundColor,color,(name,black)
+//VBPartValue: RedValue,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: RedValue,text,string,"255"
+//VBPartValue: RedValue,framingSpec,position1,(339,53,36,25,339,133,36,25)
+//VBPartValue: RedSlider,primaryTickSpacing,integer,0
+//VBPartValue: RedSlider,style,bitflag,(true,ISlider::Style,(("ISlider","buttonsTop",false),("ISlider","buttonsBottom",false),("ISlider","buttonsLeft",false),("ISlider","buttonsRight",false),("IProgressIndicator","ribbonStrip",true),("IWindow","tabStop",true)))
+//VBPartValue: RedSlider,framingSpec,position1,(47,48,288,30,47,133,288,30)
+//VBPartValue: RedSlider,primaryNumberOfTicks,integer,256
+//VBPartValue: GreenSwatch,fillColor,color,(name,green)
+//VBPartValue: GreenSwatch,framingSpec,position1,(20,89,18,21,20,101,18,21)
+//VBPartValue: GreenSwatch,backgroundColor,color,(name,green)
+//VBPartValue: GreenSwatch,alignment,enum,(IStaticText::Alignment,"centerCenter")
+//VBPartValue: GreenSwatch,foregroundColor,color,(name,black)
+//VBPartValue: GreenValue,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: GreenValue,text,string,"12"
+//VBPartValue: GreenValue,framingSpec,position1,(339,87,36,25,339,99,36,25)
+//VBPartValue: GreenSlider,style,bitflag,(true,ISlider::Style,(("ISlider","buttonsTop",false),("ISlider","buttonsBottom",false),("ISlider","buttonsLeft",false),("ISlider","buttonsRight",false),("IProgressIndicator","ribbonStrip",true)))
+//VBPartValue: GreenSlider,framingSpec,position1,(47,84,288,30,47,97,288,30)
+//VBPartValue: GreenSlider,primaryNumberOfTicks,integer,256
+//VBPartValue: BlueSwatch,style,bitflag,(true,IStaticText::Style,(("IStaticText","fillBackground",true)))
+//VBPartValue: BlueSwatch,fillColor,color,(name,blue)
+//VBPartValue: BlueSwatch,alignment,enum,(IStaticText::Alignment,"centerCenter")
+//VBPartValue: BlueSwatch,backgroundColor,color,(name,blue)
+//VBPartValue: BlueSwatch,framingSpec,position1,(20,123,18,21,20,67,18,21)
+//VBPartValue: BlueSwatch,foregroundColor,color,(name,black)
+//VBPartValue: BlueValue,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: BlueValue,text,string,"0"
+//VBPartValue: BlueValue,framingSpec,position1,(339,121,36,25,339,65,36,25)
+//VBPartValue: BlueSlider,style,bitflag,(true,ISlider::Style,(("ISlider","buttonsTop",false),("ISlider","buttonsBottom",false),("ISlider","buttonsLeft",false),("ISlider","buttonsRight",false),("IProgressIndicator","ribbonStrip",true)))
+//VBPartValue: BlueSlider,framingSpec,position1,(47,118,288,30,47,63,288,30)
+//VBPartValue: BlueSlider,primaryNumberOfTicks,integer,256
+//VBPartValue: SetButton,style,bitflag,(true,IPushButton::Style,(("IPushButton","defaultButton",true),("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: SetButton,text,string,"Set"
+//VBPartValue: SetButton,framingSpec,position1,(32,157,83,34,32,20,83,34)
+//VBPartValue: CancelButton,text,string,"Cancel"
+//VBPartValue: CancelButton,framingSpec,position1,(147,159,null,null,147,21,83,31)
+//VBPartValue: ResetButton,style,bitflag,(true,IPushButton::Style,(("IWindow","tabStop",false)))
+//VBPartValue: ResetButton,text,string,"Reset"
+//VBPartValue: ResetButton,framingSpec,position1,(262,157,83,34,262,20,83,34)
+//VBPartValue: ColorLabel,style,bitflag,(true,IStaticText::Style,(("IWindow","group",true)))
+//VBPartValue: ColorLabel,text,string,"Current Color:"
+//VBPartValue: ColorLabel,framingSpec,position1,(17,11,,,17,178,130,22)
+//VBPartValue: ColorSwatch,fillColor,color,(name,darkBlue)
+//VBPartValue: ColorSwatch,framingSpec,position1,(150,7,80,30,150,174,80,30)
+//VBPartValue: ColorSwatch,foregroundColor,color,(name,yellow)
+//VBPartValue: ColorSwatch,backgroundColor,color,(name,darkPink)
+//VBPartValue: RedVariable,deferUpdate,boolean,true
+//VBPartValue: GreenVariable,deferUpdate,boolean,true
+//VBPartValue: BlueVariable,deferUpdate,boolean,true
+//VBPartValue: TempColor,greenMix,code,((255))
+//VBPartValue: TempColor,blueMix,code,((255))
+//VBPartValue: TempColor,value,enum,(IColor::Color,"white")
+//VBPartValue: TempColor,redMix,code,((255))
+//VBPartLayout: main,IColorDialog,(initWidgetSize,rectangle,(352,390,1163,1015))
+//VBPartLayout: part,RedVariable,(framingSpec,position2,(70,396,81,78))
+//VBPartLayout: part,GreenVariable,(framingSpec,position2,(227,392,58,58))
+//VBPartLayout: part,BlueVariable,(framingSpec,position2,(380,389,58,58))
+//VBPartLayout: connection,3,(midPoints,array,(point,(379,201)))
+//VBPartLayout: connection,13,(midPoints,array,(point,(383,166)))
+//VBPartLayout: connection,4,(midPoints,array,(point,(379,236)))
+//VBPartLayout: eventconnection,46,(midPoints,array,(point,(37,189)))
+//VBPartLayout: eventconnection,57,(midPoints,collection,(point,(46,223)))
+//VBPartLayout: eventconnection,48,(midPoints,array,(point,(36,258)))
+//VBPartLayout: part,TempColor,(framingSpec,position2,(517,82,40,40))
+//VBEndPartInfo: IColorDialog
+
+

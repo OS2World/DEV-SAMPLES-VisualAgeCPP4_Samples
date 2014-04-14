@@ -1,0 +1,41 @@
+/******************************************************************************
+* .FILE:         magnify.rcx                                                  *
+*                                                                             *
+* .DESCRIPTION:  Magnify Sample Program:  Resource File                       *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+*  Revision: 82 1.2.1.3 samples/graph2d/magnify/magnify.rcx, ocsamples-L1, ioc.v400, 981111 
+******************************************************************************/
+/*
+-------------------------------------------------------------------------------
+Copyright (c) IBM Corporation 1992, 1997.
+All Rights Reserved.
+
+Permission is granted to copy, use, modify, and merge this software into your
+applications and to permit others to do any of the foregoing. You must include
+this permission and copyright notice in all copies and modified versions of
+this software. THIS SOFTWARE IS PROVIDED IN ITS 'AS IS' CONDITION. TALIGENT
+AND IBM DISCLAIM ANY LIABILITY OF ANY KIND FOR DAMAGES WHATSOEVER RESULTING
+FROM THE USE OF THIS SOFTWARE.
+-------------------------------------------------------------------------------
+*/
+
+#include "magnify.h"
+
+ICON ID_MAIN magnify.ico
+
+STRINGTABLE
+  BEGIN
+    STR_MAGNIFY     ,  "Start"
+    STR_CAPTURE     ,  "Stop"
+    STR_SAVEAS      ,  "Save As..."
+    STR_Y           ,  "   Y:"
+    STR_X           ,  "   X:"
+    TITLE_MAGNIFY   ,  "Magnify Sample"
+    STR_SAVETYPES   ,  "GIF (*.gif)"
+    STR_SAVETYPES+1 ,  "XPM (*.xpm)"
+    STR_SAVETYPES+2 ,  "Bitmap (*.bmp)"
+    STR_SAVETYPES+3 ,  "Jpeg (*.jpg)"
+    STR_WRITE_ERROR ,  "Unable to save file!"
+  END

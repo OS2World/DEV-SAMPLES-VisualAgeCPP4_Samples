@@ -1,0 +1,34 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: VBStereo,"stereo",VB
+//VBGeneratedFiles: VBStereo.cp, VBStereo.cpp
+//VBDependsOnFiles: vbvideo.vbf, vbmixer.vbf, vbcdplyr.vbf, vbwave.vbf
+//VBParents: public IFrameWindow
+//VBIncludes: "VBStereo.hpp" _VBSTEREO_
+//VBConstructor: VBStereo(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle ( ), const char* title = 0)
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBSubpart: VBStereo,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,Canvas,ICanvas*,p
+//VBSubpart: Canvas,VBWave1,VBWave*,p
+//VBSubpart: Canvas,VBVideo1,VBVideo*,p
+//VBSubpart: Canvas,VBCDPlayer1,VBCDPlayer*,p
+//VBSubpart: Canvas,VBMixer1,VBMixer*,p
+//VBPartValue: VBStereo,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,client,partRef,Canvas
+//VBPartValue: FrameWindow,framingSpec,position1,(1,9,1017,686,1,205,1017,686)
+//VBPartValue: FrameWindow,title,string,"Stereo"
+//VBPartValue: Canvas,id,code,((IC_FRAME_CLIENT_ID))
+//VBPartValue: Canvas,backgroundColor,color,(name,black)
+//VBPartValue: VBWave1,framingSpec,position1,(451,356,554,295,451,8,554,295)
+//VBPartValue: VBWave1,backgroundColor,color,(name,paleGray)
+//VBPartValue: VBVideo1,framingSpec,position1,(6,7,631,342,6,310,631,342)
+//VBPartValue: VBVideo1,backgroundColor,color,(name,paleGray)
+//VBPartValue: VBCDPlayer1,framingSpec,position1,(6,356,442,295,6,8,442,295)
+//VBPartValue: VBCDPlayer1,backgroundColor,color,(name,paleGray)
+//VBPartValue: VBMixer1,framingSpec,position1,(640,7,365,342,640,310,365,342)
+//VBPartValue: VBMixer1,backgroundColor,color,(name,paleGray)
+//VBPartLayout: main,VBStereo,(initWidgetSize,rectangle,(107,194,1275,1023))
+//VBEndPartInfo: VBStereo
+
+

@@ -1,0 +1,18 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ICalcPU,"Calculator Processing Unit",interface
+//VBConstraints:  noGen
+//VBParents: IStandardNotifier
+//VBIncludes: <icalcpu.hpp> _ICALCPU_
+//VBConstructor: ICalcPU()
+//VBComposerInfo: nonvisual
+//VBEvent: evaluateOp,, evaluateId,,preferred
+//VBAction: processOperatorResult,,,int processOperatorResult(double accumulator),preferred
+//VBAction: processDigitKey,,,int processDigit(IString digit),preferred
+//VBAction: processOperatorKey,,,int processOperator(ICalcOperator* currentOp),preferred
+//VBAction: processFunctionKey,,,int processFunction(ICalcFunction* currentFunc),preferred
+//VBAction: evaluateOperation,,double,double evaluateOperation(),preferred
+//VBAction: clearCalc,,,int clearCalc(),preferred
+//VBAttribute: buffer,"calculator display",IString,int buffer(),int setBuffer(IString buffer),bufferId,preferred
+//VBEndPartInfo: ICalcPU
+

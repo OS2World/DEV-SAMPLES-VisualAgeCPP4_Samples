@@ -1,0 +1,18 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: OASkill,"OASearch skill class",VB
+//VBGeneratedFiles: skill.cpp
+//VBParents: public IStandardNotifier
+//VBIncludes: "skill.hpp" _OASkill_
+//VBConstructor: OASkill()
+//VBComposerInfo: nonvisual,803,oasres
+//VBGeneratorValues: userHpp(true),userCpp(true),userH(false),userRC(false),startingResId("")
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBAction: clear,"Clear instance of all values",void,void clear()
+//VBAttribute: skillName,"Description of this skill",IString,virtual const IString& skillName() const,virtual OASkill& setSkillName(const IString& aSkillName),skillNameId,preferred
+//VBAttribute: contractorID,"Contractor holding this skill",IString,virtual const IString& contractorID() const,virtual OASkill& setContractorID(const IString& aContractorID),contractorIDId,preferred
+//VBAttribute: yearsExp,"Number of years' experience in this skill (as string)",IString,virtual const IString& yearsExp() const,virtual OASkill& setYearsExp(const IString& aYearsExp),yearsExpId,preferred
+//VBAttribute: key,"Database key for skill instance",IString,virtual const IString& key() const,virtual OASkill& setKey(const IString& aKey),keyId
+//VBPartLayout: main,OASkill,(initWidgetSize,rectangle,(74,183,1098,727))
+//VBEndPartInfo: OASkill
+

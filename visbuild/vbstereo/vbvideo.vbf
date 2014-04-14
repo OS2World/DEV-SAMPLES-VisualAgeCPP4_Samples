@@ -1,0 +1,164 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: VBVideo,,VB
+//VBGeneratedFiles: VBVideo.cp, VBVideo.cpp
+//VBDependsOnFiles: vbmm.vbe
+//VBParents: public IMultiCellCanvas
+//VBIncludes: "VBVideo.hpp" _VBVIDEO_
+//VBConstructor: VBVideo(unsigned long id, IWindow* parent = IWindow::desktopWindow(), IWindow* owner = IWindow::desktopWindow(), const IRectangle& rect = IRectangle(), const IMultiCellCanvas::Style& style = IMultiCellCanvas::defaultStyle())
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBSubpart: VBVideo,MultiCellCanvas,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas,StaticText3,IStaticText*,p
+//VBSubpart: MultiCellCanvas,StaticText4,IStaticText*,p
+//VBSubpart: MultiCellCanvas,EntryField3,IEntryField*,p
+//VBSubpart: MultiCellCanvas,SetCanvas2,ISetCanvas*,p
+//VBSubpart: SetCanvas2,AnimatedButton1,IAnimatedButton*,p
+//VBSubpart: SetCanvas2,AnimatedButton2,IAnimatedButton*,p
+//VBSubpart: SetCanvas2,AnimatedButton3,IAnimatedButton*,p
+//VBSubpart: SetCanvas2,AnimatedButton4,IAnimatedButton*,p
+//VBSubpart: SetCanvas2,AnimatedButton5,IAnimatedButton*,p
+//VBSubpart: SetCanvas2,PushButton1,IPushButton*,p
+//VBSubpart: MultiCellCanvas,StaticText51,IStaticText*,p
+//VBSubpart: MultiCellCanvas,Canvas2,ICanvas*,p
+//VBSubpart: Canvas2,EntryField11,IEntryField*,p
+//VBSubpart: Canvas2,StaticText1,IStaticText*,p
+//VBSubpart: Canvas2,StaticText2,IStaticText*,p
+//VBSubpart: Canvas2,StaticText6,IStaticText*,p
+//VBSubpart: MultiCellCanvas,VideoCanvas1,ICanvas*,p
+//VBSubpart: VBVideo,VBFileDialog1,IVBFileDialog*,p
+//VBSubpart: VBVideo,VBFlyText1,IVBFlyText*,p
+//VBSubpart: VBVideo,MMDigitalVideo1,IMMDigitalVideo*,p
+//VBSubpart: VBVideo,StandardNotifier1,IFrameWindow*,f
+//VBSubpart: VBVideo,VideoDisplay,IFrameWindow*,v
+//VBSubpart: VBVideo,MMTime1,IMMTime*,v
+//VBConnection: EA,4,p,p,PushButton1,buttonClickEvent,VBFileDialog1,fileName
+//VBConnection: EA,25,p,p,PushButton1,buttonClickEvent,VBFileDialog1,showModally
+//VBConnection: EA,7,p,p,,ready,VBFileDialog1,fileName
+//VBConnection: EA,19,p,p,VBFileDialog1,pressedOkEvent,EntryField3,text
+//VBConnection: AA,10,c,p,19,text,VBFileDialog1,fileName
+//VBConnection: EA,20,p,p,VBFileDialog1,pressedOkEvent,MMDigitalVideo1,filename
+//VBConnection: AA,11,c,p,20,filename,VBFileDialog1,fileName
+//VBConnection: EA,8,p,p,AnimatedButton2,buttonClickEvent,MMDigitalVideo1,pause
+//VBConnection: EA,9,p,p,AnimatedButton3,buttonClickEvent,MMDigitalVideo1,stop
+//VBConnection: EA,21,p,p,AnimatedButton5,buttonClickEvent,MMDigitalVideo1,seekToEnd
+//VBConnection: EA,12,p,p,AnimatedButton4,buttonClickEvent,AnimatedButton4,startAnimation
+//VBConnection: EA,50,p,p,AnimatedButton4,buttonClickEvent,MMDigitalVideo1,startPositionTracking
+//VBConnection: EA,30,p,p,AnimatedButton4,buttonClickEvent,MMDigitalVideo1,play
+//VBConnection: EA,18,p,p,AnimatedButton1,buttonClickEvent,MMDigitalVideo1,seekToStart
+//VBConnection: EA,29,p,p,AnimatedButton3,buttonClickEvent,AnimatedButton4,stopAnimation
+//VBConnection: EC,41,p,p,MMDigitalVideo1,positionChangeEvent,,customLogic,"GetNextMMTimeFromPositionChange",void,(unsigned long position;
+//VB:position = ((IMMPositionChangeEvent *) event->eventData().asUnsignedLong())->position();
+//VB://target->setTarget(new IMMTime(position));  when connected to the variable
+//VB:iMMTime1()->setTarget(new IMMTime(position));  // when connected to the freeform
+//VB:)
+//VBConnection: EA,22,p,p,VBFileDialog1,pressedOkEvent,MMDigitalVideo1,timeFormat
+//VBConnection: EA,49,p,p,AnimatedButton3,buttonClickEvent,MMDigitalVideo1,stopPositionTracking
+//VBConnection: EA,31,p,p,,ready,StandardNotifier1,new
+//VBConnection: EA,32,p,p,StandardNotifier1,newEvent,VideoDisplay,this
+//VBConnection: EA,23,p,p,StandardNotifier1,newEvent,VideoDisplay,show
+//VBConnection: AA,24,p,p,StandardNotifier1,parent,VideoCanvas1,this
+//VBConnection: EA,35,p,p,,ready,MMDigitalVideo1,setWindow
+//VBConnection: AA,26,c,p,35,window,VideoDisplay,handle
+//VBConnection: EA,27,p,p,,ready,MMTime1,autoDeleteTarget
+//VBConnection: EA,36,p,p,MMDigitalVideo1,positionChangeEvent,StaticText2,valueAsInt
+//VBConnection: EA,47,p,p,MMDigitalVideo1,positionChangeEvent,StaticText1,valueAsInt
+//VBConnection: AA,28,c,p,36,newValue,MMTime1,seconds
+//VBConnection: AA,39,c,p,47,newValue,MMTime1,minutes
+//VBConnection: AA,59,p,p,VideoCanvas1,size,VideoDisplay,size
+//VBPartValue: VBVideo,primaryPart,partRef,MultiCellCanvas
+//VBPartValue: MultiCellCanvas,framingSpec,position1,(17,29,627,353,17,288,627,353)
+//VBPartValue: MultiCellCanvas,canvasLayout,mclayout,(rowAttr(3,false,),rowAttr(4,false,),rowAttr(5,false,),rowAttr(6,false,),rowAttr(12,,),colAttr(1,false,),colAttr(2,false,),colAttr(3,false,),colAttr(4,false,),colAttr(5,false,),colAttr(19,,),ctlAttr("StaticText3",6,6,16,16),ctlAttr("StaticText4",7,7,3,3),ctlAttr("EntryField3",8,8,3,3),ctlAttr("SetCanvas2",1,1,3,3),ctlAttr("StaticText51",12,12,3,3),ctlAttr("Canvas2",3,3,3,3),ctlAttr("VideoCanvas1",1,12,5,5))
+//VBPartValue: MultiCellCanvas,backgroundColor,color,(name,paleGray)
+//VBPartValue: StaticText3,font,font,(System Proportional,10,Bold,Italic)
+//VBPartValue: StaticText3,alignment,enum,(IStaticText::Alignment,"centerCenter")
+//VBPartValue: StaticText3,text,string,"                                 "
+//VBPartValue: StaticText3,foregroundColor,color,(name,red)
+//VBPartValue: StaticText3,backgroundColor,color,(name,black)
+//VBPartValue: StaticText4,text,string,"Now Playing:"
+//VBPartValue: StaticText4,font,font,(Times New Roman,12,Bold,Italic,Fixed,Vector)
+//VBPartValue: StaticText4,foregroundColor,color,(name,red)
+//VBPartValue: StaticText4,backgroundColor,color,(name,paleGray)
+//VBPartValue: StaticText4,alignment,enum,(IStaticText::Alignment,"centerCenter")
+//VBPartValue: StaticText4,minimumSize,minsize,(112,19,false)
+//VBPartValue: EntryField3,style,bitflag,(true,IEntryField::Style,(("IEntryField","margin",true)))
+//VBPartValue: EntryField3,foregroundColor,color,(name,red)
+//VBPartValue: EntryField3,limit,integer,256
+//VBPartValue: EntryField3,backgroundColor,color,(name,black)
+//VBPartValue: EntryField3,minimumSize,minsize,(265,46,false)
+//VBPartValue: SetCanvas2,minimumSize,minsize,(263,69,false)
+//VBPartValue: AnimatedButton1,avlFlyOverShortText,string,"Go to Begining"
+//VBPartValue: AnimatedButton1,minimumSize,minsize,(32,29,false)
+//VBPartValue: AnimatedButton1,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"rewind",))
+//VBPartValue: AnimatedButton2,avlFlyOverShortText,string,"Pause"
+//VBPartValue: AnimatedButton2,minimumSize,minsize,(32,29,false)
+//VBPartValue: AnimatedButton2,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"pause",))
+//VBPartValue: AnimatedButton3,avlFlyOverShortText,string,"Stop"
+//VBPartValue: AnimatedButton3,minimumSize,minsize,(32,29,false)
+//VBPartValue: AnimatedButton3,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"stop",))
+//VBPartValue: AnimatedButton4,avlFlyOverShortText,string,"Play"
+//VBPartValue: AnimatedButton4,minimumSize,minsize,(32,29,false)
+//VBPartValue: AnimatedButton4,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"play",))
+//VBPartValue: AnimatedButton5,avlFlyOverShortText,string,"Go to End"
+//VBPartValue: AnimatedButton5,minimumSize,minsize,(32,29,false)
+//VBPartValue: AnimatedButton5,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"fastForward",))
+//VBPartValue: PushButton1,avlFlyOverShortText,string,"Load Video File"
+//VBPartValue: PushButton1,text,string,"Load"
+//VBPartValue: PushButton1,minimumSize,minsize,(55,35,false)
+//VBPartValue: PushButton1,backgroundColor,color,(name,darkGray)
+//VBPartValue: StaticText51,alignment,enum,(IStaticText::Alignment,"centerCenter")
+//VBPartValue: StaticText51,font,font,(Times New Roman,12,Bold,Italic,Fixed,Vector)
+//VBPartValue: StaticText51,text,string,"Digital Video"
+//VBPartValue: StaticText51,foregroundColor,color,(name,red)
+//VBPartValue: Canvas2,minimumSize,minsize,(100,100,false)
+//VBPartValue: EntryField11,framingSpec,position1,(6,1,261,91,6,8,261,91)
+//VBPartValue: EntryField11,foregroundColor,color,(name,paleGray)
+//VBPartValue: EntryField11,backgroundColor,color,(name,black)
+//VBPartValue: EntryField11,minimumSize,minsize,(293,90,false)
+//VBPartValue: StaticText1,alignment,enum,(IStaticText::Alignment,"bottomCenter")
+//VBPartValue: StaticText1,backgroundColor,color,(name,black)
+//VBPartValue: StaticText1,framingSpec,position1,(49,20,66,58,49,22,66,58)
+//VBPartValue: StaticText1,minimumSize,minsize,(66,58,false)
+//VBPartValue: StaticText1,font,font,(Times New Roman,28,Bold,Fixed,Vector)
+//VBPartValue: StaticText1,text,string,"00"
+//VBPartValue: StaticText1,foregroundColor,color,(name,darkGreen)
+//VBPartValue: StaticText2,alignment,enum,(IStaticText::Alignment,"bottomCenter")
+//VBPartValue: StaticText2,backgroundColor,color,(name,black)
+//VBPartValue: StaticText2,framingSpec,position1,(129,20,66,58,129,22,66,58)
+//VBPartValue: StaticText2,minimumSize,minsize,(66,58,false)
+//VBPartValue: StaticText2,font,font,(Times New Roman,28,Bold,Fixed,Vector)
+//VBPartValue: StaticText2,text,string,"00"
+//VBPartValue: StaticText2,foregroundColor,color,(name,darkGreen)
+//VBPartValue: StaticText6,text,string,":"
+//VBPartValue: StaticText6,framingSpec,position1,(119,39,14,20,119,41,14,20)
+//VBPartValue: StaticText6,foregroundColor,color,(name,darkGreen)
+//VBPartValue: StaticText6,backgroundColor,color,(name,black)
+//VBPartValue: VideoCanvas1,minimumSize,minsize,(329,320,false)
+//VBPartValue: StandardNotifier1,font,font,(System,10,Bold,Italic)
+//VBPartValue: StandardNotifier1,foregroundColor,color,(name,red)
+//VBPartValue: StandardNotifier1,title,string,"Video Display"
+//VBConnValue: 4,fileName,string,"*.avi"
+//VBConnValue: 7,fileName,string,"*.AVI"
+//VBConnValue: 50,timeInterval,code,((1000))
+//VBConnValue: 22,timeFormat,enum,(IMMTime::Format,"milliseconds")
+//VBConnValue: 23,visible,boolean,true
+//VBConnValue: 27,autoDeleteTarget,boolean,true
+//VBPartLayout: main,VBVideo,(initWidgetSize,rectangle,(64,69,968,760))
+//VBPartLayout: eventconnection,12,(midPoints,collection,(point,(435,16),point,(439,67)))
+//VBPartLayout: part,VBFileDialog1,(framingSpec,position2,(110,541,40,40))
+//VBPartLayout: eventconnection,4,(midPoints,collection,(point,(216,433)))
+//VBPartLayout: eventconnection,25,(midPoints,collection,(point,(179,415)))
+//VBPartLayout: part,VBFlyText1,(framingSpec,position2,(29,509,40,40))
+//VBPartLayout: eventconnection,29,(midPoints,collection,(point,(168,6)))
+//VBPartLayout: part,MMDigitalVideo1,(framingSpec,position2,(317,493,40,40))
+//VBPartLayout: eventconnection,22,(midPoints,collection,(point,(250,585)))
+//VBPartLayout: part,StandardNotifier1,(framingSpec,position2,(514,533,40,40))
+//VBPartLayout: part,VideoDisplay,(framingSpec,position2,(642,521,58,58))
+//VBPartLayout: connection,26,(midPoints,collection,(point,(462,613)))
+//VBPartLayout: part,MMTime1,(framingSpec,position2,(423,498,58,58))
+//VBPartLayout: eventconnection,41,(midPoints,collection,(point,(306,597)))
+//VBPartLayout: eventconnection,36,(midPoints,collection,(point,(416,458)))
+//VBPartLayout: eventconnection,47,(midPoints,collection,(point,(380,458)))
+//VBEndPartInfo: VBVideo
+
+

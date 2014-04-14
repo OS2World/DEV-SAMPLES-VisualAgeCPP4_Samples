@@ -1,0 +1,85 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: OAContractorPage1,,VB
+//VBGeneratedFiles: OACtr1.cp, OACtr1.cpp
+//VBParents: public IMultiCellCanvas
+//VBIncludes: "OACtr1.hpp" _OAContractorPage1_
+//VBConstructor: OAContractorPage1(unsigned long id, IWindow* parent = IWindow::desktopWindow(), IWindow* owner = IWindow::desktopWindow(), const IRectangle& rect = IRectangle(), const IMultiCellCanvas::Style& style = IMultiCellCanvas::defaultStyle())
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: lastNameEFText,"Returns the control window's text.",IString,virtual IString getLastNameEFText() const,virtual OAContractorPage1& setLastNameEFText(const char* text),lastNameEFTextId,LastNameEF,text
+//VBPromotedAttribute: lastNameEFTextLength,"Returns the current length of the control window's text in bytes.",unsigned long,virtual unsigned long getLastNameEFTextLength() const,,lastNameEFTextLengthId,LastNameEF,textLength
+//VBPromotedAttribute: firstNameEFText,"Returns the control window's text.",IString,virtual IString getFirstNameEFText() const,virtual OAContractorPage1& setFirstNameEFText(const char* text),firstNameEFTextId,FirstNameEF,text
+//VBPromotedAttribute: firstNameEFTextLength,"Returns the current length of the control window's text in bytes.",unsigned long,virtual unsigned long getFirstNameEFTextLength() const,,firstNameEFTextLengthId,FirstNameEF,textLength
+//VBPromotedAttribute: middleInitEFText,"Returns the control window's text.",IString,virtual IString getMiddleInitEFText() const,virtual OAContractorPage1& setMiddleInitEFText(const char* text),middleInitEFTextId,MiddleInitEF,text
+//VBPromotedAttribute: middleInitEFTextLength,"Returns the current length of the control window's text in bytes.",unsigned long,virtual unsigned long getMiddleInitEFTextLength() const,,middleInitEFTextLengthId,MiddleInitEF,textLength
+//VBPromotedAttribute: streetEFText,"Returns the control window's text.",IString,virtual IString getStreetEFText() const,virtual OAContractorPage1& setStreetEFText(const char* text),streetEFTextId,StreetEF,text
+//VBPromotedAttribute: streetEFTextLength,"Returns the current length of the control window's text in bytes.",unsigned long,virtual unsigned long getStreetEFTextLength() const,,streetEFTextLengthId,StreetEF,textLength
+//VBPromotedAttribute: cityEFText,"Returns the control window's text.",IString,virtual IString getCityEFText() const,virtual OAContractorPage1& setCityEFText(const char* text),cityEFTextId,CityEF,text
+//VBPromotedAttribute: cityEFTextLength,"Returns the current length of the control window's text in bytes.",unsigned long,virtual unsigned long getCityEFTextLength() const,,cityEFTextLengthId,CityEF,textLength
+//VBPromotedAttribute: stateEFText,"Returns the control window's text.",IString,virtual IString getStateEFText() const,virtual OAContractorPage1& setStateEFText(const char* text),stateEFTextId,StateEF,text
+//VBPromotedAttribute: stateEFTextLength,"Returns the current length of the control window's text in bytes.",unsigned long,virtual unsigned long getStateEFTextLength() const,,stateEFTextLengthId,StateEF,textLength
+//VBPromotedAttribute: zipEFText,"Returns the control window's text.",IString,virtual IString getZipEFText() const,virtual OAContractorPage1& setZipEFText(const char* text),zipEFTextId,ZipEF,text
+//VBPromotedAttribute: zipEFTextLength,"Returns the current length of the control window's text in bytes.",unsigned long,virtual unsigned long getZipEFTextLength() const,,zipEFTextLengthId,ZipEF,textLength
+//VBPromotedAttribute: phoneNumEFText,"Returns the control window's text.",IString,virtual IString getPhoneNumEFText() const,virtual OAContractorPage1& setPhoneNumEFText(const char* text),phoneNumEFTextId,PhoneNumEF,text
+//VBPromotedAttribute: phoneNumEFTextLength,"Returns the current length of the control window's text in bytes.",unsigned long,virtual unsigned long getPhoneNumEFTextLength() const,,phoneNumEFTextLengthId,PhoneNumEF,textLength
+//VBSubpart: OAContractorPage1,MultiCellCanvas,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas,GroupBox1,IGroupBox*,p
+//VBSubpart: MultiCellCanvas,GroupBox2,IGroupBox*,p
+//VBSubpart: MultiCellCanvas,LastNameEF,IEntryField*,p
+//VBSubpart: MultiCellCanvas,FirstNameEF,IEntryField*,p
+//VBSubpart: MultiCellCanvas,MiddleInitEF,IEntryField*,p
+//VBSubpart: MultiCellCanvas,StreetEF,IEntryField*,p
+//VBSubpart: MultiCellCanvas,CityEF,IEntryField*,p
+//VBSubpart: MultiCellCanvas,StateEF,IEntryField*,p
+//VBSubpart: MultiCellCanvas,ZipEF,IEntryField*,p
+//VBSubpart: MultiCellCanvas,PhoneNumEF,IEntryField*,p
+//VBSubpart: MultiCellCanvas,StaticText1,IStaticText*,p
+//VBSubpart: MultiCellCanvas,StaticText2,IStaticText*,p
+//VBSubpart: MultiCellCanvas,StaticText3,IStaticText*,p
+//VBSubpart: MultiCellCanvas,StaticText4,IStaticText*,p
+//VBSubpart: MultiCellCanvas,StaticText5,IStaticText*,p
+//VBSubpart: MultiCellCanvas,StaticText6,IStaticText*,p
+//VBSubpart: MultiCellCanvas,StaticText7,IStaticText*,p
+//VBSubpart: MultiCellCanvas,StaticText8,IStaticText*,p
+//VBPartValue: OAContractorPage1,primaryPart,partRef,MultiCellCanvas
+//VBPartValue: MultiCellCanvas,framingSpec,position1,(30,20,485,341,30,73,485,341)
+//VBPartValue: MultiCellCanvas,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(5,false,),rowAttr(21,true,),colAttr(1,true,),colAttr(11,true,),ctlAttr("GroupBox1",2,8,2,10),ctlAttr("GroupBox2",10,18,2,10),ctlAttr("StaticText1",5,5,3,3),ctlAttr("StaticText2",7,7,3,3),ctlAttr("StaticText3",7,7,7,7),ctlAttr("StaticText4",13,13,3,3),ctlAttr("StaticText5",15,15,3,3),ctlAttr("StaticText6",17,17,3,3),ctlAttr("StaticText7",15,15,7,7),ctlAttr("LastNameEF",5,5,5,9),ctlAttr("FirstNameEF",7,7,5,5),ctlAttr("StreetEF",13,13,5,9),ctlAttr("CityEF",15,15,5,5),ctlAttr("ZipEF",17,17,5,5),ctlAttr("MiddleInitEF",7,7,9,9),ctlAttr("StateEF",15,15,9,9),ctlAttr("StaticText8",20,20,2,3),ctlAttr("PhoneNumEF",20,20,5,7))
+//VBPartValue: GroupBox1,text,string,"Name"
+//VBPartValue: GroupBox2,text,string,"Home Address"
+//VBPartValue: LastNameEF,style,bitflag,(true,IEntryField::Style,(("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: LastNameEF,limit,integer,15
+//VBPartValue: FirstNameEF,style,bitflag,(true,IEntryField::Style,(("IWindow","tabStop",true)))
+//VBPartValue: FirstNameEF,limit,integer,10
+//VBPartValue: MiddleInitEF,style,bitflag,(true,IEntryField::Style,(("IWindow","tabStop",true)))
+//VBPartValue: MiddleInitEF,limit,integer,1
+//VBPartValue: StreetEF,style,bitflag,(true,IEntryField::Style,(("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: StreetEF,limit,integer,25
+//VBPartValue: CityEF,style,bitflag,(true,IEntryField::Style,(("IWindow","tabStop",true)))
+//VBPartValue: CityEF,limit,integer,15
+//VBPartValue: StateEF,style,bitflag,(true,IEntryField::Style,(("IWindow","tabStop",true)))
+//VBPartValue: StateEF,limit,integer,2
+//VBPartValue: ZipEF,style,bitflag,(true,IEntryField::Style,(("IWindow","tabStop",true)))
+//VBPartValue: ZipEF,limit,integer,5
+//VBPartValue: PhoneNumEF,style,bitflag,(true,IEntryField::Style,(("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: PhoneNumEF,limit,integer,13
+//VBPartValue: StaticText1,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: StaticText1,text,string,"Last"
+//VBPartValue: StaticText2,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: StaticText2,text,string,"First"
+//VBPartValue: StaticText3,alignment,enum,(IStaticText::Alignment,"centerRight")
+//VBPartValue: StaticText3,text,string,"MI"
+//VBPartValue: StaticText4,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: StaticText4,text,string,"Street"
+//VBPartValue: StaticText5,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: StaticText5,text,string,"City"
+//VBPartValue: StaticText6,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: StaticText6,text,string,"Postal Code"
+//VBPartValue: StaticText7,alignment,enum,(IStaticText::Alignment,"centerRight")
+//VBPartValue: StaticText7,text,string,"State"
+//VBPartValue: StaticText8,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: StaticText8,text,string,"Phone"
+//VBPartValue: StaticText8,minimumSize,minsize,(60,27,false)
+//VBPartLayout: main,OAContractorPage1,(initWidgetSize,rectangle,(279,99,1018,632))
+//VBEndPartInfo: OAContractorPage1
+

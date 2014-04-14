@@ -1,0 +1,158 @@
+/******************************************************************************
+* .FILE:         mmremote.rc                                                  *
+*                                                                             *
+* .DESCRIPTION:  Multimedia Remote-Control Sample:     Resources              *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    IBM Open Class Library                                                   *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1997 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+******************************************************************************/
+#include "mmremote.h"
+
+BITMAP BMPPOWER  power.bmp
+BITMAP BMPVIDEO  video.bmp
+BITMAP BMPMIDI   midi.bmp
+BITMAP BMPCD     cd.bmp
+BITMAP BMPWAVE   wave.bmp
+
+
+ICON WINDOWID    mmremote.ico
+
+STRINGTABLE PRELOAD
+BEGIN
+  POWERID                         , "Load new file"
+  VOLUPID                         , "5% louder"
+  VOLDNID                         , "5% quieter"
+  PLAYID                          , "Play"
+  STOPID                          , "Stop"
+  REWID                           , "Rewind"
+  FFID                            , "Fast forward"
+  PAUSEID                         , "Pause"
+  STEPTRACKFID                    , "Next track"
+  STEPTRACKBID                    , "Previous track"
+  VIDEOID                         , "Video player"
+  MIDIID                          , "Midi player"
+  CDID                            , "CD player"
+  WAVEID                          , "Wave player"
+  READOUTID                       , "Status line"
+  ONEID                           , "Track digit"
+  TWOID                           , "Track digit"
+  THREEID                         , "Track digit"
+  FOURID                          , "Track digit"
+  FIVEID                          , "Track digit"
+  SIXID                           , "Track digit"
+  SEVENID                         , "Track digit"
+  EIGHTID                         , "Track digit"
+  NINEID                          , "Track digit"
+  ZEROID                          , "Track digit"
+
+  VIDEO+POWERID                   , "Load new file"
+  VIDEO+VOLUPID                   , "5% louder"
+  VIDEO+VOLDNID                   , "5% quieter"
+  VIDEO+PLAYID                    , "Play"
+  VIDEO+STOPID                    , "Stop"
+  VIDEO+REWID                     , "Rewind"
+  VIDEO+FFID                      , "Fast forward"
+  VIDEO+PAUSEID                   , "Pause"
+  VIDEO+STEPTRACKFID              , "Frame advance"
+  VIDEO+STEPTRACKBID              , "Frame reverse"
+  VIDEO+VIDEOID                   , "Video player"
+  VIDEO+MIDIID                    , "Midi player"
+  VIDEO+CDID                      , "CD player"
+  VIDEO+WAVEID                    , "Wave player"
+  VIDEO+READOUTID                 , "Status line"
+  VIDEO+ONEID                     , "Slow play"
+  VIDEO+TWOID                     , "Fast play"
+  VIDEO+THREEID                   , "Frame scan"
+  VIDEO+FOURID                    , "Not active"
+  VIDEO+FIVEID                    , "Not active"
+  VIDEO+SIXID                     , "Not active"
+  VIDEO+SEVENID                   , "Not active"
+  VIDEO+EIGHTID                   , "Not active"
+  VIDEO+NINEID                    , "Not active"
+  VIDEO+ZEROID                    , "Normal play"
+
+  MIDI+POWERID                    , "Load new file"
+  MIDI+VOLUPID                    , "5% louder"
+  MIDI+VOLDNID                    , "5% quieter"
+  MIDI+PLAYID                     , "Play"
+  MIDI+STOPID                     , "Stop"
+  MIDI+REWID                      , "Rewind"
+  MIDI+FFID                       , "Fast forward"
+  MIDI+PAUSEID                    , "Pause"
+  MIDI+STEPTRACKFID               , "Not active"
+  MIDI+STEPTRACKBID               , "Not active"
+  MIDI+VIDEOID                    , "Video player"
+  MIDI+MIDIID                     , "Midi player"
+  MIDI+CDID                       , "CD player"
+  MIDI+WAVEID                     , "Wave player"
+  MIDI+READOUTID                  , "Status line"
+  MIDI+PADID                      , "Not active"
+
+  WAVE+POWERID                    , "Load new file"
+  WAVE+VOLUPID                    , "5% louder"
+  WAVE+VOLDNID                    , "5% quieter"
+  WAVE+PLAYID                     , "Play"
+  WAVE+STOPID                     , "Stop"
+  WAVE+REWID                      , "Rewind"
+  WAVE+FFID                       , "Fast forward"
+  WAVE+PAUSEID                    , "Pause"
+  WAVE+STEPTRACKFID               , "Not active"
+  WAVE+STEPTRACKBID               , "Not active"
+  WAVE+VIDEOID                    , "Video player"
+  WAVE+MIDIID                     , "Midi player"
+  WAVE+CDID                       , "CD player"
+  WAVE+WAVEID                     , "Wave player"
+  WAVE+READOUTID                  , "Status line"
+  WAVE+PADID                      , "Not active"
+
+  WINDOWID,              "Multimedia MMREMOTE Sample"
+  STR_TRACK,             "TRACK "
+  STR_INVALID_TRACK,     " is an invalid track number.  This cd only has "
+  STR_TRACKS,            " tracks."
+  STR_TIME_00,           "00:00:00"
+  STR_NOAUDCD,           "No audio CD present.  Insert an audio CD and retry or cancel."
+  STR_CDDIS,             "The CD functions are disabled."
+  STR_NOCD,              "Could not open the CD device.  The CD functions are disabled."
+  STR_NOTRANS,           "Could not enable digital transfer for the CD device, as a result, the remote will not be able to control the volume of the audio CD player."
+  STR_NOWAVE,            "Could not open the wave audio device.  The wave audio functions are disabled."
+  STR_NOVID,             "Could not open the digital video device.  The digital video functions are disabled."
+  STR_NOMIDI,            "Could not open the midi device.  The midi functions are disabled."
+  STR_POWER,             "Power"
+  STR_VOLUMEUP,          "Volume Up"
+  STR_VOLUMEDOWN,        "Volume Down"
+  STR_VIDEO,             "VIDEO"
+  STR_CD,                "CD"
+  STR_MIDI,              "Midi"
+  STR_WAVE,              "Wave"
+  STR_AVI,               "*.avi"
+  STR_LOAD_DEVICE,       "Load new device"
+  STR_WAV_EXT,           "*.wav"
+  STR_MID_EXT,           "*.mid"
+  STR_LOAD_FILE,         "Load file"
+  STR_COLON,             ":"
+  STR_ONE,               "1"
+  STR_TWO,               "2"
+  STR_THREE,             "3"
+  STR_FOUR,              "4"
+  STR_FIVE,              "5"
+  STR_SIX,               "6"
+  STR_SEVEN,             "7"
+  STR_EIGHT,             "8"
+  STR_NINE,              "9"
+  STR_ZERO,              "0"
+  STR_PAD,               "  "
+END

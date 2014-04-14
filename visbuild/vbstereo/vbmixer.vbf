@@ -1,0 +1,72 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: VBMixer,,VB
+//VBGeneratedFiles: VBMixer.cp, VBMixer.cpp
+//VBDependsOnFiles: vbmm.vbe
+//VBParents: public IMultiCellCanvas
+//VBIncludes: "VBMixer.hpp" _VBMIXER_
+//VBConstructor: VBMixer(unsigned long id, IWindow* parent = IWindow::desktopWindow(), IWindow* owner = IWindow::desktopWindow(), const IRectangle& rect = IRectangle(), const IMultiCellCanvas::Style& style = IMultiCellCanvas::defaultStyle())
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBSubpart: VBMixer,MultiCellCanvas,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas,SetCanvas1,ISetCanvas*,p
+//VBSubpart: SetCanvas1,StaticText1,IStaticText*,p
+//VBSubpart: SetCanvas1,Volume,ISlider*,p
+//VBSubpart: SetCanvas1,StaticText2,IStaticText*,p
+//VBSubpart: SetCanvas1,Balance,ISlider*,p
+//VBSubpart: SetCanvas1,StaticText3,IStaticText*,p
+//VBSubpart: SetCanvas1,Bass,ISlider*,p
+//VBSubpart: SetCanvas1,StaticText4,IStaticText*,p
+//VBSubpart: SetCanvas1,Treble,ISlider*,p
+//VBSubpart: SetCanvas1,StaticText5,IStaticText*,p
+//VBSubpart: SetCanvas1,Pitch,ISlider*,p
+//VBSubpart: SetCanvas1,StaticText6,IStaticText*,p
+//VBSubpart: SetCanvas1,Gain,ISlider*,p
+//VBSubpart: VBMixer,MMAmpMixer1,IMMAmpMixer*,p
+//VBConnection: AA,0,p,p,Volume,armTickOffset,MMAmpMixer1,volume
+//VBConnection: AA,1,p,p,Balance,armTickOffset,MMAmpMixer1,balance
+//VBConnection: AA,2,p,p,Bass,armTickOffset,MMAmpMixer1,bass
+//VBConnection: AA,3,p,p,Treble,armTickOffset,MMAmpMixer1,treble
+//VBConnection: AA,4,p,p,Pitch,armTickOffset,MMAmpMixer1,pitch
+//VBConnection: AA,5,p,p,Gain,armTickOffset,MMAmpMixer1,gain
+//VBPartValue: VBMixer,primaryPart,partRef,MultiCellCanvas
+//VBPartValue: MultiCellCanvas,framingSpec,position1,(28,29,347,344,28,152,347,344)
+//VBPartValue: MultiCellCanvas,canvasLayout,mclayout,(rowAttr(8,,),colAttr(5,,),ctlAttr("SetCanvas1",4,4,4,4))
+//VBPartValue: MultiCellCanvas,backgroundColor,color,(name,paleGray)
+//VBPartValue: SetCanvas1,minimumSize,minsize,(325,295,false)
+//VBPartValue: SetCanvas1,deckCount,integer,6
+//VBPartValue: StaticText1,text,string,"Volume"
+//VBPartValue: StaticText1,minimumSize,minsize,(65,20,false)
+//VBPartValue: Volume,armTickOffset,integer,50
+//VBPartValue: Volume,minimumSize,minsize,(211,37,false)
+//VBPartValue: Volume,primaryNumberOfTicks,integer,100
+//VBPartValue: StaticText2,text,string,"Balance"
+//VBPartValue: StaticText2,minimumSize,minsize,(65,20,false)
+//VBPartValue: Balance,armTickOffset,integer,50
+//VBPartValue: Balance,minimumSize,minsize,(211,37,false)
+//VBPartValue: Balance,primaryNumberOfTicks,integer,100
+//VBPartValue: StaticText3,text,string,"Bass"
+//VBPartValue: StaticText3,minimumSize,minsize,(65,20,false)
+//VBPartValue: Bass,armTickOffset,integer,50
+//VBPartValue: Bass,minimumSize,minsize,(211,37,false)
+//VBPartValue: Bass,primaryNumberOfTicks,integer,100
+//VBPartValue: StaticText4,text,string,"Treble"
+//VBPartValue: StaticText4,minimumSize,minsize,(65,20,false)
+//VBPartValue: Treble,armTickOffset,integer,50
+//VBPartValue: Treble,minimumSize,minsize,(211,37,false)
+//VBPartValue: Treble,primaryNumberOfTicks,integer,100
+//VBPartValue: StaticText5,text,string,"Pitch"
+//VBPartValue: StaticText5,minimumSize,minsize,(65,20,false)
+//VBPartValue: Pitch,armTickOffset,integer,50
+//VBPartValue: Pitch,minimumSize,minsize,(211,36,false)
+//VBPartValue: Pitch,primaryNumberOfTicks,integer,100
+//VBPartValue: StaticText6,text,string,"Gain"
+//VBPartValue: StaticText6,minimumSize,minsize,(65,20,false)
+//VBPartValue: Gain,armTickOffset,integer,50
+//VBPartValue: Gain,minimumSize,minsize,(211,37,false)
+//VBPartValue: Gain,primaryNumberOfTicks,integer,100
+//VBPartLayout: main,VBMixer,(initWidgetSize,rectangle,(357,339,1137,936))
+//VBPartLayout: part,MMAmpMixer1,(framingSpec,position2,(515,169,40,40))
+//VBEndPartInfo: VBMixer
+
+

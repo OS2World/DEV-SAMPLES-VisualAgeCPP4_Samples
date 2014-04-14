@@ -1,0 +1,12 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: IAlias,,interface
+//VBParents: IStandardNotifier
+//VBIncludes: "ialias.hpp" _IALIAS_,"istdntfy.hpp" _ISTDNTFY_,"ialias.hpp" _IALIAS_,"istring.hpp" _ISTRING_,"iavlseq.h" _IAVLSEQ_
+//VBConstraints:  noGen
+//VBConstructor: IAlias()
+//VBComposerInfo: nonvisual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId
+//VBAttribute: alias,"the alias",IString,IString alias() const,IAlias& setAlias(const IString& anAlias),aliasId, preferred
+//VBEndPartInfo: IAlias
+

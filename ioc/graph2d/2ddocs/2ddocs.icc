@@ -1,0 +1,166 @@
+option
+    link(debug, yes),
+    link(pmtype,PM),
+    link(linkwithmultithreadlib, yes),
+    link(linkwithsharedlib, yes),
+    link(extdictionary, no),
+    link(map, no),
+    gen(rtti, yes),
+    link(padding, no)
+{
+    target "2ddocs.exe"
+    {
+        option
+            lang(nokeyword, "bool"),
+            lang(nokeyword, "true"),
+            lang(nokeyword, "false"),
+            lang(staticinlinelinkage, no),
+            lang(staticconstlinkage, no),
+            define("_IOC_VERSION_40_", "1"),
+            define("IC_LANG_BOOL", "0"),
+            define("USE_IPF", "1"),
+            incl(searchpath,".")
+        {
+            option macros(global)
+            {
+                source type(hpp) "ilanglvl.hpp"
+                source type(hpp) "ipraglib.h"
+                source type(hpp) "ibasepl.hpp"
+                source type(hpp) "imsgtext.hpp"
+                source type(hpp) "iexcbase.hpp"
+                source type(hpp) "istream.hpp"
+                source type(hpp) "isynonym.hpp"
+                source type(hpp) "ibase.hpp"
+                source type(hpp) "igraphpl.hpp"
+                source type(hpp) "iuipl.hpp"
+                source type(hpp) "ibidiset.hpp"
+                source type(hpp) "ibitflag.hpp"
+                source type(hpp) "ievtdata.hpp"
+                source type(hpp) "istrenum.hpp"
+                source type(hpp) "iprimtyp.hpp"
+                source type(hpp) "ilonglng.hpp"
+                source type(hpp) "istrmio.hpp"
+                source type(hpp) "idatstrm.hpp"
+                source type(hpp) "ityperep.hpp"
+                source type(hpp) "imstrmbl.hpp"
+                source type(hpp) "igstream.hpp"
+                source type(hpp) "imrefcnt.hpp"
+                source type(hpp) "ibuffer.hpp"
+                source type(hpp) "istrtest.hpp"
+                source type(hpp) "istring.hpp"
+                source type(hpp) "ibhandle.hpp"
+                source type(hpp) "i2dghand.hpp"
+                source type(hpp) "ihandle.hpp"
+                source type(hpp) "ievent.hpp"
+                source type(hpp) "inotadr.hpp"
+                source type(hpp) "itrace.hpp"
+                source type(hpp) "ireslock.hpp"
+                source type(hpp) "iexcept.hpp"
+                source type(hpp) "irefcnt.hpp"
+                source type(hpp) "ingapp.hpp"
+                source type(hpp) "ingthrd.hpp"
+                source type(hpp) "inotify.hpp"
+                source type(hpp) "iintrst.hpp"
+                source type(hpp) "ipoint.hpp"
+                source type(hpp) "iwindow.hpp"
+                source type(hpp) "imngpres.hpp"
+                source type(hpp) "icontrol.hpp"
+                source type(hpp) "inotifev.hpp"
+                source type(hpp) "irect.hpp"
+                source type(hpp) "itxtstyl.hpp"
+                source type(hpp) "itxtiter.hpp"
+                source type(hpp) "itext.hpp"
+                source type(hpp) "icanvas.hpp"
+                source type(hpp) "ihandler.hpp"
+                source type(hpp) "icmdevt.hpp"
+                source type(hpp) "icmdhdr.hpp"
+                source type(hpp) "ifont.hpp"
+                source type(hpp) "icconsta.h"
+                source type(hpp) "icconst.h"
+                source type(hpp) "ireslib.hpp"
+                source type(hpp) "iapp.hpp"
+                source type(hpp) "iframe.hpp"
+                source type(hpp) "igenexc.hpp"
+                source type(hpp) "itextctl.hpp"
+                source type(hpp) "ibcolor.hpp"
+                source type(hpp) "icolor.hpp"
+                source type(hpp) "istattxt.hpp"
+                source type(hpp) "iinfoa.hpp"
+                source type(hpp) "iobslist.hpp"
+                source type(hpp) "istdntfy.hpp"
+                source type(hpp) "imnitem.hpp"
+                source type(hpp) "imenu.hpp"
+                source type(hpp) "imenubar.hpp"
+                source type(hpp) "ipainevt.hpp"
+                source type(hpp) "ipainhdr.hpp"
+                source type(hpp) "igrtypes.hpp"
+                source type(hpp) "igbase2d.hpp"
+                source type(hpp) "igrexept.hpp"
+                source type(hpp) "irawarr.hpp"
+                source type(hpp) "ipt2darr.hpp"
+                source type(hpp) "igline2d.hpp"
+                source type(hpp) "imatrix.hpp"
+                source type(hpp) "igarea2d.hpp"
+                source type(hpp) "igrafatt.hpp"
+                source type(hpp) "ipaints.hpp"
+                source type(hpp) "ibundles.hpp"
+                source type(hpp) "ibcurve.hpp"
+                source type(hpp) "igcurv2d.hpp"
+                source type(hpp) "igloop2d.hpp"
+                source type(hpp) "inumpos.h"
+                source type(hpp) "iiglobal.h"
+                source type(hpp) "iastr.h"
+                source type(hpp) "iistream.h"
+                source type(hpp) "iikeyops.h"
+                source type(hpp) "iargtype.h"
+                source type(hpp) "ifunc.h"
+                source type(hpp) "iexctxt.h"
+                source type(hpp) "iivcllct.h"
+                source type(hpp) "iexc.h"
+                source type(hpp) "iiexc.h"
+                source type(hpp) "iiacllct.h"
+                source type(hpp) "imcllct.h"
+                source type(hpp) "icstr.h"
+                source type(hpp) "icompat.h"
+                source type(hpp) "iglobals.h"
+                source type(hpp) "istdops.h"
+                source type(hpp) "iappl.h"
+                source type(hpp) "iiter.h"
+                source type(hpp) "iptr.h"
+                source type(hpp) "iconnect.h"
+                source type(hpp) "ibcllct.h"
+                source type(hpp) "iarstrct.h"
+                source type(hpp) "iacllct.h"
+                source type(hpp) "iaorder.h"
+                source type(hpp) "iiaseq.h"
+                source type(hpp) "iadqu.h"
+                source type(hpp) "iicseq.h"
+                source type(hpp) "iivseq.h"
+                source type(hpp) "iiseqlst.h"
+                source type(hpp) "idqu.h"
+                source type(hpp) "ideque.h"
+                source type(hpp) "ideque2.h"
+                source type(hpp) "igraph2d.hpp"
+                source type(hpp) "imousevt.hpp"
+                source type(hpp) "imoushdr.hpp"
+                source type(hpp) "2ddocs.h"
+                source type(hpp) "examples.hpp"
+                source type(hpp) "bolt.hpp"
+                source type(hpp) "icoordsy.hpp"
+                source type(hpp) "icolmap.hpp"
+                source type(hpp) "igrport.hpp"
+                source type(hpp) "iexgrprt.hpp"
+                source type(hpp) "istrmmod.hpp"
+            }
+            source type(cpp) "app.cpp"
+            source type(cpp) "bolt.cpp"
+            source type(cpp) "examples.cpp"
+            source type(cpp) "exbase.cpp"
+            option res_rc_options("  -d __OS2__ -d IC_PM")
+            {
+                source type(rc) "2ddocs.rc"
+            }
+        }
+    }
+}
+

@@ -1,0 +1,9 @@
+// Feature source code generation begins here...
+public:
+  virtual OASkillBase& putSkill(OASkill* aSkill );
+  virtual OASkillBase& getSkill(const IString& aSkillName , IVSequence<OASkill*>* aList );
+  virtual OASkillBase& primeData(IProfile& aDatabase);
+
+  static const INotificationId _Import queryFoundId;
+
+// Feature source code generation ends here.

@@ -1,0 +1,27 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: VBStereoMain,,VB
+//VBGeneratedFiles: VBSterMn.cpp
+//VBDependsOnFiles: vbstereo.vbf
+//VBParents: public IVBMain
+//VBIncludes: "VBSterMn.hpp" _VBStereoMain_
+//VBConstructor: VBStereoMain()
+//VBComposerInfo: nonvisual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBSubpart: VBStereoMain,IVBMain1,IVBMain*,p
+//VBSubpart: VBStereoMain,StandardNotifier1,VBStereo*,f
+//VBSubpart: VBStereoMain,VBStereo,VBStereo*,v
+//VBConnection: EA,0,p,p,,ready,StandardNotifier1,new
+//VBConnection: EA,1,p,p,StandardNotifier1,newEvent,VBStereo,this
+//VBConnection: EA,2,p,p,StandardNotifier1,newEvent,VBStereo,show
+//VBPartValue: VBStereoMain,primaryPart,partRef,IVBMain1
+//VBPartValue: StandardNotifier1,autoDeleteObject,boolean,true
+//VBConnValue: 2,visible,boolean,true
+//VBPartLayout: main,VBStereoMain,(initWidgetSize,rectangle,(128,100,1152,921))
+//VBPartLayout: part,IVBMain1,(framingSpec,position2,(20,20))
+//VBPartLayout: part,StandardNotifier1,(framingSpec,position2,(194,41))
+//VBPartLayout: part,VBStereo,(framingSpec,position2,(179,139,58,58))
+//VBEndPartInfo: VBStereoMain
+
+
+

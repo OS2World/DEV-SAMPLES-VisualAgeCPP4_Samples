@@ -1,0 +1,182 @@
+//VBInitializeStream: 4.0.0 
+ 
+//VBBeginPartInfo: EmployeeForm, "Form for table EMPLOYEE",VB
+//VBGeneratedFiles: EmplForm.cpp, EmplForm.cp
+//VBDependsOnFiles: Empl.vbe
+//VBParents: public IMultiCellCanvas 
+//VBIncludes: "EmplForm.hpp" _EmployeeForm_ 
+//VBConstructor: EmployeeForm(unsigned long id , IWindow* parent = IWindow::desktopWindow() , IWindow* owner = IWindow::desktopWindow() , const IRectangle& rect = IRectangle() , const IMultiCellCanvas::Style& style = IMultiCellCanvas::defaultStyle() ) 
+//VBComposerInfo: visual 
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect 
+//VBPromotedAttribute: targetAsEmployee,"Query the target attribute.",Employee*,Employee* getTargetAsEmployee() const,EmployeeForm& setTargetAsEmployee(Employee* target ),targetAsEmployeeId,theEmployee,this 
+//VBSubpart: EmployeeForm,MultiCellCanvas,IMultiCellCanvas*,p 
+//VBSubpart: MultiCellCanvas,Title2,IStaticText*,p 
+//VBPartValue: Title2,text,string,"Field" 
+//VBSubpart: MultiCellCanvas,Title3,IStaticText*,p 
+//VBPartValue: Title3,text,string,"Null" 
+//VBSubpart: MultiCellCanvas,Title4,IStaticText*,p 
+//VBPartValue: Title4,text,string,"Value" 
+//VBSubpart: EmployeeForm,theEmployee,Employee*,v 
+//VBSubpart: MultiCellCanvas,Nameempno,IStaticText*,p 
+//VBPartValue: Nameempno,text,string,"empno" 
+//VBSubpart: MultiCellCanvas,Checkempno,ICheckBox*,p 
+//VBPartValue: Checkempno,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entryempno,IEntryField*,p 
+//VBPartValue: Entryempno,avlFlyOverLongText,string,"This attribute is mapped to EMPNO." 
+//VBPartValue: Entryempno,avlFlyOverShortText,string,"This attribute is mapped to EMPNO." 
+//VBSubpart: MultiCellCanvas,Iconempno,IIconControl*,p 
+//VBPartValue: Iconempno,resourceId,resourceid,(6005,"cppar440") 
+//VBSubpart: MultiCellCanvas,Namefirstnme,IStaticText*,p 
+//VBPartValue: Namefirstnme,text,string,"firstnme" 
+//VBSubpart: MultiCellCanvas,Checkfirstnme,ICheckBox*,p 
+//VBPartValue: Checkfirstnme,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entryfirstnme,IEntryField*,p 
+//VBPartValue: Entryfirstnme,avlFlyOverLongText,string,"This attribute is mapped to FIRSTNME." 
+//VBPartValue: Entryfirstnme,avlFlyOverShortText,string,"This attribute is mapped to FIRSTNME." 
+//VBSubpart: MultiCellCanvas,Namemidinit,IStaticText*,p 
+//VBPartValue: Namemidinit,text,string,"midinit" 
+//VBSubpart: MultiCellCanvas,Checkmidinit,ICheckBox*,p 
+//VBPartValue: Checkmidinit,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entrymidinit,IEntryField*,p 
+//VBPartValue: Entrymidinit,avlFlyOverLongText,string,"This attribute is mapped to MIDINIT." 
+//VBPartValue: Entrymidinit,avlFlyOverShortText,string,"This attribute is mapped to MIDINIT." 
+//VBSubpart: MultiCellCanvas,Namelastname,IStaticText*,p 
+//VBPartValue: Namelastname,text,string,"lastname" 
+//VBSubpart: MultiCellCanvas,Checklastname,ICheckBox*,p 
+//VBPartValue: Checklastname,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entrylastname,IEntryField*,p 
+//VBPartValue: Entrylastname,avlFlyOverLongText,string,"This attribute is mapped to LASTNAME." 
+//VBPartValue: Entrylastname,avlFlyOverShortText,string,"This attribute is mapped to LASTNAME." 
+//VBSubpart: MultiCellCanvas,Nameworkdept,IStaticText*,p 
+//VBPartValue: Nameworkdept,text,string,"workdept" 
+//VBSubpart: MultiCellCanvas,Checkworkdept,ICheckBox*,p 
+//VBPartValue: Checkworkdept,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entryworkdept,IEntryField*,p 
+//VBPartValue: Entryworkdept,avlFlyOverLongText,string,"This attribute is mapped to WORKDEPT." 
+//VBPartValue: Entryworkdept,avlFlyOverShortText,string,"This attribute is mapped to WORKDEPT." 
+//VBSubpart: MultiCellCanvas,Namephoneno,IStaticText*,p 
+//VBPartValue: Namephoneno,text,string,"phoneno" 
+//VBSubpart: MultiCellCanvas,Checkphoneno,ICheckBox*,p 
+//VBPartValue: Checkphoneno,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entryphoneno,IEntryField*,p 
+//VBPartValue: Entryphoneno,avlFlyOverLongText,string,"This attribute is mapped to PHONENO." 
+//VBPartValue: Entryphoneno,avlFlyOverShortText,string,"This attribute is mapped to PHONENO." 
+//VBSubpart: MultiCellCanvas,Namehiredate,IStaticText*,p 
+//VBPartValue: Namehiredate,text,string,"hiredate" 
+//VBSubpart: MultiCellCanvas,Checkhiredate,ICheckBox*,p 
+//VBPartValue: Checkhiredate,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entryhiredate,IEntryField*,p 
+//VBPartValue: Entryhiredate,avlFlyOverLongText,string,"This attribute is mapped to HIREDATE." 
+//VBPartValue: Entryhiredate,avlFlyOverShortText,string,"This attribute is mapped to HIREDATE." 
+//VBSubpart: MultiCellCanvas,Namejob,IStaticText*,p 
+//VBPartValue: Namejob,text,string,"job" 
+//VBSubpart: MultiCellCanvas,Checkjob,ICheckBox*,p 
+//VBPartValue: Checkjob,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entryjob,IEntryField*,p 
+//VBPartValue: Entryjob,avlFlyOverLongText,string,"This attribute is mapped to JOB." 
+//VBPartValue: Entryjob,avlFlyOverShortText,string,"This attribute is mapped to JOB." 
+//VBSubpart: MultiCellCanvas,Nameedlevel,IStaticText*,p 
+//VBPartValue: Nameedlevel,text,string,"edlevel" 
+//VBSubpart: MultiCellCanvas,Checkedlevel,ICheckBox*,p 
+//VBPartValue: Checkedlevel,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entryedlevel,IEntryField*,p 
+//VBPartValue: Entryedlevel,avlFlyOverLongText,string,"This attribute is mapped to EDLEVEL." 
+//VBPartValue: Entryedlevel,avlFlyOverShortText,string,"This attribute is mapped to EDLEVEL." 
+//VBSubpart: MultiCellCanvas,Namesex,IStaticText*,p 
+//VBPartValue: Namesex,text,string,"sex" 
+//VBSubpart: MultiCellCanvas,Checksex,ICheckBox*,p 
+//VBPartValue: Checksex,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entrysex,IEntryField*,p 
+//VBPartValue: Entrysex,avlFlyOverLongText,string,"This attribute is mapped to SEX." 
+//VBPartValue: Entrysex,avlFlyOverShortText,string,"This attribute is mapped to SEX." 
+//VBSubpart: MultiCellCanvas,Namebirthdate,IStaticText*,p 
+//VBPartValue: Namebirthdate,text,string,"birthdate" 
+//VBSubpart: MultiCellCanvas,Checkbirthdate,ICheckBox*,p 
+//VBPartValue: Checkbirthdate,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entrybirthdate,IEntryField*,p 
+//VBPartValue: Entrybirthdate,avlFlyOverLongText,string,"This attribute is mapped to BIRTHDATE." 
+//VBPartValue: Entrybirthdate,avlFlyOverShortText,string,"This attribute is mapped to BIRTHDATE." 
+//VBSubpart: MultiCellCanvas,Namesalary,IStaticText*,p 
+//VBPartValue: Namesalary,text,string,"salary" 
+//VBSubpart: MultiCellCanvas,Checksalary,ICheckBox*,p 
+//VBPartValue: Checksalary,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entrysalary,IEntryField*,p 
+//VBPartValue: Entrysalary,avlFlyOverLongText,string,"This attribute is mapped to SALARY." 
+//VBPartValue: Entrysalary,avlFlyOverShortText,string,"This attribute is mapped to SALARY." 
+//VBSubpart: MultiCellCanvas,Namebonus,IStaticText*,p 
+//VBPartValue: Namebonus,text,string,"bonus" 
+//VBSubpart: MultiCellCanvas,Checkbonus,ICheckBox*,p 
+//VBPartValue: Checkbonus,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entrybonus,IEntryField*,p 
+//VBPartValue: Entrybonus,avlFlyOverLongText,string,"This attribute is mapped to BONUS." 
+//VBPartValue: Entrybonus,avlFlyOverShortText,string,"This attribute is mapped to BONUS." 
+//VBSubpart: MultiCellCanvas,Namecomm,IStaticText*,p 
+//VBPartValue: Namecomm,text,string,"comm" 
+//VBSubpart: MultiCellCanvas,Checkcomm,ICheckBox*,p 
+//VBPartValue: Checkcomm,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entrycomm,IEntryField*,p 
+//VBPartValue: Entrycomm,avlFlyOverLongText,string,"This attribute is mapped to COMM." 
+//VBPartValue: Entrycomm,avlFlyOverShortText,string,"This attribute is mapped to COMM." 
+//VBConnection: AA,0,p,p,theEmployee,empnoAsString,Entryempno,text 
+//VBConnection: AA,1,p,p,theEmployee,empnoIsNull,Checkempno,selected 
+//VBConnection: AA,2,p,p,theEmployee,empnoIsNullable,Checkempno,enabled 
+//VBConnection: AA,3,p,p,theEmployee,firstnmeAsString,Entryfirstnme,text 
+//VBConnection: AA,4,p,p,theEmployee,firstnmeIsNull,Checkfirstnme,selected 
+//VBConnection: AA,5,p,p,theEmployee,firstnmeIsNullable,Checkfirstnme,enabled 
+//VBConnection: AA,6,p,p,theEmployee,midinitAsString,Entrymidinit,text 
+//VBConnection: AA,7,p,p,theEmployee,midinitIsNull,Checkmidinit,selected 
+//VBConnection: AA,8,p,p,theEmployee,midinitIsNullable,Checkmidinit,enabled 
+//VBConnection: AA,9,p,p,theEmployee,lastnameAsString,Entrylastname,text 
+//VBConnection: AA,10,p,p,theEmployee,lastnameIsNull,Checklastname,selected 
+//VBConnection: AA,11,p,p,theEmployee,lastnameIsNullable,Checklastname,enabled 
+//VBConnection: AA,12,p,p,theEmployee,workdeptAsString,Entryworkdept,text 
+//VBConnection: AA,13,p,p,theEmployee,workdeptIsNull,Checkworkdept,selected 
+//VBConnection: AA,14,p,p,theEmployee,workdeptIsNullable,Checkworkdept,enabled 
+//VBConnection: AA,15,p,p,theEmployee,phonenoAsString,Entryphoneno,text 
+//VBConnection: AA,16,p,p,theEmployee,phonenoIsNull,Checkphoneno,selected 
+//VBConnection: AA,17,p,p,theEmployee,phonenoIsNullable,Checkphoneno,enabled 
+//VBConnection: AA,18,p,p,theEmployee,hiredateAsString,Entryhiredate,text 
+//VBConnection: AA,19,p,p,theEmployee,hiredateIsNull,Checkhiredate,selected 
+//VBConnection: AA,20,p,p,theEmployee,hiredateIsNullable,Checkhiredate,enabled 
+//VBConnection: AA,21,p,p,theEmployee,jobAsString,Entryjob,text 
+//VBConnection: AA,22,p,p,theEmployee,jobIsNull,Checkjob,selected 
+//VBConnection: AA,23,p,p,theEmployee,jobIsNullable,Checkjob,enabled 
+//VBConnection: AA,24,p,p,theEmployee,edlevelAsString,Entryedlevel,text 
+//VBConnection: AA,25,p,p,theEmployee,edlevelIsNull,Checkedlevel,selected 
+//VBConnection: AA,26,p,p,theEmployee,edlevelIsNullable,Checkedlevel,enabled 
+//VBConnection: AA,27,p,p,theEmployee,sexAsString,Entrysex,text 
+//VBConnection: AA,28,p,p,theEmployee,sexIsNull,Checksex,selected 
+//VBConnection: AA,29,p,p,theEmployee,sexIsNullable,Checksex,enabled 
+//VBConnection: AA,30,p,p,theEmployee,birthdateAsString,Entrybirthdate,text 
+//VBConnection: AA,31,p,p,theEmployee,birthdateIsNull,Checkbirthdate,selected 
+//VBConnection: AA,32,p,p,theEmployee,birthdateIsNullable,Checkbirthdate,enabled 
+//VBConnection: AA,33,p,p,theEmployee,salaryAsString,Entrysalary,text 
+//VBConnection: AA,34,p,p,theEmployee,salaryIsNull,Checksalary,selected 
+//VBConnection: AA,35,p,p,theEmployee,salaryIsNullable,Checksalary,enabled 
+//VBConnection: AA,36,p,p,theEmployee,bonusAsString,Entrybonus,text 
+//VBConnection: AA,37,p,p,theEmployee,bonusIsNull,Checkbonus,selected 
+//VBConnection: AA,38,p,p,theEmployee,bonusIsNullable,Checkbonus,enabled 
+//VBConnection: AA,39,p,p,theEmployee,commAsString,Entrycomm,text 
+//VBConnection: AA,40,p,p,theEmployee,commIsNull,Checkcomm,selected 
+//VBConnection: AA,41,p,p,theEmployee,commIsNullable,Checkcomm,enabled 
+//VBPartValue: EmployeeForm,primaryPart,partRef,MultiCellCanvas 
+//VBPartValue: MultiCellCanvas,framingSpec,position1,(30,30,,,30,30,450,450) 
+//VBPartValue: MultiCellCanvas,canvasLayout,mclayout,(rowAttr(15,,),colAttr(4,,),ctlAttr("Title2",1,1,2,2),ctlAttr("Title3",1,1,3,3),ctlAttr("Title4",1,1,4,4)
+//VB: ,ctlAttr("Iconempno",2,2,1,1),ctlAttr("Nameempno",2,2,2,2),ctlAttr("Checkempno",2,2,3,3),ctlAttr("Entryempno",2,2,4,4)
+//VB: ,ctlAttr("Namefirstnme",3,3,2,2),ctlAttr("Checkfirstnme",3,3,3,3),ctlAttr("Entryfirstnme",3,3,4,4)
+//VB: ,ctlAttr("Namemidinit",4,4,2,2),ctlAttr("Checkmidinit",4,4,3,3),ctlAttr("Entrymidinit",4,4,4,4)
+//VB: ,ctlAttr("Namelastname",5,5,2,2),ctlAttr("Checklastname",5,5,3,3),ctlAttr("Entrylastname",5,5,4,4)
+//VB: ,ctlAttr("Nameworkdept",6,6,2,2),ctlAttr("Checkworkdept",6,6,3,3),ctlAttr("Entryworkdept",6,6,4,4)
+//VB: ,ctlAttr("Namephoneno",7,7,2,2),ctlAttr("Checkphoneno",7,7,3,3),ctlAttr("Entryphoneno",7,7,4,4)
+//VB: ,ctlAttr("Namehiredate",8,8,2,2),ctlAttr("Checkhiredate",8,8,3,3),ctlAttr("Entryhiredate",8,8,4,4)
+//VB: ,ctlAttr("Namejob",9,9,2,2),ctlAttr("Checkjob",9,9,3,3),ctlAttr("Entryjob",9,9,4,4)
+//VB: ,ctlAttr("Nameedlevel",10,10,2,2),ctlAttr("Checkedlevel",10,10,3,3),ctlAttr("Entryedlevel",10,10,4,4)
+//VB: ,ctlAttr("Namesex",11,11,2,2),ctlAttr("Checksex",11,11,3,3),ctlAttr("Entrysex",11,11,4,4)
+//VB: ,ctlAttr("Namebirthdate",12,12,2,2),ctlAttr("Checkbirthdate",12,12,3,3),ctlAttr("Entrybirthdate",12,12,4,4)
+//VB: ,ctlAttr("Namesalary",13,13,2,2),ctlAttr("Checksalary",13,13,3,3),ctlAttr("Entrysalary",13,13,4,4)
+//VB: ,ctlAttr("Namebonus",14,14,2,2),ctlAttr("Checkbonus",14,14,3,3),ctlAttr("Entrybonus",14,14,4,4)
+//VB: ,ctlAttr("Namecomm",15,15,2,2),ctlAttr("Checkcomm",15,15,3,3),ctlAttr("Entrycomm",15,15,4,4))
+//VBPartLayout: main,EmployeeForm,(initWidgetSize,rectangle,(30,30,900,600)) 
+//VBPartLayout: part,theEmployee,(framingSpec,position2,(600,30,60,60)) 
+//VBEndPartInfo: EmployeeForm 
+

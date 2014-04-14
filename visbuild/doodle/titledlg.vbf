@@ -1,0 +1,43 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: ITitleDialog,"Label Dialog",VB
+//VBGeneratedFiles: TtlDalog.cpp, TtlDalog.cp
+//VBParents: public IFrameWindow
+//VBIncludes: "TtlDalog.hpp" _ITITLEDIALOG_
+//VBConstructor: ITitleDialog(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle ( ), const char* title = 0)
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: titleStringVariable,(7101,"cppres"),IVBStringPart*,IVBStringPart* getTitleStringVariable() const,ITitleDialog& setTitleStringVariable(IVBStringPart* target),titleStringVariableId,TitleStringVariable,this
+//VBSubpart: ITitleDialog,TitleDialog,IFrameWindow*,p
+//VBSubpart: TitleDialog,Canvas,ICanvas*,p
+//VBSubpart: Canvas,LabelText,IStaticText*,p
+//VBSubpart: Canvas,TitleEntryField,IEntryField*,p
+//VBSubpart: Canvas,SetButton,IPushButton*,p
+//VBSubpart: Canvas,CancelButton,IPushButton*,p
+//VBSubpart: ITitleDialog,TitleStringVariable,IVBStringPart*,v
+//VBConnection: EA,0,p,p,CancelButton,buttonClickEvent,TitleDialog,close
+//VBConnection: EA,3,p,p,SetButton,buttonClickEvent,TitleStringVariable,apply
+//VBConnection: EA,5,p,p,SetButton,buttonClickEvent,TitleDialog,close
+//VBConnection: AA,2,p,p,TitleStringVariable,value,TitleEntryField,text
+//VBPartValue: ITitleDialog,primaryPart,partRef,TitleDialog
+//VBPartValue: TitleDialog,style,bitflag,(true,IFrameWindow::Style,(("IFrameWindow","dialogBackground",true),("IFrameWindow","dialogBorder",true),("IFrameWindow","hideButton",false),("IFrameWindow","maximizeButton",false),("IFrameWindow","minimizeButton",false),("IFrameWindow","sizingBorder",false)))
+//VBPartValue: TitleDialog,client,partRef,Canvas
+//VBPartValue: TitleDialog,framingSpec,position1,(97,30,242,172,97,179,242,172)
+//VBPartValue: TitleDialog,title,string,"Set Title"
+//VBPartValue: LabelText,text,string,"Enter the title:"
+//VBPartValue: LabelText,framingSpec,position1,(17,16,,,17,115,90,16)
+//VBPartValue: TitleEntryField,style,bitflag,(true,IEntryField::Style,(("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: TitleEntryField,framingSpec,position1,(19,43,185,28,19,76,185,28)
+//VBPartValue: TitleEntryField,limit,integer,20
+//VBPartValue: SetButton,style,bitflag,(true,IPushButton::Style,(("IPushButton","defaultButton",true),("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: SetButton,text,string,"Set"
+//VBPartValue: SetButton,framingSpec,position1,(37,90,62,25,37,32,62,25)
+//VBPartValue: CancelButton,text,string,"Cancel"
+//VBPartValue: CancelButton,framingSpec,position1,(136,90,null,null,136,32,62,25)
+//VBPartValue: TitleStringVariable,deferUpdate,boolean,true
+//VBPartLayout: main,ITitleDialog,(initWidgetSize,rectangle,(232,188,796,641))
+//VBPartLayout: part,TitleStringVariable,(framingSpec,position2,(207,233,58,58))
+//VBPartLayout: connection,2,(midPoints,collection,(point,(382,118)))
+//VBEndPartInfo: ITitleDialog
+
+

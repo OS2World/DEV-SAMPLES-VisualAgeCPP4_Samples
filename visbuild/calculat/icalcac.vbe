@@ -1,0 +1,10 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ICalcAdditionChip,"Integer Add Chip",interface
+//VBConstraints:  noGen
+//VBParents: ICalcOperator
+//VBIncludes: <icalcac.hpp> _ICALCAC_
+//VBConstructor: ICalcAdditionChip()
+//VBComposerInfo: nonvisual
+//VBEndPartInfo: ICalcAdditionChip
+

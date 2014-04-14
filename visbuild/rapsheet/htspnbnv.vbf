@@ -1,0 +1,56 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: IHeightSpinButton,"Represents height thru 2 numeric spin buttons.",VB
+//VBGeneratedFiles: HghtSpnB.cp, HghtSpnB.cpp
+//VBParents: public ICanvas
+//VBIncludes: "HghtSpnB.hpp" _IHEIGHTSPINBUTTON_,"msnmspnh.hpp"
+//VBConstructor: IHeightSpinButton(unsigned long id, IWindow* parent = IWindow::desktopWindow(), IWindow* owner = IWindow::desktopWindow(), const IRectangle& rect = IRectangle(), const ICanvas::Style& style = ICanvas::defaultStyle())
+//VBComposerInfo: visual
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(false),userCtor((fImpl->iFeet_NS()->setMaster(*fImpl->iInches_NS());))
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: feet,(4228,"cppres"),long,virtual long getFeet() const,virtual IHeightSpinButton& setFeet(long value),feetId,Feet_NS,value
+//VBPromotedAttribute: inches,(4228,"cppres"),long,virtual long getInches() const,virtual IHeightSpinButton& setInches(long value),inchesId,Inches_NS,value
+//VBPromotedAttribute: height,(6201,"cppres"),unsigned short,const unsigned short& getHeight() const,IHeightSpinButton& setHeight(const unsigned short& aValue),heightId,Height,value
+//VBSubpart: IHeightSpinButton,Canvas,ICanvas*,p
+//VBSubpart: Canvas,Feet_NS,INumericSpinButton*,p
+//VBSubpart: Canvas,Inches_NS,INumericSpinButton*,p
+//VBSubpart: Canvas,StaticText2,IStaticText*,p
+//VBSubpart: Canvas,StaticText1,IStaticText*,p
+//VBSubpart: IHeightSpinButton,Height,IVBUnsignedShortPart*,p
+//VBConnection: EC,0,p,p,Feet_NS,value,,customLogic,"Recalculate height.",void,(this->iHeight()->setValue((this->iFeet_NS()->value())*12 +this->iInches_NS()->value());)
+//VBConnection: EC,3,p,p,Inches_NS,value,,customLogic,"Recalculate the height.",void,(this->iHeight()->setValue((this->iFeet_NS()->value())*12 +this->iInches_NS()->value());)
+//VBConnection: EC,2,p,p,Height,value,Inches_NS,customLogic,"Reset inches from the total height.",void,(//prevent the inches spin button from notifying back to height
+//VB:target->disableNotification();
+//VB:target->spinTo((source->value()) % 12);
+//VB://enable notification for the inches spin button again
+//VB:target->enableNotification();
+//VB:)
+//VBConnection: EC,5,p,p,Height,value,Feet_NS,customLogic,"Reset the feet component from the height.",void,(//prevent the feet spin button from notifying back to height
+//VB:target->disableNotification();
+//VB:target->spinTo((source->value()) / 12);
+//VB://enable notification for the feet spin button again
+//VB:target->enableNotification();
+//VB:
+//VB:)
+//VBPartValue: IHeightSpinButton,primaryPart,partRef,Canvas
+//VBPartValue: Canvas,framingSpec,position1,(133,118,207,45,133,365,207,45)
+//VBPartValue: Feet_NS,range,range,(0,9)
+//VBPartValue: Feet_NS,style,bitflag,(true,INumericSpinButton::Style,(("IBaseSpinButton","master",false),("IBaseSpinButton","servant",true),("IWindow","tabStop",false)))
+//VBPartValue: Feet_NS,value,integer,5
+//VBPartValue: Feet_NS,framingSpec,position1,(8,8,66,30,8,7,66,30)
+//VBPartValue: Feet_NS,limit,integer,1
+//VBPartValue: Feet_NS,alignment,enum,(IBaseSpinButton::Alignment,"right")
+//VBPartValue: Inches_NS,style,bitflag,(true,INumericSpinButton::Style,(("IBaseSpinButton","master",true),("IBaseSpinButton","servant",false),("IWindow","tabStop",true)))
+//VBPartValue: Inches_NS,range,range,(0,11)
+//VBPartValue: Inches_NS,value,integer,11
+//VBPartValue: Inches_NS,alignment,enum,(IBaseSpinButton::Alignment,"right")
+//VBPartValue: Inches_NS,handlers,collection,(string,"MasterServantNumSpinHandler(iInches_NS(), iFeet_NS())")
+//VBPartValue: Inches_NS,framingSpec,position1,(115,8,65,30,115,7,65,30)
+//VBPartValue: Inches_NS,limit,integer,2
+//VBPartValue: StaticText2,text,string,"\""
+//VBPartValue: StaticText2,framingSpec,position1,(191,8,,,191,17,9,20)
+//VBPartValue: StaticText1,text,string,"\'"
+//VBPartValue: StaticText1,framingSpec,position1,(84,8,6,16,84,21,6,16)
+//VBPartLayout: main,IHeightSpinButton,(initWidgetSize,rectangle,(80,104,897,722))
+//VBPartLayout: part,Height,(framingSpec,position2,(205,26,48,68))
+//VBEndPartInfo: IHeightSpinButton

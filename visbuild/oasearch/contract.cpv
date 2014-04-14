@@ -1,0 +1,161 @@
+const INotificationId _Export OAContract::accountNumId = "OAContract::accountNum";
+const INotificationId _Export OAContract::companyNameId = "OAContract::companyName";
+const INotificationId _Export OAContract::projectMgrId = "OAContract::projectMgr";
+const INotificationId _Export OAContract::deptNameId = "OAContract::deptName";
+const INotificationId _Export OAContract::positionTitleId = "OAContract::positionTitle";
+const INotificationId _Export OAContract::startDateId = "OAContract::startDate";
+const INotificationId _Export OAContract::endDateId = "OAContract::endDate";
+const INotificationId _Export OAContract::contractorIDId = "OAContract::contractorID";
+
+const IString& OAContract::companyName() const
+{
+  return iCompanyName;
+}
+
+OAContract& OAContract::setCompanyName(const IString& aCompanyName)
+{
+  if (!(iCompanyName == aCompanyName))                                                  
+  {
+    iCompanyName = aCompanyName;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContract::companyNameId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContract::projectMgr() const
+{
+  return iProjectMgr;
+}
+
+OAContract& OAContract::setProjectMgr(const IString& aProjectMgr)
+{
+  if (!(iProjectMgr == aProjectMgr))
+  {
+    iProjectMgr = aProjectMgr;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContract::projectMgrId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContract::deptName() const
+{
+  return iDeptName;
+}
+
+OAContract& OAContract::setDeptName(const IString& aDeptName)
+{
+  if (!(iDeptName == aDeptName))
+  {
+    iDeptName = aDeptName;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContract::deptNameId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContract::positionTitle() const
+{
+  return iPositionTitle;
+}
+
+OAContract& OAContract::setPositionTitle(const IString& aPositionTitle)
+{
+  if (!(iPositionTitle == aPositionTitle))
+  {
+    iPositionTitle = aPositionTitle;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContract::positionTitleId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContract::startDate() const
+{
+  return iStartDate;
+}
+
+OAContract& OAContract::setStartDate(const IString& aStartDate)
+{
+  if (!(iStartDate == aStartDate))
+  {
+    iStartDate = aStartDate;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContract::startDateId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContract::endDate() const
+{
+  return iEndDate;
+}
+
+OAContract& OAContract::setEndDate(const IString& aEndDate)
+{
+  if (!(iEndDate == aEndDate))
+  {
+    iEndDate = aEndDate;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContract::endDateId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContract::contractorID() const
+{
+  return iContractorID;
+}
+
+OAContract& OAContract::setContractorID(const IString& aContractorID)
+{
+  if (!(iContractorID == aContractorID))
+  {
+    iContractorID = aContractorID;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContract::contractorIDId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContract::accountNum() const
+{
+  return iAccountNum;
+}
+
+OAContract& OAContract::setAccountNum(const IString& aAccountNum)
+{
+  if (!(iAccountNum == aAccountNum))
+  {
+    iAccountNum = aAccountNum;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContract::accountNumId)));
+  } // endif
+  return *this;
+}
+
+// Copy constructor
+
+OAContract::OAContract(const OAContract & aContract)
+  : IStandardNotifier(aContract),
+  iAccountNum(aContract.accountNum()),
+  iCompanyName(aContract.companyName()),
+  iProjectMgr(aContract.projectMgr()),
+  iDeptName(aContract.deptName()),
+  iPositionTitle(aContract.positionTitle()),
+  iStartDate(aContract.startDate()),
+  iEndDate(aContract.endDate()),
+  iContractorID(aContract.contractorID())
+  {
+    enableNotification();
+  }
+
+// Added after documentation went to press
+
+void OAContract::clear()
+{
+    setAccountNum("");
+    setCompanyName("");
+    setProjectMgr("");
+    setDeptName("");
+    setPositionTitle("");
+    setStartDate("");
+    setEndDate("");
+    setContractorID("");
+
+    return;
+}
+

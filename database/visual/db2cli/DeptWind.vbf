@@ -1,0 +1,66 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: DepartmentWindow,,VB
+//VBGeneratedFiles: DeptWind.cp, DeptWind.cpp
+//VBDependsOnFiles: DeptForm.vbf, Dept.vbe
+//VBParents: public IFrameWindow
+//VBIncludes: "DeptWind.hpp" _DeptWind_
+//VBConstructor: DepartmentWindow(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle(), const char* title = 0)
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: theDepartment,"Query the target attribute.",Department*,Department* getTheDepartment() const,DepartmentWindow& setTheDepartment(Department* target),theDepartmentId,theDept,this
+//VBSubpart: DepartmentWindow,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,MultiCellCanvas1,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas1,ClientArea,IMultiCellCanvas*,p
+//VBSubpart: ClientArea,deptForm,DepartmentForm*,p
+//VBSubpart: ClientArea,StaticText1,IStaticText*,p
+//VBSubpart: ClientArea,SetCanvas1,ISetCanvas*,p
+//VBSubpart: SetCanvas1,PushButton1,IPushButton*,p
+//VBSubpart: SetCanvas1,PushButton2,IPushButton*,p
+//VBSubpart: SetCanvas1,PushButton3,IPushButton*,p
+//VBSubpart: SetCanvas1,PushButton4,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,ButtonBar,ISetCanvas*,p
+//VBSubpart: ButtonBar,cancelPushButton,IPushButton*,p
+//VBSubpart: DepartmentWindow,theDept,Department*,v
+//VBSubpart: DepartmentWindow,MessageBox1,IMessageBox*,p
+//VBConnection: EA,5,p,p,cancelPushButton,buttonClickEvent,FrameWindow,close
+//VBConnection: AA,1,p,p,theDept,this,deptForm,targetAsDepartment
+//VBConnection: EA,2,p,p,PushButton1,buttonClickEvent,theDept,add
+//VBConnection: EA,3,p,p,PushButton2,buttonClickEvent,theDept,retrieve
+//VBConnection: EA,4,p,p,PushButton4,buttonClickEvent,theDept,del
+//VBConnection: EA,15,c,p,4,exceptionOccurred,MessageBox1,showException
+//VBConnection: EA,6,c,p,3,exceptionOccurred,MessageBox1,showException
+//VBConnection: EA,7,c,p,2,exceptionOccurred,MessageBox1,showException
+//VBConnection: EA,8,p,p,PushButton3,buttonClickEvent,theDept,update
+//VBConnection: EA,9,c,p,8,exceptionOccurred,MessageBox1,showException
+//VBConnection: EA,10,p,p,,ready,FrameWindow,show
+//VBConnection: EA,11,p,p,,ready,FrameWindow,setFocus
+//VBPartValue: DepartmentWindow,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,client,partRef,MultiCellCanvas1
+//VBPartValue: FrameWindow,framingSpec,position1,(30,30,477,383,30,126,477,383)
+//VBPartValue: FrameWindow,title,string,"DepartmentWindow"
+//VBPartValue: MultiCellCanvas1,id,code,((IC_FRAME_CLIENT_ID))
+//VBPartValue: MultiCellCanvas1,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(2,,),colAttr(1,true,),ctlAttr("ButtonBar",2,2,1,1),ctlAttr("ClientArea",1,1,1,1))
+//VBPartValue: ClientArea,canvasLayout,mclayout,(rowAttr(3,false,),colAttr(1,,),ctlAttr("deptForm",2,2,1,1),ctlAttr("StaticText1",1,1,1,1),ctlAttr("SetCanvas1",3,3,1,1))
+//VBPartValue: ClientArea,minimumSize,minsize,(466,256,false)
+//VBPartValue: StaticText1,alignment,enum,(IStaticText::Alignment,"centerCenter")
+//VBPartValue: StaticText1,text,string,"Department Record Update Panel"
+//VBPartValue: SetCanvas1,alignment,enum,(ISetCanvas::Alignment,"centerCenter")
+//VBPartValue: SetCanvas1,deckOrientation,enum,(ISetCanvas::DeckOrientation,"horizontal")
+//VBPartValue: SetCanvas1,deckCount,integer,1
+//VBPartValue: SetCanvas1,packType,enum,(ISetCanvas::PackType,"even")
+//VBPartValue: PushButton1,text,string,"Add"
+//VBPartValue: PushButton2,text,string,"Retrieve"
+//VBPartValue: PushButton3,text,string,"Update"
+//VBPartValue: PushButton4,text,string,"Delete"
+//VBPartValue: ButtonBar,minimumSize,minsize,(473,60,false)
+//VBPartValue: cancelPushButton,text,string,"Cancel"
+//VBPartValue: theDept,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBPartLayout: main,DepartmentWindow,(initWidgetSize,rectangle,(48,84,959,699))
+//VBPartLayout: eventconnection,5,(midPoints,collection,(point,(160,436)))
+//VBPartLayout: part,theDept,(framingSpec,position2,(628,286,58,58))
+//VBPartLayout: part,MessageBox1,(framingSpec,position2,(643,131))
+//VBPartLayout: eventconnection,10,(midPoints,collection,(point,(322,20)))
+//VBEndPartInfo: DepartmentWindow
+
+

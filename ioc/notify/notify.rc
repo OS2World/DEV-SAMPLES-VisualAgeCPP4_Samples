@@ -1,0 +1,47 @@
+/******************************************************************************
+* .FILE:         notify.rc                                                    *
+*                                                                             *
+* .DESCRIPTION:  Notify Sample Application: Resource file                     *
+*                                                                             *
+* .CLASSES:                                                                   *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    IBM Open Class Library                                                   *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1997 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+******************************************************************************/
+#include "notify.h"
+
+ICON WND_MAIN notify.ico
+
+MENU MAIN_MENU
+  BEGIN
+    SUBMENU "Options", MI_MENU
+      BEGIN
+        MENUITEM "Enable the entryfield",   MI_ENABLEEF
+        MENUITEM "Disable the entryfield",   MI_DISABLEEF
+        MENUITEM "Show contents of Customer",   MI_SHOW
+      END
+  END
+
+STRINGTABLE
+  BEGIN
+        TITLE_NOTIF_INF   , "Notification information"
+        STR_ILLEGAL_CHARS , "Illegal characters entered.  Only alphabetic chars allowed"
+        WND_MAIN          , "Notify Sample"
+        STR_ALPHA_ONLY    , "alphabetic data only"
+        STR_ENTER         , "Enter"
+  END
+

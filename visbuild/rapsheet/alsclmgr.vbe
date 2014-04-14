@@ -1,0 +1,22 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: IAliasClientMgr,,interface
+//VBParents: IStandardNotifier
+//VBIncludes: "ialsrmgr.hpp" _IALSRMGR_
+//VBConstraints:  noGen
+//VBComposerInfo: nonvisual
+//VBEvent: sameRequest,"same request received from peer/client machine", sameRequestId
+//VBEvent: manyObjectsFound,"many objects met query input", manyObjectsFoundId
+//VBEvent: noObjectsFound,"no objects met query input", noObjectsFoundId
+//VBEvent: oneObjectFound,"only one object met query input", oneObjectFoundId
+//VBEvent: parsedResult,"completed parsing result returned from a request", parsedResultId,, preferred
+//VBAction: getAllByBookNumber,"get all aliases by which a suspect is known",IString,IString allByBookNumber(unsigned long bookNumber), preferred
+//VBAction: processResult,"parse the result returned from a request",IAliasClientMgr&,IAliasClientMgr& processResult(), preferred
+//VBAttribute: requestBuffer,"request information",IString,IString requestBuffer(),IAliasClientMgr& setRequestBuffer(const IString& iRequestBuffer),requestBufferId, preferred
+//VBAttribute: resultBuffer,"result information",IString,IString resultBuffer(),IAliasClientMgr& setResultBuffer(const IString& iResultBuffer),resultBufferId, preferred
+//VBAttribute: resultList,"list of objects meeting query input",IVSequence<IAlias*>,IVSequence<IAlias*> resultList(),,resultListId
+//VBAttribute: resultListWrapper,"pointer to a list of objects meeting query input",IVSequence<IAlias*>*,IVSequence<IAlias*>* resultListWrapper(),,resultListWrapperId
+//VBAttribute: resultObject,"first object meeting query input",IAlias,IAlias resultObject(),,resultObjectId
+//VBAttribute: resultWrapper,"pointer to first object meeting query input",IAlias*,IAlias* resultWrapper(),,resultWrapperId
+//VBEndPartInfo: IAliasClientMgr
+

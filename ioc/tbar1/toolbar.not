@@ -1,0 +1,21 @@
+Simple Tool Bar example
+
+This program is an editor that demonstrates the look and feel of the tool bar and related classes.
+
+
+The tool bar function demonstrated here is built upon a number of C++ classes being added to the User Interface Class Library.  For example:
+
+IFlyText (iflytext.hpp) - A specially drawn window to display the Fly Over Help
+
+IFlyHelpHandler (iflyhhdr.hpp) - A handler to move, size and display the fly text field and to update an optional longer text field(information area).
+
+ITimer (itimer.hpp)  -  A system time class used to delay the display of fly text.
+
+ICustomButton (icustbut.hpp)  - A new button class built on the PM BS_USERBUTTON with added latching ability.
+
+IToolBarButton (itbarbut.hpp) - A new button class that inherits from ICustomButton and provides drawing behaviour for the buttons in a tool bar.  These buttons accept text and a bitmap.  A special ability of these objects is that they can draw bitmaps transparently without the need for a mask bitmap such as icons.  Bitmaps used in these buttons must be created with one color reserved as the transparent color.  By default this color is pink (255, 0, 255) but it can be changed on a per button basis.
+
+IToolBar (itbar.hpp) - A new set canvas derived class that is used to house controls.
+
+IToolBarContainer (itbarcnr) - A new set canvas derived class that is used to house tool bars.  Objects of this class are created as needed.
+

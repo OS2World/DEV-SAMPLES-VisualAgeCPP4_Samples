@@ -1,0 +1,99 @@
+/******************************************************************************
+* .FILE: acnr.rc                                                              *
+*                                                                             *
+* .DESCRIPTION: Container sample - Resource Defintions                        *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    IBM Open Class Library                                                   *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1997 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+******************************************************************************/
+#include "acnr.h"
+
+ICON WND_MAIN   brazil.ico
+ICON WND_MAIN_2 brazil.ico
+ICON IBMLOGO    mesa.ico
+ICON CLOGO      cpp2.ico
+ICON WLOGO      wklogo.ico
+ICON OSLOGO     os2logo.ico
+
+STRINGTABLE
+  BEGIN
+    WND_MAIN,   "Container Sample"
+    WND_MAIN_2,   "Container Sample - PM"
+    WND_DEPT,   "CnrEx - Department View"
+    STR_CNRTITLE, "Company XYZ"
+    STR_ITEM_21,  "Code Development"
+    STR_ITEM_22,  "TUID"
+    STR_ITEM_23,   "Building 71"
+    STR_ITEM_11, "OS/2 Development"
+    STR_ITEM_12, "TWPD"
+    STR_ITEM_13, "Building 71"
+    STR_ITEM_31,    "Information Development"
+    STR_ITEM_32,    "TP1D"
+    STR_ITEM_33,    "Building 71"
+    STR_ITEM_41,    "Quality Assurance"
+    STR_ITEM_42,    "TECD"
+    STR_ITEM_43,    "Building 71"
+    STR_ITEM_51, "AIX Development"
+    STR_ITEM_52, "TAIX"
+    STR_ITEM_53, "Building 71"
+    STR_ITEM_61, "Windows Development"
+    STR_ITEM_62, "TWIN"
+    STR_ITEM_63, "Building 71"
+
+    STR_DEPT,"Department Name"
+    STR_ICON,"Icon"
+    STR_ADDR,"Address"
+    STR_CODE,"Code"
+  END
+
+MENU ID_POPMENU
+  BEGIN
+    MENUITEM "Edit Record",   MI_EDRECORD
+    MENUITEM "Edit Name",     MI_EDNAME
+    MENUITEM "Edit Code",     MI_EDCODE
+    MENUITEM "Edit Address",  MI_EDADDRESS
+  END
+
+MENU WND_MAIN
+  BEGIN
+    SUBMENU "Views",                       ID_VIEWS
+      BEGIN
+        MENUITEM        "showTextView",             ID_VTEXT
+        MENUITEM        "showFlowedTextView",       ID_VFTEXT
+        MENUITEM        "showNameView",             ID_VNAME
+        MENUITEM        "showFlowedNameView",       ID_VFNAME
+        MENUITEM        "showDetailsView",          ID_VDETAILS
+        MENUITEM        "showTreeIconView",         ID_VTICON
+        MENUITEM        "showTreeTextView",         ID_VTTEXT
+        MENUITEM        "showTreeNameView",         ID_VTNAME
+        MENUITEM        "showIconView",             ID_VICON
+        MENUITEM        "arrangeIconView",          ID_VARRANGE
+      END
+    SUBMENU "Edit",                        MI_EDIT
+      BEGIN
+        MENUITEM        "select All objects"  ,     ID_MARKALL
+        MENUITEM        "deselect All objects",     ID_UNMARKALL
+      END
+    SUBMENU "Filters",                     ID_FILTERS
+      BEGIN
+        MENUITEM        "Show Only level Selected", ID_FILTER1
+        MENUITEM        "Show All",                 ID_FILTER2
+      END
+    SUBMENU "Sort",                        ID_SORTS
+      BEGIN
+        MENUITEM        "by Name"                 ,  ID_SORT1
+        MENUITEM        "by Code"                 ,  ID_SORT2
+      END
+  END

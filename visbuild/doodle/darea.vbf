@@ -1,0 +1,39 @@
+//VBInitializeStream: 4.B.1
+
+//VBBeginPartInfo: DrawingArea,"IBM sample drawing area control",VB
+//VBParents: ICanvas
+//VBIncludes: <darea.hpp> _DAREA_
+//VBConstraints:  noGen
+//VBLibFile: darea.lib
+//VBConstructor: DrawingArea(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect = IRectangle(), const ICanvas::Style& style = ICanvas::defaultStyle ( ))
+//VBComposerInfo: visual,4050,cppwv53r,primitive
+//VBGeneratorClass: AvlVisualPartCodeGenerator
+//VBAction: setArrow,"Set drawing object to arrow.",,setDrawObject(=DrawingArea::move)
+//VBAction: setStyleCan,"Set drawing object to arrow.",,setDrawObject(=DrawingArea::stylecan)
+//VBAction: setErase,"Set drawing object to eraser.",,setDrawObject(=DrawingArea::eraser)
+//VBAction: setRectangle,"Set drawing object to rectangle.",,setDrawObject(=DrawingArea::rectangle)
+//VBAction: setEllipse,"Set drawing object to ellipse.",,setDrawObject(=DrawingArea::ellipse)
+//VBAction: setLine,"Set drawing object to line.",,setDrawObject(=DrawingArea::line)
+//VBAction: setFreeHand,"Set drawing object to freehand.",,setDrawObject(=DrawingArea::freehand)
+//VBAction: setPolyline,"Set drawing object to polyline.",,setDrawObject(=DrawingArea::polyline)
+//VBAction: setPolygon,"Set drawing object to polygon.",,setDrawObject(=DrawingArea::polygon)
+//VBAction: setArc,"Set drawing object to arc.",,setDrawObject(=DrawingArea::arc)
+//VBAction: setPie,"Set drawing object to pie.",,setDrawObject(=DrawingArea::pie)
+//VBAction: setChord,"Set drawing object to chord.",,setDrawObject(=DrawingArea::chord)
+//VBAction: setText,"Set drawing object to text.",,setDrawObject(=DrawingArea::text)
+//VBAction: setBitmap,"Set drawing object to bitmap.",,setDrawObject(=DrawingArea::bitmap)
+//VBAction: setColor,"Set the color",,setColor(const IColor* color), preferred
+//VBAction: setPenColor,"Set the pen color",,setPenColor(const IColor* color), preferred
+//VBAction: setWidth,"Set the pen width",,setWidth(const unsigned long width), preferred
+//VBAction: setDrawStyle,"Set the drawn object fill/frame style",,setDrawStyle(short value = 0), preferred
+//VBAction: setFlyOverHandler,"Set the FlyOverHelpHandler for the DrawingArea",,setFlyOverHandler(IFlyOverHelpHandler* handler)
+//VBAttribute: drawObject,"Returns the current draw object.",DrawingArea::DrawObject,drawObject(),setDrawObject(const DrawingArea::DrawObject drawObject),, preferred
+//VBAttribute: enabled,"If the window is sent mouse and keyboard input, true is returned.",Boolean,Boolean ICanvas::isEnabled() const,virtual IWindow& ICanvas::enable(Boolean enabled = true),enableId
+//VBEndPartInfo: DrawingArea
+
+//VBBeginEnumInfo: DrawingArea::DrawObject
+//VBIncludes: <darea.hpp> _DAREA_
+//VBComposerClass: AvlEnum
+//VBEnumerators: move,line,freehand,rectangle,ellipse,polyline,polygon,arc,pie,chord,text,bitmap,stylecan,eraser
+//VBEndEnumInfo: DrawingArea::DrawObject
+

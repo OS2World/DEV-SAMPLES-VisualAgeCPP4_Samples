@@ -1,0 +1,90 @@
+/******************************************************************************
+* .FILE:         aclient.rc                                                   *
+*                                                                             *
+* .DESCRIPTION:  Dynamic Data Exchange Client Program: Resources              *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    IBM Open Class Library                                                   *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1997 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+******************************************************************************/
+#include "aclient.h"
+
+ICON WND_CLIENT aclient.ico
+
+STRINGTABLE
+  BEGIN
+    WND_CLIENT,         "DDE Client Sample"
+    STR_HOTYES,         "Hot Links Active"
+    STR_HOTNO,          "Hot Links Not Active"
+    MI_CONV_OPTIONS,    "Conversation Menu"
+    MI_START_CONV,      "Start Conversation"
+    MI_END_CONV,        "End Conversation"
+    MI_DATA_OPTIONS,    "Data Menu"
+    MI_REQUEST_DATA,    "Request New Work Item (RequestData)"
+    MI_POKE_DATA,       "Work Item Completed (PokeData)"
+    MI_HOTLINK_OPTIONS, "Hot Link Menu"
+    MI_BEGIN_HOTLINK,   "Begin Hot Links for Status Line"
+    MI_END_HOTLINK,     "End Hot Links for Status Line"
+    MI_BEGIN_SENT,      "<<begin: sent to Server "
+    MI_APP,             "DDE Sample App"
+    MI_TOPIC,           "Work Topic"
+    MI_END_HOT_SENT,    "<<endHotLinks sent to Server "
+    MI_END_SENT,        "<<end sent to Server "
+    MI_REQDATA_SENT,    "<<requestData: NextTodo sent to Server "
+    MI_NEXTTODO,        "NextToDo"
+    MI_BEGIN_HOTLINK_HOTTODO_SENT, "<<beginHotLink: HotTodo sent to Server "
+    MI_HOTTODO,         "HotTodo"
+    MI_BEGIN_HOTLINK_HOTWORK_SENT, "<<beginHotLink: HotWork sent to Server "
+    MI_HOTWORK,         "HotWork"
+    MI_BEGIN_HOTLINK_HOTDONE_SENT, "<<beginHotLink: HotDone sent to Server "
+    MI_HOTDONE,         "HotDone"
+    MI_POKEDATA_SENT,   "<<pokeData: DonePoke sent to Server "
+    MI_DONEPOKE,        "DonePoke"
+    MI_TODO_COUNT,      "Todo count: "
+    MI_WORK_COUNT,      "Work count: "
+    MI_DONE_COUNT,      "Done count: "
+    MI_DATA_HOTLINK,    ">>data hotlink("
+    MI_RECEIVED,        " received from Server "
+    MI_DATA,            ">>data("
+    MI_TOPIC_END,       ">>conversationEnded: for topic: "
+    MI_IN_APP,          " in application: "
+    MI_BY_SERVER,       " by Server "
+    MI_BY_CLIENT,       " by Client "
+    MI_BY_ERROR,        " by error "
+    MI_ACK_RECEIVED,    ">>acknowledged: received from Server "
+  END
+
+/*****************************/
+/* menu                      */
+/*****************************/
+MENU WND_CLIENT
+  BEGIN
+    SUBMENU "Conversation",             MI_CONV_OPTIONS
+      BEGIN
+        MENUITEM "Start",               MI_START_CONV
+        MENUITEM "End",                 MI_END_CONV
+      END
+    SUBMENU "Data",                     MI_DATA_OPTIONS
+      BEGIN
+        MENUITEM "Request Next Todo",   MI_REQUEST_DATA
+        MENUITEM "Work Item Done",      MI_POKE_DATA
+      END
+    SUBMENU "HotLink",                  MI_HOTLINK_OPTIONS
+      BEGIN
+        MENUITEM "Begin",               MI_BEGIN_HOTLINK
+        MENUITEM "End",                 MI_END_HOTLINK
+      END
+  END

@@ -1,0 +1,10 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ISpinHandler,"Open Class Library spin handler.",interface
+//VBParents: public IHandler
+//VBIncludes: <ispinhdr.hpp> _ISPINHDR_
+//VBConstraints:  noGen
+//VBConstructor: ISpinHandler()
+//VBComposerInfo: class
+//VBEndPartInfo: ISpinHandler
+

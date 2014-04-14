@@ -1,0 +1,64 @@
+User Interface Class Library Tool Bar Sample 2
+
+This program is an editor that demonstrates the look and feel of the
+IToolBar and related classes.
+
+ToolBar Classes:
+----------------
+
+The tool bar function demonstrated here is built upon a number of C++
+classes being added to the User Interface Library.  New classes used by
+this sample include:
+
+  IFlyText            - A specially drawn window to display the Fly Over Help
+  IFlyOverHelpHandler - A handler to move, size and display the fly text field
+                        and to update an optional longer text field(information area).
+  IToolBar            - A new set canvas derived class that is used to house
+                        controls.
+  IToolBarButton      - A new button class that provides drawing behavior for
+                        the buttons in a tool bar.  These buttons accept text and
+                        a foreground bitmap.  A special ability of these objects
+                        is that they can draw bitmaps transparently without the
+                        need for a mask bitmap such as icons.  Bitmaps used
+                        in these buttons must be created with one color reserved
+                        as the transparent color.  By default this color is pink,
+                        but it can be changed on a per button basis.
+
+Sample function:
+----------------
+
+1) Tool Bars - This sample provides three tool bars (file, edit, and font)
+   for the editor window.  Tool bars may contain any window (not just a
+   tool bar button) as demonstrated by the drop-down combination box on the
+   font tool bar.
+
+2) Tool Bar Buttons - This sample creates tool bar buttons for the tool bars.
+   Each button has both a bitmap and text.
+
+3) Fly Over Help - This sample provides fly over help for the tool bars and
+   the windows that have been added to the tool bars.  Both the short fly
+   over help description and the longer text descriptions (shown at the bottom
+   of the window) are demonstrated.
+
+4) Latchable Tool Bar Buttons - This sample demonstrates the latchable style
+   for tool bar buttons by allowing the bold, italic, and underscore buttons
+   to be put in a latched or down state by clicking on the button.
+
+5) Tool Bar Location - The tool bars' settings notebook (from the Options menu) can be
+   used to change the location of each of the tool bars.   Tool bars can have
+   a location of top, left, bottom, right, floating, or hidden.  Also, when
+   a tool bar is on the top, left, bottom, or right the group style can be
+   used to determine if the tool bar is displayed on a new row or column.
+
+6) Tool Bar Button View - The tool bars' settings notebook (from the Options menu) can
+   be used to change the view of the tool bar buttons on a tool bar.  Bitmap
+   text, or both bitmap and text can be displayed for a tool bar button.
+
+7) Tool Bar Direct Manipulation - The user can drag tool bars to new locations.
+   Normally, direct manipulation will make a tool bar floating, but dropping a
+   tool bar on the frame border or on another tool bar or tool bar frame
+   extension area causes the tool bar to be non-floating.  The mouse pointer
+   changes to indicate the new tool bar location if it is non-floating.
+
+8) Tool Bar Button Direct Manipulation - The user can drag tool bar buttons
+   within a tool bar, and between tool bars.

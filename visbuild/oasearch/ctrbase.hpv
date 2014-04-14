@@ -1,0 +1,7 @@
+public:
+  virtual OAContractor& getContractor(OAContractor& aContractor);
+  virtual OAContractorBase& putContractor(OAContractor& aContractor);
+  virtual OAContractorBase& primeData(IProfile& aDatabase);
+
+  static const INotificationId _Import queryFoundId;
+

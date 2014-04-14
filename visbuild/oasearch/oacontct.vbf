@@ -1,0 +1,23 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: OAContract,"OASearch contract class",VB
+//VBGeneratedFiles: contract.cpp
+//VBParents: public IStandardNotifier
+//VBIncludes: "contract.hpp" _OAContract_,<istring.hpp>,<iprofile.hpp>
+//VBConstructor: OAContract()
+//VBComposerInfo: nonvisual,801,oasres
+//VBGeneratorValues: userHpp(true),userCpp(true),userH(false),userRC(false)
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBAction: clear,"Clear instance of all values",void,void clear()
+//VBAttribute: companyName,"Name of company seeking contractors",IString,virtual const IString& companyName() const,virtual OAContract& setCompanyName(const IString& aCompanyName),companyNameId
+//VBAttribute: projectMgr,"Name of contact at customer location",IString,virtual const IString& projectMgr() const,virtual OAContract& setProjectMgr(const IString& aProjectMgr),projectMgrId
+//VBAttribute: deptName,"Name of organization at customer location",IString,virtual const IString& deptName() const,virtual OAContract& setDeptName(const IString& aDeptName),deptNameId
+//VBAttribute: positionTitle,"Position sought by customer",IString,virtual const IString& positionTitle() const,virtual OAContract& setPositionTitle(const IString& aPositionTitle),positionTitleId
+//VBAttribute: startDate,"Date on which contractor starts working at customer location",IString,virtual const IString& startDate() const,virtual OAContract& setStartDate(const IString& aStartDate),startDateId
+//VBAttribute: endDate,"Last date for this contract",IString,virtual const IString& endDate() const,virtual OAContract& setEndDate(const IString& aEndDate),endDateId
+//VBAttribute: contractorID,"Contractor assigned to this contract",IString,virtual const IString& contractorID() const,virtual OAContract& setContractorID(const IString& aContractorID),contractorIDId
+//VBAttribute: accountNum,"Contract number as string",IString,virtual const IString& accountNum() const,virtual OAContract& setAccountNum(const IString& aAccountNum),accountNumId,preferred
+//VBPartLayout: main,OAContract,(initWidgetSize,rectangle,(35,122,950,704))
+//VBEndPartInfo: OAContract
+
+

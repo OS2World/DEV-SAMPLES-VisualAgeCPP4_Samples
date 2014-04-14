@@ -1,0 +1,75 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: OAQueryContractor,,VB
+//VBGeneratedFiles: OAQryCtr.cpp, OAQryCtr.cp
+//VBDependsOnFiles: oactrctr.vbf, oactrv.vbf, oactrb.vbf
+//VBParents: public IFrameWindow
+//VBIncludes: "OAQryCtr.hpp" _OAQueryContractor_
+//VBConstructor: OAQueryContractor(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle(), const char* title = 0)
+//VBComposerInfo: visual
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(false),startingResId("")
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: contractor,"Query the target attribute.",OAContractor*,OAContractor* getContractor() const,OAQueryContractor& setContractor(OAContractor* target),contractorId,Contractor,this
+//VBSubpart: OAQueryContractor,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,MultiCellCanvas1,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas1,ClientArea,IMultiCellCanvas*,p
+//VBSubpart: ClientArea,EntryField1,IEntryField*,p
+//VBSubpart: ClientArea,StaticText1,IStaticText*,p
+//VBSubpart: MultiCellCanvas1,ButtonBar,ISetCanvas*,p
+//VBSubpart: ButtonBar,okPushButton,IPushButton*,p
+//VBSubpart: ButtonBar,cancelPushButton,IPushButton*,p
+//VBSubpart: ButtonBar,helpPushButton,IPushButton*,p
+//VBSubpart: OAQueryContractor,HelpWindow,IHelpWindow*,p
+//VBSubpart: OAQueryContractor,OAContractorViewFac,OAContractorView*,f
+//VBSubpart: OAQueryContractor,OAContractorViewVar,OAContractorView*,v
+//VBSubpart: OAQueryContractor,Errors,IMessageBox*,p
+//VBSubpart: OAQueryContractor,Contractor,OAContractor*,v
+//VBSubpart: OAQueryContractor,ContractorBase,OAContractorBase*,p
+//VBConnection: EA,5,p,p,cancelPushButton,buttonClickEvent,FrameWindow,close
+//VBConnection: AA,19,p,p,EntryField1,textLength,okPushButton,enabled
+//VBConnection: EA,6,p,p,okPushButton,buttonClickEvent,Contractor,parseName
+//VBConnection: EA,11,p,p,okPushButton,buttonClickEvent,ContractorBase,getContractor
+//VBConnection: AA,8,p,p,Contractor,this,OAContractorViewFac,contractor
+//VBConnection: EA,1,p,p,ContractorBase,queryFound,OAContractorViewFac,new
+//VBConnection: EA,3,p,p,OAContractorViewFac,newEvent,OAContractorViewVar,this
+//VBConnection: EA,4,p,p,OAContractorViewFac,newEvent,OAContractorViewVar,setFocus
+//VBConnection: EA,15,p,p,OAContractorViewFac,newEvent,OAContractorViewVar,show
+//VBConnection: EA,9,c,p,6,exceptionOccurred,Errors,showException
+//VBConnection: AA,10,c,p,6,aName,EntryField1,text
+//VBConnection: EA,13,c,p,11,exceptionOccurred,Errors,showException
+//VBConnection: AA,23,c,p,11,aContractor,Contractor,*this
+//VBConnection: AA,14,p,p,OAContractorViewFac,owner,FrameWindow,owner
+//VBConnection: EA,24,p,p,ContractorBase,queryFound,FrameWindow,dismiss
+//VBPartValue: OAQueryContractor,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,client,partRef,MultiCellCanvas1
+//VBPartValue: FrameWindow,framingSpec,position1,(30,30,397,227,10,10,397,227)
+//VBPartValue: FrameWindow,helpId,integer,10003
+//VBPartValue: FrameWindow,title,string,"Request for Contractor Information"
+//VBPartValue: MultiCellCanvas1,id,code,((IC_FRAME_CLIENT_ID))
+//VBPartValue: MultiCellCanvas1,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(2,,),colAttr(1,true,),ctlAttr("ButtonBar",2,2,1,1),ctlAttr("ClientArea",1,1,1,1))
+//VBPartValue: ClientArea,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(5,true,),colAttr(1,true,),colAttr(3,true,),ctlAttr("StaticText1",2,2,2,2),ctlAttr("EntryField1",4,4,2,2))
+//VBPartValue: EntryField1,style,bitflag,(true,IEntryField::Style,(("IWindow","tabStop",true)))
+//VBPartValue: EntryField1,helpId,integer,10004
+//VBPartValue: StaticText1,text,string,"Enter the contractor\'s name below:"
+//VBPartValue: ButtonBar,alignment,enum,(ISetCanvas::Alignment,"centerCenter")
+//VBPartValue: ButtonBar,packType,enum,(ISetCanvas::PackType,"expanded")
+//VBPartValue: okPushButton,style,bitflag,(true,IPushButton::Style,(("IPushButton","defaultButton",true),("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: okPushButton,text,string,"OK"
+//VBPartValue: cancelPushButton,text,string,"Cancel"
+//VBPartValue: helpPushButton,style,bitflag,(true,IPushButton::Style,(("IButton","noPointerFocus",true),("IPushButton","help",true)))
+//VBPartValue: helpPushButton,text,string,"Help"
+//VBPartValue: HelpWindow,style,bitflag,(true,IHelpWindow::Style,(("IHelpWindow","ipfCompatible",true)))
+//VBPartValue: HelpWindow,avlTitle,string,"Help for Opportunities Abound Database Query"
+//VBPartValue: HelpWindow,avlHelpLibraries,string,"oasearch.hlp"
+//VBPartValue: OAContractorViewFac,autoDeleteObject,boolean,true
+//VBConnValue: 15,visible,boolean,true
+//VBPartLayout: main,OAQueryContractor,(initWidgetSize,rectangle,(208,206,872,762))
+//VBPartLayout: eventconnection,5,(midPoints,collection,(point,(174,273)))
+//VBPartLayout: part,HelpWindow,(framingSpec,position2,(475,28,40,40))
+//VBPartLayout: part,OAContractorViewFac,(framingSpec,position2,(448,318,40,40))
+//VBPartLayout: part,OAContractorViewVar,(framingSpec,position2,(306,326,58,58))
+//VBPartLayout: part,Errors,(framingSpec,position2,(201,341,40,40))
+//VBPartLayout: part,Contractor,(framingSpec,position2,(474,94,58,58))
+//VBPartLayout: part,ContractorBase,(framingSpec,position2,(487,182,40,40))
+//VBEndPartInfo: OAQueryContractor
+

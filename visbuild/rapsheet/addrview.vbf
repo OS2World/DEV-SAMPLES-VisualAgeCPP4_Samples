@@ -1,0 +1,61 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: IAddressView,,VB
+//VBGeneratedFiles: ddrssVew.rc, ddrssVew.cp, ddrssVew.cpp
+//VBDependsOnFiles: vbsample.vbe
+//VBParents: public ICanvas
+//VBIncludes: "ddrssVew.hpp" _IADDRESSVIEW_
+//VBResourceDllName: rapstrg
+//VBConstructor: IAddressView(unsigned long id, IWindow* parent = IWindow::desktopWindow(), IWindow* owner = IWindow::desktopWindow(), const IRectangle& rect = IRectangle(), const ICanvas::Style& style = ICanvas::defaultStyle())
+//VBComposerInfo: visual
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(false),genStrings(true),startingResId("10000")
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: anAddress,,IAddress*,IAddress* getAnAddress() const,IAddressView& setAnAddress(IAddress* target),,anAddress,this
+//VBAttribute: resourceLibrary,(92,"cppres"),char*,const IResourceLibrary& resourceLibrary() const,IAddressView& setResourceLibrary(const char* resLibName = 0, IDynamicLinkLibrary::ESearchLocation searchLocation = IVBMain::defaultResourcePath()),resourceLibraryId
+//VBAttribute: defaultResourceLibrary,(93,"cppres"),char*,static const IResourceLibrary& defaultResourceLibrary(),static void setDefaultResourceLibrary(const char* resLibName = 0, IDynamicLinkLibrary::ESearchLocation searchLocation = IVBMain::defaultResourcePath()),,nosetting
+//VBSubpart: IAddressView,Canvas,ICanvas*,p
+//VBSubpart: Canvas,Street_EF,IEntryField*,p
+//VBSubpart: Canvas,City_EF,IEntryField*,p
+//VBSubpart: Canvas,State_EF,IEntryField*,p
+//VBSubpart: Canvas,Zip_EF,IEntryField*,p
+//VBSubpart: Canvas,StaticText1,IStaticText*,p
+//VBSubpart: Canvas,StaticText12,IStaticText*,p
+//VBSubpart: Canvas,StaticText13,IStaticText*,p
+//VBSubpart: Canvas,StaticText14,IStaticText*,p
+//VBSubpart: IAddressView,anAddress,IAddress*,v
+//VBConnection: AA,0,p,p,anAddress,city,City_EF,text
+//VBConnection: AA,1,p,p,anAddress,street,Street_EF,text
+//VBConnection: AA,2,p,p,anAddress,zip,Zip_EF,text
+//VBConnection: AA,3,p,p,anAddress,state,State_EF,text
+//VBPartValue: IAddressView,primaryPart,partRef,Canvas
+//VBPartValue: Canvas,framingSpec,position1,(30,30,425,173,30,107,425,173)
+//VBPartValue: Street_EF,style,bitflag,(true,IEntryField::Style,(("IEntryField","autoScroll",true),("IEntryField","autoTab",true),("IEntryField","margin",true),("IEntryField","readOnly",false),("IWindow","tabStop",true)))
+//VBPartValue: Street_EF,text,string,""
+//VBPartValue: Street_EF,framingSpec,position1,(95,10,,,95,138,283,25)
+//VBPartValue: Street_EF,limit,integer,30
+//VBPartValue: City_EF,style,bitflag,(true,IEntryField::Style,(("IEntryField","autoScroll",true),("IEntryField","autoTab",true),("IEntryField","margin",true),("IEntryField","readOnly",false),("IWindow","tabStop",true)))
+//VBPartValue: City_EF,text,string,""
+//VBPartValue: City_EF,framingSpec,position1,(95,50,,,95,98,203,25)
+//VBPartValue: City_EF,limit,integer,20
+//VBPartValue: State_EF,style,bitflag,(true,IEntryField::Style,(("IEntryField","autoScroll",true),("IEntryField","autoTab",true),("IEntryField","margin",true),("IEntryField","readOnly",false),("IWindow","tabStop",true)))
+//VBPartValue: State_EF,text,string,""
+//VBPartValue: State_EF,framingSpec,position1,(95,90,,,95,58,51,25)
+//VBPartValue: State_EF,limit,integer,2
+//VBPartValue: Zip_EF,style,bitflag,(true,IEntryField::Style,(("IEntryField","autoScroll",true),("IEntryField","autoTab",true),("IEntryField","margin",true),("IEntryField","readOnly",false),("IWindow","tabStop",true)))
+//VBPartValue: Zip_EF,text,string,""
+//VBPartValue: Zip_EF,framingSpec,position1,(95,130,,,95,18,123,25)
+//VBPartValue: Zip_EF,limit,integer,10
+//VBPartValue: StaticText1,text,string,"Street"
+//VBPartValue: StaticText1,framingSpec,position1,(13,18,,,13,135,51,20)
+//VBPartValue: StaticText12,text,string,"City"
+//VBPartValue: StaticText12,framingSpec,position1,(13,56,,,13,97,32,20)
+//VBPartValue: StaticText13,text,string,"State"
+//VBPartValue: StaticText13,framingSpec,position1,(13,94,,,13,59,44,20)
+//VBPartValue: StaticText14,text,string,"Zip"
+//VBPartValue: StaticText14,framingSpec,position1,(13,132,,,13,21,25,20)
+//VBPartValue: anAddress,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBPartLayout: main,IAddressView,(initWidgetSize,rectangle,(184,319,1003,705))
+//VBPartLayout: part,anAddress,(framingSpec,position2,(472,68))
+//VBEndPartInfo: IAddressView
+
+

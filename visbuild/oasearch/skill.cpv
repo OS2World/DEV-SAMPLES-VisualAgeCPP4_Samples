@@ -1,0 +1,89 @@
+// Feature source code generation begins here...
+const INotificationId _Export OASkill::skillNameId = "OASkill::skillName";
+const INotificationId _Export OASkill::contractorIDId = "OASkill::contractorID";
+const INotificationId _Export OASkill::yearsExpId = "OASkill::yearsExp";
+const INotificationId _Export OASkill::keyId = "OASkill::key";
+
+const IString& OASkill::skillName() const
+{
+  return iSkillName;
+}
+
+OASkill& OASkill::setSkillName(const IString& aSkillName)
+{
+  if (!(iSkillName == aSkillName))
+  {
+    iSkillName = aSkillName;
+    notifyObservers(INotificationEvent(IInterest(*this, OASkill::skillNameId)));
+  } // endif
+  return *this;
+}
+
+const IString& OASkill::contractorID() const
+{
+  return iContractorID;
+}
+
+OASkill& OASkill::setContractorID(const IString& aContractorID)
+{
+  if (!(iContractorID == aContractorID))
+  {
+    iContractorID = aContractorID;
+    setKey("");
+    notifyObservers(INotificationEvent(IInterest(*this, OASkill::contractorIDId)));
+  } // endif
+  return *this;
+}
+
+const IString& OASkill::yearsExp() const
+{
+  return iYearsExp;
+}
+
+OASkill& OASkill::setYearsExp(const IString& aYearsExp)
+{
+  if (!(iYearsExp == aYearsExp))
+  {
+    iYearsExp = aYearsExp;
+    notifyObservers(INotificationEvent(IInterest(*this, OASkill::yearsExpId)));
+  } // endif
+  return *this;
+}
+
+const IString& OASkill::key() const
+{
+  return iKey;
+}
+
+OASkill& OASkill::setKey(const IString& aKey)
+{
+  if (!(iKey == aKey))
+  {
+    iKey = aKey;
+    notifyObservers(INotificationEvent(IInterest(*this, OASkill::keyId)));
+  } // endif
+  return *this;
+}
+
+void OASkill::clear()
+{
+  setSkillName("");
+  setYearsExp(NULL);
+  setKey(NULL);
+  setContractorID(NULL);
+
+  return;
+}
+
+// Feature source code generation ends here.
+
+// Copy constructor
+OASkill::OASkill(const OASkill & aSkill)
+  : IStandardNotifier(aSkill),
+  iSkillName(aSkill.skillName()),
+  iContractorID(aSkill.contractorID()),
+  iYearsExp(aSkill.yearsExp()),
+  iKey(aSkill.key())
+  {
+    enableNotification();
+  }

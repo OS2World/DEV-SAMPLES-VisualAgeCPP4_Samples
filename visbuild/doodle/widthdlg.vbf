@@ -1,0 +1,50 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: IWidthDialog,"Width Dialog",VB
+//VBGeneratedFiles: WdthDlog.cpp, WdthDlog.cp
+//VBParents: public IFrameWindow
+//VBIncludes: "WdthDlog.hpp" _IWIDTHDIALOG_
+//VBConstructor: IWidthDialog(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle ( ), const char* title = 0)
+//VBComposerInfo: visual
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(false),userCtor((ITRACE_DEVELOP(\" ***MDH*** In IWidthDialog constructor ***\");)),userDtor((ITRACE_DEVELOP(\" ***MDH*** In IWidthDialog destructor ***\");))
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: widthVariable,(7101,"cppres"),IVBUnsignedLongPart*,IVBUnsignedLongPart* getWidthVariable() const,IWidthDialog& setWidthVariable(IVBUnsignedLongPart* target),widthVariableId,WidthVariable,this
+//VBSubpart: IWidthDialog,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,Canvas,ICanvas*,p
+//VBSubpart: Canvas,TextWidthLabel,IStaticText*,p
+//VBSubpart: Canvas,WidthEntryField,IEntryField*,p
+//VBSubpart: Canvas,SetPushButton,IPushButton*,p
+//VBSubpart: Canvas,CancelButton,IPushButton*,p
+//VBSubpart: IWidthDialog,WidthVariable,IVBUnsignedLongPart*,v
+//VBSubpart: IWidthDialog,TempWidth,IVBLongPart*,p
+//VBConnection: EA,0,p,p,CancelButton,buttonClickEvent,FrameWindow,close
+//VBConnection: EA,16,p,p,SetPushButton,buttonClickEvent,WidthVariable,apply
+//VBConnection: EA,2,p,p,SetPushButton,buttonClickEvent,FrameWindow,close
+//VBConnection: AA,6,p,p,WidthEntryField,text,TempWidth,valueAsText
+//VBConnection: AA,7,p,p,TempWidth,valueWithinLimits,SetPushButton,enabled
+//VBConnection: AA,27,p,p,WidthVariable,valueAsText,WidthEntryField,text
+//VBPartValue: IWidthDialog,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,style,bitflag,(true,IFrameWindow::Style,(("IFrameWindow","dialogBackground",true),("IFrameWindow","dialogBorder",true),("IFrameWindow","hideButton",false),("IFrameWindow","maximizeButton",false),("IFrameWindow","minimizeButton",false),("IFrameWindow","sizingBorder",false)))
+//VBPartValue: FrameWindow,client,partRef,Canvas
+//VBPartValue: FrameWindow,framingSpec,position1,(145,52,213,192,145,176,213,192)
+//VBPartValue: FrameWindow,autoDeleteObject,boolean,false
+//VBPartValue: FrameWindow,title,string,"Set Pen Width"
+//VBPartValue: TextWidthLabel,text,string,"Set pen width (1-10):"
+//VBPartValue: TextWidthLabel,framingSpec,position1,(5,28,null,null,5,112,195,22)
+//VBPartValue: WidthEntryField,style,bitflag,(true,IEntryField::Style,(("IWindow","group",true),("IWindow","tabStop",true),("IEntryField","leftAlign",false),("IEntryField","rightAlign",true)))
+//VBPartValue: WidthEntryField,text,string,""
+//VBPartValue: WidthEntryField,framingSpec,position1,(15,65,176,27,15,70,176,27)
+//VBPartValue: WidthEntryField,limit,integer,2
+//VBPartValue: SetPushButton,style,bitflag,(true,IPushButton::Style,(("IPushButton","defaultButton",true),("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: SetPushButton,text,string,"Set"
+//VBPartValue: SetPushButton,framingSpec,position1,(13,109,83,31,13,22,83,31)
+//VBPartValue: CancelButton,text,string,"Cancel"
+//VBPartValue: CancelButton,framingSpec,position1,(109,109,null,null,109,22,83,31)
+//VBPartValue: WidthVariable,deferUpdate,boolean,true
+//VBPartLayout: main,IWidthDialog,(initWidgetSize,rectangle,(544,76,1268,570))
+//VBPartLayout: connection,6,(midPoints,array,(point,(118,158)))
+//VBPartLayout: part,WidthVariable,(framingSpec,position2,(215,286,58,58))
+//VBPartLayout: part,TempWidth,(framingSpec,position2,(38,167,40,40))
+//VBEndPartInfo: IWidthDialog
+
+

@@ -1,0 +1,50 @@
+/******************************************************************************
+* .FILE:         amcelcv.rc                                                   *
+*                                                                             *
+* .DESCRIPTION:  Canvas Classes Example 3 - Multi Cell Canvas : Resource file *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    IBM Open Class Library                                                   *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1997 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+******************************************************************************/
+#include "amcelcv.h"
+
+ICON WND_MAIN "amcelcv.ico"
+
+//**************************************************************************
+// string resources - used by IStaticText & ITitle Classes                 *
+//  Symbolic Name (ID) <-> Text String                                     *
+//**************************************************************************
+STRINGTABLE
+  BEGIN
+    WND_MAIN        ,  "Multi Cell Canvas Sample"
+    STR_STATUS      ,  "IMultiCellCanvas Sample"
+    STR_TITLE1      ,  "Check Boxes"
+    STR_TITLE2      ,  "Radio Buttons"
+    STR_CHECK1      ,  "check box one"
+    STR_CHECK2      ,  "check box two"
+    STR_RADIO1      ,  "radio button one"
+    STR_RADIO2      ,  "radio button two"
+    STR_PUSHBUT     ,  "Read..."
+    STR_PUSHED      ,  "You have pressed the push button!"
+    STR_MSGBOX      ,  "Current Button State"
+    STR_CHK1_SEL    ,  "check box one selected, "
+    STR_CHK1_NOSEL  ,  "check box one not selected, "
+    STR_CHK2_SEL    ,  "check box two selected, "
+    STR_CHK2_NOSEL  ,  "check box two not selected, "
+    STR_RAD1_SEL    ,  "and radio button one selected"
+    STR_RAD2_SEL    ,  "and radio button two selected"
+  END

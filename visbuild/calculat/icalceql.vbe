@@ -1,0 +1,10 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ICalcEqualFunction,"Equal Function",interface
+//VBConstraints:  noGen
+//VBParents: ICalcFunction
+//VBIncludes: <icalceql.hpp> _IEQUALFUNC_
+//VBConstructor: ICalcEqualFunction()
+//VBComposerInfo: nonvisual
+//VBEndPartInfo: ICalcEqualFunction
+

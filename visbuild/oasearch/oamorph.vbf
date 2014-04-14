@@ -1,0 +1,18 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: OAMorphableSpinButton,"Extended for string compatibility",VB
+//VBGeneratedFiles: oamrfbtn.cp, oamrfbtn.cpp
+//VBParents: public INumericSpinButton
+//VBIncludes: "oamrfbtn.hpp" _OAMORPHABLESPINBUTTON_,<ispinnum.hpp>
+//VBConstructor: OAMorphableSpinButton(unsigned long id, IWindow* parent = IWindow::desktopWindow(), IWindow* owner = IWindow::desktopWindow(), const IRectangle& rect = IRectangle(), const INumericSpinButton::Style& style = OAMorphableSpinButton::defaultStyle())
+//VBComposerInfo: visual,,,primitive,oamorphw,,27
+//VBGeneratorValues: userHpp(true),userCpp(true),userH(false),userRC(false)
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBAttribute: valueAsString,"Current spin value as a string",IString,virtual IString valueAsString() const,virtual OAMorphableSpinButton& setValue(const IString& aValueAsString),valueId
+//VBSubpart: OAMorphableSpinButton,NumericSpinButton,INumericSpinButton*,p
+//VBPartValue: OAMorphableSpinButton,primaryPart,partRef,NumericSpinButton
+//VBPartValue: NumericSpinButton,framingSpec,position1,(27,28,,,27,574,251,27)
+//VBPartLayout: main,OAMorphableSpinButton,(initWidgetSize,rectangle,(6,312,1018,997))
+//VBEndPartInfo: OAMorphableSpinButton
+
+

@@ -1,0 +1,10 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ICalcSubtractionChip,"Integer Subtract Chip",interface
+//VBConstraints:  noGen
+//VBParents: ICalcOperator
+//VBIncludes: <icalcsc.hpp> _ICALCSC_
+//VBConstructor: ICalcSubtractionChip()
+//VBComposerInfo: nonvisual
+//VBEndPartInfo: ICalcSubtractionChip
+

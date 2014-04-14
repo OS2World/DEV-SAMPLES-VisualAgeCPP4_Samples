@@ -1,0 +1,107 @@
+/* chkmark.rc	*/
+
+/* OS/2 Resource Script File */
+
+/* --------------------------------------------------------------------------- */
+
+/* IBM VisualAge C++ Professional, Version 4.0                                 */
+/* Licensed Materials - Property of IBM                                        */
+/* (C) Copyright IBM Corp. 1997, 1998. All Rights Reserved.                    */
+
+/* --------------------------------------------------------------------------- */
+
+/*******************************************************************************/
+/*******************************************************************************/
+/*		       DISCLAIMER OF WARRANTIES.			        */
+/*******************************************************************************/
+/*******************************************************************************/
+/* DISCLAIMER:                                                                 */
+/*   The following [enclosed] code is sample code created by IBM               */
+/*   Corporation.  This sample code is not part of any standard IBM product    */
+/*   and is provided to you solely for the purpose of assisting you in the     */
+/*   development of your applications.  The code is provided 'AS IS',          */
+/*   without warranty of any kind.  IBM shall not be liable for any damages    */
+/*   arising out of your use of the sample code, even if they have been        */
+/*   advised of the possibility of such damages.                               */
+/*******************************************************************************/
+/*******************************************************************************/
+
+#define	INCL_WINSYS
+#define INCL_WINSTDDLGS
+#define INCL_WINSTDSPIN
+#define INCL_NLS
+#define INCL_SW
+
+#include <os2.h>
+
+#include "chkmark.h"
+
+BITMAP	    IDB_CHECKMARKS "ChkMark.Bmp"
+
+DLGTEMPLATE DLG_CTRLUSER 850
+BEGIN
+    DIALOG "Check Mark Styles",	DLG_CTRLUSER, 22, 62, 288, 106,	FS_NOBYTEALIGN |
+		FS_DLGBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS | WS_VISIBLE,
+		FCF_TITLEBAR | FCF_SYSMENU
+    PRESPARAMS PP_FONTNAMESIZE,	"8.Helv"
+    BEGIN
+	CONTROL	"Select style and type text and ID symbol.", -1, 5, 96,	123, 8,
+					    WC_STATIC, SS_TEXT | DT_VCENTER |
+					    WS_GROUP | WS_VISIBLE
+		PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+	CONTROL	"Text:",	       -1, 5, 85, 16, 8, WC_STATIC, SS_TEXT |
+					    DT_RIGHT | DT_VCENTER | WS_VISIBLE
+	CONTROL	"",		       EF_TEXT,	25, 56,	190, 36, WC_MLE,
+					    MLS_BORDER | MLS_HSCROLL |
+					    MLS_IGNORETAB | MLS_VSCROLL	|
+					    MLS_DISABLEUNDO | WS_TABSTOP |
+					    WS_VISIBLE
+	CONTROL	"ID:",		       -1, 5, 46, 16, 8, WC_STATIC, SS_TEXT |
+					    DT_RIGHT | DT_VCENTER | WS_VISIBLE
+	CONTROL	"",		       IDBX_SYMBOLVALUE, 25, 46, 190, 8, "ID.Box",
+					    WS_TABSTOP | WS_VISIBLE
+	CONTROL	"Check mark options",  -1, 5, 26, 210, 18, WC_STATIC,
+					    SS_GROUPBOX	| WS_VISIBLE
+	CONTROL	"~Checked",	       CB_CMS_CHECKED, 8, 28, 40, 8, WC_BUTTON,
+					    BS_AUTOCHECKBOX | WS_TABSTOP |
+					    WS_VISIBLE
+	CONTROL	"Base styles",	       -1, 5, 6, 210, 18, WC_STATIC,
+					    SS_GROUPBOX	| WS_GROUP | WS_VISIBLE
+	CONTROL	"~Visible",	       CB_VISIBLE, 8, 8, 32, 8,	WC_BUTTON,
+					    BS_AUTOCHECKBOX | WS_TABSTOP |
+					    WS_VISIBLE
+	CONTROL	"~Group",	       CB_GROUP, 110, 8, 31, 8,	WC_BUTTON,
+					    BS_AUTOCHECKBOX | WS_TABSTOP |
+					    WS_VISIBLE
+	CONTROL	"~Disabled",	       CB_DISABLED, 58,	8, 40, 8, WC_BUTTON,
+					    BS_AUTOCHECKBOX | WS_TABSTOP |
+					    WS_VISIBLE
+	CONTROL	"~Tab stop",	       CB_TABSTOP, 165,	8, 39, 8, WC_BUTTON,
+					    BS_AUTOCHECKBOX | WS_TABSTOP |
+					    WS_VISIBLE
+	CONTROL	"Enter",	       DID_OK, 221, 87,	60, 12,	WC_BUTTON,
+					    BS_PUSHBUTTON | BS_DEFAULT |
+					    WS_GROUP | WS_TABSTOP | WS_VISIBLE
+	CONTROL	"Cancel",	       DID_CANCEL, 221,	74, 60,	12, WC_BUTTON,
+					    BS_PUSHBUTTON | WS_TABSTOP |
+					    WS_VISIBLE
+	CONTROL	"Help",		       DID_HELP, 221, 61, 60, 12, WC_BUTTON,
+					    BS_PUSHBUTTON | BS_HELP |
+					    BS_NOPOINTERFOCUS |	WS_TABSTOP |
+					    WS_VISIBLE
+	CONTROL	"Bidi...",	       DID_BIDI, 221, 48, 60, 12, WC_BUTTON,
+					    BS_PUSHBUTTON | WS_TABSTOP |
+					    WS_VISIBLE
+	CONTROL	"Font & colours...",   DID_FONTCLR, 221, 35, 60, 12, WC_BUTTON,
+					    BS_PUSHBUTTON | WS_TABSTOP |
+					    WS_VISIBLE
+    END
+END
+
+CODEPAGE 850
+STRINGTABLE MOVEABLE DISCARDABLE
+BEGIN
+    IDS_CMS_CHECKED,			"CMS_CHECKED"
+END
+
+

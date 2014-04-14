@@ -1,0 +1,133 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: CalculatorView,,VB
+//VBGeneratedFiles: CalcView.cp, CalcView.cpp
+//VBDependsOnFiles: icalcsc.vbe, icalctly.vbe, icalcpu.vbe, ikeypad.vbe, icalceql.vbe, icalcac.vbe, icalcclr.vbe, icalcdc.vbe, keypadvw.vbf, icalcmc.vbe
+//VBParents: public IFrameWindow
+//VBIncludes: "CalcView.hpp" _CalculatorView_,"iclrdsp.hpp","imykybrd.hpp"
+//VBConstructor: CalculatorView(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = CalculatorView::defaultStyle(), const char* title = 0)
+//VBComposerInfo: visual
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(false)
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBSubpart: CalculatorView,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,Canvas1,ICanvas*,p
+//VBSubpart: Canvas1,TallyDisplay,IMultiLineEdit*,p
+//VBSubpart: Canvas1,KeypadView1,KeypadView*,p
+//VBSubpart: Canvas1,pluspb,IPushButton*,p
+//VBSubpart: Canvas1,subpb,IPushButton*,p
+//VBSubpart: Canvas1,multpb,IPushButton*,p
+//VBSubpart: Canvas1,divpb,IPushButton*,p
+//VBSubpart: Canvas1,equalpb,IPushButton*,p
+//VBSubpart: Canvas1,savepb,IPushButton*,p
+//VBSubpart: Canvas1,clearallpb,IPushButton*,p
+//VBSubpart: Canvas1,clearpb,IPushButton*,p
+//VBSubpart: Canvas1,SLEDisplay,IEntryField*,p
+//VBSubpart: CalculatorView,CalcPU,ICalcPU*,p
+//VBSubpart: CalculatorView,AddChip,ICalcAdditionChip*,p
+//VBSubpart: CalculatorView,SubChip,ICalcSubtractionChip*,p
+//VBSubpart: CalculatorView,MultChip,ICalcMultiplicationChip*,p
+//VBSubpart: CalculatorView,DivChip,ICalcDivisionChip*,p
+//VBSubpart: CalculatorView,TallyChip,ICalcTally*,p
+//VBSubpart: CalculatorView,ClearFunc,ICalcClearFunction*,p
+//VBSubpart: CalculatorView,EqualFunc,ICalcEqualFunction*,p
+//VBSubpart: CalculatorView,Keypad,IKeypad*,p
+//VBSubpart: CalculatorView,MessageBox1,IMessageBox*,p
+//VBSubpart: CalculatorView,TallyDialog,IVBFileDialog*,p
+//VBSubpart: CalculatorView,Double,IVBDoublePart*,p
+//VBSubpart: CalculatorView,Menu1,IMenu*,p
+//VBSubpart: Menu1,MenuItem1,IMenuItem*,p
+//VBConnection: EA,0,p,p,pluspb,buttonClickEvent,TallyChip,binaryOperation
+//VBConnection: EA,1,p,p,pluspb,buttonClickEvent,CalcPU,processOperatorKey
+//VBConnection: EA,2,p,p,subpb,buttonClickEvent,TallyChip,binaryOperation
+//VBConnection: EA,3,p,p,subpb,buttonClickEvent,CalcPU,processOperatorKey
+//VBConnection: EA,4,p,p,multpb,buttonClickEvent,TallyChip,binaryOperation
+//VBConnection: EA,5,p,p,multpb,buttonClickEvent,CalcPU,processOperatorKey
+//VBConnection: EA,6,p,p,divpb,buttonClickEvent,TallyChip,binaryOperation
+//VBConnection: EA,7,p,p,divpb,buttonClickEvent,CalcPU,processOperatorKey
+//VBConnection: EA,8,p,p,clearallpb,buttonClickEvent,CalcPU,processFunctionKey
+//VBConnection: EA,9,p,p,equalpb,buttonClickEvent,TallyChip,unaryOperation
+//VBConnection: EA,10,p,p,equalpb,buttonClickEvent,CalcPU,processFunctionKey
+//VBConnection: AA,11,c,p,1,currentOp,AddChip,this
+//VBConnection: AA,12,c,p,3,currentOp,SubChip,this
+//VBConnection: AA,13,c,p,5,currentOp,MultChip,this
+//VBConnection: AA,14,c,p,7,currentOp,DivChip,this
+//VBConnection: AA,15,c,p,10,currentFunc,EqualFunc,this
+//VBConnection: AA,16,c,p,8,currentFunc,ClearFunc,this
+//VBConnection: AA,17,c,p,0,opSymbol,pluspb,text
+//VBConnection: AA,18,c,p,2,opSymbol,subpb,text
+//VBConnection: AA,19,c,p,4,opSymbol,multpb,text
+//VBConnection: AA,20,c,p,6,opSymbol,divpb,text
+//VBConnection: AA,21,c,p,9,opSymbol,equalpb,text
+//VBConnection: AA,22,p,p,Keypad,this,KeypadView1,keypad
+//VBConnection: EA,23,p,p,Keypad,digit,CalcPU,processDigitKey
+//VBConnection: AA,25,p,p,CalcPU,buffer,TallyChip,buffer
+//VBConnection: EA,26,p,p,clearallpb,buttonClickEvent,TallyDisplay,removeAll
+//VBConnection: EA,27,p,p,clearallpb,buttonClickEvent,TallyChip,reset
+//VBConnection: EA,28,p,p,TallyChip,nextTallyLine,TallyDisplay,add
+//VBConnection: EA,29,p,p,savepb,buttonClickEvent,TallyDialog,showModally
+//VBConnection: EA,30,p,p,TallyDialog,fileName,TallyDisplay,exportToFile
+//VBConnection: EA,31,p,p,,ready,savepb,disable
+//VBConnection: EA,32,p,p,CalcPU,evaluateOp,CalcPU,evaluateOperation
+//VBConnection: EA,33,p,p,CalcPU,evaluateOp,CalcPU,processOperatorResult
+//VBConnection: EA,34,c,p,32,actionResult,Double,value
+//VBConnection: AA,35,c,p,33,accumulator,Double,value
+//VBConnection: EA,36,c,p,32,exceptionOccurred,MessageBox1,showException
+//VBConnection: EA,39,p,p,clearallpb,buttonClickEvent,savepb,disable
+//VBConnection: EA,40,p,p,TallyChip,notEmpty,savepb,enable
+//VBConnection: EA,42,p,p,TallyDisplay,gotFocusEvent,clearpb,setFocus
+//VBConnection: EA,50,p,p,MenuItem1,commandEvent,SLEDisplay,removeAll
+//VBConnection: AA,41,p,p,CalcPU,buffer,SLEDisplay,text
+//VBPartValue: CalculatorView,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,client,partRef,Canvas1
+//VBPartValue: FrameWindow,framingSpec,position1,(28,39,460,315,28,226,460,315)
+//VBPartValue: FrameWindow,title,string,"A-O Calculator"
+//VBPartValue: Canvas1,handlers,collection,(string,"IClearDisplay(*iSLEDisplay(),*iclearpb())",string,"ICaptureMyKeys(*ipluspb(),*isubpb(),*imultpb(),*idivpb(),*iequalpb(),*iKeypad())")
+//VBPartValue: TallyDisplay,style,bitflag,(true,IMultiLineEdit::Style,(("IMultiLineEdit","readOnly",true)))
+//VBPartValue: TallyDisplay,framingSpec,position1,(11,17,170,220,11,46,170,220)
+//VBPartValue: KeypadView1,framingSpec,position1,(191,52,155,189,191,42,155,189)
+//VBPartValue: pluspb,text,string,"+"
+//VBPartValue: pluspb,framingSpec,position1,(361,71,,,361,183,31,29)
+//VBPartValue: subpb,text,string,"-"
+//VBPartValue: subpb,framingSpec,position1,(414,71,27,25,414,187,27,25)
+//VBPartValue: multpb,text,string,"*"
+//VBPartValue: multpb,framingSpec,position1,(361,113,27,25,361,145,27,25)
+//VBPartValue: divpb,text,string,"/"
+//VBPartValue: divpb,framingSpec,position1,(414,113,27,25,414,145,27,25)
+//VBPartValue: equalpb,text,string,"="
+//VBPartValue: equalpb,framingSpec,position1,(384,154,,,384,100,31,29)
+//VBPartValue: savepb,text,string,"Save Tally"
+//VBPartValue: savepb,framingSpec,position1,(47,242,,,47,12,107,29)
+//VBPartValue: clearallpb,text,string,"Clear All"
+//VBPartValue: clearallpb,framingSpec,position1,(180,242,,,180,12,89,29)
+//VBPartValue: clearpb,text,string,"Clear Display"
+//VBPartValue: clearpb,id,code,((WND_clearpb))
+//VBPartValue: clearpb,framingSpec,position1,(298,242,,,298,12,126,29)
+//VBPartValue: SLEDisplay,style,bitflag,(true,IEntryField::Style,(("IEntryField","leftAlign",false),("IEntryField","rightAlign",true),("IEntryField","readOnly",true)))
+//VBPartValue: SLEDisplay,framingSpec,position1,(187,17,258,25,187,241,258,25)
+//VBPartValue: SLEDisplay,menu,array,(integer,49,boolean,true,partRef,Menu1)
+//VBPartValue: TallyDialog,fileName,string,"tally"
+//VBPartValue: TallyDialog,okButtonText,string,"Save"
+//VBPartValue: TallyDialog,title,string,"Save Tally"
+//VBPartValue: Double,avlDeferCreation,boolean,false
+//VBPartValue: Menu1,menuParents,collection,(partRef,SLEDisplay)
+//VBPartValue: MenuItem1,text,string,"Clear"
+//VBPartLayout: main,CalculatorView,(paletteVisible,boolean,true,toolBarVisible,boolean,true,initWidgetSize,rectangle,(48,106,994,762))
+//VBPartLayout: part,CalcPU,(framingSpec,position2,(600,400))
+//VBPartLayout: part,AddChip,(framingSpec,position2,(645,25))
+//VBPartLayout: part,SubChip,(framingSpec,position2,(645,145))
+//VBPartLayout: part,MultChip,(framingSpec,position2,(645,215))
+//VBPartLayout: part,DivChip,(framingSpec,position2,(645,310))
+//VBPartLayout: part,TallyChip,(framingSpec,position2,(185,455))
+//VBPartLayout: part,ClearFunc,(framingSpec,position2,(300,455))
+//VBPartLayout: part,EqualFunc,(framingSpec,position2,(425,455))
+//VBPartLayout: part,Keypad,(framingSpec,position2,(124,416,40,40))
+//VBPartLayout: part,MessageBox1,(framingSpec,position2,(700,445))
+//VBPartLayout: part,TallyDialog,(framingSpec,position2,(30,455))
+//VBPartLayout: part,Double,(framingSpec,position2,(800,430))
+//VBPartLayout: eventconnection,32,(midPoints,collection,(point,(728,388)))
+//VBPartLayout: eventconnection,33,(midPoints,collection,(point,(642,555)))
+//VBPartLayout: menu,Menu1,(framingSpec,position2,(529,47))
+//VBEndPartInfo: CalculatorView
+
+
+

@@ -1,0 +1,119 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: MainView,,VB
+//VBGeneratedFiles: MainView.cp, MainView.cpp
+//VBDependsOnFiles: Empl.vbe, DeptDatastore.vbe, EmplWind.vbf, Dept.vbe, EmplManager.vbe, DeptManager.vbe, DeptWind.vbf, idsccabs.vbf
+//VBParents: public IFrameWindow
+//VBIncludes: "MainView.hpp" _MainView_
+//VBConstructor: MainView(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle(), const char* title = 0)
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBSubpart: MainView,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,MultiCellCanvas1,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas1,ClientArea,IMultiCellCanvas*,p
+//VBSubpart: ClientArea,StaticText1,IStaticText*,p
+//VBSubpart: ClientArea,StaticText3,IStaticText*,p
+//VBSubpart: ClientArea,StaticText4,IStaticText*,p
+//VBSubpart: ClientArea,SetCanvas1,ISetCanvas*,p
+//VBSubpart: SetCanvas1,PushButton1,IPushButton*,p
+//VBSubpart: SetCanvas1,PushButton2,IPushButton*,p
+//VBSubpart: ClientArea,SetCanvas2,ISetCanvas*,p
+//VBSubpart: SetCanvas2,PushButton3,IPushButton*,p
+//VBSubpart: SetCanvas2,PushButton4,IPushButton*,p
+//VBSubpart: SetCanvas2,PushButton5,IPushButton*,p
+//VBSubpart: ClientArea,connectCanvas,IDSConnectCanvasBase*,p
+//VBSubpart: ClientArea,VBContainerControl1,IVBContainerControl<Department*>*,p
+//VBSubpart: VBContainerControl1,ContainerColumn1,IContainerColumn*,p
+//VBSubpart: VBContainerControl1,ContainerColumn2,IContainerColumn*,p
+//VBSubpart: ClientArea,VBContainerControl2,IVBContainerControl<Employee*>*,p
+//VBSubpart: VBContainerControl2,ContainerColumn3,IContainerColumn*,p
+//VBSubpart: VBContainerControl2,ContainerColumn4,IContainerColumn*,p
+//VBSubpart: VBContainerControl2,ContainerColumn5,IContainerColumn*,p
+//VBSubpart: MultiCellCanvas1,ButtonBar,ISetCanvas*,p
+//VBSubpart: ButtonBar,cancelPushButton,IPushButton*,p
+//VBSubpart: MainView,theDS,DepartmentDatastore*,p
+//VBSubpart: MainView,deptMgr,DepartmentManager*,p
+//VBSubpart: MainView,MessageBox1,IMessageBox*,p
+//VBSubpart: MainView,theDeptWindowFactory,DepartmentWindow*,f
+//VBSubpart: MainView,emplMgr,EmployeeManager*,p
+//VBSubpart: MainView,theDept,Department*,v
+//VBSubpart: MainView,theEmplWindowFactory,EmployeeWindow*,f
+//VBSubpart: MainView,theEmpl,Employee*,v
+//VBConnection: AA,2,p,p,theDS,this,connectCanvas,datastoreBase
+//VBConnection: EA,3,p,p,PushButton1,buttonClickEvent,deptMgr,refresh
+//VBConnection: EA,4,c,p,3,exceptionOccurred,MessageBox1,showException
+//VBConnection: EA,7,p,p,PushButton2,buttonClickEvent,theDeptWindowFactory,new
+//VBConnection: EA,17,p,p,PushButton3,buttonClickEvent,emplMgr,refresh
+//VBConnection: EA,8,c,p,17,exceptionOccurred,MessageBox1,showException
+//VBConnection: EA,9,p,p,PushButton4,buttonClickEvent,emplMgr,selectEmpInDept
+//VBConnection: AA,10,p,p,theDept,this,theDeptWindowFactory,theDepartment
+//VBConnection: AA,11,c,p,9,department,theDept,deptnoAsString
+//VBConnection: EA,14,p,p,PushButton5,buttonClickEvent,theEmplWindowFactory,new
+//VBConnection: EA,15,p,p,cancelPushButton,buttonClickEvent,theDS,rollback
+//VBConnection: EA,16,p,p,cancelPushButton,buttonClickEvent,theDS,disconnect
+//VBConnection: EA,5,p,p,cancelPushButton,buttonClickEvent,FrameWindow,close
+//VBConnection: AA,25,p,p,deptMgr,items,VBContainerControl1,items
+//VBConnection: AA,26,p,p,VBContainerControl1,selectedItem,theDept,this
+//VBConnection: AA,35,p,p,emplMgr,items,VBContainerControl2,items
+//VBConnection: AA,36,p,p,theEmplWindowFactory,theEmployee,theEmpl,this
+//VBConnection: AA,27,p,p,VBContainerControl2,selectedItem,theEmpl,this
+//VBPartValue: MainView,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,client,partRef,MultiCellCanvas1
+//VBPartValue: FrameWindow,framingSpec,position1,(69,17,820,540,69,142,820,540)
+//VBPartValue: FrameWindow,title,string,"MainView"
+//VBPartValue: MultiCellCanvas1,id,code,((IC_FRAME_CLIENT_ID))
+//VBPartValue: MultiCellCanvas1,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(2,,),colAttr(1,true,),ctlAttr("ButtonBar",2,2,1,1),ctlAttr("ClientArea",1,1,1,1))
+//VBPartValue: ClientArea,canvasLayout,mclayout,(rowAttr(6,,),colAttr(2,,),ctlAttr("StaticText1",1,1,1,2),ctlAttr("StaticText3",3,3,1,1),ctlAttr("StaticText4",3,3,2,2),ctlAttr("SetCanvas1",4,4,1,1),ctlAttr("SetCanvas2",4,4,2,2),ctlAttr("connectCanvas",2,2,1,1),ctlAttr("VBContainerControl1",5,5,1,1),ctlAttr("VBContainerControl2",5,5,2,2))
+//VBPartValue: ClientArea,minimumSize,minsize,(412,452,false)
+//VBPartValue: StaticText1,alignment,enum,(IStaticText::Alignment,"centerCenter")
+//VBPartValue: StaticText1,text,string,"Data Access Builder Sample"
+//VBPartValue: StaticText3,text,string,"Departments"
+//VBPartValue: StaticText4,text,string,"Employees"
+//VBPartValue: PushButton1,text,string,"Get All"
+//VBPartValue: PushButton2,text,string,"Display Selected"
+//VBPartValue: PushButton3,text,string,"Get All"
+//VBPartValue: PushButton4,text,string,"Get From Selected Dept"
+//VBPartValue: PushButton5,text,string,"Display Selected"
+//VBPartValue: VBContainerControl1,style,bitflag,(true,IContainerControl::Style,(("IContainerControl","noSharedObjects",true)))
+//VBPartValue: VBContainerControl1,minimumSize,minsize,(343,193,false)
+//VBPartValue: VBContainerControl1,viewType,enum,(IContainerControl::View,"showDetailsView")
+//VBPartValue: ContainerColumn1,headingText,string,"Dept Number"
+//VBPartValue: ContainerColumn1,framingSpec,position1,(18,11,null,null,-1,15,135,143)
+//VBPartValue: ContainerColumn1,shadowAttribute,shadowAttribute,("deptnoAsString",#string)
+//VBPartValue: ContainerColumn2,headingText,string,"Dept Name"
+//VBPartValue: ContainerColumn2,framingSpec,position1,(107,43,null,null,132,15,172,143)
+//VBPartValue: ContainerColumn2,shadowAttribute,shadowAttribute,("deptnameAsString",#string)
+//VBPartValue: ContainerColumn2,displayWidth,integer,150
+//VBPartValue: VBContainerControl2,style,bitflag,(true,IContainerControl::Style,(("IContainerControl","noSharedObjects",true)))
+//VBPartValue: VBContainerControl2,viewType,enum,(IContainerControl::View,"showDetailsView")
+//VBPartValue: ContainerColumn3,headingText,string,"Empno"
+//VBPartValue: ContainerColumn3,framingSpec,position1,(25,11,null,null,-1,15,93,143)
+//VBPartValue: ContainerColumn3,shadowAttribute,shadowAttribute,("empnoAsString",#string)
+//VBPartValue: ContainerColumn4,headingText,string,"Last Name"
+//VBPartValue: ContainerColumn4,framingSpec,position1,(119,34,null,null,90,15,119,143)
+//VBPartValue: ContainerColumn4,shadowAttribute,shadowAttribute,("lastnameAsString",#string)
+//VBPartValue: ContainerColumn5,headingText,string,"First Name"
+//VBPartValue: ContainerColumn5,framingSpec,position1,(230,43,null,null,207,15,116,143)
+//VBPartValue: ContainerColumn5,shadowAttribute,shadowAttribute,("firstnmeAsString",#string)
+//VBPartValue: cancelPushButton,text,string,"Exit"
+//VBPartValue: theDept,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBConnValue: 3,clause,code,((\"order by deptno\"))
+//VBConnValue: 3,suffix,code,((\"order by deptno\"))
+//VBConnValue: 17,suffix,code,((\"order by empno\"))
+//VBConnValue: 9,sqlSuffix,code,((\"\"))
+//VBPartLayout: main,MainView,(initWidgetSize,rectangle,(0,75,1024,768))
+//VBPartLayout: eventconnection,5,(midPoints,collection,(point,(17,473)))
+//VBPartLayout: part,theDS,(framingSpec,position2,(10,133,48,48))
+//VBPartLayout: part,deptMgr,(framingSpec,position2,(49,581,48,48))
+//VBPartLayout: part,MessageBox1,(framingSpec,position2,(419,590,48,48))
+//VBPartLayout: part,theDeptWindowFactory,(framingSpec,position2,(179,586,48,48))
+//VBPartLayout: part,emplMgr,(framingSpec,position2,(765,595,48,48))
+//VBPartLayout: eventconnection,17,(midPoints,collection,(point,(764,361)))
+//VBPartLayout: part,theDept,(framingSpec,position2,(295,585,58,58))
+//VBPartLayout: connection,11,(midPoints,collection,(point,(801,572)))
+//VBPartLayout: part,theEmplWindowFactory,(framingSpec,position2,(663,598,48,48))
+//VBPartLayout: eventconnection,15,(midPoints,collection,(point,(25,427)))
+//VBPartLayout: part,theEmpl,(framingSpec,position2,(547,589,58,58))
+//VBEndPartInfo: MainView
+
+

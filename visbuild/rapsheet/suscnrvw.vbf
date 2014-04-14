@@ -1,0 +1,189 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: ISuspectCnrView,,VB
+//VBGeneratedFiles: SspctCnr.cp, SspctCnr.cpp, SspctCnr.rc
+//VBDependsOnFiles: susnbkvw.vbf, susclmgr.vbe
+//VBParents: public IFrameWindow
+//VBIncludes: "SspctCnr.hpp" _ISUSPECTCNRVIEW_,"cnrpopmh.hpp"
+//VBResourceDllName: rapstrg
+//VBConstructor: ISuspectCnrView(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle ( ), const char* title = 0)
+//VBComposerInfo: visual
+//VBGeneratorValues: userHpp(true),userCpp(true),userH(false),userRC(false),genStrings(true),startingResId("21000")
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBAttribute: suspectToOpen,,ISuspect*,ISuspect* suspectToOpen() const,ISuspectCnrView& ISuspectCnrView::setSuspectToOpen(ISuspect* aSuspectToOpen),suspectToOpenId
+//VBPromotedAttribute: susCMgr,,ISuspectClientMgr*,ISuspectClientMgr* getSusCMgr() const,ISuspectCnrView& setSusCMgr(ISuspectClientMgr* target),susCMgrId,susCMgr,this
+//VBAttribute: resourceLibrary,(92,"cppres"),char*,const IResourceLibrary& resourceLibrary() const,ISuspectCnrView& setResourceLibrary(const char* resLibName = 0, IDynamicLinkLibrary::ESearchLocation searchLocation = IVBMain::defaultResourcePath()),resourceLibraryId
+//VBAttribute: defaultResourceLibrary,(93,"cppres"),char*,static const IResourceLibrary& defaultResourceLibrary(),static void setDefaultResourceLibrary(const char* resLibName = 0, IDynamicLinkLibrary::ESearchLocation searchLocation = IVBMain::defaultResourcePath()),,nosetting
+//VBSubpart: ISuspectCnrView,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,MultiCellCanvas1,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas1,SuspectCnr,IVBContainerControl<ISuspect*>*,p
+//VBSubpart: SuspectCnr,ContainerColumn1,IContainerColumn*,p
+//VBSubpart: SuspectCnr,ContainerColumn2,IContainerColumn*,p
+//VBSubpart: SuspectCnr,ContainerColumn3,IContainerColumn*,p
+//VBSubpart: SuspectCnr,ContainerColumn4,IContainerColumn*,p
+//VBSubpart: ISuspectCnrView,susCMgr,ISuspectClientMgr*,v
+//VBSubpart: ISuspectCnrView,Menu1,IMenu*,p
+//VBSubpart: Menu1,MenuCascade3,IMenuCascade*,p
+//VBSubpart: Menu1,MenuCascade4,IMenuCascade*,p
+//VBSubpart: Menu1,MenuCascade1,IMenuCascade*,p
+//VBSubpart: ISuspectCnrView,Menu2,IMenu*,p
+//VBSubpart: Menu2,MenuItem1,IMenuItem*,p
+//VBSubpart: Menu2,MenuItem2,IMenuItem*,p
+//VBSubpart: Menu2,MenuItem3,IMenuItem*,p
+//VBSubpart: ISuspectCnrView,Menu4,IMenu*,p
+//VBSubpart: Menu4,MenuItem4,IMenuItem*,p
+//VBSubpart: Menu4,MenuSeparator1,IMenuSeparator*,p
+//VBSubpart: Menu4,MenuItem8,IMenuItem*,p
+//VBSubpart: Menu4,MenuSeparator3,IMenuSeparator*,p
+//VBSubpart: Menu4,MenuItem9,IMenuItem*,p
+//VBSubpart: ISuspectCnrView,Menu5,IMenu*,p
+//VBSubpart: Menu5,MenuItem7,IMenuItem*,p
+//VBSubpart: Menu5,MenuItem11,IMenuItem*,p
+//VBSubpart: Menu5,MenuSeparator4,IMenuSeparator*,p
+//VBSubpart: Menu5,MenuItem5,IMenuItem*,p
+//VBSubpart: Menu5,MenuItem6,IMenuItem*,p
+//VBSubpart: ISuspectCnrView,autoRefresh,IVBBooleanPart*,p
+//VBSubpart: ISuspectCnrView,Menu3,IMenu*,p
+//VBSubpart: Menu3,NewMenuItem,IMenuItem*,p
+//VBSubpart: Menu3,FindMenuItem,IMenuItem*,p
+//VBSubpart: Menu3,OpenMenuItem,IMenuItem*,p
+//VBSubpart: Menu3,DeleteMenuItem,IMenuItem*,p
+//VBSubpart: ISuspectCnrView,SuspectNotebook,ISuspectNotebook*,f
+//VBSubpart: ISuspectCnrView,SusNtbkView,ISuspectNotebook*,v
+//VBSubpart: ISuspectCnrView,isSelection,IVBBooleanPart*,p
+//VBSubpart: ISuspectCnrView,CnrItems,IVSequence<unsigned long>*,p
+//VBSubpart: ISuspectCnrView,CnrObjItems,IVSequence<unsigned long>*,p
+//VBConnection: AA,0,p,p,susCMgr,resultListWrapper,SuspectCnr,items
+//VBConnection: EA,20,p,p,MenuItem1,commandEvent,SuspectCnr,showIconView
+//VBConnection: EA,11,p,p,MenuItem2,commandEvent,SuspectCnr,showDetailsView
+//VBConnection: AA,24,p,p,autoRefresh,value,MenuItem5,disabled
+//VBConnection: EA,65,p,p,MenuItem5,commandEvent,SuspectCnr,refresh
+//VBConnection: EA,21,p,p,MenuItem6,commandEvent,autoRefresh,logicalNotValue
+//VBConnection: AA,42,p,p,autoRefresh,value,MenuItem6,checked
+//VBConnection: EC,32,p,p,MenuItem7,commandEvent,,customLogic,"Select all suspect container objects.",void,(target->selectAllSuspects(this->iSuspectCnr());)
+//VBConnection: EC,23,p,p,MenuItem11,commandEvent,,customLogic,"Deselect all suspect container objects.",void,(target->selectAllSuspects(this->iSuspectCnr(), false);)
+//VBConnection: AA,28,p,p,SuspectNotebook,suspect,,suspectToOpen
+//VBConnection: EA,34,p,p,SuspectNotebook,newEvent,SusNtbkView,this
+//VBConnection: EA,67,p,p,,suspectToOpen,SuspectNotebook,new
+//VBConnection: EA,26,p,p,,suspectToOpen,SusNtbkView,showModally
+//VBConnection: AA,36,p,p,SuspectCnr,refreshOn,autoRefresh,value
+//VBConnection: AA,46,p,p,SuspectNotebook,owner,FrameWindow,this
+//VBConnection: AA,56,p,p,SuspectCnr,numberOfSelections,isSelection,value
+//VBConnection: AA,66,p,p,isSelection,valueEqualToDefault,MenuItem8,disabled
+//VBConnection: EA,27,p,p,,ready,CnrObjItems,addAsLast
+//VBConnection: AA,38,c,p,27,element,OpenMenuItem,id
+//VBConnection: EA,29,p,p,,ready,CnrObjItems,addAsLast
+//VBConnection: AA,40,c,p,29,element,DeleteMenuItem,id
+//VBConnection: EA,41,p,p,,ready,CnrItems,addAsLast
+//VBConnection: AA,52,c,p,41,element,NewMenuItem,id
+//VBConnection: EA,43,p,p,,ready,CnrItems,addAsLast
+//VBConnection: AA,44,c,p,43,element,FindMenuItem,id
+//VBConnection: EM,45,p,p,SuspectCnr,enterEvent,,ISuspectCnrView& openSuspects(IVSequence<ISuspect*>* aSuspectList)
+//VBConnection: AA,76,c,p,45,aSuspectList,SuspectCnr,selectedItems
+//VBConnection: EM,86,p,p,MenuItem8,commandEvent,,ISuspectCnrView& openSuspects(IVSequence<ISuspect*>* aSuspectList)
+//VBConnection: AA,37,c,p,86,aSuspectList,SuspectCnr,selectedItems
+//VBConnection: EM,47,p,p,OpenMenuItem,commandEvent,,ISuspectCnrView& openSuspects(IVSequence<ISuspect*>* aSuspectList)
+//VBConnection: AA,106,c,p,47,aSuspectList,SuspectCnr,button2Items
+//VBPartValue: ISuspectCnrView,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,menu,array,(integer,13,boolean,false,partRef,Menu1)
+//VBPartValue: FrameWindow,client,partRef,MultiCellCanvas1
+//VBPartValue: FrameWindow,framingSpec,position1,(31,33,511,344,31,396,511,344)
+//VBPartValue: FrameWindow,title,string,"Witness Identification - Suspect Container View"
+//VBPartValue: MultiCellCanvas1,canvasLayout,mclayout,(rowAttr(1,true,),colAttr(1,true,),ctlAttr("SuspectCnr",1,1,1,1))
+//VBPartValue: SuspectCnr,refreshOn,boolean,true
+//VBPartValue: SuspectCnr,title,string,"Suspects Matching Witness Description"
+//VBPartValue: SuspectCnr,titleAlignment,enum,(IContainerControl::TitleAlignment,"centered")
+//VBPartValue: SuspectCnr,viewType,enum,(IContainerControl::View,"showDetailsView")
+//VBPartValue: SuspectCnr,titleVisible,boolean,true
+//VBPartValue: SuspectCnr,minimumSize,minsize,(503,312,false)
+//VBPartValue: SuspectCnr,titleSeparatorVisible,boolean,true
+//VBPartValue: SuspectCnr,style,bitflag,(true,IContainerControl::Style,(("IContainerControl","readOnly",true),("IContainerControl","autoPosition",true),("IContainerControl","extendedSelection",true),("IContainerControl","multipleSelection",false),("IContainerControl","singleSelection",false),("IContainerControl","noSharedObjects",true)))
+//VBPartValue: SuspectCnr,shadowText,string,"bookNumberAsString"
+//VBPartValue: SuspectCnr,handlers,collection,(string,"CnrPopupMenuHandler(iCnrObjItems(), iCnrItems())")
+//VBPartValue: SuspectCnr,shadowIcon,code,((IDynamicLinkLibrary(VBRESLIBNAME(\"rapres\"),IVBMain::defaultResourcePath()).loadIcon(2000)))
+//VBPartValue: SuspectCnr,menu,array,(integer,18,boolean,true,partRef,Menu3)
+//VBPartValue: ContainerColumn1,framingSpec,position1,(8,138,,,1,-3,102,294)
+//VBPartValue: ContainerColumn1,shadowAttribute,shadowAttribute,(#icon,)
+//VBPartValue: ContainerColumn2,headingText,string,"Book Number"
+//VBPartValue: ContainerColumn2,framingSpec,position1,(83,174,,,101,-3,127,294)
+//VBPartValue: ContainerColumn2,shadowAttribute,shadowAttribute,(#text,#text)
+//VBPartValue: ContainerColumn2,displayWidth,integer,125
+//VBPartValue: ContainerColumn3,headingText,string,"Last Name"
+//VBPartValue: ContainerColumn3,framingSpec,position1,(104,189,,,226,-3,127,294)
+//VBPartValue: ContainerColumn3,shadowAttribute,shadowAttribute,("lastName",#string)
+//VBPartValue: ContainerColumn3,displayWidth,integer,125
+//VBPartValue: ContainerColumn4,headingText,string,"First Name"
+//VBPartValue: ContainerColumn4,framingSpec,position1,(316,79,,,351,-3,127,294)
+//VBPartValue: ContainerColumn4,shadowAttribute,shadowAttribute,("firstName",#string)
+//VBPartValue: ContainerColumn4,displayWidth,integer,125
+//VBPartValue: susCMgr,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBPartValue: Menu1,menuParents,collection,(partRef,FrameWindow)
+//VBPartValue: MenuCascade3,text,string,"Suspect"
+//VBPartValue: MenuCascade3,menu,array,(integer,5,boolean,false,partRef,Menu4)
+//VBPartValue: MenuCascade4,text,string,"Edit"
+//VBPartValue: MenuCascade4,menu,array,(integer,22,boolean,false,partRef,Menu5)
+//VBPartValue: MenuCascade1,text,string,"View"
+//VBPartValue: MenuCascade1,menu,array,(integer,2,boolean,false,partRef,Menu2)
+//VBPartValue: Menu2,menuParents,collection,(partRef,MenuCascade1)
+//VBPartValue: MenuItem1,text,string,"Icons"
+//VBPartValue: MenuItem2,text,string,"Details"
+//VBPartValue: MenuItem2,disabled,boolean,false
+//VBPartValue: MenuItem3,text,string,"Lineup"
+//VBPartValue: MenuItem3,disabled,boolean,true
+//VBPartValue: Menu4,menuParents,collection,(partRef,MenuCascade3)
+//VBPartValue: MenuItem4,text,string,"New..."
+//VBPartValue: MenuItem4,disabled,boolean,true
+//VBPartValue: MenuItem8,text,string,"Open..."
+//VBPartValue: MenuItem8,disabled,boolean,true
+//VBPartValue: MenuItem9,text,string,"Delete"
+//VBPartValue: MenuItem9,disabled,boolean,true
+//VBPartValue: Menu5,menuParents,collection,(partRef,MenuCascade4)
+//VBPartValue: MenuItem7,text,mnemonic,"~Select all"
+//VBPartValue: MenuItem7,disabled,boolean,false
+//VBPartValue: MenuItem11,text,mnemonic,"Dese~lect all"
+//VBPartValue: MenuItem11,disabled,boolean,false
+//VBPartValue: MenuItem5,text,mnemonic,"Refresh ~now"
+//VBPartValue: MenuItem5,disabled,boolean,true
+//VBPartValue: MenuItem6,checked,boolean,true
+//VBPartValue: MenuItem6,text,mnemonic,"Auto ~refresh"
+//VBPartValue: autoRefresh,defaultValue,boolean,true
+//VBPartValue: autoRefresh,value,boolean,true
+//VBPartValue: Menu3,menuParents,collection,(partRef,SuspectCnr)
+//VBPartValue: NewMenuItem,text,string,"New..."
+//VBPartValue: NewMenuItem,disabled,boolean,true
+//VBPartValue: FindMenuItem,text,string,"Find..."
+//VBPartValue: FindMenuItem,disabled,boolean,true
+//VBPartValue: OpenMenuItem,text,string,"Open..."
+//VBPartValue: DeleteMenuItem,text,string,"Delete"
+//VBPartValue: DeleteMenuItem,disabled,boolean,true
+//VBPartValue: SuspectNotebook,autoDeleteObject,boolean,true
+//VBPartValue: SusNtbkView,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBPartValue: isSelection,value,boolean,false
+//VBConnValue: 26,visible,boolean,true
+//VBPartLayout: main,ISuspectCnrView,(initWidgetSize,rectangle,(326,98,1187,943))
+//VBPartLayout: part,susCMgr,(framingSpec,position2,(587,42,58,58))
+//VBPartLayout: menu,Menu1,(framingSpec,position2,(20,412))
+//VBPartLayout: menu,Menu2,(framingSpec,position2,(34,535))
+//VBPartLayout: menu,Menu4,(framingSpec,position2,(184,414))
+//VBPartLayout: eventconnection,20,(midPoints,array,(point,(229,399)))
+//VBPartLayout: menu,Menu5,(framingSpec,position2,(551,403))
+//VBPartLayout: eventconnection,23,(midPoints,array,(point,(499,158)))
+//VBPartLayout: part,autoRefresh,(framingSpec,position2,(611,583,40,40))
+//VBPartLayout: connection,42,(midPoints,collection,(point,(611,551)))
+//VBPartLayout: eventconnection,65,(midPoints,array,(point,(354,441)))
+//VBPartLayout: menu,Menu3,(framingSpec,position2,(361,416))
+//VBPartLayout: eventconnection,21,(midPoints,collection,(point,(680,555)))
+//VBPartLayout: part,SuspectNotebook,(framingSpec,position2,(616,163,40,40))
+//VBPartLayout: part,SusNtbkView,(framingSpec,position2,(592,271,58,58))
+//VBPartLayout: connection,56,(midPoints,collection,(point,(287,541)))
+//VBPartLayout: part,isSelection,(framingSpec,position2,(241,557,40,40))
+//VBPartLayout: part,CnrItems,(framingSpec,position2,(453,574,40,40))
+//VBPartLayout: part,CnrObjItems,(framingSpec,position2,(361,573,40,40))
+//VBPartLayout: eventconnection,29,(midPoints,collection,(point,(399,641)))
+//VBPartLayout: eventconnection,43,(midPoints,collection,(point,(459,641)))
+//VBPartLayout: eventconnection,45,(midPoints,collection,(point,(327,527)))
+//VBPartLayout: eventconnection,86,(midPoints,collection,(point,(192,612)))
+//VBPartLayout: eventconnection,47,(midPoints,collection,(point,(536,568)))
+//VBEndPartInfo: ISuspectCnrView
+
+

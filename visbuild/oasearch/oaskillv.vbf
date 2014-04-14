@@ -1,0 +1,81 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: OASkillView,,VB
+//VBGeneratedFiles: OASkillV.cpp, OASkillV.cp
+//VBDependsOnFiles: oaskill.vbf, oaskillb.vbf
+//VBParents: public IFrameWindow
+//VBIncludes: "OASkillV.hpp" _OASkillView_
+//VBConstructor: OASkillView(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle(), const char* title = 0)
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: skill,"Query the target attribute.",OASkill*,OASkill* getSkill() const,OASkillView& setSkill(OASkill* target),skillId,Skill,this
+//VBPromotedAttribute: skillList,(7101,"cppres"),IVSequence<OASkill*>*,IVSequence<OASkill*>* getSkillList() const,OASkillView& setSkillList(IVSequence<OASkill*>* target),skillListId,SkillList,this
+//VBSubpart: OASkillView,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,MultiCellCanvas1,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas1,ClientArea,IMultiCellCanvas*,p
+//VBSubpart: ClientArea,StaticText1,IStaticText*,p
+//VBSubpart: ClientArea,SkillEF,IEntryField*,p
+//VBSubpart: ClientArea,SkillsContainer,IVBContainerControl<OASkill*,IVSequence>*,p
+//VBSubpart: SkillsContainer,ContractorIDColumn,IContainerColumn*,p
+//VBSubpart: SkillsContainer,YearsColumn,IContainerColumn*,p
+//VBSubpart: MultiCellCanvas1,ButtonBar,ISetCanvas*,p
+//VBSubpart: ButtonBar,RefreshPB,IPushButton*,p
+//VBSubpart: ButtonBar,ClearPB,IPushButton*,p
+//VBSubpart: ButtonBar,cancelPushButton,IPushButton*,p
+//VBSubpart: OASkillView,Skill,OASkill*,v
+//VBSubpart: OASkillView,NotFound,IMessageBox*,p
+//VBSubpart: OASkillView,SkillList,IVSequence<OASkill*>*,v
+//VBSubpart: OASkillView,SkillBase,OASkillBase*,p
+//VBConnection: EA,5,p,p,cancelPushButton,buttonClickEvent,FrameWindow,close
+//VBConnection: AA,13,p,p,SkillEF,textLength,RefreshPB,enabled
+//VBConnection: EA,1,p,p,RefreshPB,buttonClickEvent,SkillBase,getSkill
+//VBConnection: AA,6,p,p,SkillList,this,SkillsContainer,items
+//VBConnection: AA,3,c,p,1,aList,SkillList,this
+//VBConnection: EA,4,p,p,ClearPB,buttonClickEvent,SkillEF,removeAll
+//VBConnection: EA,15,p,p,ClearPB,buttonClickEvent,SkillList,removeAll
+//VBConnection: AA,7,p,p,Skill,skillName,SkillEF,text
+//VBConnection: AA,16,c,p,1,aSkillName,Skill,skillName
+//VBConnection: EA,11,c,p,1,exceptionOccurred,NotFound,showException
+//VBPartValue: OASkillView,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,client,partRef,MultiCellCanvas1
+//VBPartValue: FrameWindow,framingSpec,position1,(30,30,502,412,10,10,502,412)
+//VBPartValue: FrameWindow,helpId,code,((1))
+//VBPartValue: FrameWindow,title,string,"Opportunities Abound Skills Information"
+//VBPartValue: MultiCellCanvas1,id,code,((IC_FRAME_CLIENT_ID))
+//VBPartValue: MultiCellCanvas1,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(2,,),colAttr(1,true,),ctlAttr("ButtonBar",2,2,1,1),ctlAttr("ClientArea",1,1,1,1))
+//VBPartValue: MultiCellCanvas1,helpId,code,((1))
+//VBPartValue: ClientArea,canvasLayout,mclayout,(rowAttr(1,,20),rowAttr(5,true,),colAttr(1,true,),colAttr(5,true,),ctlAttr("StaticText1",2,2,2,2),ctlAttr("SkillEF",2,2,4,4),ctlAttr("SkillsContainer",4,4,2,4))
+//VBPartValue: StaticText1,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: StaticText1,text,string,"Requested Skill"
+//VBPartValue: SkillEF,style,bitflag,(true,IEntryField::Style,(("IWindow","tabStop",true)))
+//VBPartValue: SkillEF,limit,integer,20
+//VBPartValue: SkillsContainer,refreshOn,boolean,true
+//VBPartValue: SkillsContainer,title,string,"Contractors Holding this Skill"
+//VBPartValue: SkillsContainer,minimumSize,minsize,(375,222,false)
+//VBPartValue: SkillsContainer,viewType,enum,(IContainerControl::View,"showDetailsView")
+//VBPartValue: ContractorIDColumn,headingText,string,"ContractorID"
+//VBPartValue: ContractorIDColumn,displayWidth,integer,175
+//VBPartValue: ContractorIDColumn,headingWriteable,boolean,false
+//VBPartValue: ContractorIDColumn,writeable,boolean,false
+//VBPartValue: ContractorIDColumn,title,bitflag,(true,IContainerColumn::HeadingStyle,(("IContainerColumn","readOnlyHeading",true)))
+//VBPartValue: ContractorIDColumn,shadowAttribute,shadowAttribute,("contractorID",#string)
+//VBPartValue: YearsColumn,writeable,boolean,false
+//VBPartValue: YearsColumn,headingText,string,"Years of Exp."
+//VBPartValue: YearsColumn,shadowAttribute,shadowAttribute,("yearsExp",#string)
+//VBPartValue: YearsColumn,displayWidth,integer,150
+//VBPartValue: YearsColumn,title,bitflag,(true,IContainerColumn::HeadingStyle,(("IContainerColumn","readOnlyHeading",true)))
+//VBPartValue: ButtonBar,packType,enum,(ISetCanvas::PackType,"expanded")
+//VBPartValue: RefreshPB,style,bitflag,(true,IPushButton::Style,(("IPushButton","defaultButton",true),("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: RefreshPB,text,string,"Refresh"
+//VBPartValue: ClearPB,text,string,"Clear"
+//VBPartValue: cancelPushButton,text,string,"Cancel"
+//VBPartValue: cancelPushButton,helpId,code,((2))
+//VBPartLayout: main,OASkillView,(initWidgetSize,rectangle,(239,203,1018,762))
+//VBPartLayout: eventconnection,5,(midPoints,collection,(point,(160,436)))
+//VBPartLayout: part,Skill,(framingSpec,position2,(566,73,58,58))
+//VBPartLayout: part,NotFound,(framingSpec,position2,(580,360,40,40))
+//VBPartLayout: part,SkillList,(framingSpec,position2,(571,254,58,58))
+//VBPartLayout: part,SkillBase,(framingSpec,position2,(576,170,40,40))
+//VBEndPartInfo: OASkillView
+
+

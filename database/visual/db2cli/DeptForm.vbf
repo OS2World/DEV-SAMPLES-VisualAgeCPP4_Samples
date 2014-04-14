@@ -1,0 +1,83 @@
+//VBInitializeStream: 4.0.0 
+ 
+//VBBeginPartInfo: DepartmentForm, "Form for table DEPARTMENT",VB
+//VBGeneratedFiles: DeptForm.cpp, DeptForm.cp
+//VBDependsOnFiles: Dept.vbe
+//VBParents: public IMultiCellCanvas 
+//VBIncludes: "DeptForm.hpp" _DepartmentForm_ 
+//VBConstructor: DepartmentForm(unsigned long id , IWindow* parent = IWindow::desktopWindow() , IWindow* owner = IWindow::desktopWindow() , const IRectangle& rect = IRectangle() , const IMultiCellCanvas::Style& style = IMultiCellCanvas::defaultStyle() ) 
+//VBComposerInfo: visual 
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect 
+//VBPromotedAttribute: targetAsDepartment,"Query the target attribute.",Department*,Department* getTargetAsDepartment() const,DepartmentForm& setTargetAsDepartment(Department* target ),targetAsDepartmentId,theDepartment,this 
+//VBSubpart: DepartmentForm,MultiCellCanvas,IMultiCellCanvas*,p 
+//VBSubpart: MultiCellCanvas,Title2,IStaticText*,p 
+//VBPartValue: Title2,text,string,"Field" 
+//VBSubpart: MultiCellCanvas,Title3,IStaticText*,p 
+//VBPartValue: Title3,text,string,"Null" 
+//VBSubpart: MultiCellCanvas,Title4,IStaticText*,p 
+//VBPartValue: Title4,text,string,"Value" 
+//VBSubpart: DepartmentForm,theDepartment,Department*,v 
+//VBSubpart: MultiCellCanvas,Namedeptno,IStaticText*,p 
+//VBPartValue: Namedeptno,text,string,"deptno" 
+//VBSubpart: MultiCellCanvas,Checkdeptno,ICheckBox*,p 
+//VBPartValue: Checkdeptno,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entrydeptno,IEntryField*,p 
+//VBPartValue: Entrydeptno,avlFlyOverLongText,string,"This attribute is mapped to DEPTNO." 
+//VBPartValue: Entrydeptno,avlFlyOverShortText,string,"This attribute is mapped to DEPTNO." 
+//VBSubpart: MultiCellCanvas,Icondeptno,IIconControl*,p 
+//VBPartValue: Icondeptno,resourceId,resourceid,(6005,"cppar440") 
+//VBSubpart: MultiCellCanvas,Namedeptname,IStaticText*,p 
+//VBPartValue: Namedeptname,text,string,"deptname" 
+//VBSubpart: MultiCellCanvas,Checkdeptname,ICheckBox*,p 
+//VBPartValue: Checkdeptname,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entrydeptname,IEntryField*,p 
+//VBPartValue: Entrydeptname,avlFlyOverLongText,string,"This attribute is mapped to DEPTNAME." 
+//VBPartValue: Entrydeptname,avlFlyOverShortText,string,"This attribute is mapped to DEPTNAME." 
+//VBSubpart: MultiCellCanvas,Namemgrno,IStaticText*,p 
+//VBPartValue: Namemgrno,text,string,"mgrno" 
+//VBSubpart: MultiCellCanvas,Checkmgrno,ICheckBox*,p 
+//VBPartValue: Checkmgrno,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entrymgrno,IEntryField*,p 
+//VBPartValue: Entrymgrno,avlFlyOverLongText,string,"This attribute is mapped to MGRNO." 
+//VBPartValue: Entrymgrno,avlFlyOverShortText,string,"This attribute is mapped to MGRNO." 
+//VBSubpart: MultiCellCanvas,Nameadmrdept,IStaticText*,p 
+//VBPartValue: Nameadmrdept,text,string,"admrdept" 
+//VBSubpart: MultiCellCanvas,Checkadmrdept,ICheckBox*,p 
+//VBPartValue: Checkadmrdept,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entryadmrdept,IEntryField*,p 
+//VBPartValue: Entryadmrdept,avlFlyOverLongText,string,"This attribute is mapped to ADMRDEPT." 
+//VBPartValue: Entryadmrdept,avlFlyOverShortText,string,"This attribute is mapped to ADMRDEPT." 
+//VBSubpart: MultiCellCanvas,Namelocation,IStaticText*,p 
+//VBPartValue: Namelocation,text,string,"location" 
+//VBSubpart: MultiCellCanvas,Checklocation,ICheckBox*,p 
+//VBPartValue: Checklocation,text,string,"" 
+//VBSubpart: MultiCellCanvas,Entrylocation,IEntryField*,p 
+//VBPartValue: Entrylocation,avlFlyOverLongText,string,"This attribute is mapped to LOCATION." 
+//VBPartValue: Entrylocation,avlFlyOverShortText,string,"This attribute is mapped to LOCATION." 
+//VBConnection: AA,0,p,p,theDepartment,deptnoAsString,Entrydeptno,text 
+//VBConnection: AA,1,p,p,theDepartment,deptnoIsNull,Checkdeptno,selected 
+//VBConnection: AA,2,p,p,theDepartment,deptnoIsNullable,Checkdeptno,enabled 
+//VBConnection: AA,3,p,p,theDepartment,deptnameAsString,Entrydeptname,text 
+//VBConnection: AA,4,p,p,theDepartment,deptnameIsNull,Checkdeptname,selected 
+//VBConnection: AA,5,p,p,theDepartment,deptnameIsNullable,Checkdeptname,enabled 
+//VBConnection: AA,6,p,p,theDepartment,mgrnoAsString,Entrymgrno,text 
+//VBConnection: AA,7,p,p,theDepartment,mgrnoIsNull,Checkmgrno,selected 
+//VBConnection: AA,8,p,p,theDepartment,mgrnoIsNullable,Checkmgrno,enabled 
+//VBConnection: AA,9,p,p,theDepartment,admrdeptAsString,Entryadmrdept,text 
+//VBConnection: AA,10,p,p,theDepartment,admrdeptIsNull,Checkadmrdept,selected 
+//VBConnection: AA,11,p,p,theDepartment,admrdeptIsNullable,Checkadmrdept,enabled 
+//VBConnection: AA,12,p,p,theDepartment,locationAsString,Entrylocation,text 
+//VBConnection: AA,13,p,p,theDepartment,locationIsNull,Checklocation,selected 
+//VBConnection: AA,14,p,p,theDepartment,locationIsNullable,Checklocation,enabled 
+//VBPartValue: DepartmentForm,primaryPart,partRef,MultiCellCanvas 
+//VBPartValue: MultiCellCanvas,framingSpec,position1,(30,30,,,30,30,450,450) 
+//VBPartValue: MultiCellCanvas,canvasLayout,mclayout,(rowAttr(6,,),colAttr(4,,),ctlAttr("Title2",1,1,2,2),ctlAttr("Title3",1,1,3,3),ctlAttr("Title4",1,1,4,4)
+//VB: ,ctlAttr("Icondeptno",2,2,1,1),ctlAttr("Namedeptno",2,2,2,2),ctlAttr("Checkdeptno",2,2,3,3),ctlAttr("Entrydeptno",2,2,4,4)
+//VB: ,ctlAttr("Namedeptname",3,3,2,2),ctlAttr("Checkdeptname",3,3,3,3),ctlAttr("Entrydeptname",3,3,4,4)
+//VB: ,ctlAttr("Namemgrno",4,4,2,2),ctlAttr("Checkmgrno",4,4,3,3),ctlAttr("Entrymgrno",4,4,4,4)
+//VB: ,ctlAttr("Nameadmrdept",5,5,2,2),ctlAttr("Checkadmrdept",5,5,3,3),ctlAttr("Entryadmrdept",5,5,4,4)
+//VB: ,ctlAttr("Namelocation",6,6,2,2),ctlAttr("Checklocation",6,6,3,3),ctlAttr("Entrylocation",6,6,4,4))
+//VBPartLayout: main,DepartmentForm,(initWidgetSize,rectangle,(30,30,900,600)) 
+//VBPartLayout: part,theDepartment,(framingSpec,position2,(600,30,60,60)) 
+//VBEndPartInfo: DepartmentForm 
+

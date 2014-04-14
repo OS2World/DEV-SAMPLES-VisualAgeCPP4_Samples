@@ -1,0 +1,100 @@
+// IBM VisualAge C++ Professional, Version 4.0
+// Licensed Materials - Property of IBM
+// (C) Copyright IBM Corp. 1995, 1998. All Rights Reserved.
+// US Government Users Restricted Rights - Use, duplication or disclosure restricted
+// by GSA ADP Schedule Contract with IBM Corp.
+if $__TOS_AIX__
+{
+  if defined($DAB_INCLUDE)
+    option dab_include=incl(searchpath, $DAB_INCLUDE":/u/"$DB2INSTANCE"/sqllib/include" )
+  else
+    option dab_include=incl(searchpath, "/u/"$DB2INSTANCE"/sqllib/include" )
+  if $DAB_LIB
+    option dab_lib=link(libsearchpath, $DAB_LIB":/u/"$DB2INSTANCE"/sqllib/lib" )
+  else
+    option dab_lib=link(libsearchpath, "/u/"$DB2INSTANCE"/sqllib/lib" )
+  option link(linkwithmultithreadlib)
+        ,link(linkwithsharedlib)
+        ,link(libPathOut,"/usr/vacpp/lib:/usr/lib:/lib")
+        ,incl(searchpath, ".")
+        ,gen(rtti, yes)
+        ,gen(enumsize, 4)
+        ,lang(nokeyword, "bool")
+        ,lang(nokeyword, "true")
+        ,lang(nokeyword, "false")
+        ,define(IC_LANG_BOOL, 0)
+        ,defaults(xlC_r)
+        ,dab_include
+        ,dab_lib
+        ,SqlPrepOptions( BINDFILE )
+  {
+     target "VisSamp"
+     {
+        source "pthread.h"
+        source "Dept.sqx"
+        source "DeptForm.cpp"
+        source "Empl.sqx"
+        source "EmplForm.cpp"
+        source "idsccabs.cpp"
+        source "DeptWind.cpp"
+        source "EmplWind.cpp"
+        source "MainView.cpp"
+        source "VisSamp.cpp"
+        source "libvacbase.a"
+        source "libvacui.a"
+        source "libvacvgui40.a"
+        source "libvacvngui40.a"
+        source "libcppaci40.a"
+        source "libvacgraph2d.a"
+        source "libdb2.a"
+     }
+  }
+}
+else
+{
+  option link(linkwithmultithreadlib)
+        ,link(linkwithsharedlib)
+        ,incl(searchpath, ".")
+        ,gen(rtti, yes)
+        ,gen(enumsize, 4)
+        ,gen(pack, 4)
+        ,lang(nokeyword, "bool")
+        ,lang(nokeyword, "true")
+        ,lang(nokeyword, "false")
+        ,define(IC_LANG_BOOL, 0)
+        ,link(pmtype, "pm")
+        ,link(nodefaultlibsname,"Dept.lib")
+        ,link(nodefaultlibsname,"Empl.lib")
+        ,SqlPrepOptions( BINDFILE )
+  {
+    target "VisSamp.exe"
+    {
+      source "visual.dax"
+      source "DeptDataId.vbe"
+      source "Dept.vbe"
+      source "DeptDataIdManagerBase.vbe"
+      source "DeptDataIdManagerTemplate.vbe"
+      source "DeptDataIdManager.vbe"
+      source "DeptDatastore.vbe"
+      source "DeptManagerBase.vbe"
+      source "DeptManagerTemplate.vbe"
+      source "DeptManager.vbe"
+      source "DeptForm.vbf"
+      source "EmplDataId.vbe"
+      source "Empl.vbe"
+      source "EmplDataIdManagerBase.vbe"
+      source "EmplDataIdManagerTemplate.vbe"
+      source "EmplDataIdManager.vbe"
+      source "EmplDatastore.vbe"
+      source "EmplManagerBase.vbe"
+      source "EmplManagerTemplate.vbe"
+      source "EmplManager.vbe"
+      source "EmplForm.vbf"
+      source "idsccabs.vbf"
+      source "DeptWind.vbf"
+      source "EmplWind.vbf"
+      source "MainView.vbf"
+      source "VisSamp.vbf"
+    }
+  }
+}

@@ -1,0 +1,284 @@
+DAX103 GA 1.1
+SE 16: 1 1 H:\DAXSAMPL\
+DB 13: 1 SAMPLE 1 0:
+SP 195: 1 colstats 5
+ 31: 1 Table 6: 1 9 0: 32 0 N 1 0: 0
+ 32: 1 Column 6: 1 9 0: 32 0 N 1 0: 0
+ 30: 1 Count 6: 1 2 0: 0 0 N 2 0: 0
+ 32: 1 Average 6: 1 4 0: 0 0 N 2 0: 0
+ 28: 1 Std 6: 1 4 0: 0 0 N 2 0: 0
+TBL 42: 1 31: 1 DEPARTMENT USERID SAMPLE 1 0: 0: 0
+COL 27: 1 DEPTNO 0: 6: 1 9 0: 3 0 N
+COL 31: 1 DEPTNAME 0: 7: 1 10 0: 29 0 N
+COL 26: 1 MGRNO 0: 6: 1 9 0: 6 0 Y
+COL 29: 1 ADMRDEPT 0: 6: 1 9 0: 3 0 N
+COL 30: 1 LOCATION 0: 6: 1 9 0: 16 0 Y
+PKEY 3: 1 0
+CLS 118: 2 Department Department Departme Dept 1 0 1 0: 1 0: 1 0: 27: 1 DEPARTMENT 0: SAMPLE 1 0: 1 2 3 0 0: 0: 0 0: 0: 1 0 1 1
+ATTR 78: 2 DEPTNO deptno deptno 1 IString 1 1 2 35: This attribute is mapped to DEPTNO.
+ATTR 86: 2 DEPTNAME deptname deptname 1 IString 1 0 2 37: This attribute is mapped to DEPTNAME.
+ATTR 74: 2 MGRNO mgrno mgrno 1 IString 0 0 2 34: This attribute is mapped to MGRNO.
+ATTR 86: 2 ADMRDEPT admrdept admrdept 1 IString 0 0 2 37: This attribute is mapped to ADMRDEPT.
+ATTR 86: 2 LOCATION location location 1 IString 0 0 2 37: This attribute is mapped to LOCATION.
+UDM 651: 2 add add 1 1 1 26: Add a row to the database. 5 5
+ 271: INSERT INTO %QUAL%DEPARTMENT (
+                  DEPTNO,
+                  DEPTNAME,
+                  MGRNO,
+                  ADMRDEPT,
+                  LOCATION )
+          VALUES (?,
+                  ?,
+                  ?,
+                  ?,
+                  ?)
+ 31: 1 param1 6: 1 9 0: 3 0 N 1 0: 0
+ 33: 1 param2 7: 1 10 0: 29 0 N 1 0: 0
+ 31: 1 param3 6: 1 9 0: 6 0 Y 1 0: 0
+ 31: 1 param4 6: 1 9 0: 3 0 N 1 0: 0
+ 32: 1 param5 6: 1 9 0: 16 0 Y 1 0: 0
+ 20: 1 deptno IString 1 2
+ 22: 1 deptname IString 1 2
+ 19: 1 mgrno IString 1 2
+ 22: 1 admrdept IString 1 2
+ 22: 1 location IString 1 2
+UDM 546: 2 retrieve retrieve 1 1 1 33: Retrieve a row from the database. 5 5
+ 149: SELECT
+            DEPTNAME,
+            MGRNO,
+            ADMRDEPT,
+            LOCATION
+        FROM %QUAL%DEPARTMENT WHERE
+            DEPTNO = ?
+ 31: 1 param1 6: 1 9 0: 3 0 N 1 0: 0
+ 33: 1 param2 7: 1 10 0: 29 0 N 5 0: 0
+ 31: 1 param3 6: 1 9 0: 6 0 Y 5 0: 0
+ 31: 1 param4 6: 1 9 0: 3 0 N 5 0: 0
+ 32: 1 param5 6: 1 9 0: 16 0 Y 5 0: 0
+ 20: 1 deptno IString 1 2
+ 22: 1 deptname IString 5 2
+ 19: 1 mgrno IString 5 2
+ 22: 1 admrdept IString 5 2
+ 22: 1 location IString 5 2
+UDM 181: 2 del del 1 1 1 31: Delete a row from the database. 1 1
+ 57: DELETE FROM %QUAL%DEPARTMENT WHERE
+            DEPTNO = ?
+ 31: 1 param1 6: 1 9 0: 3 0 N 1 0: 0
+ 20: 1 deptno IString 1 2
+UDM 583: 2 updateAll updateAll 1 1 1 29: Update a row in the database. 5 5
+ 188: UPDATE %QUAL%DEPARTMENT SET
+                  DEPTNAME = ?,
+                  MGRNO = ?,
+                  ADMRDEPT = ?,
+                  LOCATION = ?
+        WHERE
+            DEPTNO = ?
+ 33: 1 param1 7: 1 10 0: 29 0 N 1 0: 0
+ 31: 1 param2 6: 1 9 0: 6 0 Y 1 0: 0
+ 31: 1 param3 6: 1 9 0: 3 0 N 1 0: 0
+ 32: 1 param4 6: 1 9 0: 16 0 Y 1 0: 0
+ 31: 1 param5 6: 1 9 0: 3 0 N 1 0: 0
+ 22: 1 deptname IString 1 2
+ 19: 1 mgrno IString 1 2
+ 22: 1 admrdept IString 1 2
+ 22: 1 location IString 1 2
+ 20: 1 deptno IString 1 2
+TBL 40: 1 29: 1 EMPLOYEE USERID SAMPLE 1 0: 0: 0
+COL 26: 1 EMPNO 0: 6: 1 9 0: 6 0 N
+COL 31: 1 FIRSTNME 0: 7: 1 10 0: 12 0 N
+COL 28: 1 MIDINIT 0: 6: 1 9 0: 1 0 N
+COL 31: 1 LASTNAME 0: 7: 1 10 0: 15 0 N
+COL 29: 1 WORKDEPT 0: 6: 1 9 0: 3 0 Y
+COL 28: 1 PHONENO 0: 6: 1 9 0: 4 0 Y
+COL 30: 1 HIREDATE 0: 6: 1 6 0: 10 0 Y
+COL 24: 1 JOB 0: 6: 1 9 0: 8 0 Y
+COL 28: 1 EDLEVEL 0: 6: 1 1 0: 5 0 N
+COL 24: 1 SEX 0: 6: 1 9 0: 1 0 Y
+COL 31: 1 BIRTHDATE 0: 6: 1 6 0: 10 0 Y
+COL 28: 1 SALARY 0: 6: 1 3 0: 11 2 Y
+COL 27: 1 BONUS 0: 6: 1 3 0: 11 2 Y
+COL 26: 1 COMM 0: 6: 1 3 0: 11 2 Y
+PKEY 3: 1 0
+CLS 112: 2 Employee Employee Employee Empl 1 0 1 0: 1 0: 1 0: 25: 1 EMPLOYEE 0: SAMPLE 1 0: 1 2 3 0 0: 0: 0 0: 0: 1 0 1 1
+ATTR 74: 2 EMPNO empno empno 1 IString 1 1 2 34: This attribute is mapped to EMPNO.
+ATTR 86: 2 FIRSTNME firstnme firstnme 1 IString 1 0 2 37: This attribute is mapped to FIRSTNME.
+ATTR 82: 2 MIDINIT midinit midinit 1 IString 1 0 2 36: This attribute is mapped to MIDINIT.
+ATTR 86: 2 LASTNAME lastname lastname 1 IString 1 0 2 37: This attribute is mapped to LASTNAME.
+ATTR 86: 2 WORKDEPT workdept workdept 1 IString 0 0 2 37: This attribute is mapped to WORKDEPT.
+ATTR 82: 2 PHONENO phoneno phoneno 1 IString 0 0 2 36: This attribute is mapped to PHONENO.
+ATTR 84: 2 HIREDATE hiredate hiredate 1 IDate 0 0 0 37: This attribute is mapped to HIREDATE.
+ATTR 66: 2 JOB job job 1 IString 0 0 2 32: This attribute is mapped to JOB.
+ATTR 80: 2 EDLEVEL edlevel edlevel 1 short 0 0 0 36: This attribute is mapped to EDLEVEL.
+ATTR 66: 2 SEX sex sex 1 IString 0 0 2 32: This attribute is mapped to SEX.
+ATTR 88: 2 BIRTHDATE birthdate birthdate 1 IDate 0 0 0 38: This attribute is mapped to BIRTHDATE.
+ATTR 90: 2 SALARY salary salary 1 IBinaryCodedDecimal 0 0 0 35: This attribute is mapped to SALARY.
+ATTR 86: 2 BONUS bonus bonus 1 IBinaryCodedDecimal 0 0 0 34: This attribute is mapped to BONUS.
+ATTR 82: 2 COMM comm comm 1 IBinaryCodedDecimal 0 0 0 33: This attribute is mapped to COMM.
+PDQ 154: 2 empInDept empInDept 16: where workdept=? 1 1 0 1 28: This method is user defined. 1 1
+ 31: 1 param1 6: 1 9 0: 3 0 N 1 0: 0
+ 24: 1 department IString 1 1
+SPCP 184: 2 colstats POAvg POAvg 28: This method is user defined. 0 1 0 1 5
+ 19: 1 table IString 1 1
+ 20: 1 column IString 1 1
+ 16: 1 parm2 long 2 4
+ 16: 1 parm3 long 2 3
+ 18: 1 parm4 double 2 4
+UDM 1678: 2 add add 1 1 1 26: Add a row to the database. 14 14
+ 691: INSERT INTO %QUAL%EMPLOYEE (
+                  EMPNO,
+                  FIRSTNME,
+                  MIDINIT,
+                  LASTNAME,
+                  WORKDEPT,
+                  PHONENO,
+                  HIREDATE,
+                  JOB,
+                  EDLEVEL,
+                  SEX,
+                  BIRTHDATE,
+                  SALARY,
+                  BONUS,
+                  COMM )
+          VALUES (?,
+                  ?,
+                  ?,
+                  ?,
+                  ?,
+                  ?,
+                  ?,
+                  ?,
+                  ?,
+                  ?,
+                  ?,
+                  ?,
+                  ?,
+                  ?)
+ 31: 1 param1 6: 1 9 0: 6 0 N 1 0: 0
+ 33: 1 param2 7: 1 10 0: 12 0 N 1 0: 0
+ 31: 1 param3 6: 1 9 0: 1 0 N 1 0: 0
+ 33: 1 param4 7: 1 10 0: 15 0 N 1 0: 0
+ 31: 1 param5 6: 1 9 0: 3 0 Y 1 0: 0
+ 31: 1 param6 6: 1 9 0: 4 0 Y 1 0: 0
+ 31: 1 param7 6: 1 6 0: 0 0 Y 1 0: 0
+ 31: 1 param8 6: 1 9 0: 8 0 Y 1 0: 0
+ 31: 1 param9 6: 1 1 0: 0 0 N 1 0: 0
+ 32: 1 param10 6: 1 9 0: 1 0 Y 1 0: 0
+ 32: 1 param11 6: 1 6 0: 0 0 Y 1 0: 0
+ 33: 1 param12 6: 1 3 0: 11 2 Y 1 0: 0
+ 33: 1 param13 6: 1 3 0: 11 2 Y 1 0: 0
+ 33: 1 param14 6: 1 3 0: 11 2 Y 1 0: 0
+ 19: 1 empno IString 1 2
+ 22: 1 firstnme IString 1 2
+ 21: 1 midinit IString 1 2
+ 22: 1 lastname IString 1 2
+ 22: 1 workdept IString 1 2
+ 21: 1 phoneno IString 1 2
+ 20: 1 hiredate IDate 1 2
+ 17: 1 job IString 1 2
+ 19: 1 edlevel short 1 2
+ 17: 1 sex IString 1 2
+ 21: 1 birthdate IDate 1 2
+ 32: 1 salary IBinaryCodedDecimal 1 2
+ 31: 1 bonus IBinaryCodedDecimal 1 2
+ 30: 1 comm IBinaryCodedDecimal 1 2
+UDM 1330: 2 retrieve retrieve 1 1 1 33: Retrieve a row from the database. 14 14
+ 326: SELECT
+            FIRSTNME,
+            MIDINIT,
+            LASTNAME,
+            WORKDEPT,
+            PHONENO,
+            HIREDATE,
+            JOB,
+            EDLEVEL,
+            SEX,
+            BIRTHDATE,
+            SALARY,
+            BONUS,
+            COMM
+        FROM %QUAL%EMPLOYEE WHERE
+            EMPNO = ?
+ 31: 1 param1 6: 1 9 0: 6 0 N 1 0: 0
+ 33: 1 param2 7: 1 10 0: 12 0 N 5 0: 0
+ 31: 1 param3 6: 1 9 0: 1 0 N 5 0: 0
+ 33: 1 param4 7: 1 10 0: 15 0 N 5 0: 0
+ 31: 1 param5 6: 1 9 0: 3 0 Y 5 0: 0
+ 31: 1 param6 6: 1 9 0: 4 0 Y 5 0: 0
+ 31: 1 param7 6: 1 6 0: 0 0 Y 5 0: 0
+ 31: 1 param8 6: 1 9 0: 8 0 Y 5 0: 0
+ 31: 1 param9 6: 1 1 0: 0 0 N 5 0: 0
+ 32: 1 param10 6: 1 9 0: 1 0 Y 5 0: 0
+ 32: 1 param11 6: 1 6 0: 0 0 Y 5 0: 0
+ 33: 1 param12 6: 1 3 0: 11 2 Y 5 0: 0
+ 33: 1 param13 6: 1 3 0: 11 2 Y 5 0: 0
+ 33: 1 param14 6: 1 3 0: 11 2 Y 5 0: 0
+ 19: 1 empno IString 1 2
+ 22: 1 firstnme IString 5 2
+ 21: 1 midinit IString 5 2
+ 22: 1 lastname IString 5 2
+ 22: 1 workdept IString 5 2
+ 21: 1 phoneno IString 5 2
+ 20: 1 hiredate IDate 5 2
+ 17: 1 job IString 5 2
+ 19: 1 edlevel short 5 2
+ 17: 1 sex IString 5 2
+ 21: 1 birthdate IDate 5 2
+ 32: 1 salary IBinaryCodedDecimal 5 2
+ 31: 1 bonus IBinaryCodedDecimal 5 2
+ 30: 1 comm IBinaryCodedDecimal 5 2
+UDM 177: 2 del del 1 1 1 31: Delete a row from the database. 1 1
+ 54: DELETE FROM %QUAL%EMPLOYEE WHERE
+            EMPNO = ?
+ 31: 1 param1 6: 1 9 0: 6 0 N 1 0: 0
+ 19: 1 empno IString 1 2
+UDM 1457: 2 updateAll updateAll 1 1 1 29: Update a row in the database. 14 14
+ 455: UPDATE %QUAL%EMPLOYEE SET
+                  FIRSTNME = ?,
+                  MIDINIT = ?,
+                  LASTNAME = ?,
+                  WORKDEPT = ?,
+                  PHONENO = ?,
+                  HIREDATE = ?,
+                  JOB = ?,
+                  EDLEVEL = ?,
+                  SEX = ?,
+                  BIRTHDATE = ?,
+                  SALARY = ?,
+                  BONUS = ?,
+                  COMM = ?
+        WHERE
+            EMPNO = ?
+ 33: 1 param1 7: 1 10 0: 12 0 N 1 0: 0
+ 31: 1 param2 6: 1 9 0: 1 0 N 1 0: 0
+ 33: 1 param3 7: 1 10 0: 15 0 N 1 0: 0
+ 31: 1 param4 6: 1 9 0: 3 0 Y 1 0: 0
+ 31: 1 param5 6: 1 9 0: 4 0 Y 1 0: 0
+ 31: 1 param6 6: 1 6 0: 0 0 Y 1 0: 0
+ 31: 1 param7 6: 1 9 0: 8 0 Y 1 0: 0
+ 31: 1 param8 6: 1 1 0: 0 0 N 1 0: 0
+ 31: 1 param9 6: 1 9 0: 1 0 Y 1 0: 0
+ 32: 1 param10 6: 1 6 0: 0 0 Y 1 0: 0
+ 33: 1 param11 6: 1 3 0: 11 2 Y 1 0: 0
+ 33: 1 param12 6: 1 3 0: 11 2 Y 1 0: 0
+ 33: 1 param13 6: 1 3 0: 11 2 Y 1 0: 0
+ 32: 1 param14 6: 1 9 0: 6 0 N 1 0: 0
+ 22: 1 firstnme IString 1 2
+ 21: 1 midinit IString 1 2
+ 22: 1 lastname IString 1 2
+ 22: 1 workdept IString 1 2
+ 21: 1 phoneno IString 1 2
+ 20: 1 hiredate IDate 1 2
+ 17: 1 job IString 1 2
+ 19: 1 edlevel short 1 2
+ 17: 1 sex IString 1 2
+ 21: 1 birthdate IDate 1 2
+ 32: 1 salary IBinaryCodedDecimal 1 2
+ 31: 1 bonus IBinaryCodedDecimal 1 2
+ 30: 1 comm IBinaryCodedDecimal 1 2
+ 19: 1 empno IString 1 2
+UDM 255: 2 numEmpInDept numEmpInDept 1 0 1 28: This method is user defined. 2 2
+ 50: select count(empno) from employee where workdept=?
+ 31: 1 param1 6: 1 9 0: 3 0 N 1 0: 0
+ 32: 1 result1 6: 1 2 0: 0 0 N 5 0: 0
+ 24: 1 department IString 1 1
+ 18: 1 result1 long 5 3

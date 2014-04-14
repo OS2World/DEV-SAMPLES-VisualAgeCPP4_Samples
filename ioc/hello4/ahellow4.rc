@@ -1,0 +1,91 @@
+/******************************************************************************
+* .FILE:         ahellow4.rc                                                  *
+*                                                                             *
+* .DESCRIPTION:  Hello World Sample Program Version 4:  Resource Definitions  *
+*                                                                             *
+* .CLASSES:                                                                   *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    IBM Open Class Library                                                   *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1997 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+*                                                                             *
+******************************************************************************/
+#include "ahellow4.h"
+
+//**************************************************************************
+// icon and bitmap resources                                               *
+//   Relate symbolic name to file containing main window icon.             *
+//**************************************************************************
+ICON WND_MAIN ahellow4.ico
+
+//**************************************************************************
+// string resources                                                        *
+//   Relate symbolic names to literal text strings.                        *
+//**************************************************************************
+STRINGTABLE
+  BEGIN
+    STR_HELLO,  "Hello, World!!!"
+    WND_MAIN,   "Hello World Sample - Version 4"
+    WND_TEXTDIALOG, "Hello World Edit Dialog"
+    STR_INFO,   "Use Alt-F4 to Close Window"
+    MI_EDIT,    "Edit Menu"
+    MI_ALIGNMENT,"Alignment Menu"
+    MI_CENTER,  "Set Center Alignment"
+    MI_LEFT,    "Set Left Alignment"
+    MI_RIGHT,   "Set Right Alignment"
+    MI_TEXT,    "Display Edit Dialog"
+    STR_INFODLG,"Modal Edit Text Dialog Active"
+    STR_CENTER, "Center Alignment"
+    STR_LEFT,   "Left Alignment"
+    STR_RIGHT,  "Right Alignment"
+    STR_LEFTB,  "Left"
+    STR_CENTERB,"Center"
+    STR_RIGHTB, "Right"
+    DID_OK,     "OK"
+    DID_CANCEL, "Cancel"
+    DID_STATIC, "Edit Text:"
+    DID_ENTRY,  ""
+  END
+
+//**************************************************************************
+// Menu bar for main window - used by IMenuBar Class                       *
+//   Define menu bar layout and relate symbolic names to menu item strings.*
+//**************************************************************************
+MENU WND_MAIN
+  BEGIN
+    SUBMENU "~Edit", MI_EDIT
+      BEGIN
+        SUBMENU "~Alignment", MI_ALIGNMENT
+          BEGIN
+            MENUITEM "~Left\tF7",   MI_LEFT
+            MENUITEM "~Center\tF8", MI_CENTER
+            MENUITEM "~Right\tF9",  MI_RIGHT
+          END
+        MENUITEM "~Text...", MI_TEXT
+      END
+  END
+
+//**************************************************************************
+// Accelerator (key) table resources                                       *
+//   Relate accelerator keys to command IDs.                               *
+//**************************************************************************
+ACCELTABLE WND_MAIN
+  BEGIN
+    VK_F7,  MI_LEFT,   VIRTUALKEY
+    VK_F8,  MI_CENTER, VIRTUALKEY
+    VK_F9,  MI_RIGHT,  VIRTUALKEY
+  END
+

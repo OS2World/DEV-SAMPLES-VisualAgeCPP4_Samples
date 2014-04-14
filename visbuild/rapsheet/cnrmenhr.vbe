@@ -1,0 +1,10 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ICnrMenuHandler,"Open Class Library container menu handler",interface
+//VBParents: public IMenuHandler
+//VBIncludes: <icnrmhdr.hpp> _ICNRMHDR_
+//VBConstraints:  noGen
+//VBConstructor: ICnrMenuHandler()
+//VBComposerInfo: class
+//VBEndPartInfo: ICnrMenuHandler
+

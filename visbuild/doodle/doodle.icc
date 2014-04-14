@@ -1,0 +1,35 @@
+//
+//   This is the configuration file for building the main executable
+//   of the Doodle Sample
+//
+
+option
+       gen(enumsize, 4),
+       gen(rtti, yes),
+       lang(nokeyword,"false"),
+       lang(nokeyword,"true"),
+       lang(nokeyword,"bool"),
+       define(IC_LANG_BOOL,0),
+       define("IC_TRACE_DEVELOP"),
+       link(debug, yes),
+       link(linkwithsharedlib, yes),
+       link(linkwithmultithreadlib, yes),
+       link(pmtype,pm),
+       link(map, no),
+       incl(searchpath, ".")
+{
+
+          target "doodle.exe"
+         {
+
+            source "doodlemn.vbf"
+            source "doodle.vbf"
+            source "colordlg.vbf"
+            source "titledlg.vbf"
+            source "styledlg.vbf"
+            source "widthdlg.vbf"
+            source "darea.vbf"
+
+         }
+
+}

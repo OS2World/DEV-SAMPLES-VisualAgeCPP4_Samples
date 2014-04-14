@@ -1,0 +1,11 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: IKeypad,"Ten Digit Keypad",interface
+//VBConstraints:  noGen
+//VBParents: IStandardNotifier
+//VBIncludes: <ikeypad.hpp> _IKEYPAD_
+//VBConstructor: IKeypad()
+//VBComposerInfo: nonvisual
+//VBAttribute: digit,"keypad digit pressed",IString,int digit(),int setDigit(IString digit),digitId,preferred
+//VBEndPartInfo: IKeypad
+

@@ -1,0 +1,9 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: CnrPopupMenuHandler,"Popup Menu Handler for an IVBContainerControl",interface
+//VBParents: public ICnrMenuHandler
+//VBIncludes: "cnrpopmh.hpp" _CNRPOPMH_
+//VBConstructor: CnrPopupMenuHandler(IVSequence<unsigned long>* aCnrObjMenuItemList, IVSequence<unsigned long>* aCnrMenuItemList)
+//VBComposerInfo: class
+//VBEndPartInfo: CnrPopupMenuHandler
+

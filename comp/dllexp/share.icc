@@ -1,0 +1,27 @@
+if $__TOS_AIX__
+   TARG = "share.a"
+else
+   TARG = "share.dll"
+
+if $__TOS_OS2__ | $__TOS_WIN__
+   option IntelOptions = link(extdictionary, no)
+if $__TOS_AIX__
+   option IntelOptions = null
+
+option
+   IntelOptions,
+   link(debug, no),
+   link(linkwithmultithreadlib, yes),
+   link(linkwithsharedlib, yes),
+   link(padding, no),
+   gen(rtti, yes)
+{
+   target type(dll) TARG
+   {
+      option macros(global)
+      {
+         source type(cpp) "share.h"
+      }
+      source "share.cpp"
+   }
+}

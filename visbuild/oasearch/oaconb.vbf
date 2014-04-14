@@ -1,0 +1,17 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: OAContractBase,"OASearch contract database class",VB
+//VBGeneratedFiles: conbase.cpp
+//VBParents: public IStandardNotifier
+//VBIncludes: "conbase.hpp" _OAContractBase_,<istring.hpp>,<iprofile.hpp>,"contract.hpp"
+//VBConstructor: OAContractBase()
+//VBComposerInfo: nonvisual
+//VBGeneratorValues: userHpp(true),userCpp(true),userH(false),userRC(false)
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBEvent: queryFound,"Was query found in database?", queryFoundId,'bool'
+//VBAction: getContract,"Get records for this contract from the database",OAContractBase,virtual OAContract& getContract(OAContract& aContract),preferred
+//VBAction: putContract,"Save records for this contract to the database",OAContractBase,virtual OAContractBase& putContract(const OAContract& aContract),preferred
+//VBPartLayout: main,OAContractBase,(initWidgetSize,rectangle,(144,303,1168,885))
+//VBEndPartInfo: OAContractBase
+
+

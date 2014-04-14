@@ -1,0 +1,44 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: IPerson,,interface
+//VBConstraints:  noGen
+//VBParents: public IStandardNotifier
+//VBIncludes: "iperson.hpp" _IPERSON_,"iadd.hpp" _IADD_,"istdntfy.hpp" _ISTDNTFY_,"ialias.hpp" _IALIAS_,"istring.hpp" _ISTRING_,"ivseq.h" _IVSEQ_
+//VBConstructor: IPerson()
+//VBComposerInfo: nonvisual,2004,rapres
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBAttribute: address,"suspect's current address",IAddress*,IAddress* address() const,IPerson& setAddress(IAddress* aAddress),addressId,preferred
+//VBAttribute: aliasList,"list of aliases by which the suspect is known",IVSequence<IAlias*>*,IVSequence<IAlias*>* aliasList() const,IPerson& setAliasList(IVSequence<IAlias*>* aAliasList),aliasListId,preferred
+//VBAttribute: birthDate,"the date the suspect was born",IString,IString birthDate() const,IPerson& setBirthDate(const IString& aBirthDate),birthDateId,preferred
+//VBAttribute: eyeColor,"the color of the suspect's eyes",unsigned short,unsigned short eyeColor() const,IPerson& setEyeColor(unsigned short aEyeColor),eyeColorId
+//VBAttribute: eyeColorAsString,"the eye color as a IString",IString,IString eyeColorAsString() const,IPerson& setEyeColorAsString(const IString& aEyeColor),eyeColorId
+//VBAttribute: firstName,"the suspect's first name",IString,IString firstName() const,IPerson& setFirstName(const IString& aFirstName),firstNameId,preferred
+//VBAttribute: gender,"the suspect's gender/sex",unsigned short,unsigned short gender() const,IPerson& setGender(unsigned short aGender),genderId
+//VBAttribute: isMale,"indicates if the suspect is a male",Boolean,Boolean isMale() const,IPerson& enableIsMale(Boolean aGender = true),genderId
+//VBAttribute: hairColor,"the color of the suspect's hair",unsigned short,unsigned short hairColor() const,IPerson& setHairColor(unsigned short aHairColor),hairColorId
+//VBAttribute: hairColorAsString,"the hair color as a IString",IString,IString hairColorAsString() const,IPerson& setHairColorAsString(const IString& aHairColor),hairColorId
+//VBAttribute: height,"the suspect's height (in inches)",unsigned short,unsigned short height() const,IPerson& setHeight(unsigned short aHeight),heightId
+//VBAttribute: heightAsString,"the suspect's height as a IString",IString,IString heightAsString() const,IPerson& setHeightAsString(const IString& aHeight),heightId
+//VBAttribute: info,"any information concerning the suspect",IString,IString info() const,IPerson& setInfo(const IString& aInfo),infoId
+//VBAttribute: lastName,"the suspect's last name",IString,IString lastName() const,IPerson& setLastName(const IString& aLastName),lastNameId,preferred
+//VBAttribute: weight,"the suspect's weight (in pounds)",unsigned short,unsigned short weight() const,IPerson& setWeight(unsigned short aWeight),weightId
+//VBAttribute: weightAsString,"the suspect's weight as a IString",IString,IString weightAsString() const,IPerson& setWeightAsString(const IString& aWeight),weightId
+//VBEndPartInfo: IPerson
+
+//VBBeginEnumInfo: IPerson::IGender
+//VBIncludes: "iperson.hpp" _IPERSON_
+//VBEnumerators: female=0,male=1
+//VBEndEnumInfo: IPerson::IGender
+
+//VBBeginEnumInfo: IPerson::IEyeColor,"The various types of eye color"
+//VBIncludes: "iperson.hpp" _IPERSON_
+//VBEnumerators: unknown_eye_color=-1,blue_eyes=0,brown_eyes=1,green_eyes=2,hazel_eyes=3
+//VBEndEnumInfo: IPerson::IEyeColor
+
+
+//VBBeginEnumInfo: IPerson::IHairColor,"The various types of hair color"
+//VBIncludes: "iperson.hpp" _IPERSON_
+//VBEnumerators: unknown_hair_color=-1,no_hair=0,black_hair=1,blonde_hair=2,brown_hair=3,grey_hair=4,red_hair=5
+//VBEndEnumInfo: IPerson::IHairColor
+
+

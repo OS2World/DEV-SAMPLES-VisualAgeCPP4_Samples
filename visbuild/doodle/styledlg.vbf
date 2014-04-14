@@ -1,0 +1,63 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: IStyleDialog,"Style dialog",VB
+//VBGeneratedFiles: StylDlog.cpp, StylDlog.cp
+//VBParents: public IFrameWindow
+//VBIncludes: "StylDlog.hpp" _ISTYLEDIALOG_
+//VBConstructor: IStyleDialog(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle ( ), const char* title = 0)
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: styleEnum,(7101,"cppres"),IVBShortPart*,IVBShortPart* getStyleEnum() const,IStyleDialog& setStyleEnum(IVBShortPart* target),styleEnumId,StyleEnum,this
+//VBSubpart: IStyleDialog,SetStyleDialog,IFrameWindow*,p
+//VBSubpart: SetStyleDialog,Canvas,ICanvas*,p
+//VBSubpart: Canvas,GroupBox1,IGroupBox*,p
+//VBSubpart: Canvas,FrameFillRadioButton,IRadioButton*,p
+//VBSubpart: Canvas,FrameRadioButton,IRadioButton*,p
+//VBSubpart: Canvas,FillRadioButton,IRadioButton*,p
+//VBSubpart: Canvas,SetPushButton,IPushButton*,p
+//VBSubpart: Canvas,CancelPushButton,IPushButton*,p
+//VBSubpart: IStyleDialog,StyleEnum,IVBShortPart*,v
+//VBSubpart: IStyleDialog,TempStyleEnum,IVBShortPart*,p
+//VBConnection: EA,0,p,p,CancelPushButton,buttonClickEvent,SetStyleDialog,close
+//VBConnection: EA,8,p,p,SetPushButton,buttonClickEvent,StyleEnum,apply
+//VBConnection: EA,1,p,p,SetPushButton,buttonClickEvent,SetStyleDialog,close
+//VBConnection: AA,42,p,p,StyleEnum,highLimit,TempStyleEnum,highLimit
+//VBConnection: AA,21,p,p,StyleEnum,lowLimit,TempStyleEnum,lowLimit
+//VBConnection: AA,10,p,p,StyleEnum,defaultValue,TempStyleEnum,defaultValue
+//VBConnection: AA,11,p,p,StyleEnum,value,TempStyleEnum,value
+//VBConnection: AA,12,p,p,TempStyleEnum,valueEqualToDefault,FrameFillRadioButton,selected
+//VBConnection: AA,22,p,p,TempStyleEnum,valueEqualToLowLimit,FrameRadioButton,selected
+//VBConnection: AA,32,p,p,TempStyleEnum,valueEqualToHighLimit,FillRadioButton,selected
+//VBConnection: EA,72,p,p,FrameRadioButton,buttonClickEvent,TempStyleEnum,setValueToLowLimit
+//VBConnection: EA,82,p,p,FillRadioButton,buttonClickEvent,TempStyleEnum,setValueToHighLimit
+//VBConnection: EA,19,p,p,FrameFillRadioButton,buttonClickEvent,TempStyleEnum,setValueToDefault
+//VBPartValue: IStyleDialog,primaryPart,partRef,SetStyleDialog
+//VBPartValue: SetStyleDialog,style,bitflag,(true,IFrameWindow::Style,(("IFrameWindow","dialogBackground",true),("IFrameWindow","dialogBorder",true),("IFrameWindow","hideButton",false),("IFrameWindow","maximizeButton",false),("IFrameWindow","minimizeButton",false),("IFrameWindow","sizingBorder",false)))
+//VBPartValue: SetStyleDialog,client,partRef,Canvas
+//VBPartValue: SetStyleDialog,framingSpec,position1,(27,26,261,240,27,184,261,240)
+//VBPartValue: SetStyleDialog,title,string,"Set Drawing Style"
+//VBPartValue: GroupBox1,text,string,"Drawing Style"
+//VBPartValue: GroupBox1,framingSpec,position1,(13,11,220,138,13,61,220,138)
+//VBPartValue: FrameFillRadioButton,selected,boolean,false
+//VBPartValue: FrameFillRadioButton,style,bitflag,(true,IRadioButton::Style,(("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: FrameFillRadioButton,text,string,"Frame and Fill"
+//VBPartValue: FrameFillRadioButton,framingSpec,position1,(32,37,,,32,149,155,24)
+//VBPartValue: FrameRadioButton,selected,boolean,false
+//VBPartValue: FrameRadioButton,text,string,"Frame only"
+//VBPartValue: FrameRadioButton,framingSpec,position1,(33,74,,,33,112,129,24)
+//VBPartValue: FillRadioButton,selected,boolean,true
+//VBPartValue: FillRadioButton,text,string,"Fill only"
+//VBPartValue: FillRadioButton,framingSpec,position1,(33,108,,,33,78,94,24)
+//VBPartValue: SetPushButton,style,bitflag,(true,IPushButton::Style,(("IPushButton","defaultButton",true),("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: SetPushButton,text,string,"Set"
+//VBPartValue: SetPushButton,framingSpec,position1,(29,161,83,31,29,18,83,31)
+//VBPartValue: CancelPushButton,text,string,"Cancel"
+//VBPartValue: CancelPushButton,framingSpec,position1,(141,161,null,null,141,18,83,31)
+//VBPartValue: StyleEnum,deferUpdate,boolean,true
+//VBPartValue: TempStyleEnum,value,integer,-1
+//VBPartLayout: main,IStyleDialog,(initWidgetSize,rectangle,(72,50,774,574))
+//VBPartLayout: part,StyleEnum,(framingSpec,position2,(243,289,58,58))
+//VBPartLayout: part,TempStyleEnum,(framingSpec,position2,(380,147,40,40))
+//VBEndPartInfo: IStyleDialog
+
+

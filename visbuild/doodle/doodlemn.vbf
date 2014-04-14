@@ -1,0 +1,28 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: DoodleMain,,VB
+//VBGeneratedFiles: DoodleMn.cpp
+//VBDependsOnFiles: doodle.vbf
+//VBParents: public IVBMain
+//VBIncludes: "DoodleMn.hpp" _DoodleMain_
+//VBConstructor: DoodleMain()
+//VBComposerInfo: nonvisual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBSubpart: DoodleMain,IVBMain1,IVBMain*,p
+//VBSubpart: DoodleMain,Doodle1,Doodle*,v
+//VBSubpart: DoodleMain,StandardNotifier1,Doodle*,f
+//VBConnection: EA,0,p,p,,ready,StandardNotifier1,new
+//VBConnection: EA,1,p,p,StandardNotifier1,newEvent,Doodle1,this
+//VBConnection: EA,2,p,p,StandardNotifier1,newEvent,Doodle1,show
+//VBConnection: EC,3,p,p,,ready,,customLogic,"Set the coordinate origin for 2D graphics to the correct OS native origin",void,(
+//VB:ICoordinateSystem::setApplicationOrientation(ICoordinateSystem::nativeOrientation());)
+//VBPartValue: DoodleMain,primaryPart,partRef,IVBMain1
+//VBConnValue: 2,visible,boolean,true
+//VBPartLayout: main,DoodleMain,(initWidgetSize,rectangle,(129,177,821,637))
+//VBPartLayout: part,IVBMain1,(framingSpec,position2,(20,20))
+//VBPartLayout: part,Doodle1,(framingSpec,position2,(152,191,58,58))
+//VBPartLayout: part,StandardNotifier1,(framingSpec,position2,(192,92))
+//VBPartLayout: eventconnection,3,(midPoints,collection,(point,(480,256),point,(435,25)))
+//VBEndPartInfo: DoodleMain
+
+

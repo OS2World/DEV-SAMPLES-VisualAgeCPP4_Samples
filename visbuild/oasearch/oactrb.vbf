@@ -1,0 +1,16 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: OAContractorBase,"OASearch contractor database class",VB
+//VBGeneratedFiles: ctrbase.cpp
+//VBParents: public IStandardNotifier
+//VBIncludes: "ctrbase.hpp" _OAContractorBase_,<iprofile.hpp>,<istring.hpp>,"contrctr.hpp"
+//VBConstructor: OAContractorBase()
+//VBComposerInfo: nonvisual
+//VBGeneratorValues: userHpp(true),userCpp(true),userH(false),userRC(false)
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBEvent: queryFound,"Contractor with this ID was found in database", queryFoundId
+//VBAction: getContractor,"Retrieve contractor records from database",OAContractor,virtual OAContractor& getContractor(OAContractor& aContractor),preferred
+//VBAction: putContractor,"Save this contractor's records to the database",OAContractorBase,virtual OAContractorBase& putContractor(const OAContractor& aContractor),preferred
+//VBPartLayout: main,OAContractorBase,(initWidgetSize,rectangle,(104,155,1128,728))
+//VBEndPartInfo: OAContractorBase
+

@@ -1,0 +1,119 @@
+/******************************************************************************
+* .FILE:         tbarbutn.rc                                                  *
+*                                                                             *
+* .DESCRIPTION:  Tool Bar Button Sample:  Resource File                       *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    IBM Open Class Library                                                   *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1997 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+******************************************************************************/
+#include <icconst.h>
+#include "tbarbutn.h"
+
+ICON ID_MAIN_WINDOW tbarbutn.ico
+
+MENU ID_MAIN_WINDOW
+BEGIN
+  SUBMENU "~Toolbar",       ID_TOOLBAR_OPTIONS
+  BEGIN
+    MENUITEM "Show ~bitmaps only",     ID_SHOWBITMAPS
+    MENUITEM "Show ~text only",        ID_SHOWTEXT
+    MENUITEM "Show text ~and bitmaps", ID_SHOWTEXTANDBITMAPS
+    MENUITEM SEPARATOR
+    MENUITEM "Top",                    ID_TOOLBAR_TOP
+    MENUITEM "Bottom",                 ID_TOOLBAR_BOTTOM
+    MENUITEM "Left",                   ID_TOOLBAR_LEFT
+    MENUITEM "Right",                  ID_TOOLBAR_RIGHT
+    MENUITEM "Floating",               ID_TOOLBAR_FLOATING
+    MENUITEM SEPARATOR
+    MENUITEM "Hide",                   ID_TOOLBAR_HIDE
+  END
+END
+
+STRINGTABLE PRELOAD
+BEGIN
+  ID_MAIN_WINDOW                        , "Tool Bar Button Sample"
+  STR_TOOLBAR+1                          , "Floating Toolbar 1"
+  STR_TOOLBAR+2                          , "Floating Toolbar 2"
+  STR_TOOLBAR+3                          , "Floating Toolbar 3"
+  STR_TOOLBAR+4                          , "Floating Toolbar 4"
+  STR_TOOLBAR+5                          , "Floating Toolbar 5"
+  STR_TOOLBAR+6                          , "Floating Toolbar 6"
+  STR_TOOLBAR+7                          , "Floating Toolbar 7"
+  STR_BUTTONID_BASE + IC_ID_CANCELOPERATION, "IC_ID_CANCELOPERATION"
+  STR_BUTTONID_BASE + IC_ID_OPEN      , "IC_ID_OPEN"
+  STR_BUTTONID_BASE + IC_ID_SAVE      , "IC_ID_SAVE"
+  STR_BUTTONID_BASE + IC_ID_PRINT     , "IC_ID_PRINT"
+  STR_BUTTONID_BASE + IC_ID_LOCATE    , "IC_ID_LOCATE"
+  STR_BUTTONID_BASE + IC_ID_CUT       , "IC_ID_CUT"
+  STR_BUTTONID_BASE + IC_ID_COPY      , "IC_ID_COPY"
+  STR_BUTTONID_BASE + IC_ID_PASTE     , "IC_ID_PASTE"
+  STR_BUTTONID_BASE + IC_ID_HELP      , "IC_ID_HELP"
+  STR_BUTTONID_BASE + IC_ID_BOLD      , "IC_ID_BOLD"
+  STR_BUTTONID_BASE + IC_ID_ITALIC    , "IC_ID_ITALIC"
+  STR_BUTTONID_BASE + IC_ID_UNDERSCORE, "IC_ID_UNDERSCORE"
+  STR_BUTTONID_BASE + IC_ID_SETTINGS  , "IC_ID_SETTINGS"
+  STR_BUTTONID_BASE + IC_ID_CLEAR     , "IC_ID_CLEAR"
+  STR_BUTTONID_BASE + IC_ID_DELETE    , "IC_ID_DELETE"
+  STR_BUTTONID_BASE + IC_ID_JUSTIFY   , "IC_ID_JUSTIFY"
+  STR_BUTTONID_BASE + IC_ID_CENTER    , "IC_ID_CENTER"
+  STR_BUTTONID_BASE + IC_ID_LEFT      , "IC_ID_LEFT"
+  STR_BUTTONID_BASE + IC_ID_RIGHT     , "IC_ID_RIGHT"
+  STR_BUTTONID_BASE + IC_ID_CHECKSPELLING, "IC_ID_CHECKSPELLING"
+  STR_BUTTONID_BASE + IC_ID_DESELECTALL, "IC_ID_DESELECTALL"
+  STR_BUTTONID_BASE + IC_ID_INSERTCOLUMN, "IC_ID_INSERTCOLUMN"
+  STR_BUTTONID_BASE + IC_ID_INSERTROW , "IC_ID_INSERTROW"
+  STR_BUTTONID_BASE + IC_ID_DELETECOLUMNS, "IC_ID_DELETECOLUMNS"
+  STR_BUTTONID_BASE + IC_ID_DELETEROWS, "IC_ID_DELETEROWS"
+  STR_BUTTONID_BASE + IC_ID_NORMAL    , "IC_ID_NORMAL"
+  STR_BUTTONID_BASE + IC_ID_NEW       , "IC_ID_NEW"
+  STR_BUTTONID_BASE + IC_ID_SAVE_AS   , "IC_ID_SAVE_AS"
+  STR_BUTTONID_BASE + IC_ID_EXIT      , "IC_ID_EXIT"
+  STR_BUTTONID_BASE + IC_ID_UNDO      , "IC_ID_UNDO"
+  STR_BUTTONID_BASE + IC_ID_TOOLBAR   , "IC_ID_TOOLBAR"
+  STR_BUTTONID_BASE + IC_ID_ABOUT     , "IC_ID_ABOUT"
+  STR_BUTTONID_BASE + IC_ID_UPDATE    , "IC_ID_UPDATE"
+  STR_BUTTONID_BASE + IC_ID_PASTESPECIAL, "IC_ID_PASTESPECIAL"
+  STR_BUTTONID_BASE + IC_ID_PASTELINK , "IC_ID_PASTELINK"
+  STR_BUTTONID_BASE + IC_ID_SELECTALL , "IC_ID_SELECTALL"
+  STR_BUTTONID_BASE + IC_ID_DOUBLEUNDERSCORE, "IC_ID_DOUBLEUNDERSCORE"
+  STR_BUTTONID_BASE + IC_ID_LEFTALIGNOBJ, "IC_ID_LEFTALIGNOBJ"
+  STR_BUTTONID_BASE + IC_ID_RIGHTALIGNOBJ, "IC_ID_RIGHTALIGNOBJ"
+  STR_BUTTONID_BASE + IC_ID_MAILSEND  , "IC_ID_MAILSEND"
+  STR_BUTTONID_BASE + IC_ID_MOVEPAGES , "IC_ID_MOVEPAGES"
+  STR_BUTTONID_BASE + IC_ID_PRINTPREVIEW, "IC_ID_PRINTPREVIEW"
+  STR_BUTTONID_BASE + IC_ID_PRINTSETUP, "IC_ID_PRINTSETUP"
+  STR_BUTTONID_BASE + IC_ID_REDO      , "IC_ID_REDO"
+  STR_BUTTONID_BASE + IC_ID_TOOLBARSETUP, "IC_ID_TOOLBARSETUP"
+  STR_BUTTONID_BASE + IC_ID_SORTAZ    , "IC_ID_SORTAZ"
+  STR_BUTTONID_BASE + IC_ID_SORTZA    , "IC_ID_SORTZA"
+  STR_BUTTONID_BASE + IC_ID_SORTUP    , "IC_ID_SORTUP"
+  STR_BUTTONID_BASE + IC_ID_SORTDOWN  , "IC_ID_SORTDOWN"
+  STR_BUTTONID_BASE + IC_ID_TOUR      , "IC_ID_TOUR"
+  STR_BUTTONID_BASE + IC_ID_ZOOM      , "IC_ID_ZOOM"
+  STR_BUTTONID_BASE + IC_ID_ZOOMIN    , "IC_ID_ZOOMIN"
+  STR_BUTTONID_BASE + IC_ID_ZOOMOUT   , "IC_ID_ZOOMOUT"
+  STR_BUTTONID_BASE + IC_ID_GENERALHELP, "IC_ID_GENERALHELP"
+  STR_BUTTONID_BASE + IC_ID_HELPINDEX , "IC_ID_HELPINDEX"
+  STR_BUTTONID_BASE + IC_ID_HELPTUTORIAL, "IC_ID_HELPTUTORIAL"
+  STR_BUTTONID_BASE + IC_ID_USINGHELP , "IC_ID_USINGHELP"
+  STR_BUTTONID_BASE + IC_ID_LOGON     , "IC_ID_LOGON"
+  STR_BUTTONID_BASE + IC_ID_LOGOFF    , "IC_ID_LOGOFF"
+  STR_BUTTONID_BASE + IC_ID_RUNSCRIPT , "IC_ID_RUNSCRIPT"
+  STR_BUTTONID_BASE + IC_ID_VPAPALETTE, "IC_ID_VPAPALETTE"
+  STR_BUTTONID_BASE + 0x9999          , "IC_ID_DEFAULT"
+END
+

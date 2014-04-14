@@ -1,0 +1,42 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: OAContractorPage3,,VB
+//VBGeneratedFiles: OACtr3.cp, OACtr3.cpp
+//VBDependsOnFiles: oamorph.vbf
+//VBParents: public IMultiCellCanvas
+//VBIncludes: "OACtr3.hpp" _OAContractorPage3_
+//VBConstructor: OAContractorPage3(unsigned long id, IWindow* parent = IWindow::desktopWindow(), IWindow* owner = IWindow::desktopWindow(), const IRectangle& rect = IRectangle(), const IMultiCellCanvas::Style& style = IMultiCellCanvas::defaultStyle())
+//VBComposerInfo: visual,,,,,,3
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(false)
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: skillCBTextLength,"Returns the current length of the control window's text in bytes.",unsigned long,virtual unsigned long getSkillCBTextLength() const,,skillCBTextLengthId,SkillCB,textLength
+//VBPromotedAttribute: skillCBText,"Returns the control window's text.",IString,virtual IString getSkillCBText() const,virtual OAContractorPage3& setSkillCBText(const char* text),skillCBTextId,SkillCB,text
+//VBAttribute: yearsAsString,,IString,virtual const IString& yearsAsString() const,virtual OAContractorPage3& setYearsAsString(const IString& aString),yearsAsStringId
+//VBPromotedAttribute: yearMSBValueAsString,"Current spin value as a string",IString,virtual IString getYearMSBValueAsString() const,virtual OAContractorPage3& setYearMSBValueAsString(const IString& aValueAsString),yearMSBValueAsStringId,YearMSB,valueAsString
+//VBSubpart: OAContractorPage3,MultiCellCanvas,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas,SkillCB,IComboBox*,p
+//VBSubpart: MultiCellCanvas,YearMSB,OAMorphableSpinButton*,p
+//VBSubpart: MultiCellCanvas,StaticText1,IStaticText*,p
+//VBSubpart: MultiCellCanvas,StaticText2,IStaticText*,p
+//VBSubpart: MultiCellCanvas,YearST,IStaticText*,p
+//VBPartValue: OAContractorPage3,primaryPart,partRef,MultiCellCanvas
+//VBPartValue: MultiCellCanvas,framingSpec,position1,(32,30,,,32,324,269,110)
+//VBPartValue: MultiCellCanvas,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(5,true,),colAttr(1,true,),colAttr(7,true,),ctlAttr("StaticText1",2,2,2,2),ctlAttr("StaticText2",4,4,2,2),ctlAttr("YearST",4,4,6,6),ctlAttr("SkillCB",2,2,4,6),ctlAttr("YearMSB",4,4,4,4))
+//VBPartValue: SkillCB,style,bitflag,(true,IComboBox::Style,(("IWindow","tabStop",true),("IWindow","group",true)))
+//VBPartValue: SkillCB,text,string,"Technical writing"
+//VBPartValue: SkillCB,limit,integer,25
+//VBPartValue: SkillCB,initialContents,collection,(string,"Software architecture",string,"Programming",string,"Technical writing",string,"Testing")
+//VBPartValue: SkillCB,minimumRows,integer,2
+//VBPartValue: YearMSB,style,bitflag,(true,INumericSpinButton::Style,(("IWindow","tabStop",true),("IBaseSpinButton","pmCompatible",true)))
+//VBPartValue: YearMSB,range,range,(0,30)
+//VBPartValue: YearMSB,limit,integer,2
+//VBPartValue: YearMSB,value,integer,0
+//VBPartValue: StaticText1,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: StaticText1,text,string,"Skill Name"
+//VBPartValue: StaticText2,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: StaticText2,text,string,"Experience"
+//VBPartValue: YearST,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: YearST,text,string,"years"
+//VBPartLayout: main,OAContractorPage3,(initWidgetSize,rectangle,(326,103,975,656))
+//VBEndPartInfo: OAContractorPage3
+

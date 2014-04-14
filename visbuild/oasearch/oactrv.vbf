@@ -1,0 +1,133 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: OAContractorView,,VB
+//VBGeneratedFiles: OACtrV.cp, OACtrV.cpp
+//VBDependsOnFiles: oactrpg3.vbf, oaconv.vbf, oactrb.vbf, oacontct.vbf, oasavcnf.vbf, oactrctr.vbf, oaconb.vbf, oactrpg1.vbf, oaskill.vbf, oaclrcnf.vbf, oactrpg2.vbf, oaskillb.vbf
+//VBParents: public IFrameWindow
+//VBIncludes: "OACtrV.hpp" _OAContractorView_
+//VBConstructor: OAContractorView(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle(), const char* title = 0)
+//VBComposerInfo: visual
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(false),startingResId("")
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: contractor,(7101,"cppres"),OAContractor*,OAContractor* getContractor() const,OAContractorView& setContractor(OAContractor* target),contractorId,Contractor,this
+//VBSubpart: OAContractorView,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,MultiCellCanvas1,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas1,ButtonBar,ISetCanvas*,p
+//VBSubpart: ButtonBar,OkPB,IPushButton*,p
+//VBSubpart: ButtonBar,RefreshPB,IPushButton*,p
+//VBSubpart: ButtonBar,ClearPB,IPushButton*,p
+//VBSubpart: ButtonBar,CancelPB,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,ContractorNB,INotebook*,p
+//VBSubpart: ContractorNB,ContactPage,IVBNotebookPage*,p
+//VBSubpart: ContactPage,ContactPageClient,OAContractorPage1*,p
+//VBSubpart: ContractorNB,HistoryPage,IVBNotebookPage*,p
+//VBSubpart: HistoryPage,HistoryPageClient,OAContractorPage2*,p
+//VBSubpart: ContractorNB,SkillsPage,IVBNotebookPage*,p
+//VBSubpart: SkillsPage,SkillsPageClient,OAContractorPage3*,p
+//VBSubpart: OAContractorView,Skill,OASkill*,p
+//VBSubpart: OAContractorView,OASaveConfirmationVar,OASaveConfirmation*,v
+//VBSubpart: OAContractorView,OASaveConfirmationFac,OASaveConfirmation*,f
+//VBSubpart: OAContractorView,OAClearConfirmationFac,OAClearConfirmation*,f
+//VBSubpart: OAContractorView,SkillBase,OASkillBase*,p
+//VBSubpart: OAContractorView,Contract,OAContract*,p
+//VBSubpart: OAContractorView,OAConViewFac,OAContractView*,f
+//VBSubpart: OAContractorView,OAConViewVar,OAContractView*,v
+//VBSubpart: OAContractorView,NotFound,IMessageBox*,p
+//VBSubpart: OAContractorView,OAClearConfirmationVar,OAClearConfirmation*,v
+//VBSubpart: OAContractorView,Contractor,OAContractor*,v
+//VBSubpart: OAContractorView,ContractorBase,OAContractorBase*,p
+//VBSubpart: OAContractorView,ContractBase,OAContractBase*,p
+//VBConnection: EA,5,p,p,CancelPB,buttonClickEvent,FrameWindow,close
+//VBConnection: AA,4,p,p,Contractor,firstName,ContactPageClient,firstNameEFText
+//VBConnection: AA,15,p,p,Contractor,lastName,ContactPageClient,lastNameEFText
+//VBConnection: AA,6,p,p,Contractor,middleInitial,ContactPageClient,middleInitEFText
+//VBConnection: AA,7,p,p,Contractor,homeStreet,ContactPageClient,streetEFText
+//VBConnection: AA,8,p,p,Contractor,homeCity,ContactPageClient,cityEFText
+//VBConnection: AA,9,p,p,Contractor,homeState,ContactPageClient,stateEFText
+//VBConnection: AA,10,p,p,Contractor,homeZip,ContactPageClient,zipEFText
+//VBConnection: AA,11,p,p,Contractor,phoneNumber,ContactPageClient,phoneNumEFText
+//VBConnection: AA,24,p,p,SkillsPageClient,skillCBText,Skill,skillName
+//VBConnection: AA,79,p,p,Contractor,startDate,HistoryPageClient,startDateEFText
+//VBConnection: AA,40,p,p,Contractor,endDate,HistoryPageClient,endDateEFText
+//VBConnection: AA,51,p,p,Contractor,accountNum,HistoryPageClient,contractEFText
+//VBConnection: AA,42,p,p,Contractor,activeStatus,HistoryPageClient,activeStatusCBSelected
+//VBConnection: AA,35,p,p,Contractor,contractorID,Skill,contractorID
+//VBConnection: EA,18,p,p,OkPB,buttonClickEvent,OASaveConfirmationFac,new
+//VBConnection: EA,19,p,p,OASaveConfirmationFac,newEvent,OASaveConfirmationVar,this
+//VBConnection: EA,20,p,p,OASaveConfirmationFac,newEvent,OASaveConfirmationVar,setFocus
+//VBConnection: EA,21,p,p,OASaveConfirmationFac,newEvent,OASaveConfirmationVar,show
+//VBConnection: EA,22,p,p,ClearPB,buttonClickEvent,OAClearConfirmationFac,new
+//VBConnection: EA,27,p,p,OAClearConfirmationVar,yesPBButtonClickEvent,Contractor,clear
+//VBConnection: EA,28,p,p,OAClearConfirmationVar,yesPBButtonClickEvent,Skill,clear
+//VBConnection: EA,30,p,p,OASaveConfirmationVar,yesPBButtonClickEvent,ContractorBase,putContractor
+//VBConnection: EA,31,p,p,OASaveConfirmationVar,yesPBButtonClickEvent,SkillBase,putSkill
+//VBConnection: EA,29,p,p,OASaveConfirmationVar,noPBButtonClickEvent,FrameWindow,close
+//VBConnection: AA,62,p,p,SkillsPageClient,yearMSBValueAsString,Skill,yearsExp
+//VBConnection: AA,32,c,p,31,aSkill,Skill,this
+//VBConnection: AA,41,p,p,Contract,accountNum,HistoryPageClient,contractEFText
+//VBConnection: EA,43,p,p,HistoryPageClient,browsePBButtonClickEvent,ContractBase,getContract
+//VBConnection: AA,52,p,p,Contract,this,OAConViewFac,contract
+//VBConnection: EA,44,p,p,OAConViewFac,newEvent,OAConViewVar,this
+//VBConnection: EA,55,p,p,OAConViewFac,newEvent,OAConViewVar,setFocus
+//VBConnection: EA,36,p,p,OAConViewFac,newEvent,OAConViewVar,show
+//VBConnection: EA,39,p,p,ContractBase,queryFound,OAConViewFac,new
+//VBConnection: EA,53,p,p,RefreshPB,buttonClickEvent,ContractorBase,getContractor
+//VBConnection: EA,65,c,p,53,exceptionOccurred,NotFound,showException
+//VBConnection: EA,46,p,p,OAClearConfirmationVar,yesPBButtonClickEvent,Contract,clear
+//VBConnection: EA,64,p,p,OAClearConfirmationFac,newEvent,OAClearConfirmationVar,this
+//VBConnection: EA,45,p,p,OAClearConfirmationFac,newEvent,OAClearConfirmationVar,setFocus
+//VBConnection: EA,56,p,p,OAClearConfirmationFac,newEvent,OAClearConfirmationVar,show
+//VBConnection: AA,59,c,p,53,aContractor,Contractor,*this
+//VBConnection: AA,49,c,p,30,aContractor,Contractor,*this
+//VBConnection: AA,69,c,p,43,aContract,Contract,*this
+//VBConnection: AA,63,p,p,OAConViewFac,owner,FrameWindow,owner
+//VBPartValue: OAContractorView,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,client,partRef,MultiCellCanvas1
+//VBPartValue: FrameWindow,framingSpec,position1,(30,30,606,517,10,10,606,517)
+//VBPartValue: FrameWindow,title,string,"Opportunities Abound Contractor Information"
+//VBPartValue: MultiCellCanvas1,id,code,((IC_FRAME_CLIENT_ID))
+//VBPartValue: MultiCellCanvas1,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(2,,),colAttr(1,true,),ctlAttr("ButtonBar",2,2,1,1),ctlAttr("ContractorNB",1,1,1,1))
+//VBPartValue: ButtonBar,packType,enum,(ISetCanvas::PackType,"expanded")
+//VBPartValue: OkPB,style,bitflag,(true,IPushButton::Style,(("IPushButton","defaultButton",true),("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: OkPB,text,string,"OK"
+//VBPartValue: RefreshPB,text,string,"Refresh"
+//VBPartValue: RefreshPB,enabled,boolean,true
+//VBPartValue: ClearPB,text,string,"Clear"
+//VBPartValue: CancelPB,text,string,"Cancel"
+//VBPartValue: ContractorNB,avlSetMajorTabSize,size,(100,30)
+//VBPartValue: ContractorNB,minimumSize,minsize,(600,429,false)
+//VBPartValue: ContractorNB,tabShape,enum,(INotebook::TabShape,"rounded")
+//VBPartValue: ContractorNB,backgroundColor,color,(name,white)
+//VBPartValue: ContactPage,tabText,string,"Contact"
+//VBPartValue: ContactPage,attribute,bitflag,(false,INotebook::PageSettings::Attribute,(("INotebook::PageSettings","majorTab",true),("INotebook::PageSettings","autoPageSize",true)))
+//VBPartValue: ContactPage,statusText,string,"Vital statistics"
+//VBPartValue: HistoryPage,tabText,string,"History"
+//VBPartValue: HistoryPage,attribute,bitflag,(false,INotebook::PageSettings::Attribute,(("INotebook::PageSettings","majorTab",true),("INotebook::PageSettings","autoPageSize",true)))
+//VBPartValue: HistoryPage,statusText,string,"Employment status"
+//VBPartValue: SkillsPage,tabText,string,"Skills"
+//VBPartValue: SkillsPage,attribute,bitflag,(false,INotebook::PageSettings::Attribute,(("INotebook::PageSettings","majorTab",true),("INotebook::PageSettings","autoPageSize",true)))
+//VBPartValue: SkillsPage,statusText,string,"Use this page to add skills."
+//VBPartValue: OAConViewFac,autoDeleteObject,boolean,true
+//VBConnValue: 21,visible,boolean,true
+//VBConnValue: 30,aContractorID,string,"*this"
+//VBConnValue: 36,visible,boolean,true
+//VBConnValue: 56,visible,boolean,true
+//VBPartLayout: main,OAContractorView,(initWidgetSize,rectangle,(54,26,984,762))
+//VBPartLayout: part,OASaveConfirmationVar,(framingSpec,position2,(213,617,58,58))
+//VBPartLayout: part,OASaveConfirmationFac,(framingSpec,position2,(74,619,40,40))
+//VBPartLayout: part,OAClearConfirmationFac,(framingSpec,position2,(350,619,40,40))
+//VBPartLayout: part,SkillBase,(framingSpec,position2,(689,105,40,40))
+//VBPartLayout: part,Skill,(framingSpec,position2,(682,34,40,40))
+//VBPartLayout: part,OAConViewFac,(framingSpec,position2,(701,504,40,40))
+//VBPartLayout: part,OAConViewVar,(framingSpec,position2,(655,608,58,58))
+//VBPartLayout: part,NotFound,(framingSpec,position2,(571,630,40,40))
+//VBPartLayout: part,Contract,(framingSpec,position2,(703,320,40,40))
+//VBPartLayout: part,OAClearConfirmationVar,(framingSpec,position2,(470,605,58,58))
+//VBPartLayout: part,Contractor,(framingSpec,position2,(684,178,58,58))
+//VBPartLayout: part,ContractBase,(framingSpec,position2,(712,405,40,40))
+//VBPartLayout: part,ContractorBase,(framingSpec,position2,(723,264,40,40))
+//VBPartLayout: connection,40,(midPoints,collection,(point,(651,234)))
+//VBPartLayout: connection,51,(midPoints,collection,(point,(657,216)))
+//VBPartLayout: connection,42,(midPoints,collection,(point,(662,194)))
+//VBEndPartInfo: OAContractorView
+

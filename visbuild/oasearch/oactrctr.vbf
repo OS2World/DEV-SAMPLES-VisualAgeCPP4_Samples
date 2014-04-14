@@ -1,0 +1,29 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: OAContractor,"OASearch contractor class",VB
+//VBGeneratedFiles: contrctr.cpp
+//VBParents: public IStandardNotifier
+//VBIncludes: "contrctr.hpp" _OAContractor_,<iprofile.hpp>,<istring.hpp>
+//VBConstructor: OAContractor()
+//VBComposerInfo: nonvisual,802,oasres
+//VBGeneratorValues: userHpp(true),userCpp(true),userH(false),userRC(false)
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBAction: clear,"Empty the instance of values",void,void clear()
+//VBAction: parseName,"Parse user input and construct contractorID attribute",OAContractor&,virtual OAContractor& parseName(const IString& aName)
+//VBAttribute: contractorID,"Contractor identifier derived from name attributes",IString,virtual const IString& contractorID() const,virtual OAContractor& setContractorID(const IString& aContractorID),contractorIDId,preferred
+//VBAttribute: phoneNumber,"Home phone number as string",IString,virtual const IString& phoneNumber() const,virtual OAContractor& setPhoneNumber(const IString& aPhoneNumber),phoneNumberId
+//VBAttribute: startDate,"Date on which contractor started working for OA",IString,virtual const IString& startDate() const,virtual OAContractor& setStartDate(const IString& aStartDate),startDateId
+//VBAttribute: endDate,"Date on which contractor stopped working for OA",IString,virtual const IString& endDate() const,virtual OAContractor& setEndDate(const IString& aEndDate),endDateId
+//VBAttribute: homeStreet,,IString,virtual const IString& homeStreet() const,virtual OAContractor& setHomeStreet(const IString& aHomeStreet),homeStreetId
+//VBAttribute: homeCity,,IString,virtual const IString& homeCity() const,virtual OAContractor& setHomeCity(const IString& aHomeCity),homeCityId
+//VBAttribute: homeState,,IString,virtual const IString& homeState() const,virtual OAContractor& setHomeState(const IString& aHomeState),homeStateId
+//VBAttribute: homeZip,,IString,virtual const IString& homeZip() const,virtual OAContractor& setHomeZip(const IString& aHomeZip),homeZipId
+//VBAttribute: accountNum,"Account number for current contract",IString,virtual const IString& accountNum() const,virtual OAContractor& setAccountNum(const IString& aAccountNum),accountNumId
+//VBAttribute: activeStatus,"Is contractor currently accepting work?",bool,virtual bool isActiveStatus() const,virtual OAContractor& enableActiveStatus(const bool enable = true),activeStatusId
+//VBAttribute: firstName,,IString,virtual const IString& firstName() const,virtual OAContractor& setFirstName(const IString& aFirstName),firstNameId
+//VBAttribute: lastName,,IString,virtual const IString& lastName() const,virtual OAContractor& setLastName(const IString& aLastName),lastNameId
+//VBAttribute: middleInitial,,IString,virtual const IString& middleInitial() const,virtual OAContractor& setMiddleInitial(const IString& aMiddleInitial),middleInitialId
+//VBAttribute: IDvalid,"Whether current value of contractorID is still valid",bool,virtual bool isIDvalid() const,virtual OAContractor& enableIDvalid(const bool enable = false),IDvalidId
+//VBPartLayout: main,OAContractor,(initWidgetSize,rectangle,(104,155,1128,728))
+//VBEndPartInfo: OAContractor
+

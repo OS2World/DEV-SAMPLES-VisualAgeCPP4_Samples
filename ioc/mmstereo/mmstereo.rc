@@ -1,0 +1,66 @@
+/******************************************************************************
+* .FILE:         mmstereo.rc                                                  *
+*                                                                             *
+* .DESCRIPTION:  Multimedia Stereo Sample:             Resources              *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    IBM Open Class Library                                                   *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1997 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+******************************************************************************/
+#include "mmstereo.h"
+#include "mltamp.h"
+#include "mltcd.h"
+#include "mltvid.h"
+#include "mltwave.h"
+
+ICON WINDOWID    mmstereo.ico
+
+STRINGTABLE
+  BEGIN
+    WINDOWID,         "Multimedia MMSTEREO Sample"
+    TITLE_MIXER,      "Open Class Library Amp/Mixer Player"
+    STR_VOLUME,       "Volume"
+    STR_BALANCE,      "Balance"
+    STR_BASS,         "Bass"
+    STR_TREBLE,       "Treble"
+    STR_PITCH,        "Pitch"
+    STR_GAIN,         "Gain"
+    TITLE_CD_PLAYER,  "Open Class Library CD Player"
+    STR_INIT_DISP,    "TRACK 00  00:00:00"
+    STR_NO_TITLE,     "No CD Title: No Track Title"
+    STR_NO_DISC_TITLE,  "No CD Title"
+    STR_NO_TRACK_TITLE, " No Track Title"
+    STR_INSERT,       "Insert an Audio CD"
+    STR_NO_DEVICE,    "Could Not Open CD Device"
+    STR_TRACK,        "TRACK "
+    STR_COLON,        ":"
+    STR_LOAD_VID,     "Load"
+    TITLE_VID_PLAYER, "Open Class Library Video Player"
+    STR_AVI_EXT,      "*.avi"
+    STR_DEF_TIME,     "00:00:00"
+    STR_LOAD_VID_FILE, "Load a new video file"
+    STR_LINE_IN,      "LineIn"
+    STR_SAVE,         "Save"
+    STR_MIC,          "Microphone"
+    STR_LTIME_DEF,    "00:00:00"
+    STR_RECORD,       "Record"
+    STR_LOAD,         "Load"
+    TITLE_WAV_PLAYER, "Open Class Library Wave Player"
+    STR_LOAD_NEW,     "Load a new audio file"
+    STR_WAV_EXT,      "*.wav"
+    STR_PAD,          "  "
+  END
+

@@ -1,0 +1,28 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: rapmain,,VB
+//VBGeneratedFiles: rapmain.cpp, rapmain.rc
+//VBDependsOnFiles: rapmainv.vbf
+//VBParents: public IVBMain
+//VBIncludes: "rapmain.hpp" _rapmain_
+//VBConstructor: rapmain()
+//VBComposerInfo: nonvisual
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(true)
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBAttribute: resourceLibrary,(92,"cppres"),char*,const IResourceLibrary& resourceLibrary() const,rapmain& setResourceLibrary(const char* resLibName = 0, IDynamicLinkLibrary::ESearchLocation searchLocation = IVBMain::defaultResourcePath()),resourceLibraryId
+//VBAttribute: defaultResourceLibrary,(93,"cppres"),char*,static const IResourceLibrary& defaultResourceLibrary(),static void setDefaultResourceLibrary(const char* resLibName = 0, IDynamicLinkLibrary::ESearchLocation searchLocation = IVBMain::defaultResourcePath()),,nosetting
+//VBSubpart: rapmain,IVBMain1,IVBMain*,p
+//VBSubpart: rapmain,StandardNotifier1,IRapMainView*,f
+//VBSubpart: rapmain,RapMainView1,IRapMainView*,v
+//VBConnection: EA,0,p,p,,ready,StandardNotifier1,new
+//VBConnection: EA,1,p,p,StandardNotifier1,newEvent,RapMainView1,this
+//VBConnection: EA,2,p,p,StandardNotifier1,newEvent,RapMainView1,show
+//VBPartValue: rapmain,primaryPart,partRef,IVBMain1
+//VBConnValue: 2,visible,boolean,true
+//VBPartLayout: main,rapmain,(initWidgetSize,rectangle,(128,97,739,572))
+//VBPartLayout: part,IVBMain1,(framingSpec,position2,(21,43,40,40))
+//VBPartLayout: part,StandardNotifier1,(framingSpec,position2,(162,90))
+//VBPartLayout: part,RapMainView1,(framingSpec,position2,(158,224))
+//VBEndPartInfo: rapmain
+
+

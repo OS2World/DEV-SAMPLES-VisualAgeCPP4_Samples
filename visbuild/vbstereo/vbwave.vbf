@@ -1,0 +1,176 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: VBWave,,VB
+//VBGeneratedFiles: VBWave.cp, VBWave.cpp
+//VBDependsOnFiles: vbmm.vbe
+//VBParents: public IMultiCellCanvas
+//VBIncludes: "VBWave.hpp" _VBWAVE_
+//VBConstructor: VBWave(unsigned long id, IWindow* parent = IWindow::desktopWindow(), IWindow* owner = IWindow::desktopWindow(), const IRectangle& rect = IRectangle(), const IMultiCellCanvas::Style& style = IMultiCellCanvas::defaultStyle())
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBSubpart: VBWave,MultiCellCanvas,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas,StaticText5,IStaticText*,p
+//VBSubpart: MultiCellCanvas,SetCanvas1,ISetCanvas*,p
+//VBSubpart: SetCanvas1,AnimatedButton1,IAnimatedButton*,p
+//VBSubpart: SetCanvas1,StaticText1,IStaticText*,p
+//VBSubpart: SetCanvas1,AnimatedButton3,IAnimatedButton*,p
+//VBSubpart: SetCanvas1,AnimatedButton4,IAnimatedButton*,p
+//VBSubpart: SetCanvas1,AnimatedButton5,IAnimatedButton*,p
+//VBSubpart: SetCanvas1,AnimatedButton6,IAnimatedButton*,p
+//VBSubpart: SetCanvas1,AnimatedButton7,IAnimatedButton*,p
+//VBSubpart: SetCanvas1,StaticText2,IStaticText*,p
+//VBSubpart: SetCanvas1,AnimatedButton2,IAnimatedButton*,p
+//VBSubpart: MultiCellCanvas,EntryField5,IEntryField*,p
+//VBSubpart: MultiCellCanvas,SetCanvas11,ISetCanvas*,p
+//VBSubpart: SetCanvas11,StaticText4,IStaticText*,p
+//VBSubpart: SetCanvas11,StaticText11,IStaticText*,p
+//VBSubpart: SetCanvas11,StaticText6,IStaticText*,p
+//VBSubpart: SetCanvas11,StaticText21,IStaticText*,p
+//VBSubpart: MultiCellCanvas,StaticText3,IStaticText*,p
+//VBSubpart: MultiCellCanvas,PushButton1,IPushButton*,p
+//VBSubpart: VBWave,VBFileDialog1,IVBFileDialog*,p
+//VBSubpart: VBWave,VBFlyText1,IVBFlyText*,p
+//VBSubpart: VBWave,MMWaveAudio1,IMMWaveAudio*,p
+//VBSubpart: VBWave,MMTime2,IMMTime*,v
+//VBConnection: EA,1,p,p,AnimatedButton1,buttonClickEvent,VBFileDialog1,showModally
+//VBConnection: EA,7,p,p,,ready,VBFileDialog1,fileName
+//VBConnection: EA,19,p,p,AnimatedButton2,buttonClickEvent,MMWaveAudio1,acquire
+//VBConnection: EA,35,p,p,AnimatedButton2,buttonClickEvent,MMWaveAudio1,enableConnector
+//VBConnection: EA,38,p,p,AnimatedButton2,buttonClickEvent,MMWaveAudio1,record
+//VBConnection: EA,9,p,p,VBFileDialog1,pressedOkEvent,EntryField5,text
+//VBConnection: AA,10,c,p,9,text,VBFileDialog1,fileName
+//VBConnection: EA,11,p,p,VBFileDialog1,pressedOkEvent,MMWaveAudio1,filename
+//VBConnection: AA,32,c,p,11,filename,VBFileDialog1,fileName
+//VBConnection: EA,33,p,p,AnimatedButton6,buttonClickEvent,AnimatedButton6,startAnimation
+//VBConnection: EA,25,p,p,AnimatedButton5,buttonClickEvent,AnimatedButton6,stopAnimation
+//VBConnection: EA,16,p,p,AnimatedButton4,buttonClickEvent,AnimatedButton6,stopAnimation
+//VBConnection: EA,17,p,p,AnimatedButton3,buttonClickEvent,AnimatedButton6,stopAnimation
+//VBConnection: EA,18,p,p,AnimatedButton7,buttonClickEvent,AnimatedButton6,stopAnimation
+//VBConnection: EA,29,p,p,AnimatedButton7,buttonClickEvent,MMWaveAudio1,seekToEnd
+//VBConnection: EA,20,p,p,AnimatedButton5,buttonClickEvent,MMWaveAudio1,stop
+//VBConnection: EA,31,p,p,AnimatedButton4,buttonClickEvent,MMWaveAudio1,pause
+//VBConnection: EA,22,p,p,AnimatedButton3,buttonClickEvent,MMWaveAudio1,seekToStart
+//VBConnection: EA,26,p,p,AnimatedButton6,buttonClickEvent,MMWaveAudio1,startPositionTracking
+//VBConnection: EA,43,p,p,AnimatedButton6,buttonClickEvent,MMWaveAudio1,play
+//VBConnection: EA,41,p,p,VBFileDialog1,pressedOkEvent,MMWaveAudio1,timeFormat
+//VBConnection: EA,51,p,p,VBFileDialog1,pressedOkEvent,MMWaveAudio1,volume
+//VBConnection: EA,52,p,p,PushButton1,buttonClickEvent,MMWaveAudio1,save
+//VBConnection: EC,42,p,p,MMWaveAudio1,positionChangeEvent,,customLogic,"GetTimeFromPosition",void,(unsigned long position;
+//VB:position = ((IMMPositionChangeEvent *) event->eventData().asUnsignedLong())->position();
+//VB://target->setTarget(new IMMTime(position)); when connected to the variable
+//VB:iMMTime2()->setTarget(new IMMTime(position));  // when connected to the freeform
+//VB:)
+//VBConnection: EA,27,p,p,AnimatedButton5,buttonClickEvent,MMWaveAudio1,stopPositionTracking
+//VBConnection: EA,37,p,p,,ready,MMTime2,autoDeleteTarget
+//VBConnection: EA,36,p,p,MMWaveAudio1,positionChangeEvent,StaticText21,valueAsInt
+//VBConnection: EA,47,p,p,MMWaveAudio1,positionChangeEvent,StaticText11,valueAsInt
+//VBConnection: AA,28,c,p,36,newValue,MMTime2,seconds
+//VBConnection: AA,39,c,p,47,newValue,MMTime2,minutes
+//VBPartValue: VBWave,primaryPart,partRef,MultiCellCanvas
+//VBPartValue: MultiCellCanvas,framingSpec,position1,(16,46,550,302,16,279,550,302)
+//VBPartValue: MultiCellCanvas,canvasLayout,mclayout,(rowAttr(8,,),colAttr(3,true,),colAttr(18,,),ctlAttr("StaticText5",5,5,3,3),ctlAttr("SetCanvas1",1,1,3,3),ctlAttr("EntryField5",6,6,3,3),ctlAttr("SetCanvas11",2,2,3,3),ctlAttr("StaticText3",8,8,3,3),ctlAttr("PushButton1",1,1,5,5))
+//VBPartValue: MultiCellCanvas,backgroundColor,color,(name,paleGray)
+//VBPartValue: StaticText5,font,font,(Times New Roman,12,Bold,Italic,Fixed,Vector)
+//VBPartValue: StaticText5,alignment,enum,(IStaticText::Alignment,"centerCenter")
+//VBPartValue: StaticText5,text,string,"Now Playing:"
+//VBPartValue: StaticText5,foregroundColor,color,(name,red)
+//VBPartValue: StaticText5,backgroundColor,color,(name,paleGray)
+//VBPartValue: SetCanvas1,minimumSize,minsize,(383,84,false)
+//VBPartValue: SetCanvas1,deckCount,integer,1
+//VBPartValue: AnimatedButton1,font,font,(IBM3270,7,Bold)
+//VBPartValue: AnimatedButton1,avlFlyOverShortText,string,"Load Wave File"
+//VBPartValue: AnimatedButton1,minimumSize,minsize,(59,53,false)
+//VBPartValue: AnimatedButton1,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"eject",))
+//VBPartValue: StaticText1,text,string,"     "
+//VBPartValue: AnimatedButton3,avlFlyOverShortText,string,"Go to Begining"
+//VBPartValue: AnimatedButton3,minimumSize,minsize,(37,26,false)
+//VBPartValue: AnimatedButton3,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"rewind",))
+//VBPartValue: AnimatedButton4,avlFlyOverShortText,string,"Pause"
+//VBPartValue: AnimatedButton4,minimumSize,minsize,(37,26,false)
+//VBPartValue: AnimatedButton4,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"pause",))
+//VBPartValue: AnimatedButton5,avlFlyOverShortText,string,"Stop"
+//VBPartValue: AnimatedButton5,minimumSize,minsize,(37,26,false)
+//VBPartValue: AnimatedButton5,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"stop",))
+//VBPartValue: AnimatedButton6,avlFlyOverShortText,string,"Play"
+//VBPartValue: AnimatedButton6,minimumSize,minsize,(37,26,false)
+//VBPartValue: AnimatedButton6,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"play",))
+//VBPartValue: AnimatedButton7,avlFlyOverShortText,string,"Go to End"
+//VBPartValue: AnimatedButton7,minimumSize,minsize,(37,26,false)
+//VBPartValue: AnimatedButton7,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"fastForward",))
+//VBPartValue: StaticText2,text,string,"    "
+//VBPartValue: AnimatedButton2,avlFlyOverShortText,string,"Record"
+//VBPartValue: AnimatedButton2,foregroundColor,color,(name,red)
+//VBPartValue: AnimatedButton2,minimumSize,minsize,(61,50,false)
+//VBPartValue: AnimatedButton2,backgroundColor,color,(name,red)
+//VBPartValue: AnimatedButton2,resourceIds,animResId,(enum,(IAnimatedButton::AnimatedBitmaps,"record",))
+//VBPartValue: EntryField5,foregroundColor,color,(name,red)
+//VBPartValue: EntryField5,limit,integer,256
+//VBPartValue: EntryField5,backgroundColor,color,(name,black)
+//VBPartValue: EntryField5,minimumSize,minsize,(247,50,false)
+//VBPartValue: SetCanvas11,alignment,enum,(ISetCanvas::Alignment,"bottomCenter")
+//VBPartValue: SetCanvas11,packType,enum,(ISetCanvas::PackType,"tight")
+//VBPartValue: SetCanvas11,deckCount,integer,1
+//VBPartValue: SetCanvas11,pad,size,(20,10)
+//VBPartValue: SetCanvas11,backgroundColor,color,(name,black)
+//VBPartValue: SetCanvas11,minimumSize,minsize,(458,85,false)
+//VBPartValue: SetCanvas11,margin,size,(70,10)
+//VBPartValue: SetCanvas11,deckOrientation,enum,(ISetCanvas::DeckOrientation,"horizontal")
+//VBPartValue: StaticText4,text,string,"          "
+//VBPartValue: StaticText11,text,string,"00"
+//VBPartValue: StaticText11,font,font,(Times New Roman,28,Bold,Fixed,Vector)
+//VBPartValue: StaticText11,foregroundColor,color,(name,darkGreen)
+//VBPartValue: StaticText11,backgroundColor,color,(name,black)
+//VBPartValue: StaticText11,alignment,enum,(IStaticText::Alignment,"bottomCenter")
+//VBPartValue: StaticText11,minimumSize,minsize,(66,58,false)
+//VBPartValue: StaticText6,font,font,(Times New Roman,28,Bold,Vector)
+//VBPartValue: StaticText6,text,string,":"
+//VBPartValue: StaticText6,foregroundColor,color,(name,darkGreen)
+//VBPartValue: StaticText21,text,string,"00"
+//VBPartValue: StaticText21,font,font,(Times New Roman,28,Bold,Fixed,Vector)
+//VBPartValue: StaticText21,foregroundColor,color,(name,darkGreen)
+//VBPartValue: StaticText21,backgroundColor,color,(name,black)
+//VBPartValue: StaticText21,alignment,enum,(IStaticText::Alignment,"bottomCenter")
+//VBPartValue: StaticText21,minimumSize,minsize,(66,58,false)
+//VBPartValue: StaticText3,font,font,(Times New Roman,12,Bold,Italic,Fixed,Vector)
+//VBPartValue: StaticText3,alignment,enum,(IStaticText::Alignment,"centerCenter")
+//VBPartValue: StaticText3,text,string,"Wave Audio"
+//VBPartValue: StaticText3,foregroundColor,color,(name,red)
+//VBPartValue: PushButton1,text,string,"Save"
+//VBPartValue: PushButton1,minimumSize,minsize,(63,50,false)
+//VBPartValue: VBFileDialog1,fileName,string,"*.WAV"
+//VBPartValue: VBFileDialog1,title,string,"Open Audio Wave  Files"
+//VBPartValue: MMTime2,avlDeferCreation,boolean,false
+//VBPartValue: MMTime2,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBConnValue: 7,fileName,string,"*.WAV"
+//VBConnValue: 19,call,enum,(IMMDevice::CallType,"wait")
+//VBConnValue: 19,acquire,enum,(IMMDevice::ShareMode,"isolatedExclusive")
+//VBConnValue: 35,enable,boolean,true
+//VBConnValue: 35,type,enum,(IMMDevice::ConnectorType,"microphones")
+//VBConnValue: 35,call,enum,(IMMDevice::CallType,"wait")
+//VBConnValue: 38,insert,boolean,false
+//VBConnValue: 26,timeInterval,code,((1000))
+//VBConnValue: 41,timeFormat,enum,(IMMTime::Format,"milliseconds")
+//VBConnValue: 51,volume,integer,100
+//VBConnValue: 37,autoDeleteTarget,boolean,true
+//VBPartLayout: main,VBWave,(initWidgetSize,rectangle,(328,274,1223,975))
+//VBPartLayout: part,VBFileDialog1,(framingSpec,position2,(81,463,40,40))
+//VBPartLayout: eventconnection,16,(midPoints,collection,(point,(241,16)))
+//VBPartLayout: eventconnection,38,(midPoints,collection,(point,(671,224)))
+//VBPartLayout: eventconnection,11,(midPoints,collection,(point,(374,593)))
+//VBPartLayout: part,VBFlyText1,(framingSpec,position2,(19,410,40,40))
+//VBPartLayout: eventconnection,19,(midPoints,collection,(point,(648,227)))
+//VBPartLayout: eventconnection,20,(midPoints,array,(point,(633,61)))
+//VBPartLayout: eventconnection,41,(midPoints,collection,(point,(353,528)))
+//VBPartLayout: part,MMWaveAudio1,(framingSpec,position2,(596,452,40,40))
+//VBPartLayout: eventconnection,51,(midPoints,collection,(point,(365,561)))
+//VBPartLayout: eventconnection,52,(midPoints,collection,(point,(700,190)))
+//VBPartLayout: part,MMTime2,(framingSpec,position2,(354,427,58,58))
+//VBPartLayout: eventconnection,17,(midPoints,collection,(point,(204,17)))
+//VBPartLayout: eventconnection,18,(midPoints,collection,(point,(349,6)))
+//VBPartLayout: connection,32,(midPoints,collection,(point,(224,596)))
+//VBPartLayout: eventconnection,35,(midPoints,collection,(point,(588,247)))
+//VBPartLayout: eventconnection,36,(midPoints,collection,(point,(483,400)))
+//VBPartLayout: eventconnection,47,(midPoints,collection,(point,(420,401)))
+//VBEndPartInfo: VBWave
+
+

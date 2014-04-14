@@ -1,0 +1,24 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: OASearch,"Main for sample application",VB
+//VBGeneratedFiles: OASearch.cpp
+//VBDependsOnFiles: oamain.vbf
+//VBParents: public IVBMain
+//VBIncludes: "OASearch.hpp" _OASEARCH_
+//VBConstructor: OASearch()
+//VBComposerInfo: nonvisual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBSubpart: OASearch,VBMain,IVBMain*,p
+//VBSubpart: OASearch,OAMainFactory,OAMain*,f
+//VBSubpart: OASearch,OAMainWindow,OAMain*,v
+//VBConnection: EA,1,p,p,,ready,OAMainFactory,new
+//VBConnection: EA,11,p,p,OAMainFactory,newEvent,OAMainWindow,this
+//VBConnection: EA,2,p,p,OAMainFactory,newEvent,OAMainWindow,show
+//VBPartValue: OASearch,primaryPart,partRef,VBMain
+//VBConnValue: 2,visible,boolean,true
+//VBPartLayout: main,OASearch,(initWidgetSize,rectangle,(439,294,1117,894))
+//VBPartLayout: part,VBMain,(framingSpec,position2,(23,17,40,40))
+//VBPartLayout: part,OAMainFactory,(framingSpec,position2,(109,64,40,40))
+//VBPartLayout: part,OAMainWindow,(framingSpec,position2,(206,52,58,58))
+//VBEndPartInfo: OASearch
+

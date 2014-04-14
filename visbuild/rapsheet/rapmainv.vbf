@@ -1,0 +1,90 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: IRapMainView,,VB
+//VBGeneratedFiles: RpMnView.rc, RpMnView.cp, RpMnView.cpp
+//VBDependsOnFiles: suscnrvw.vbf, susclmgr.vbe
+//VBParents: public IFrameWindow
+//VBIncludes: "RpMnView.hpp" _IRAPMAINVIEW_
+//VBResourceDllName: rapstrg
+//VBConstructor: IRapMainView(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle ( ), const char* title = 0)
+//VBComposerInfo: visual
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(false),genStrings(true),startingResId("22000")
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBAttribute: resourceLibrary,(92,"cppres"),char*,const IResourceLibrary& resourceLibrary() const,IRapMainView& setResourceLibrary(const char* resLibName = 0, IDynamicLinkLibrary::ESearchLocation searchLocation = IVBMain::defaultResourcePath()),resourceLibraryId
+//VBAttribute: defaultResourceLibrary,(93,"cppres"),char*,static const IResourceLibrary& defaultResourceLibrary(),static void setDefaultResourceLibrary(const char* resLibName = 0, IDynamicLinkLibrary::ESearchLocation searchLocation = IVBMain::defaultResourcePath()),,nosetting
+//VBSubpart: IRapMainView,Frame Window,IFrameWindow*,p
+//VBSubpart: Frame Window,Canvas,ICanvas*,p
+//VBSubpart: Canvas,GraphicPushButton1,IGraphicPushButton*,p
+//VBSubpart: Canvas,GraphicPushButton2,IGraphicPushButton*,p
+//VBSubpart: Canvas,GraphicPushButton3,IGraphicPushButton*,p
+//VBSubpart: Canvas,StaticText1,IStaticText*,p
+//VBSubpart: Canvas,StaticText2,IStaticText*,p
+//VBSubpart: Canvas,StaticText3,IStaticText*,p
+//VBSubpart: Canvas,StaticText4,IStaticText*,p
+//VBSubpart: Canvas,StaticText5,IStaticText*,p
+//VBSubpart: Canvas,StaticText6,IStaticText*,p
+//VBSubpart: IRapMainView,susCMgr,ISuspectClientMgr*,p
+//VBSubpart: IRapMainView,susCnrFac,ISuspectCnrView*,f
+//VBSubpart: IRapMainView,susCnrVw,ISuspectCnrView*,v
+//VBConnection: EA,3,p,p,GraphicPushButton1,buttonClickEvent,GraphicPushButton1,disable
+//VBConnection: EA,12,p,p,GraphicPushButton1,buttonClickEvent,susCMgr,primeDBWithSuspects
+//VBConnection: EA,9,p,p,GraphicPushButton1,buttonClickEvent,susCMgr,getAllFromDB
+//VBConnection: EA,10,c,p,9,actionResult,susCMgr,resultBuffer
+//VBConnection: AA,41,p,p,susCnrFac,susCMgr,susCMgr,this
+//VBConnection: EA,15,p,p,susCMgr,parsedResult,susCnrFac,new
+//VBConnection: EA,8,p,p,susCnrFac,newEvent,susCnrVw,this
+//VBConnection: EA,21,p,p,susCMgr,parsedResult,susCnrVw,setFocus
+//VBConnection: AA,42,p,p,susCnrFac,owner,Frame Window,this
+//VBConnection: EA,35,p,p,GraphicPushButton1,buttonClickEvent,susCMgr,processResult
+//VBConnection: EA,4,p,p,GraphicPushButton1,buttonClickEvent,GraphicPushButton1,enable
+//VBConnection: EA,11,p,p,susCMgr,parsedResult,susCnrVw,showModally
+//VBConnection: EA,31,p,p,susCMgr,parsedResult,susCnrVw,deleteTarget
+//VBPartValue: IRapMainView,primaryPart,partRef,Frame Window
+//VBPartValue: Frame Window,client,partRef,Canvas
+//VBPartValue: Frame Window,framingSpec,position1,(29,28,516,304,29,236,516,304)
+//VBPartValue: Frame Window,title,string,"Alpha Omega - Police Rap Sheet Main Menu"
+//VBPartValue: Canvas,id,code,((IC_FRAME_CLIENT_ID))
+//VBPartValue: GraphicPushButton1,resourceId,resourceid,(2001,"rapres")
+//VBPartValue: GraphicPushButton1,style,bitflag,(true,IGraphicPushButton::Style,(("IPushButton","defaultButton",false),("IButton","noPointerFocus",true),("IWindow","group",false),("IWindow","tabStop",true)))
+//VBPartValue: GraphicPushButton1,default,boolean,true
+//VBPartValue: GraphicPushButton1,framingSpec,position1,(52,84,99,92,52,96,99,92)
+//VBPartValue: GraphicPushButton2,resourceId,resourceid,(2002,"rapres")
+//VBPartValue: GraphicPushButton2,style,bitflag,(true,IGraphicPushButton::Style,(("IWindow","tabStop",true)))
+//VBPartValue: GraphicPushButton2,framingSpec,position1,(202,84,99,92,202,96,99,92)
+//VBPartValue: GraphicPushButton3,resourceId,resourceid,(2003,"rapres")
+//VBPartValue: GraphicPushButton3,style,bitflag,(true,IGraphicPushButton::Style,(("IWindow","tabStop",true)))
+//VBPartValue: GraphicPushButton3,framingSpec,position1,(354,84,99,92,354,96,99,92)
+//VBPartValue: GraphicPushButton3,backgroundColor,color,(name,black)
+//VBPartValue: StaticText1,text,string,"Witness"
+//VBPartValue: StaticText1,framingSpec,position1,(66,184,null,null,66,66,71,22)
+//VBPartValue: StaticText1,foregroundColor,color,(name,black)
+//VBPartValue: StaticText2,text,string,"Identification"
+//VBPartValue: StaticText2,framingSpec,position1,(43,209,null,null,43,41,116,22)
+//VBPartValue: StaticText2,foregroundColor,color,(name,black)
+//VBPartValue: StaticText3,text,string,"Cases"
+//VBPartValue: StaticText3,framingSpec,position1,(224,187,null,null,224,63,55,22)
+//VBPartValue: StaticText3,foregroundColor,color,(name,black)
+//VBPartValue: StaticText4,text,string,"Most Wanted"
+//VBPartValue: StaticText4,framingSpec,position1,(345,185,null,null,345,65,116,22)
+//VBPartValue: StaticText4,foregroundColor,color,(name,black)
+//VBPartValue: StaticText5,text,string,"Whereabouts"
+//VBPartValue: StaticText5,framingSpec,position1,(343,209,null,null,343,41,120,22)
+//VBPartValue: StaticText5,foregroundColor,color,(name,black)
+//VBPartValue: StaticText6,text,string,"Select the appropriate application."
+//VBPartValue: StaticText6,framingSpec,position1,(12,28,,,12,222,313,22)
+//VBPartValue: susCnrVw,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBConnValue: 11,visible,boolean,true
+//VBPartLayout: main,IRapMainView,(initWidgetSize,rectangle,(344,274,1163,898))
+//VBPartLayout: part,susCMgr,(framingSpec,position2,(276,382,57,68))
+//VBPartLayout: part,susCnrFac,(framingSpec,position2,(37,381,68,68))
+//VBPartLayout: part,susCnrVw,(framingSpec,position2,(137,479,63,78))
+//VBPartLayout: eventconnection,21,(midPoints,collection,(point,(220,439)))
+//VBPartLayout: eventconnection,35,(midPoints,collection,(point,(214,351)))
+//VBPartLayout: eventconnection,11,(midPoints,array,(point,(247,472)))
+//VBPartLayout: eventconnection,31,(midPoints,array,(point,(258,503)))
+//VBPartLayout: eventconnection,12,(midPoints,collection,(point,(289,276)))
+//VBPartLayout: eventconnection,3,(midPoints,collection,(point,(155,162),point,(194,100),point,(155,122)))
+//VBPartLayout: eventconnection,4,(midPoints,collection,(point,(175,162),point,(222,143),point,(235,106)))
+//VBEndPartInfo: IRapMainView
+
+

@@ -1,0 +1,63 @@
+/******************************************************************************
+* .FILE:         dmsamp4.rc                                                   *
+*                                                                             *
+* .DESCRIPTION:  Direct Manipulation Sample Program 4: Resources              *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    IBM Open Class Library                                                   *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1997 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+******************************************************************************/
+#include "dmsamp3.h"
+
+ICON WND_MAIN  LOADONCALL dmsamp4.ico
+ICON DEFAULT   LOADONCALL win100.ico
+ICON APPLE     LOADONCALL apple.ico
+ICON BOLT      LOADONCALL bolt.ico
+ICON CAR       LOADONCALL car.ico
+ICON SPACE     LOADONCALL space.ico
+ICON STARFLEET LOADONCALL starflee.ico
+
+STRINGTABLE LOADONCALL
+{
+  ID_JOB1,          "Physicist"
+  ID_JOB2,          "Technician"
+  ID_JOB3,          "Auto Racer"
+  ID_JOB4,          "Space Alien"
+  ID_JOB5,          "Captain"
+  STR_ITEM_11,      "Auto Racer"
+  STR_ITEM_12,      "Al Uncer"
+  STR_ITEM_13,      "Le Mans, France"
+  STR_ITEM_14,      "(919) 555-1234"
+  STR_ITEM_21,      "Astronaut"
+  STR_ITEM_22,      "E. T."
+  STR_ITEM_23,      "Pirx the Pilot"
+  STR_ITEM_24,      "(919) 555-4321"
+  STR_ITEM_31,      "Technician"
+  STR_ITEM_32,      "Joe Blow"
+  STR_ITEM_33,      "The Sky"
+  STR_ITEM_34,      "(919) 555-4321"
+  STR_ITEM_41,      "Captain"
+  STR_ITEM_42,      "J. L. Picard"
+  STR_ITEM_43,      "Starfleet"
+  STR_ITEM_44,      "(919) 555-1212"
+
+  WND_MAIN,         "Direct Manipulation Sample 4"
+  STR_SOURCE_ONLY,  "source only"
+  SET_ONLY,         "target only"
+  TITLE_SOURCE,     "Direct Manipulation - Source Container"
+  TITLE_TARGET,     "Direct Manipulation - Target Container"
+}
+

@@ -1,0 +1,50 @@
+//
+//  This is the configuration file for build the main executable of the
+//  Calculator Sample.
+//
+//  The macro variable "IVBSAMP_IMPORT" is a holdover from Version 3.
+//  It is not longer needed so must be in essence nulled out.
+//
+
+option
+       gen(enumsize, 4),
+       gen(rtti, yes),
+       lang(nokeyword,"false"),
+       lang(nokeyword,"true"),
+       lang(nokeyword,"bool"),
+       define(IC_LANG_BOOL,0),
+       define("IC_TRACE_DEVELOP"),
+       define("IVBSAMP_IMPORT"," "),
+       link(linkwithsharedlib, yes),
+       link(linkwithmultithreadlib, yes),
+       link(pmtype,pm),
+       link(map, no),
+       link(padding, no),
+       incl(searchpath,".")
+{
+
+   target "calculat.exe"
+   {
+
+      source "calcmain.vbf"
+      source "calcview.vbf"
+      source "keypadvw.vbf"
+
+      source "icalcac.vbe"
+      source "icalcclr.vbe"
+      source "icalcdc.vbe"
+      source "icalceql.vbe"
+      source "icalcfnc.vbe"
+      source "icalcmc.vbe"
+      source "icalcop.vbe"
+      source "icalcpu.vbe"
+      source "icalcsc.vbe"
+      source "icalctly.vbe"
+      source "ikeypad.vbe"
+
+      source "calcdll.lib"
+
+   }
+
+}
+

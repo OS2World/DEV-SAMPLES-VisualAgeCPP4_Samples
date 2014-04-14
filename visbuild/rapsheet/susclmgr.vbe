@@ -1,0 +1,23 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ISuspectClientMgr,,interface
+//VBParents: IStandardNotifier
+//VBIncludes: "isusrmgr.hpp" _ISUSRMGR_
+//VBConstraints:  noGen
+//VBComposerInfo: nonvisual
+//VBEvent: manyObjectsFound,"many objects met query input", manyObjectsFoundId
+//VBEvent: noObjectsFound,"no objects met query input", noObjectsFoundId
+//VBEvent: oneObjectFound,"only one object met query input", oneObjectFoundId
+//VBEvent: parsedResult,"completed parsing result returned from a request", parsedResultId,, preferred
+//VBEvent: sameRequest,"same request received from peer/client machine", sameRequestId
+//VBAction: processResult,"parse the result returned from a request",ISuspectClientMgr&,ISuspectClientMgr& processResult(), preferred
+//VBAction: primeDBWithSuspects,"prime the database with a sampling of suspects",ISuspectClientMgr&,ISuspectClientMgr& primeDBWithSuspects()
+//VBAction: getAllFromDB,"retrieve all suspects from the database",IString,IString getAll(), preferred
+//VBAttribute: requestBuffer,"request information",IString,IString requestBuffer(),ISuspectClientMgr& setRequestBuffer(const IString& iRequestBuffer),requestBufferId, preferred
+//VBAttribute: resultBuffer,"result information",IString,IString resultBuffer(),ISuspectClientMgr& setResultBuffer(const IString& iResultBuffer),resultBufferId, preferred
+//VBAttribute: resultList,"list of objects meeting query input",IVSequence<ISuspect*>,IVSequence<ISuspect*> resultList(),,resultListId
+//VBAttribute: resultListWrapper,"pointer to a list of objects meeting query input",IVSequence<ISuspect*>*,IVSequence<ISuspect*>* resultListWrapper(),,resultListWrapperId
+//VBAttribute: resultObject,"first object meeting query input",ISuspect,ISuspect resultObject(),,resultObjectId
+//VBAttribute: resultWrapper,"pointer to first object meeting query input",ISuspect*,ISuspect* resultWrapper(),,resultWrapperId
+//VBEndPartInfo: ISuspectClientMgr
+

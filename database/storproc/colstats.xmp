@@ -1,0 +1,65 @@
+-- Sample DML to register the colstats Stored Procedure in the stored procedure
+-- pseudo-catalog DB2CLI.PROCEDURES.
+--
+-- DB2CLI.PROCEDURES contains one row for each Stored Procedure
+-- registered in the database. Only Stored Procedure registered in the
+-- DB2CLI.PROCEDURES will be seen by applications written using ODBC
+-- or DB2 Call Level Interface (DB2 CLI) API.
+--
+-- Execution instructions:
+-- 1. make sure that database server is started (db2start issued)
+-- 2. make sure that connection to a database exists
+-- 3. make sure that DB2CLI.PROCEDURES exists in the database. If it
+--    does not, see STORPROC.DDL file in sqllib\misc
+--    for instructions on creating this table
+-- 4. issue "db2 -f COLSTATS.XMP -z COLSTATS.LOG -t" command
+--    from operating system command prompt.
+--    Note: on Windows use "db2cliw" command in place of "db2"
+-- 5. Check COLSTATS.LOG for errors encountered during execution
+
+--
+-- Set autocommit off
+--
+update command options using C off;
+
+--
+-- pre-delete the colstats entry, if there
+--
+delete from db2cli.procedures where procschema='colstats' and procname='colstats';
+--
+-- Register the colstats stored procedure
+--
+insert into db2cli.procedures (procschema,
+                                procname,
+                                definer,
+                                pkgschema,
+                                pkgname,
+                                proc_location,
+                                parm_style,
+                                language,
+                                stayresident,
+                                runopts,
+                                parm_list,
+                                fenced,
+                                remarks,
+                                result_sets  )
+       values ('colstats',
+               'colstats',
+               'JTroster',
+               'colstats',
+               'colstats',
+               'colstats',
+               'D',
+               'C',
+               ' ',
+               ' ',
+               'table char(32) in, column char(32) in, count int out, average double out, stdev double out',
+               'Y',
+               'Computes 3 column statistics',
+               0);
+
+--
+-- Commit.
+--
+commit work;
+

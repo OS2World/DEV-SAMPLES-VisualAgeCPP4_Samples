@@ -1,0 +1,38 @@
+// IBM VisualAge C++ Professional, Version 4.0
+// Licensed Materials - Property of IBM
+// (C) Copyright IBM Corp. 1995, 1998. All Rights Reserved.
+// US Government Users Restricted Rights - Use, duplication or disclosure restricted
+// by GSA ADP Schedule Contract with IBM Corp.
+//
+//  This is the configuration file for Data Access Builder mini-samples
+//
+include "../source/exeopt.icc"
+if $__TOS_AIX__
+{
+  option exeopt
+       , incl(searchpath,".")
+       , link(libPathOut,"/usr/odbc/dlls:/usr/vacpp/lib:/usr/lib:/lib")
+  {
+    target "udmcsql.exe"
+    {
+      source "../source/main.cpp"
+      source "../source/udmcsql.cpp"
+      source "Empl.a"
+      source "libvacbase.a"
+      source "libvacui.a"
+      source "libcppacu40.a"
+    }
+  }
+}
+else
+{
+  option exeopt, incl(searchpath,".")
+  {
+    target "udmcsql.exe"
+    {
+      source "../source/main.cpp"
+      source "../source/udmcsql.cpp"
+      source "Empl.lib"
+    }
+  }
+}

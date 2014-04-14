@@ -1,0 +1,28 @@
+
+
+// Feature source code generation begins here...
+public:
+  virtual const IString& skillName() const;
+  virtual OASkill& setSkillName(const IString& aSkillName );
+  virtual const IString& contractorID() const;
+  virtual OASkill& setContractorID(const IString& aContractorID );
+  virtual const IString& yearsExp() const;
+  virtual OASkill& setYearsExp(const IString& aYearsExp );
+  virtual const IString& key() const;
+  virtual OASkill& setKey(const IString& aKey );
+
+  OASkill(const OASkill& aSkill);
+  void clear();
+
+  static const INotificationId _Import skillNameId;
+  static const INotificationId _Import contractorIDId;
+  static const INotificationId _Import yearsExpId;
+  static const INotificationId _Import keyId;
+
+private:
+  IString iSkillName;
+  IString iContractorID;
+  IString iYearsExp;
+  IString iKey;
+
+// Feature source code generation ends here.

@@ -1,0 +1,32 @@
+// IBM VisualAge C++ Professional, Version 4.0
+// Licensed Materials - Property of IBM
+// (C) Copyright IBM Corp. 1995, 1998. All Rights Reserved.
+// US Government Users Restricted Rights - Use, duplication or disclosure restricted
+// by GSA ADP Schedule Contract with IBM Corp.
+//
+//  This is the configuration file for Join
+//
+include "../source/exeopt.icc"
+if $__TOS_AIX__
+{
+  option exeopt
+       , incl(searchpath,".")
+  {
+    target "Join.a"
+    {
+      source "Join.cpp"
+    }
+  }
+}
+else
+{
+  option exeopt
+       , incl(searchpath,".")
+       , link(nodefaultlibsname,"Join.lib")
+  {
+    target "Join.dll"
+    {
+      source "Join.cpp"
+    }
+  }
+}

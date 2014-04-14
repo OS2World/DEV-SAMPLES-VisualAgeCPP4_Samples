@@ -1,0 +1,30 @@
+if $__TOS_AIX__
+   TARG = "i18msg"
+else
+   TARG = "i18msg.exe"
+
+if $__TOS_OS2__ | $__TOS_WIN__
+   option IntelOptions = link(extdictionary, no)
+if $__TOS_AIX__
+   option IntelOptions = null
+
+option
+   IntelOptions,
+   link(debug, no),
+   link(linkwithmultithreadlib, yes),
+   link(linkwithsharedlib, yes),
+   link(padding, no),
+   gen(rtti, yes)
+{
+   target TARG
+   {
+      run targets("mess_msg.h") "runcat mess mess.msg"
+      option macros(global)
+      {
+         source type(cpp) "locale"
+         source type(cpp) "string"
+         source type(cpp) "iostream"
+      }
+      source "i18msg.cpp"
+   }
+}

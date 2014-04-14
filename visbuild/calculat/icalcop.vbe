@@ -1,0 +1,11 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ICalcOperator,"Binary Operator Parent Part",interface
+//VBConstraints:  noGen
+//VBParents: IStandardNotifier
+//VBIncludes: <icalcop.hpp> _ICALCOP_
+//VBConstructor: ICalcOperator()
+//VBComposerInfo: nonvisual
+//VBAttribute: result,"result of operation",double,int result(),int setResult(double result),resultId,preferred
+//VBEndPartInfo: ICalcOperator
+

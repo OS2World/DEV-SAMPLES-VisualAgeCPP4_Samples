@@ -1,0 +1,332 @@
+// Feature source code generation begins here...
+const INotificationId _Export OAContractor::contractorIDId = "OAContractor::contractorID";
+const INotificationId _Export OAContractor::firstNameId = "OAContractor::firstName";
+const INotificationId _Export OAContractor::lastNameId = "OAContractor::lastName";
+const INotificationId _Export OAContractor::middleInitialId = "OAContractor::middleInitial";
+const INotificationId _Export OAContractor::phoneNumberId = "OAContractor::phoneNumber";
+const INotificationId _Export OAContractor::startDateId = "OAContractor::startDate";
+const INotificationId _Export OAContractor::endDateId = "OAContractor::endDate";
+const INotificationId _Export OAContractor::homeStreetId = "OAContractor::homeStreet";
+const INotificationId _Export OAContractor::homeCityId = "OAContractor::homeCity";
+const INotificationId _Export OAContractor::homeStateId = "OAContractor::homeState";
+const INotificationId _Export OAContractor::homeZipId = "OAContractor::homeZip";
+const INotificationId _Export OAContractor::accountNumId = "OAContractor::accountNum";
+const INotificationId _Export OAContractor::activeStatusId = "OAContractor::activeStatus";
+const INotificationId _Export OAContractor::IDvalidId = "OAContractor::IDvalid";
+
+const IString& OAContractor::contractorID() const
+{
+  return iContractorID;
+}
+
+OAContractor& OAContractor::setContractorID(const IString& aContractorID)
+{
+  if (!(iContractorID == aContractorID))
+  {
+    iContractorID = aContractorID;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::contractorIDId)));
+  } // endif
+
+//  Test for string with nontrivial content
+    if (iContractorID.length() > 5)
+       enableIDvalid(true);
+
+  return *this;
+}
+
+// Overloading set member function for refresh purposes
+
+OAContractor& OAContractor::setContractorID()
+{
+  setContractorID(firstName()+middleInitial()+lastName());
+
+  return *this;
+}
+
+const IString& OAContractor::lastName() const
+{
+  return iLastName;
+}
+
+OAContractor& OAContractor::setLastName(const IString & aLastName)
+{
+  if (iLastName != aLastName)
+  {
+    iLastName = aLastName;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::lastNameId)));
+    // Invalidate contractorID
+    enableIDvalid(false);
+
+  } // endif
+  return *this;
+}
+
+const IString& OAContractor::firstName() const
+{
+  return iFirstName;
+}
+
+OAContractor& OAContractor::setFirstName(const IString & aFirstName)
+{
+  if (iFirstName != aFirstName)
+  {
+    iFirstName = aFirstName;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::firstNameId)));
+    // Invalidate contractorID
+    enableIDvalid(false);
+
+  } // endif
+  return *this;
+}
+
+const IString& OAContractor::middleInitial() const
+{
+  return iMiddleInitial;
+}
+
+OAContractor & OAContractor::setMiddleInitial(const IString & aMiddleInitial)
+{
+  if (iMiddleInitial != aMiddleInitial)
+  {
+    iMiddleInitial = aMiddleInitial;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::middleInitialId)));
+    // Invalidate contractorID
+    enableIDvalid(false);
+
+  } // endif
+
+  return *this;
+}
+
+const IString& OAContractor::phoneNumber() const
+{
+  return iPhoneNumber;
+}
+
+OAContractor& OAContractor::setPhoneNumber(const IString& aPhoneNumber)
+{
+  if (!(iPhoneNumber == aPhoneNumber))
+  {
+    iPhoneNumber = aPhoneNumber;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::phoneNumberId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContractor::startDate() const
+{
+  return iStartDate;
+}
+
+OAContractor& OAContractor::setStartDate(const IString& aStartDate)
+{
+  if (!(iStartDate == aStartDate))
+  {
+    iStartDate = aStartDate;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::startDateId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContractor::endDate() const
+{
+  return iEndDate;
+}
+
+OAContractor& OAContractor::setEndDate(const IString& aEndDate)
+{
+  if (!(iEndDate == aEndDate))
+  {
+    iEndDate = aEndDate;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::endDateId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContractor::homeStreet() const
+{
+  return iHomeStreet;
+}
+
+OAContractor& OAContractor::setHomeStreet(const IString& aHomeStreet)
+{
+  if (!(iHomeStreet == aHomeStreet))
+  {
+    iHomeStreet = aHomeStreet;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::homeStreetId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContractor::homeCity() const
+{
+  return iHomeCity;
+}
+
+OAContractor& OAContractor::setHomeCity(const IString& aHomeCity)
+{
+  if (!(iHomeCity == aHomeCity))
+  {
+    iHomeCity = aHomeCity;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::homeCityId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContractor::homeState() const
+{
+  return iHomeState;
+}
+
+OAContractor& OAContractor::setHomeState(const IString& aHomeState)
+{
+  if (!(iHomeState == aHomeState))
+  {
+    iHomeState = aHomeState;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::homeStateId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContractor::homeZip() const
+{
+  return iHomeZip;
+}
+
+OAContractor& OAContractor::setHomeZip(const IString& aHomeZip)
+{
+  if (!(iHomeZip == aHomeZip))
+  {
+    iHomeZip = aHomeZip;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::homeZipId)));
+  } // endif
+  return *this;
+}
+
+const IString& OAContractor::accountNum() const
+{
+  return iAccountNum;
+}
+
+OAContractor& OAContractor::setAccountNum(const IString& aAccountNum)
+{
+  if (!(iAccountNum == aAccountNum))
+  {
+    iAccountNum = aAccountNum;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::accountNumId)));
+  } // endif
+  return *this;
+}
+
+bool OAContractor::isActiveStatus() const
+{
+  return iActiveStatus;
+}
+
+OAContractor& OAContractor::enableActiveStatus(const bool enable)
+{
+  if (!(iActiveStatus == enable))
+  {
+    iActiveStatus = enable;
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractor::activeStatusId)));
+  } // endif
+  return *this;
+}
+
+OAContractor& OAContractor::enableActiveStatus(IString aValue)
+{
+  bool tempBool = (aValue.lowerCase() == "yes" ? true : false);
+  enableActiveStatus(tempBool);
+
+  return *this;
+}
+
+void OAContractor::clear()
+{
+  setContractorID("");
+
+  // These functions also set IDValid to false
+  setFirstName("");
+  setMiddleInitial("");
+  setLastName("");
+  //
+  setHomeStreet("");
+  setHomeCity("");
+  setHomeState("");
+  setHomeZip("");
+  setStartDate("");
+  setEndDate("");
+  setPhoneNumber("");
+  enableActiveStatus(false);
+  return;
+}
+// Feature source code generation ends here.
+
+// ID Validation flag getter and setter
+
+bool OAContractor::isIDvalid () const
+{
+   return iIDvalid;
+}
+
+OAContractor & OAContractor::enableIDvalid(const bool enable)
+{
+  if (iIDvalid != enable)
+  {
+    iIDvalid = enable;
+    if (enable==true)
+      notifyObservers(INotificationEventFor<IString>(IInterest(*this, OAContractor::IDvalidId), iContractorID) );
+    else
+      notifyObservers(INotificationEvent(IInterest(*this, OAContractor::IDvalidId)));
+  } // endif
+  return *this;
+}
+
+// Copy constructor
+
+OAContractor::OAContractor(const OAContractor & aContractor)
+  : IStandardNotifier(aContractor),
+  iContractorID(aContractor.contractorID()),
+  iLastName(aContractor.lastName()),
+  iFirstName(aContractor.firstName()),
+  iMiddleInitial(aContractor.middleInitial()),
+  iHomeStreet(aContractor.homeStreet()),
+  iHomeCity(aContractor.homeCity()),
+  iHomeState(aContractor.homeState()),
+  iHomeZip(aContractor.homeZip()),
+  iPhoneNumber(aContractor.phoneNumber()),
+  iStartDate(aContractor.startDate()),
+  iEndDate(aContractor.endDate()),
+  iActiveStatus(aContractor.isActiveStatus()),
+  iAccountNum(aContractor.accountNum()),
+  iIDvalid(aContractor.isIDvalid())
+  {
+    enableNotification();
+  }
+
+OAContractor & OAContractor::parseName(const IString & aName)
+{
+
+// aName is supplied by user in OAQueryContractor
+
+// Test for missing information in newly entered name
+
+  if (aName.numWords()!= 3)
+  {
+  enableIDvalid(false);
+  throw IException("The name you entered is incomplete. Enter first name, middle initial, and last name.");
+  return *this;
+  }
+
+// Set name attributes and derive contractorID attribute
+
+  clear();
+  setFirstName(aName.word(1));
+  setMiddleInitial(aName.word(2));
+  setLastName(aName.word(3));
+  setContractorID();
+
+// End added code
+
+  return *this;
+}

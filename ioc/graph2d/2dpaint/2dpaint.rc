@@ -1,0 +1,268 @@
+/*
+-------------------------------------------------------------------------------
+Copyright (c) IBM Corporation 1996, 1997.
+All Rights Reserved.
+
+Permission is granted to copy, use, modify, and merge this software into your
+applications and to permit others to do any of the foregoing. You must include
+this permission and copyright notice in all copies and modified versions of
+this software. THIS SOFTWARE IS PROVIDED IN ITS 'AS IS' CONDITION.
+IBM DISCLAIMS ANY LIABILITY OF ANY KIND FOR DAMAGES WHATSOEVER RESULTING
+FROM THE USE OF THIS SOFTWARE.
+-------------------------------------------------------------------------------
+*/
+#ifdef IC_PM
+#include <os2.h>
+#endif
+#include <icconst.h>
+#include "2dpaint.h"
+ICON WND_MAIN "2dpaint.ico"
+
+POINTER POINTER_LINE            "2d_line.ptr"
+POINTER POINTER_DRAW            "2d_draw.ptr"
+POINTER POINTER_RECTANGLE       "2d_rect.ptr"
+POINTER POINTER_ELLIPSE         "2d_elip.ptr"
+POINTER POINTER_POLYLINE        "2d_plyl.ptr"
+POINTER POINTER_POLYGON         "2d_plyg.ptr"
+POINTER POINTER_ARC             "2d_arc.ptr"
+POINTER POINTER_PIE             "2d_pie.ptr"
+POINTER POINTER_CHORD           "2d_chd.ptr"
+POINTER POINTER_TEXT            "2d_text.ptr"
+POINTER POINTER_BITMAP          "2d_bmp.ptr"
+POINTER POINTER_ROTATE          "2d_rot.ptr"
+POINTER POINTER_SCALE           "2d_scl.ptr"
+POINTER POINTER_CLIP            "2d_clp.ptr"
+BITMAP EAGLE                  "eagle.bmp"
+BITMAP TAJMAHAL               "tajmahal.bmp"
+BITMAP PALLET_NORM            "2d_norm.bmp"
+BITMAP PALLET_LINE            "2d_line.bmp"
+BITMAP PALLET_DRAW            "2d_draw.bmp"
+BITMAP PALLET_RECTANGLE       "2d_rect.bmp"
+BITMAP PALLET_ELLIPSE         "2d_elip.bmp"
+BITMAP PALLET_POLYLINE        "2d_plyl.bmp"
+BITMAP PALLET_POLYGON         "2d_plyg.bmp"
+BITMAP PALLET_ARC             "2d_arc.bmp"
+BITMAP PALLET_CURVE           "2d_curve.bmp"
+BITMAP PALLET_LOOP            "2d_loop.bmp"
+BITMAP PALLET_PIE             "2d_pie.bmp"
+BITMAP PALLET_CHORD           "2d_chd.bmp"
+BITMAP PALLET_ROTATE          "2d_rot.bmp"
+BITMAP PALLET_SCALE           "2d_scl.bmp"
+BITMAP PALLET_CLIP            "2d_clp.bmp"
+BITMAP PALLET_STYLE           "2d_sty.bmp"
+BITMAP PALLET_TEXT            "2d_text.bmp"
+BITMAP PALLET_AREA            "2d_area.bmp"
+BITMAP PALLET_BITMAP          "2d_bmp.bmp"
+
+STRINGTABLE
+  BEGIN
+    STR_HELLO                     ,    "Hello, World!!"
+    WND_MAIN                      ,    "a2dpaint"
+    STR_INFO                      ,    "Use Alt-F4 to Close Window"
+    PALLET_NORM                   ,    "Move"
+    PALLET_LINE                   ,    "Line"
+    PALLET_DRAW                   ,    "Sketch"
+    PALLET_RECTANGLE              ,    "Rectangle"
+    PALLET_ELLIPSE                ,    "Ellipse"
+    PALLET_POLYLINE               ,    "Polyline"
+    PALLET_POLYGON                ,    "Polygon"
+    PALLET_ARC                    ,    "3 Point Arc"
+    PALLET_CURVE                  ,    "Curve"
+    PALLET_LOOP                   ,    "Loop"
+    PALLET_PIE                    ,    "Pie"
+    PALLET_CHORD                  ,    "Chord"
+    PALLET_ROTATE                 ,    "Rotate"
+    PALLET_SCALE                  ,    "Scale"
+    PALLET_CLIP                   ,    "Clip"
+    PALLET_STYLE                  ,    "Apply"
+    PALLET_TEXT                   ,    "Text"
+    PALLET_AREA                   ,    "Area"
+    PALLET_BITMAP                 ,    "Bitmap"
+    WND_TEXT                      ,    "Information area"
+    WND_TOOLBAR1                  ,    "Tool bar"
+    PALLET_NORM+LONG_OFFSET       ,    "Move objects by using mouse button 1 and dragging the object to its new position."
+    PALLET_LINE+LONG_OFFSET       ,    "Press mouse button 1 to define first point."
+    PALLET_DRAW+LONG_OFFSET       ,    "Press and hold mouse button 1 while moving mouse.  Release mouse button 1 to stop."
+    PALLET_RECTANGLE+LONG_OFFSET  ,    "Pressmouse button 1 to define first corner."
+    PALLET_ELLIPSE+LONG_OFFSET    ,    "Press mouse button 1 to define starting position."
+    PALLET_POLYLINE+LONG_OFFSET   ,    "Press mouse button 1 to define first point."
+    PALLET_POLYGON+LONG_OFFSET    ,    "Press mouse button 1 to define first point."
+    PALLET_ARC+LONG_OFFSET        ,    "Press mouse button 1 to define first point."
+    PALLET_CBEZIER+LONG_OFFSET    ,    "Press mouse button 1 to define first point."
+    PALLET_PIE+LONG_OFFSET        ,    "Press mouse button 1 to define first point."
+    PALLET_CHORD+LONG_OFFSET      ,    "Press mouse button 1 to define first point."
+    PALLET_ACURVE+LONG_OFFSET     ,    "Press mouse button 1 to define first point."
+    PALLET_ALOOP+LONG_OFFSET      ,    "Press mouse button 1 to define first point."
+    PALLET_LBEZIER+LONG_OFFSET    ,    "Press mouse button 1 to define first point."
+    PALLET_ROTATE+LONG_OFFSET     ,    "Press mouse button 1 to rotate object -10 Degrees. Press mouse button2 to rotate object +10 Degrees"
+    PALLET_SCALE+LONG_OFFSET      ,    "Press mouse button 1 to scale object up 10%. Press mouse button 2 to scale object down 10%."
+    PALLET_CLIP+LONG_OFFSET       ,    "Click on the area graphic (mouse button 1) you wish to use to define the clipping region.  Use the right mouse button to turn clipping off."
+    PALLET_STYLE+LONG_OFFSET      ,    "Click on the object (mouse button 1) you wish to apply new attributes to."
+    PALLET_ADD+LONG_OFFSET        ,    "Click first area graphic for addition."
+    PALLET_SUBTRACT+LONG_OFFSET   ,    "Click first area graphic for subtraction."
+    PALLET_MULTIPLY+LONG_OFFSET   ,    "Click first area graphic for intersection."
+    PALLET_XOR+LONG_OFFSET        ,    "Click first area graphic for xoring."
+    PALLET_TEXT+LONG_OFFSET       ,    "Click to place text."
+    PALLET_BITMAP+LONG_OFFSET     ,    "Click to place bitmap."
+    WND_TEXT+LONG_OFFSET          ,    "Invalid"
+    MI_PREVIEWER+LONG_OFFSET      ,    "Print with Preview"
+    MI_DIALOG+LONG_OFFSET         ,    "Print with Dialog"
+  END
+
+MENU  WND_MAIN
+  BEGIN
+    SUBMENU   "~Options"                 ,  ID_OPTIONS_MENU
+      BEGIN
+        MENUITEM  "~Clear Background"        ,  ID_CLEAR
+        MENUITEM  "~Reset Color Palette"       ,  ID_RESET
+      END
+    SUBMENU   "~Styles"                  ,  ID_STYLES_MENU
+      BEGIN
+        SUBMENU   "~Frame Paint"             ,  ID_FRAME_PAINT_MENU
+          BEGIN
+            MENUITEM  "~Color"                   ,  ID_COLORS
+            SUBMENU   "~Mix Mode"                ,  ID_MIX_MODE_MENU
+              BEGIN
+                MENUITEM  "Source copy"              ,  ID_SC_FRAME_TMODE
+                MENUITEM  "Invert source"            ,  ID_IS_FRAME_TMODE
+                MENUITEM  "Destination copy"         ,  ID_DC_FRAME_TMODE
+                MENUITEM  "Invert destination"       ,  ID_ID_FRAME_TMODE
+                MENUITEM  "Or"                       ,  ID_SORD_FRAME_TMODE
+                MENUITEM  "And"                      ,  ID_SANDD_FRAME_TMODE
+                MENUITEM  "Xor"                      ,  ID_SXORD_FRAME_TMODE
+                MENUITEM  "Inverted source And"       ,  ID_ISANDD_FRAME_TMODE
+                MENUITEM  "Inverted source Or"       ,  ID_ISORD_FRAME_TMODE
+                MENUITEM  "Inverted destination And"       ,  ID_SANDID_FRAME_TMODE
+                MENUITEM  "Inverted destination Or"       ,  ID_SORID_FRAME_TMODE
+                MENUITEM  "Inverted And"             ,  ID_IRSANDD_FRAME_TMODE
+                MENUITEM  "Inverted Or"              ,  ID_IRSORD_FRAME_TMODE
+                MENUITEM  "Inverted Xor"             ,  ID_IRSXORD_FRAME_TMODE
+                MENUITEM  "Ones"                     ,  ID_ONE_FRAME_TMODE
+                MENUITEM  "Zeros"                    ,  ID_ZERO_FRAME_TMODE
+              END
+            SUBMENU   "~Pattern"                 ,  ID_PATTERN_MENU
+              BEGIN
+                MENUITEM  "~Solid"                   ,  ID_PATTERN_SOLID
+                MENUITEM  "~Backward Diagonal"       ,  ID_PATTERN_BDIAGONAL
+                MENUITEM  "~Forward Diagonal"        ,  ID_PATTERN_FDIAGONAL
+                MENUITEM  "~Cross"                   ,  ID_PATTERN_CROSS
+                MENUITEM  "~Diagonal Cross"          ,  ID_PATTERN_DIAGONALCROSS
+                MENUITEM  "~Horizontal"              ,  ID_PATTERN_HORIZONTAL
+                MENUITEM  "~Vertical"                ,  ID_PATTERN_VERTICAL
+                MENUITEM  "~Eagle"                   ,  ID_PATTERN_EAGLE
+                MENUITEM  "~Tajmahal"                ,  ID_PATTERN_TAJMAHAL
+              END
+          END
+        SUBMENU   "F~ill Paint"              ,  ID_FILL_PAINT_MENU
+          BEGIN
+            MENUITEM  "Color"                    ,  ID_FLCOLORS
+            SUBMENU   "~Mix Mode"                ,  ID_FILL_MIX_MODE_MENU
+              BEGIN
+                MENUITEM  "Source copy"              ,  ID_SC_FILL_TMODE
+                MENUITEM  "Invert source"            ,  ID_IS_FILL_TMODE
+                MENUITEM  "Destination copy"         ,  ID_DC_FILL_TMODE
+                MENUITEM  "Invert destination"       ,  ID_ID_FILL_TMODE
+                MENUITEM  "Or"                       ,  ID_SORD_FILL_TMODE
+                MENUITEM  "And"                      ,  ID_SANDD_FILL_TMODE
+                MENUITEM  "Xor"                      ,  ID_SXORD_FILL_TMODE
+                MENUITEM  "Inverted source And"       ,  ID_ISANDD_FILL_TMODE
+                MENUITEM  "Inverted source Or"       ,  ID_ISORD_FILL_TMODE
+                MENUITEM  "Inverted destination And"       ,  ID_SANDID_FILL_TMODE
+                MENUITEM  "Inverted destination Or"       ,  ID_SORID_FILL_TMODE
+                MENUITEM  "Inverted And"             ,  ID_IRSANDD_FILL_TMODE
+                MENUITEM  "Inverted Or"              ,  ID_IRSORD_FILL_TMODE
+                MENUITEM  "Inverted Xor"             ,  ID_IRSXORD_FILL_TMODE
+                MENUITEM  "Ones"                     ,  ID_ONE_FILL_TMODE
+                MENUITEM  "Zeros"                    ,  ID_ZERO_FILL_TMODE
+              END
+            SUBMENU   "~Pattern"                 ,  ID_FILL_PATTERN_MENU
+              BEGIN
+                MENUITEM  "~Solid"                   ,  ID_FPATTERN_SOLID
+                MENUITEM  "~Backward Diagonal"       ,  ID_FPATTERN_BDIAGONAL
+                MENUITEM  "~Forward Diagonal"        ,  ID_FPATTERN_FDIAGONAL
+                MENUITEM  "~Cross"                   ,  ID_FPATTERN_CROSS
+                MENUITEM  "~Diagonal Cross"          ,  ID_FPATTERN_DIAGONALCROSS
+                MENUITEM  "~Horizontal"              ,  ID_FPATTERN_HORIZONTAL
+                MENUITEM  "~Vertical"                ,  ID_FPATTERN_VERTICAL
+                MENUITEM  "~Eagle"                   ,  ID_FPATTERN_EAGLE
+                MENUITEM  "~Tajmahal"                ,  ID_FPATTERN_TAJMAHAL
+              END
+          END
+        SUBMENU   "~Pen"                     ,  ID_PEN_MENU
+          BEGIN
+            SUBMENU   "~Style"                   ,  ID_PEN_STYLE_MENU
+              BEGIN
+                MENUITEM  "~Solid"                   ,  ID_PENTYPE_SOLID
+                MENUITEM  "~Invisible"               ,  ID_PENTYPE_INVISIBLE
+                MENUITEM  "~Dash Dot"                ,  ID_PENTYPE_DASHDOT
+                MENUITEM  "Dash Dou~ble Dot"         ,  ID_PENTYPE_DASHDOUBLEDOT
+                MENUITEM  "~Dash"                    ,  ID_PENTYPE_SHORTDASH
+                MENUITEM  "Do~t"                     ,  ID_PENTYPE_DOT
+                MENUITEM  "~Hairline"                ,  ID_PENTYPE_HAIRLINE
+              END
+            SUBMENU   "~Width"                   ,  ID_PEN_WIDTH_MENU
+              BEGIN
+                MENUITEM  "~1"                       ,  ID_PENWIDTH_1
+                MENUITEM  "~2"                       ,  ID_PENWIDTH_2
+                MENUITEM  "~3"                       ,  ID_PENWIDTH_3
+                MENUITEM  "~4"                       ,  ID_PENWIDTH_4
+                MENUITEM  "~5"                       ,  ID_PENWIDTH_5
+                MENUITEM  "~6"                       ,  ID_PENWIDTH_6
+                MENUITEM  "~7"                       ,  ID_PENWIDTH_7
+                MENUITEM  "~8"                       ,  ID_PENWIDTH_8
+                MENUITEM  "~9"                       ,  ID_PENWIDTH_9
+                MENUITEM  "1~0"                      ,  ID_PENWIDTH_10
+              END
+          END
+        SUBMENU   "~Drawing Operation"       ,  ID_DRAWING_OPERATION_MENU
+          BEGIN
+            MENUITEM  "~Fill objects"            ,  ID_FILL
+            MENUITEM  "F~rame objects"           ,  ID_FRAME
+            MENUITEM  "Fill ~and frame objects"       ,  ID_FILLANDFRAME
+          END
+      END
+    SUBMENU   "~Graphics"                ,  ID_GRAPHICS_MENU
+      BEGIN
+        MENUITEM  "Line"                     ,  PALLET_LINE
+        MENUITEM  "Sketch"                   ,  PALLET_DRAW
+        MENUITEM  "Rectangle"                ,  PALLET_RECTANGLE
+        MENUITEM  "Ellipse"                  ,  PALLET_ELLIPSE
+        MENUITEM  "Polyline"                 ,  PALLET_POLYLINE
+        MENUITEM  "Polygon"                  ,  PALLET_POLYGON
+        SUBMENU   "Curve"                    ,  ID_CURVE_MENU
+          BEGIN
+            MENUITEM  "Arc"                      ,  PALLET_ARC
+            MENUITEM  "Bezier"                   ,  PALLET_CBEZIER
+            MENUITEM  "Abstract"                 ,  PALLET_ACURVE
+          END
+        SUBMENU   "Loop"                     ,  ID_LOOP_MENU
+          BEGIN
+            MENUITEM  "Pie"                      ,  PALLET_PIE
+            MENUITEM  "Chord"                    ,  PALLET_CHORD
+            MENUITEM  "Bezier"                   ,  PALLET_LBEZIER
+            MENUITEM  "Abstract"                 ,  PALLET_ALOOP
+          END
+        MENUITEM  "Text"                     ,  PALLET_TEXT
+        MENUITEM  "Bitmap"                   ,  PALLET_BITMAP
+      END
+    SUBMENU   "~Operations"              ,  ID_OPERATIONS_MENU
+      BEGIN
+        MENUITEM  "Apply Style"              ,  PALLET_STYLE
+        MENUITEM  "Move"                     ,  PALLET_NORM
+        MENUITEM  "Rotate"                   ,  PALLET_ROTATE
+        MENUITEM  "Scale"                    ,  PALLET_SCALE
+        MENUITEM  "Clip"                     ,  PALLET_CLIP
+        SUBMENU   "Area"                     ,  ID_AREA_MENU
+          BEGIN
+            MENUITEM  "Add"                      ,  PALLET_ADD
+            MENUITEM  "Subtract"                 ,  PALLET_SUBTRACT
+            MENUITEM  "Intersect"                ,  PALLET_MULTIPLY
+            MENUITEM  "Xor"                      ,  PALLET_XOR
+          END
+      END
+    SUBMENU   "~Print"                   ,  ID_PRINT_MENU
+      BEGIN
+        MENUITEM  "Print Preview"            ,  MI_PREVIEWER
+        MENUITEM  "Print"                    ,  MI_DIALOG
+      END
+  END

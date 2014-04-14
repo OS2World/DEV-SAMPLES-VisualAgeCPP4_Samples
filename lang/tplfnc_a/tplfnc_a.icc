@@ -1,0 +1,27 @@
+if $__TOS_AIX__
+    TARG = "tplfnc_a"
+else
+    TARG = "tplfnc_a.exe"
+
+if $__TOS_OS2__ | $__TOS_WIN__
+   option IntelOptions = link(extdictionary, no)
+if $__TOS_AIX__
+   option IntelOptions = null
+
+option
+   IntelOptions,
+   link(debug, no),
+   link(linkwithmultithreadlib, yes),
+   link(linkwithsharedlib, yes),
+   link(padding, no),
+   gen(rtti, yes)
+{
+   target TARG
+   {
+      option macros(global)
+      {
+         source type(cpp) "iostream"
+      }
+      source "tplfnc_a.cpp"
+   }
+}

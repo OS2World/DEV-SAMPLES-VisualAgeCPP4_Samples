@@ -1,0 +1,705 @@
+/****************************************************************************
+* LANCELOT SAMPLE PROGRAM - lancelot.rc                                     *
+*                                                                           *
+* Resource file                                                             *
+*                                                                           *
+* DISCLAIMER OF WARRANTIES:                                                 *
+*   The following [enclosed] code is sample code created by IBM             *
+*   Corporation.  This sample code is not part of any standard IBM product  *
+*   and is provided to you solely for the purpose of assisting you in the   *
+*   development of your applications.  The code is provided "AS IS",        *
+*   without warranty of any kind.  IBM shall not be liable for any damages  *
+*   arising out of your use of the sample code, even if they have been      *
+*   advised of the possibility of such damages.                             *
+****************************************************************************/
+#include <os2.h>
+#include <icconst.h>
+#include "lancelot.h"
+
+/*********************************/
+/* icon for application window   */
+/*********************************/
+
+ICON    ID_MAIN                   LOADONCALL lancelot.ico
+ICON    ID_PERSONNEL              LOADONCALL lancelot.ico
+ICON    ID_ICON_QUERY             LOADONCALL query.ico
+ICON    ID_ICON_QUERY2            LOADONCALL query2.ico
+ICON    ID_ICON_PERSON1           LOADONCALL person1.ico
+ICON    ID_ICON_PERSON2           LOADONCALL person2.ico
+ICON    ID_ICON_PERSON3           LOADONCALL person3.ico
+ICON    ID_ICON_PERSON4           LOADONCALL person4.ico
+ICON    ID_ICON_PERSON_UNKNOWN    LOADONCALL personu.ico
+BITMAP  ID_MAIN_SELECTED_DELETE   LOADONCALL boot.bmp
+BITMAP  ID_MAIN_VIEW_OPEN_ICON    LOADONCALL openicon.bmp
+BITMAP  ID_MAIN_VIEW_OPEN_TREE    LOADONCALL opentree.bmp
+BITMAP  ID_MAIN_VIEW_OPEN_DETAILS LOADONCALL opendeta.bmp
+BITMAP  ID_MAIN_VIEW_SELECT_ALL   LOADONCALL selall.bmp
+BITMAP  ID_MAIN_VIEW_SELECT_DE    LOADONCALL deselall.bmp
+BITMAP  ID_MAIN_VIEW_SORT_ASC     LOADONCALL sortasc.bmp
+BITMAP  ID_MAIN_VIEW_SORT_DESC    LOADONCALL sortdesc.bmp
+BITMAP  ID_MAIN_VIEW_ARRANGE      LOADONCALL arrange.bmp
+
+BITMAP  ID_PERSONNEL_SELECTED_CREATE   LOADONCALL create.bmp
+BITMAP  ID_PERSONNEL_SELECTED_TRANSFER LOADONCALL transfer.bmp
+BITMAP  ID_PERSONNEL_SELECTED_DELETE   LOADONCALL boot.bmp
+BITMAP  ID_PERSONNEL_VIEW_OPEN_ICON    LOADONCALL openicon.bmp
+BITMAP  ID_PERSONNEL_VIEW_OPEN_TREE    LOADONCALL opentree.bmp
+BITMAP  ID_PERSONNEL_VIEW_OPEN_DETAILS LOADONCALL opendeta.bmp
+BITMAP  ID_PERSONNEL_VIEW_SELECT_ALL   LOADONCALL selall.bmp
+BITMAP  ID_PERSONNEL_VIEW_SELECT_DE    LOADONCALL deselall.bmp
+BITMAP  ID_PERSONNEL_VIEW_SORT_ASC     LOADONCALL sortasc.bmp
+BITMAP  ID_PERSONNEL_VIEW_SORT_DESC    LOADONCALL sortdesc.bmp
+BITMAP  ID_PERSONNEL_VIEW_ARRANGE      LOADONCALL arrange.bmp
+
+ICON    ID_PAGE_NEXT   LOADONCALL next.ico
+ICON    ID_PAGE_PREVIOUS LOADONCALL previous.ico
+ICON    ID_PAGE_HELP   LOADONCALL help.ico
+ICON    ID_PAGE_UNDO   LOADONCALL undo.ico
+ICON    ID_PAGE_SAVE   LOADONCALL save.ico
+ICON    ID_PAGE_QUERY  LOADONCALL query.ico
+ICON    ID_PAGE_ADD    LOADONCALL add.ico
+ICON    ID_PAGE_REMOVE LOADONCALL remove.ico
+ICON    ID_PAGE_CHANGE LOADONCALL change.ico
+
+MENU                                        ID_MAIN
+{
+    SUBMENU          "~Selected",           ID_MAIN_SELECTED
+    {
+        MENUITEM     "~Open",               ID_MAIN_SELECTED_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM     "~Delete...",          ID_MAIN_SELECTED_DELETE
+    }
+    SUBMENU          "~View",               ID_MAIN_VIEW
+    {
+        SUBMENU          "~Open",           ID_MAIN_VIEW_OPEN
+        {
+            MENUITEM     "~Icon view",      ID_MAIN_VIEW_OPEN_ICON
+            MENUITEM     "~Tree view",      ID_MAIN_VIEW_OPEN_TREE
+            MENUITEM     "~Details view",   ID_MAIN_VIEW_OPEN_DETAILS
+        }
+        MENUITEM SEPARATOR
+        SUBMENU        "S~elect",           ID_MAIN_VIEW_SELECT
+        {
+            MENUITEM "Select ~all\tCtrl+/", ID_MAIN_VIEW_SELECT_ALL
+            MENUITEM "Dese~lect all\tCtrl+\\", ID_MAIN_VIEW_SELECT_DE
+        }
+        SUBMENU      "So~rt",               ID_MAIN_VIEW_SORT
+        {
+            MENUITEM "~Ascending",          ID_MAIN_VIEW_SORT_ASC
+            MENUITEM "~Descending",         ID_MAIN_VIEW_SORT_DESC
+        }
+        MENUITEM     "~Arrange",            ID_MAIN_VIEW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM     "Close",               ID_MAIN_VIEW_CLOSE
+    }
+    SUBMENU          "~Help",               ID_MAIN_HELP, MIS_HELP
+    {
+        MENUITEM     "Help ~index",         ID_MAIN_HELP_INDEX
+        MENUITEM     "~General help",       ID_MAIN_HELP_GENERAL
+        MENUITEM     "~Using help",         ID_MAIN_HELP_USING
+        MENUITEM     "~Keys help",          SC_HELPKEYS, MIS_SYSCOMMAND
+        MENUITEM SEPARATOR
+        MENUITEM     "~Product information",ID_MAIN_HELP_PRODUCT
+    }
+}
+
+MENU                                        ID_MAIN_POP
+{
+    SUBMENU          "~Open",               ID_MAIN_VIEW_OPEN
+    {
+        MENUITEM     "~Icon view",          ID_MAIN_VIEW_OPEN_ICON
+        MENUITEM     "~Tree view",          ID_MAIN_VIEW_OPEN_TREE
+        MENUITEM     "~Details view",       ID_MAIN_VIEW_OPEN_DETAILS
+    }
+    SUBMENU          "~Help",               ID_MAIN_HELP,          MIS_HELP
+    {
+        MENUITEM     "Help ~index",         ID_MAIN_HELP_INDEX
+        MENUITEM     "~General help",       ID_MAIN_HELP_GENERAL
+        MENUITEM     "~Using help",         ID_MAIN_HELP_USING
+        MENUITEM     "~Keys help",          SC_HELPKEYS, MIS_SYSCOMMAND
+        MENUITEM SEPARATOR
+        MENUITEM     "~Product information", ID_MAIN_HELP_PRODUCT
+    }
+    MENUITEM SEPARATOR
+    SUBMENU          "S~elect",             ID_MAIN_VIEW_SELECT
+    {
+        MENUITEM     "Select ~all\tCtrl+/", ID_MAIN_VIEW_SELECT_ALL
+        MENUITEM     "Dese~lect all\tCtrl+\\", ID_MAIN_VIEW_SELECT_DE
+    }
+    SUBMENU          "So~rt",               ID_MAIN_VIEW_SORT
+    {
+        MENUITEM     "~Ascending",          ID_MAIN_VIEW_SORT_ASC
+        MENUITEM     "~Descending",         ID_MAIN_VIEW_SORT_DESC
+    }
+    MENUITEM         "~Arrange",            ID_MAIN_VIEW_ARRANGE
+    MENUITEM SEPARATOR
+    MENUITEM         "Close",               ID_MAIN_VIEW_CLOSE
+}
+
+
+MENU                                        ID_MAIN_FUNC_POP
+{
+    MENUITEM         "~Open",               ID_MAIN_OBJECT_POP_OPEN
+    SUBMENU          "~Help",               ID_MAIN_HELP,         MIS_HELP
+    {
+        MENUITEM     "Help ~index",         ID_MAIN_HELP_INDEX
+        MENUITEM     "~General help",       ID_MAIN_HELP_GENERAL
+        MENUITEM     "~Using help",         ID_MAIN_HELP_USING
+        MENUITEM     "~Keys help",          SC_HELPKEYS, MIS_SYSCOMMAND
+        MENUITEM SEPARATOR
+        MENUITEM     "~Product information", ID_MAIN_HELP_PRODUCT
+    }
+}
+
+MENU                                        ID_MAIN_QUERY_POP
+{
+    MENUITEM         "~Open",               ID_MAIN_OBJECT_POP_OPEN
+    SUBMENU          "~Help",               ID_MAIN_HELP,         MIS_HELP
+    {
+        MENUITEM     "Help ~index",         ID_MAIN_HELP_INDEX
+        MENUITEM     "~General help",       ID_MAIN_HELP_GENERAL
+        MENUITEM     "~Using help",         ID_MAIN_HELP_USING
+        MENUITEM     "~Keys help",          SC_HELPKEYS, MIS_SYSCOMMAND
+        MENUITEM SEPARATOR
+        MENUITEM     "~Product information", ID_MAIN_HELP_PRODUCT
+    }
+    MENUITEM SEPARATOR
+    MENUITEM         "~Delete...",          ID_MAIN_OBJECT_POP_DELETE
+}
+
+
+MENU                                        ID_PERSONNEL
+{
+    SUBMENU          "~Selected",           ID_PERSONNEL_SELECTED
+    {
+        MENUITEM     "~Open",               ID_PERSONNEL_SELECTED_OPEN
+        MENUITEM     "Create ~Another",     ID_PERSONNEL_SELECTED_CREATE
+        MENUITEM SEPARATOR
+        MENUITEM     "Trans~fer...",        ID_PERSONNEL_SELECTED_TRANSFER
+        MENUITEM     "~Delete...",          ID_PERSONNEL_SELECTED_DELETE
+    }
+    SUBMENU          "~View",               ID_PERSONNEL_VIEW
+    {
+        SUBMENU      "~Open",               ID_PERSONNEL_VIEW_OPEN
+        {
+            MENUITEM "~Icon view",          ID_PERSONNEL_VIEW_OPEN_ICON
+            MENUITEM "~Tree view",          ID_PERSONNEL_VIEW_OPEN_TREE
+            MENUITEM "~Details view",       ID_PERSONNEL_VIEW_OPEN_DETAILS
+        }
+        MENUITEM SEPARATOR
+        SUBMENU        "S~elect",           ID_PERSONNEL_VIEW_SELECT
+        {
+            MENUITEM "Select ~all\tCtrl+/", ID_PERSONNEL_VIEW_SELECT_ALL
+            MENUITEM "Dese~lect all\tCtrl+\\", ID_PERSONNEL_VIEW_SELECT_DE
+        }
+        SUBMENU      "So~rt",               ID_PERSONNEL_VIEW_SORT
+        {
+            MENUITEM "~Ascending",          ID_PERSONNEL_VIEW_SORT_ASC
+            MENUITEM "~Descending",         ID_PERSONNEL_VIEW_SORT_DESC
+        }
+        MENUITEM     "~Arrange",            ID_PERSONNEL_VIEW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM     "Close",               ID_PERSONNEL_VIEW_CLOSE
+    }
+    SUBMENU          "~Help",               ID_PERSONNEL_HELP,         MIS_HELP
+    {
+        MENUITEM     "Help ~index",         ID_PERSONNEL_HELP_INDEX
+        MENUITEM     "~General help",       ID_PERSONNEL_HELP_GENERAL
+        MENUITEM     "~Using help",         ID_PERSONNEL_HELP_USING
+        MENUITEM     "~Keys help",          SC_HELPKEYS, MIS_SYSCOMMAND
+        MENUITEM SEPARATOR
+        MENUITEM     "~Product information", ID_PERSONNEL_HELP_PRODUCT
+    }
+}
+
+MENU                                        ID_PERSONNEL_POP
+{
+    SUBMENU          "~Open",               ID_PERSONNEL_VIEW_OPEN
+    {
+        MENUITEM     "~Icon view",          ID_PERSONNEL_VIEW_OPEN_ICON
+        MENUITEM     "~Tree view",          ID_PERSONNEL_VIEW_OPEN_TREE
+        MENUITEM     "~Details view",       ID_PERSONNEL_VIEW_OPEN_DETAILS
+    }
+    SUBMENU          "~Help",               ID_PERSONNEL_HELP,           MIS_HELP
+    {
+        MENUITEM     "Help ~index",         ID_PERSONNEL_HELP_INDEX
+        MENUITEM     "~General help",       ID_PERSONNEL_HELP_GENERAL
+        MENUITEM     "~Using help",         ID_PERSONNEL_HELP_USING
+        MENUITEM     "~Keys help",          SC_HELPKEYS, MIS_SYSCOMMAND
+        MENUITEM SEPARATOR
+        MENUITEM     "~Product information",ID_PERSONNEL_HELP_PRODUCT
+    }
+    MENUITEM SEPARATOR
+    SUBMENU          "S~elect",             ID_PERSONNEL_VIEW_SELECT
+    {
+        MENUITEM     "Select ~all\tCtrl+/", ID_PERSONNEL_VIEW_SELECT_ALL
+        MENUITEM     "Dese~lect all\tCtrl+\\", ID_PERSONNEL_VIEW_SELECT_DE
+    }
+    SUBMENU          "So~rt",               ID_PERSONNEL_VIEW_SORT
+    {
+        MENUITEM     "~Ascending",          ID_PERSONNEL_VIEW_SORT_ASC
+        MENUITEM     "~Descending",         ID_PERSONNEL_VIEW_SORT_DESC
+    }
+    MENUITEM         "~Arrange",            ID_PERSONNEL_VIEW_ARRANGE
+    MENUITEM SEPARATOR
+    MENUITEM         "Close",               ID_PERSONNEL_VIEW_CLOSE
+}
+
+MENU                                        ID_PERSONNEL_OBJECT_POP
+{
+    MENUITEM         "~Open",               ID_PERSONNEL_OBJECT_POP_OPEN
+    SUBMENU          "~Help",               ID_PERSONNEL_HELP, MIS_HELP
+    {
+        MENUITEM     "Help ~index",         ID_PERSONNEL_HELP_INDEX
+        MENUITEM     "~General help",       ID_PERSONNEL_HELP_GENERAL
+        MENUITEM     "~Using help",         ID_PERSONNEL_HELP_USING
+        MENUITEM     "~Keys help",          SC_HELPKEYS, MIS_SYSCOMMAND
+        MENUITEM SEPARATOR
+        MENUITEM     "~Product information", ID_PERSONNEL_HELP_PRODUCT
+    }
+    MENUITEM         "Create ~Another",     ID_PERSONNEL_OBJECT_POP_CREATE
+    MENUITEM SEPARATOR
+    MENUITEM         "Trans~fer...",        ID_PERSONNEL_OBJECT_POP_TRANSFER
+    MENUITEM         "~Delete...",          ID_PERSONNEL_OBJECT_POP_DELETE
+}
+
+/***************************************************************************
+   help table resources - used by IHelpWindow Class  for Main              *
+****************************************************************************/
+HELPTABLE ID_HELP_TABLE
+{
+    HELPITEM         ID_MAIN,        ID_MAIN_SUBTABLE,   ID_MAIN
+}
+
+HELPSUBTABLE ID_MAIN_SUBTABLE
+  BEGIN
+    HELPSUBITEM ID_MAIN_VIEW, ID_MAIN_VIEW
+    HELPSUBITEM ID_MAIN, ID_MAIN
+    HELPSUBITEM ID_MAIN_VIEW_OPEN, ID_MAIN_VIEW_OPEN
+    HELPSUBITEM ID_MAIN_VIEW_OPEN_ICON, ID_MAIN_VIEW_OPEN_ICON
+    HELPSUBITEM ID_MAIN_VIEW_OPEN_TREE, ID_MAIN_VIEW_OPEN_TREE
+    HELPSUBITEM ID_MAIN_VIEW_OPEN_DETAILS, ID_MAIN_VIEW_OPEN_DETAILS
+    HELPSUBITEM ID_MAIN_VIEW_SELECT, ID_MAIN_VIEW_SELECT
+    HELPSUBITEM ID_MAIN_VIEW_SELECT_ALL, ID_MAIN_VIEW_SELECT_ALL
+    HELPSUBITEM ID_MAIN_VIEW_SELECT_DE, ID_MAIN_VIEW_SELECT_DE
+    HELPSUBITEM ID_MAIN_VIEW_SORT, ID_MAIN_VIEW_SORT
+    HELPSUBITEM ID_MAIN_VIEW_SORT_ASC, ID_MAIN_VIEW_SORT_ASC
+    HELPSUBITEM ID_MAIN_VIEW_SORT_DESC, ID_MAIN_VIEW_SORT_DESC
+    HELPSUBITEM ID_MAIN_VIEW_ARRANGE, ID_MAIN_VIEW_ARRANGE
+    HELPSUBITEM ID_MAIN_VIEW_CLOSE, ID_MAIN_VIEW_CLOSE
+    HELPSUBITEM ID_MAIN_SELECTED, ID_MAIN_SELECTED
+    HELPSUBITEM ID_MAIN_SELECTED_OPEN, ID_MAIN_SELECTED_OPEN
+    HELPSUBITEM ID_MAIN_SELECTED_DELETE, ID_MAIN_SELECTED_DELETE
+    HELPSUBITEM ID_MAIN_HELP, ID_MAIN_HELP
+    HELPSUBITEM ID_MAIN_HELP_INDEX, ID_MAIN_HELP_INDEX
+    HELPSUBITEM ID_MAIN_HELP_GENERAL, ID_MAIN_HELP_GENERAL
+    HELPSUBITEM ID_MAIN_HELP_USING, ID_MAIN_HELP_USING
+    HELPSUBITEM ID_MAIN_HELP_KEYS,  ID_MAIN_HELP_KEYS
+    HELPSUBITEM SC_HELPKEYS, ID_MAIN_HELP_KEYS_HELP
+    HELPSUBITEM ID_MAIN_HELP_PRODUCT, ID_MAIN_HELP_PRODUCT
+    HELPSUBITEM ID_MAIN_FUNC_POP, ID_MAIN_SELECTED
+    HELPSUBITEM ID_MAIN_OBJECT_POP_OPEN, ID_MAIN_SELECTED_OPEN
+    HELPSUBITEM ID_MAIN_OBJECT_POP_DELETE, ID_MAIN_SELECTED_DELETE
+    HELPSUBITEM ID_MAIN_QUERY_POP, ID_MAIN_SELECTED
+
+  END
+/***************************************************************************
+   help table resources - used by IHelpWindow Class for Personnel          *
+****************************************************************************/
+
+ HELPTABLE ID_HELP_TABLE2
+ {
+    HELPITEM         ID_PERSONNEL,        ID_PERSONNEL_SUBTABLE,   ID_PERSONNEL
+ }
+
+HELPSUBTABLE ID_PERSONNEL_SUBTABLE
+{
+    HELPSUBITEM ID_PERSONNEL_VIEW, ID_PERSONNEL_VIEW
+    HELPSUBITEM ID_PERSONNEL_VIEW_OPEN, ID_PERSONNEL_VIEW_OPEN
+    HELPSUBITEM ID_PERSONNEL_VIEW_OPEN_ICON, ID_PERSONNEL_VIEW_OPEN_ICON
+    HELPSUBITEM ID_PERSONNEL_VIEW_OPEN_TREE, ID_PERSONNEL_VIEW_OPEN_TREE
+    HELPSUBITEM ID_PERSONNEL_VIEW_OPEN_DETAILS, ID_PERSONNEL_VIEW_OPEN_DETAILS
+    HELPSUBITEM ID_PERSONNEL_VIEW_SELECT, ID_PERSONNEL_VIEW_SELECT
+    HELPSUBITEM ID_PERSONNEL_VIEW_SELECT_ALL, ID_PERSONNEL_VIEW_SELECT_ALL
+    HELPSUBITEM ID_PERSONNEL_VIEW_SELECT_DE, ID_PERSONNEL_VIEW_SELECT_DE
+    HELPSUBITEM ID_PERSONNEL_VIEW_SORT, ID_PERSONNEL_VIEW_SORT
+    HELPSUBITEM ID_PERSONNEL_VIEW_SORT_ASC, ID_PERSONNEL_VIEW_SORT_ASC
+    HELPSUBITEM ID_PERSONNEL_VIEW_SORT_DESC, ID_PERSONNEL_VIEW_SORT_DESC
+    HELPSUBITEM ID_PERSONNEL_VIEW_ARRANGE, ID_PERSONNEL_VIEW_ARRANGE
+    HELPSUBITEM ID_PERSONNEL_VIEW_CLOSE, ID_PERSONNEL_VIEW_CLOSE
+    HELPSUBITEM ID_PERSONNEL_SELECTED, ID_PERSONNEL_SELECTED
+    HELPSUBITEM ID_PERSONNEL_SELECTED_OPEN, ID_PERSONNEL_SELECTED_OPEN
+    HELPSUBITEM ID_PERSONNEL_SELECTED_DELETE, ID_PERSONNEL_SELECTED_DELETE
+    HELPSUBITEM ID_PERSONNEL_SELECTED_CREATE, ID_PERSONNEL_SELECTED_CREATE
+    HELPSUBITEM ID_PERSONNEL_SELECTED_TRANSFER, ID_PERSONNEL_SELECTED_TRANSFER
+    HELPSUBITEM ID_PERSONNEL_HELP, ID_PERSONNEL_HELP
+    HELPSUBITEM ID_PERSONNEL_HELP_INDEX, ID_PERSONNEL_HELP_INDEX
+    HELPSUBITEM ID_PERSONNEL_HELP_GENERAL, ID_PERSONNEL_HELP_GENERAL
+    HELPSUBITEM ID_PERSONNEL_HELP_USING, ID_PERSONNEL_HELP_USING
+    HELPSUBITEM ID_PERSONNEL_HELP_KEYS,  ID_PERSONNEL_HELP_KEYS
+    HELPSUBITEM ID_PERSONNEL_DELETE_HELP, ID_PERSONNEL_DELETE_HELP
+    HELPSUBITEM SC_HELPKEYS, ID_PERSONNEL_HELP_KEYS_HELP
+    HELPSUBITEM ID_PERSONNEL_HELP_PRODUCT, ID_PERSONNEL_HELP_PRODUCT
+    HELPSUBITEM ID_PERSONNEL_POP, ID_PERSONNEL_SELECTED
+    HELPSUBITEM ID_PERSONNEL_OBJECT_POP, ID_PERSONNEL_SELECTED
+    HELPSUBITEM ID_PERSONNEL_OBJECT_POP_OPEN, ID_PERSONNEL_SELECTED_OPEN
+    HELPSUBITEM ID_PERSONNEL_OBJECT_POP_DELETE, ID_PERSONNEL_SELECTED_DELETE
+    HELPSUBITEM ID_PERSONNEL_OBJECT_POP_CREATE, ID_PERSONNEL_SELECTED_CREATE
+    HELPSUBITEM ID_PERSONNEL_OBJECT_POP_TRANSFER, ID_PERSONNEL_SELECTED_TRANSFER
+}
+
+/***************************************************************************
+   help table resources - used by IHelpWindow Class for LInfoWindow        *
+****************************************************************************/
+ HELPTABLE ID_HELP_TABLE3
+ {
+    HELPITEM         ID_INFO_WINDOW, ID_LINFOWINDOW_SUBTABLE, ID_INFO_WINDOW
+ }
+
+HELPSUBTABLE ID_LINFOWINDOW_SUBTABLE
+{
+    HELPSUBITEM ID_NOTEBOOK_HELP_PANEL, ID_NOTEBOOK_HELP_PANEL
+    HELPSUBITEM ID_GENERAL_PAGE, ID_GENERAL_PAGE
+    HELPSUBITEM ID_ACCOUNT_PAGE, ID_ACCOUNT_PAGE
+    HELPSUBITEM ID_BADGE_PAGE, ID_BADGE_PAGE
+    HELPSUBITEM ID_SKILL_PAGE, ID_SKILL_PAGE
+    HELPSUBITEM ID_STATUS_PAGE, ID_STATUS_PAGE
+    HELPSUBITEM ID_PROJECT_PAGE, ID_PROJECT_PAGE
+    HELPSUBITEM ID_TASK_PAGE, ID_TASK_PAGE
+}
+
+
+/***************************************************************************
+   Resource string table                                                   *
+****************************************************************************/
+STRINGTABLE
+{
+/*---------------------------------------------------------------------
+| Application strings                                                  |
+----------------------------------------------------------------------*/
+    STR_MAIN_TITLE,               "Lancelot"
+    STR_MAIN_TITLE2,              "A Valiant Example"
+    STR_PERSONNEL_TITLE,          "Personnel"
+    STR_HELP_TITLE,               "Lancelot : Help Window"
+    STR_ASKUSER_TITLE,            "Lancelot : User Response"
+    STR_HELP_NOT_FOUND,           "Help file 'lanchelp.hlp' not found.\x0dHelp is not available."
+    STR_QUERY_INFO_WINDOW,        "Query Personnel"
+    STR_NEW_INFO_WINDOW,          "Create New Employee"
+    STR_QUERY_PERSONNEL_OBJECT    "Query Personnel"
+    STR_QUERY_PERSONNEL_DESC      "Query personnel from the database"
+    STR_CUSTOM_QUERY_DESC         "Your custom personnel query"
+    STR_ENTER_QUERY_NAME          "Enter a name for this query"
+    STR_SAVED_QUERY_NAME          "Query saved to "
+    STR_REPLACED_QUERY_NAME       "Existing query replaced for "
+    STR_PERSONNEL_DELETE_MSG      "You have requested to delete a person from the personnel database.\x0dDo you wish to set the person to INACTIVE status instead?"
+    STR_PERSONNEL_DELETED_MSG     "Employee permanently deleted from the database."
+    STR_PERSONNEL_INACTIVE_MSG    "Employee is now set to inactive status."
+    STR_TRANSFER_MSG1             "You have requested to transfer "
+    STR_TRANSFER_MSG2             "to another department.  The current department is "
+    STR_TRANSFER_MSG3             "Specify new department:"
+    STR_TRANSFER_MSG4             " has been transferred to department "
+    STR_TRANSFER_MSG5             " has not been transferred, a department cannot be determined."
+    STR_TRANSFER_MSG6             " is already in department "
+    STR_MAIN_DELETE_MSG1          "The "
+    STR_MAIN_DELETE_MSG2          " cannot be deleted."
+    STR_INCOMPLETE_DATA           "has incomplete data"
+    STR_DB_EMPTY                  "Your database is empty.\x0dWould you like to create a new employee now?"
+    STR_DB_ERROR                  "Database cannot be updated, ensure there is enough space and write authority is allowed"
+    STR_DB_UNKNOWN_ERROR          "Database cannot be updated"
+    STR_NO_DB_ACCESS              "The Lancelot databases cannot be accessed! You may have read-only access to the current directory.  Lancelot will now close."
+    STR_DB_NO_MATCH               "No matches found."
+    STR_ABOUT_MSG                 "Version 1.1 March 1995\x0dWritten by:\x0d    Wes Wilson (1994,1995)\x0d    Wilton Tom (1994,1995)\x0d    Hui Young(1994)"
+    STR_TIMECARD_NOSAVE           "Rows with incomplete information will not be saved."
+    PSZ_OBJECT                    "LANCELOT"
+    PSZ_VIEW                      "Sample Application"
+
+/*---------------------------------------------------------------------
+| Main infoarea text                                                   |
+----------------------------------------------------------------------*/
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN                   "Press F1 at any time for help"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW              "View the objects..."
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW_OPEN         "Open the current view..."
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW_OPEN_ICON    "Open the icon view of the objects"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW_OPEN_TREE    "Open the tree view of the objects"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW_OPEN_DETAILS "Open the details view of the objects"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW_SELECT       "Select objects..."
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW_SELECT_ALL   "Select all the objects"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW_SELECT_DE    "Deselect all the objects"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW_SORT         "Sort the objects..."
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW_SORT_ASC     "Sort the objects in ascending order"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW_SORT_DESC    "Sort the objects in descending order"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW_ARRANGE      "Arrange the objects"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_VIEW_CLOSE        "Close this window"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_SELECTED          "Selected objects..."
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_SELECTED_OPEN     "Open the selected objects"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_SELECTED_DELETE   "Delete the selected objects"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_HELP              "Help..."
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_HELP_INDEX        "Index help"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_HELP_GENERAL      "General help"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_HELP_USING        "Using help"
+    ID_MAIN_OFFSET_INFOAREA+SC_HELPKEYS               "Keys help"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_HELP_PRODUCT      "Product information"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_POP               "Press F1 at any time for help"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_FUNC_POP          "Action object"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_QUERY_POP         "Query object"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_OBJECT_POP_OPEN   "Open the selected objects"
+    ID_MAIN_OFFSET_INFOAREA+ID_MAIN_OBJECT_POP_DELETE "Delete the selected objects"
+
+/*---------------------------------------------------------------------
+| Main toolbar button text                                             |
+----------------------------------------------------------------------*/
+    ID_MAIN_SELECTED_OPEN         "Open"
+    ID_MAIN_HELP_INDEX            "Help"
+    ID_MAIN_SELECTED_DELETE       "Delete"
+    ID_MAIN_VIEW_OPEN_ICON        "Icon"
+    ID_MAIN_VIEW_OPEN_TREE        "Tree"
+    ID_MAIN_VIEW_OPEN_DETAILS     "Details"
+    ID_MAIN_VIEW_SELECT_ALL       "Select All"
+    ID_MAIN_VIEW_SELECT_DE        "Deselect All"
+    ID_MAIN_VIEW_SORT_ASC         "Ascending"
+    ID_MAIN_VIEW_SORT_DESC        "Descending"
+    ID_MAIN_VIEW_ARRANGE          "Arrange"
+
+/*---------------------------------------------------------------------
+| Main flyover help text                                               |
+----------------------------------------------------------------------*/
+    ID_MAIN_OFFSET_FLYTEXT+ID_MAIN_SELECTED_OPEN     "Open object"
+    ID_MAIN_OFFSET_FLYTEXT+ID_MAIN_HELP_INDEX        "Show help index"
+    ID_MAIN_OFFSET_FLYTEXT+ID_MAIN_SELECTED_DELETE   "Delete objects"
+    ID_MAIN_OFFSET_FLYTEXT+ID_MAIN_VIEW_OPEN_ICON    "Open icon view"
+    ID_MAIN_OFFSET_FLYTEXT+ID_MAIN_VIEW_OPEN_TREE    "Open tree view"
+    ID_MAIN_OFFSET_FLYTEXT+ID_MAIN_VIEW_OPEN_DETAILS "Open details view"
+    ID_MAIN_OFFSET_FLYTEXT+ID_MAIN_VIEW_SELECT_ALL   "Select all"
+    ID_MAIN_OFFSET_FLYTEXT+ID_MAIN_VIEW_SELECT_DE    "Deselect all"
+    ID_MAIN_OFFSET_FLYTEXT+ID_MAIN_VIEW_SORT_ASC     "Sort ascending"
+    ID_MAIN_OFFSET_FLYTEXT+ID_MAIN_VIEW_SORT_DESC    "Sort descending"
+    ID_MAIN_OFFSET_FLYTEXT+ID_MAIN_VIEW_ARRANGE      "Arrange objects"
+
+/*---------------------------------------------------------------------
+| Personnel infoarea text                                              |
+----------------------------------------------------------------------*/
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL                   "Press F1 at any time for help"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW              "View the employees..."
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW_OPEN         "Open the current view..."
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW_OPEN_ICON    "Open the icon view of the employees"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW_OPEN_TREE    "Open the tree view of the employees"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW_OPEN_DETAILS "Open the details view of the employees"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW_SELECT       "Select employees..."
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW_SELECT_ALL   "Select all the employees"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW_SELECT_DE    "Deselect all the employees"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW_SORT         "Sort the employees..."
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW_SORT_ASC     "Sort the employees in ascending order"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW_SORT_DESC    "Sort the employees in descending order"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW_ARRANGE      "Arrange the employees"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_VIEW_CLOSE        "Close this window"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_SELECTED          "Selected employees..."
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_SELECTED_OPEN     "Open the selected employees"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_SELECTED_CREATE   "Create another employee"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_SELECTED_TRANSFER "Transfer employee to another department"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_SELECTED_DELETE   "Delete the selected employees"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_HELP              "Help..."
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_HELP_INDEX        "Index help"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_HELP_GENERAL      "General help"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_HELP_USING        "Using help"
+    ID_PERSONNEL_OFFSET_INFOAREA+SC_HELPKEYS                    "Keys help"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_HELP_PRODUCT      "Product information"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_POP               "Press F1 at any time for help"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_OBJECT_POP_OPEN   "Open the selected employees"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_OBJECT_POP_CREATE "Create another employee"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_OBJECT_POP_TRANSFER "Transfer employee to another department"
+    ID_PERSONNEL_OFFSET_INFOAREA+ID_PERSONNEL_OBJECT_POP_DELETE "Delete the selected employees"
+
+/*---------------------------------------------------------------------
+| Personnel toolbar button text                                        |
+----------------------------------------------------------------------*/
+    ID_PERSONNEL_SELECTED_OPEN     "Open"
+    ID_PERSONNEL_HELP_INDEX        "Help"
+    ID_PERSONNEL_SELECTED_DELETE   "Delete"
+    ID_PERSONNEL_VIEW_OPEN_ICON    "Icon"
+    ID_PERSONNEL_VIEW_OPEN_TREE    "Tree"
+    ID_PERSONNEL_VIEW_OPEN_DETAILS "Details"
+    ID_PERSONNEL_VIEW_SELECT_ALL   "Select All"
+    ID_PERSONNEL_VIEW_SELECT_DE    "Deselect All"
+    ID_PERSONNEL_VIEW_SORT_ASC     "Ascend"
+    ID_PERSONNEL_VIEW_SORT_DESC    "Descend"
+    ID_PERSONNEL_VIEW_ARRANGE      "Arrange"
+    ID_PERSONNEL_SELECTED_CREATE   "Create"
+    ID_PERSONNEL_SELECTED_TRANSFER "Transfer"
+
+/*---------------------------------------------------------------------
+| Personnel flyover help text                                          |
+----------------------------------------------------------------------*/
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_SELECTED_OPEN     "Open employee"
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_HELP_INDEX        "Show help index"
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_SELECTED_DELETE   "Delete employee"
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_VIEW_OPEN_ICON    "Open icon view"
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_VIEW_OPEN_TREE    "Open tree view"
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_VIEW_OPEN_DETAILS "Open details view"
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_VIEW_SELECT_ALL   "Select all"
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_VIEW_SELECT_DE    "Deselect all"
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_VIEW_SORT_ASC     "Sort ascending"
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_VIEW_SORT_DESC    "Sort descending"
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_VIEW_ARRANGE      "Arrange employees"
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_SELECTED_CREATE   "Create employee"
+    ID_PERSONNEL_OFFSET_FLYTEXT+ID_PERSONNEL_SELECTED_TRANSFER "Transfer employee"
+
+/*---------------------------------------------------------------------
+| Page button strings                                                  |
+----------------------------------------------------------------------*/
+    ID_BUTTON_SAVE        "Save"
+    ID_BUTTON_QUERY       "Query"
+    ID_BUTTON_UNDO        "Undo"
+    ID_BUTTON_HELP        "Help"
+    ID_BUTTON_GRID        "Show gridlines"
+    ID_BUTTON_ADD         "Add"
+    ID_BUTTON_CHANGE      "Change"
+    ID_BUTTON_REMOVE      "Remove"
+    ID_BUTTON_NEXT        "Next"
+    ID_BUTTON_PREV        "Previous"
+
+/*---------------------------------------------------------------------
+| Badge page strings                                                   |
+----------------------------------------------------------------------*/
+    ID_BADGE_PAGE         "Badge"
+    STR_BDG_BADGE_TAB     "~Badge"
+    STR_BDG_BADGE_NUMBER  "Badge Number"
+    STR_BDG_ISSUE_DATE    "Issue Date"
+    STR_BDG_EXP_DATE      "Expiration Date"
+
+/*---------------------------------------------------------------------
+| Status page strings                                                  |
+----------------------------------------------------------------------*/
+    ID_STATUS_PAGE        "Status"
+    STR_STA_STATUS_TAB    "~Status"
+    STR_STA_TITLE         "Status"
+    STR_STA_INACTIVE      "Inactive"
+    STR_STA_ACTIVE        "Active"
+    STR_STA_START         "Start Date"
+    STR_STA_END           "End Date"
+    STR_STA_HOURLY        "Hourly rate"
+
+/*---------------------------------------------------------------------
+| Account page strings                                                 |
+----------------------------------------------------------------------*/
+    ID_ACCOUNT_PAGE       "Account"
+    STR_ACC_ACCOUNT_TAB   "~Account"
+    STR_ACC_USERID        "User ID"
+    STR_ACC_NODESYS       "Node/System"
+    STR_ACC_CURRENTUSERID "Current User ID"
+
+/*---------------------------------------------------------------------
+| Skill page strings                                                   |
+----------------------------------------------------------------------*/
+    ID_SKILL_PAGE          "Skill"
+    STR_SKI_SKILL_TAB      "Ski~ll"
+    STR_SKI_SKILL          "Skill"
+    STR_SKI_YEARS_EXP      "Months exp"
+    STR_SKI_CURRENT_SKILLS "Current Skills"
+
+/*---------------------------------------------------------------------
+| General page strings                                                 |
+----------------------------------------------------------------------*/
+    STR_PERSON                   "Person"
+    STR_LASTNAME                 "Last Name"
+    STR_FIRSTNAME                "First Name"
+    STR_MI                       "MI"
+    STR_EMPLOYEENUM              "Employee #"
+    STR_INTPHONE                 "Internal Telephone"
+    STR_EXTPHONE                 "External Telephone"
+    STR_INTADDR                  "Internal Address"
+    STR_EXTADDR                  "External Address"
+    STR_ROOM                     "Room"
+    STR_BUILDING                 "Building"
+    STR_DEPT                     "Department"
+    STR_TYPE                     "Type"
+    STR_MGRNUM                   "Manager #"
+    STR_TITLE                    "Title"
+    STR_DESC                     "Description"
+    STR_MGR                      "Manager"
+    ID_GENERAL_PAGE              "General"
+    STR_GEN_GENERAL_TAB          "~General"
+    STR_GEN_EMPLOYEE_ID_TEXT     "Employee #"
+    STR_GEN_LAST_NAME_TEXT       "Last Name"
+    STR_GEN_FIRST_NAME_TEXT      "First Name"
+    STR_GEN_MIDDLE_NAME_TEXT     "MI"
+    STR_GEN_INT_PHONE_TEXT       "Int.Phone"
+    STR_GEN_EXT_PHONE_TEXT       "Ext.Phone"
+    STR_GEN_ROOM_TEXT            "Room"
+    STR_GEN_DEPT_TEXT            "Dept"
+    STR_GEN_BLD_TEXT             "Bld"
+    STR_GEN_DIV_TEXT             "Div."
+    STR_GEN_EMPLOYEE_TYPE_TEXT   "Employee Type"
+    STR_GEN_REG_TEXT             "Regular"
+    STR_GEN_MGR_TEXT             "Manager"
+    STR_GEN_SUP_TEXT             "Supplemental"
+    STR_GEN_MGR_EMP_NUM_TEXT     "Mgr #"
+    STR_GEN_MGR_EMP_NAME_TEXT    "Mgr Name"
+
+/*---------------------------------------------------------------------
+| Project page strings                                                 |
+----------------------------------------------------------------------*/
+    STR_PRJ_PROJECT_TAB          "~Projects"
+    STR_PRJ_PROJ                 "Project"
+    STR_PRJ_ACTIVE               "Active"
+    STR_PRJ_DESCRIPTION          "Description"
+    STR_PRJ_RESP_MGR             "Responsible Manager"
+    STR_PRJ_PROJECT2             "Project"
+    STR_PRJ_DESCRIPTION2         "Description"
+    STR_PRJ_MGR                  "Manager"
+    STR_PRJ_ACTIVE2              "Active"
+
+/*---------------------------------------------------------------------
+| Task page strings                                                    |
+----------------------------------------------------------------------*/
+    STR_TSK_TASKS_TAB     "~Tasks"
+    STR_TSK_TASK          "Task"
+    STR_TSK_BILLABLE      "Billable"
+    STR_TSK_DESCR         "Description"
+    STR_TSK_CURR          "Current Task"
+    STR_TSK_DESCR2        "Description"
+    STR_TSK_BILLABLE2     "Billable"
+
+/*---------------------------------------------------------------------
+| Time card page strings                                               |
+----------------------------------------------------------------------*/
+    STR_TCD_WEEK_ENDING_TEXT            "Week Ending "
+    STR_TCD_TIMECARD_TAB                "Time ~Card"
+    STR_TCD_DATE                        "Date"
+    STR_TCD_DATE_HEADER                 "Date"
+    STR_TCD_PROJECT_HEADER              "Project"
+    STR_TCD_TASK_HEADER                 "Task"
+    STR_TCD_HOUR_HEADER                 "Hours"
+    STR_TCD_TOTAL_HOURS_TEXT            "Total Hours            "
+    STR_TCD_TOTAL_BILLABLE_HOURS_TEXT   "Total Billable Hours  "
+
+/*---------------------------------------------------------------------
+| Common button strings                                                |
+----------------------------------------------------------------------*/
+    STR_OK               "~OK"
+    STR_CANCEL           "Cancel"
+    STR_BT_UNDO          "Undo"
+    STR_BT_HELP          "Help"
+    STR_BT_NEXT          "Next"
+    STR_BT_PREV          "Previous"
+
+/*---------------------------------------------------------------------
+| Common container button strings                                      |
+----------------------------------------------------------------------*/
+    STR_CNR_ADD           "Add"
+    STR_CNR_REMOVE        "Remove"
+    STR_CNR_CHANGE        "Change"
+
+/*---------------------------------------------------------------------
+| Error checking strings                                               |
+----------------------------------------------------------------------*/
+    STR_MSG_REMOVE        "An item must be selected in order for it to be removed"
+    STR_MSG_SKILL_REMOVE  "An item must be selected in order for it to be removed"
+    STR_MSG_CHANGE        "An item must be selected in order for it to be changed"
+    STR_MSG_NOT_IN_DB     "An item was not found to be in the IDS database"
+    STR_MSG_ALPHA_NUMERIC  "a-z, A-Z, 0-9 allowed"
+    STR_MSG_ALPHA          "a-z, A-Z allowed"
+    STR_MSG_NUMERIC        "0-9 allowed"
+    STR_MSG_PHONE          "Looking for '###-###-####' where #=0-9"
+    STR_MSG_DATE           "Looking for MM/DD/YY"
+    STR_MSG_CURRENCY       "Looking for #####.## where #=0-9 in US dollars"
+}

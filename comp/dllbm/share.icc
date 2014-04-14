@@ -1,0 +1,44 @@
+if $__TOS_AIX__
+   TARG = "share.a"
+else
+   TARG = "share.dll"
+
+if $__TOS_OS2__ | $__TOS_WIN__
+   option AdditionalOptions = link(extdictionary, no)
+if $__TOS_AIX__
+   option AdditionalOptions = defaults(xlC_r)
+
+option
+   AdditionalOptions,
+   link(debug, no),
+   link(linkwithmultithreadlib, yes),
+   link(linkwithsharedlib, yes),
+   link(padding, no),
+   gen(rtti, yes)
+{
+   target type (dll) TARG
+   {
+      option macros(global)
+      {
+         source type(cpp) "dllbm.h"
+      }
+      source "share.cpp"
+      if $__TOS_AIX__
+         option res_rc_options( " -dIC_MOTIF -dIC_AIX -d_AIX")
+         {
+            source "dllbm.rc"
+         }
+      if $__TOS_WIN__
+         option res_rc_options(" -d__WINDOWS__ -d_WIN32 -dIC_WIN")
+         {
+            source "dllbm.rc"
+         }
+      if $__TOS_OS2__
+         option res_rc_options(" -d __OS2__ -d IC_PM")
+         {
+            source "dllbm.rc"
+         }
+   }
+}
+
+run cleanup "-rm dllbm.res"

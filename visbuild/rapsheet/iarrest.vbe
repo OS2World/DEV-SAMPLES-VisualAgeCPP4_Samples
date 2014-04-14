@@ -1,0 +1,27 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: IArrest,,interface
+//VBParents: IStandardNotifier
+//VBIncludes: "iarrest.hpp" _IARREST_,"istdntfy.hpp" _ISTDNTFY_,"iarrest.hpp" _IARREST_,"istring.hpp" _ISTRING_,"iavlseq.h" _IAVLSEQ_
+//VBConstraints:  noGen
+//VBConstructor: IArrest()
+//VBComposerInfo: nonvisual
+//VBAttribute: charge,"the charge ",unsigned short,unsigned short charge() const,IArrest& setCharge(unsigned short aCharge),chargeId, preferred
+//VBAttribute: chargeAsString,"the string rendition of charge",IString,IString chargeAsString() const,IArrest& setChargeFromString(const unsigned short aCharge),chargeId
+//VBAttribute: status,"the status ",unsigned short,unsigned short status() const,IArrest& setStatus(unsigned short aStatus),statusId, preferred
+//VBAttribute: statusAsString,"the string rendition of status",IString,IString statusAsString() const,IArrest& setStatusFromString(const unsigned short aStatus),statusId
+//VBAttribute: statusDate,"the date of the arrest",IString,IString statusDate() const,IArrest& setStatusDate(const IString& adate),statusDateId, preferred
+//VBEndPartInfo: IArrest
+
+//VBBeginEnumInfo: IArrest::ICharge,"Various types of charges"
+//VBIncludes: "iarrest.hpp" _IARREST_
+//VBComposerClass: AvlEnum
+//VBEnumerators: arson=0,accomplice_to_murder=1,assault=2,assault_w_deadly_weapon=3,breaking_and_entering=4,burglary=5,DWI=6,embezzlement=7,fraud=8,hijacking=9,hit_and_run=10,kidnapping=11,manslaughter=12,murder=13,perjury=14,trespassing=15,vandalism=16,wreckless_driving=17
+//VBEndEnumInfo: IArrest::ICharge
+
+//VBBeginEnumInfo: IArrest::IStatus,"Various types of charge status"
+//VBIncludes: "iarrest.hpp" _IARREST_
+//VBComposerClass: AvlEnum
+//VBEnumerators: acquitted=0,arrested=1,arraigned=2,convicted=3,dropped=4,escaped=5,free_on_bond=6,released=7,released_on_parole=8,under_suspicion=9,wanted=10
+//VBEndEnumInfo: IArrest::IStatus
+

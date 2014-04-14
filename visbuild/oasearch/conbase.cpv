@@ -1,0 +1,112 @@
+const INotificationId _Export OAContractBase::queryFoundId = "OAContractBase::queryFound";
+
+OAContract& OAContractBase::getContract(OAContract& aContract)
+{
+// Start data access code
+
+  IProfile *p = new IProfile("contract.ini");
+
+// Needed for Windows implementation
+
+   primeData(*p);
+
+
+// Check for this account number in the profile collection
+  IString anAccountNum = aContract.accountNum();
+
+  if (!p->containsKeyName("accountNum", anAccountNum))
+  {
+  delete p;
+  throw IException("A record was not found for this contract.");
+  return aContract;
+  }
+
+// If other data exists for this contract,
+// set the corresponding contract attributes
+
+  if (p->containsKeyName("companyName", anAccountNum))
+    aContract.setCompanyName(p->elementWithKey("companyName", anAccountNum));
+  if (p->containsKeyName("projectMgr", anAccountNum))
+    aContract.setProjectMgr(p->elementWithKey("projectMgr", anAccountNum));
+  if (p->containsKeyName("deptName", anAccountNum))
+    aContract.setDeptName(p->elementWithKey("deptName", anAccountNum));
+  if (p->containsKeyName("positionTitle", anAccountNum))
+    aContract.setPositionTitle(p->elementWithKey("positionTitle", anAccountNum));
+  if (p->containsKeyName("startDate", anAccountNum))
+    aContract.setStartDate(p->elementWithKey("startDate", anAccountNum));
+  if (p->containsKeyName("endDate", anAccountNum))
+    aContract.setEndDate(p->elementWithKey("endDate", anAccountNum));
+  if (p->containsKeyName("contractorID", anAccountNum))
+    aContract.setContractorID(p->elementWithKey("contractorID", anAccountNum));
+
+  delete p;
+
+// End data access code
+
+// Execute event to trigger instantiation of OAContractView
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractBase::queryFoundId)));
+
+  return aContract;
+}
+
+OAContractBase& OAContractBase::putContract(const OAContract& aContract)
+{
+// Start data entry code
+
+  IProfile *p = new IProfile("contract.ini");
+
+// Needed for Windows implementation
+
+   primeData(*p);
+
+
+  IString anAccountNum = aContract.accountNum();
+
+  p->addOrReplaceElementWithKey("accountNum", anAccountNum, anAccountNum);
+
+// If other data about this contract exists, update it in the database
+
+  if (aContract.companyName().length()>0)
+    p->addOrReplaceElementWithKey("companyName", aContract.companyName(), anAccountNum);
+  if (aContract.projectMgr().length()>0)
+    p->addOrReplaceElementWithKey("projectMgr", aContract.projectMgr(), anAccountNum);
+  if (aContract.deptName().length()>0)
+    p->addOrReplaceElementWithKey("deptName", aContract.deptName(), anAccountNum);
+  if (aContract.positionTitle().length()>0)
+    p->addOrReplaceElementWithKey("positionTitle", aContract.positionTitle(), anAccountNum);
+  if (aContract.startDate().length()>0)
+    p->addOrReplaceElementWithKey("startDate", aContract.startDate(), anAccountNum);
+  if (aContract.endDate().length()>0)
+    p->addOrReplaceElementWithKey("endDate", aContract.endDate(), anAccountNum);
+  if (aContract.contractorID().length()>0)
+    p->addOrReplaceElementWithKey("contractorID", aContract.contractorID(), anAccountNum);
+
+  delete p;
+
+// End data entry code
+
+  return *this;
+}
+// Prime profile instance in Windows with data
+
+OAContractBase& OAContractBase::primeData(IProfile & aDatabase) {
+
+
+  IString tempKey = "123456";
+
+// Windows does not read from .ini files.
+// It uses a central registry,
+// so load initial contract data into the registry.
+
+  aDatabase.addOrReplaceElementWithKey("accountNum","123456",tempKey);
+  aDatabase.addOrReplaceElementWithKey("companyName","Acme Rubber Bands",tempKey);
+  aDatabase.addOrReplaceElementWithKey("projectMgr","Fred W. Brown",tempKey);
+  aDatabase.addOrReplaceElementWithKey("deptName","Stretch Technology",tempKey);
+  aDatabase.addOrReplaceElementWithKey("positionTitle","Senior Stretch Scientist",tempKey);
+  aDatabase.addOrReplaceElementWithKey("startDate","12/01/95",tempKey);
+  aDatabase.addOrReplaceElementWithKey("endDate","12/31/96",tempKey);
+  aDatabase.addOrReplaceElementWithKey("contractorID","Susan G. Carpenter",tempKey);
+
+
+  return *this;
+}

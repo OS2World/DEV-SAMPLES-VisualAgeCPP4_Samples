@@ -1,0 +1,9 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: MasterServantNumSpinHandler,"Spin handler created to handle spinning for a master and servant numeric spin button.",interface
+//VBParents: public ISpinHandler
+//VBIncludes: "msnmspnh.hpp" _MSNMSPNH_
+//VBConstructor: MasterServantNumSpinHandler(INumericSpinButton* master, INumericSpinButton* servant)
+//VBComposerInfo: class
+//VBEndPartInfo: MasterServantNumSpinHandler
+

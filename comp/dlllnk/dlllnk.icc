@@ -1,0 +1,34 @@
+if $__TOS_AIX__ {
+   TARG = "dlllnk"
+   LIB = "share.a"
+}
+else {
+   TARG = "dlllnk.exe"
+   LIB = "share.lib"
+}
+
+if $__TOS_OS2__ | $__TOS_WIN__
+   option AdditionalOptions = link(extdictionary, no)
+if $__TOS_AIX__
+   option AdditionalOptions = link(libPathOut, "/usr/vacpp/samples/comp/dlllnk:/usr/vacpp/lib:/usr/lib:/lib")
+
+
+option
+   AdditionalOptions,
+   link(debug, no),
+   link(linkwithmultithreadlib, yes),
+   link(linkwithsharedlib, yes),
+   link(padding, no),
+   gen(rtti, yes)
+{
+   target TARG
+   {
+      option macros(global)
+      {
+         source type(cpp) "iostream"
+         source type(cpp) "share.h"
+      }
+      source "dlllnk.cpp"
+      source LIB
+   }
+}

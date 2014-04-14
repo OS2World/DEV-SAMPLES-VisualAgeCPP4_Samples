@@ -1,0 +1,21 @@
+#include "darea.h"
+
+STRINGTABLE
+  BEGIN
+    POINTER_MOVE+LONG_OFFSET,     "Move an object using mouse button 1 or 2."
+    POINTER_STYLECAN+LONG_OFFSET, "Press button 1 to apply the current style to an object."
+    POINTER_ERASER+LONG_OFFSET,   "Press button 1 to remove the object under the eraser."
+    POINTER_RECTANGLE+LONG_OFFSET,"Press button 1, drag and release to create a rectangle."
+    POINTER_ELLIPSE+LONG_OFFSET,  "Press button 1, drag and release to create an ellipse."
+    POINTER_POLYGON+LONG_OFFSET,  "Click button 1 to set each point.  Double-click button 1 when done."
+    POINTER_LINE+LONG_OFFSET,     "Press button 1, drag and release to create a line."
+    POINTER_POLYLINE+LONG_OFFSET, "Click button 1 to set each point.  Double-click button 1 when done."
+    POINTER_FREEHAND+LONG_OFFSET, "Hold button 1 while drawing.  Release button when done."
+
+    POINTER_ARC+LONG_OFFSET,      "Click button 1 at beginning, click button 1 at 2nd point, drag and release for sweep."
+    POINTER_PIE+LONG_OFFSET,      "Click button 1 at center, click button 1 at radius, drag and release for pie size."
+    POINTER_CHORD+LONG_OFFSET,    "Click button 1 at center, click button 1 at radius, drag and release for chord size."
+    POINTER_TEXT+LONG_OFFSET,     "Click button 1 where you want to display text."
+    POINTER_BITMAP+LONG_OFFSET,   "Click button 1 where you want the lower left corner of the bitmap."
+    FLYOVERTEXT_BLANK+LONG_OFFSET,""
+  END

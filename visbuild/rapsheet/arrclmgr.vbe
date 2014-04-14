@@ -1,0 +1,22 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: IArrestClientMgr,,interface
+//VBParents: IStandardNotifier
+//VBIncludes: "iarsrmgr.hpp" _IARSRMGR_
+//VBConstraints:  noGen
+//VBComposerInfo: nonvisual
+//VBEvent: sameRequest,"same request received from peer/client machine", sameRequestId
+//VBEvent: manyObjectsFound,"many objects met query input", manyObjectsFoundId
+//VBEvent: noObjectsFound,"no objects met query input", noObjectsFoundId
+//VBEvent: oneObjectFound,"only one object met query input", oneObjectFoundId
+//VBEvent: parsedResult,"completed parsing result returned from a request", parsedResultId,, preferred
+//VBAction: getAllByBookNumber,"get all arrest records for a suspect",IString,IString allByBookNumber(unsigned long bookNumber), preferred
+//VBAction: processResult,"parse the result returned from a request",IArrestClientMgr&,IArrestClientMgr& processResult(), preferred
+//VBAttribute: requestBuffer,"request information",IString,IString requestBuffer(),IArrestClientMgr& setRequestBuffer(const IString& iRequestBuffer),requestBufferId, preferred
+//VBAttribute: resultBuffer,"result information",IString,IString resultBuffer(),IArrestClientMgr& setResultBuffer(const IString& iResultBuffer),resultBufferId, preferred
+//VBAttribute: resultList,"list of objects meeting query input",IVSequence<IArrest*>,IVSequence<IArrest*> resultList(),,resultListId
+//VBAttribute: resultListWrapper,"pointer to a list of objects meeting query input",IVSequence<IArrest*>*,IVSequence<IArrest*>* resultListWrapper(),,resultListWrapperId
+//VBAttribute: resultObject,"first object meeting query input",IArrest,IArrest resultObject(),,resultObjectId
+//VBAttribute: resultWrapper,"pointer to first object meeting query input",IArrest*,IArrest* resultWrapper(),,resultWrapperId
+//VBEndPartInfo: IArrestClientMgr
+

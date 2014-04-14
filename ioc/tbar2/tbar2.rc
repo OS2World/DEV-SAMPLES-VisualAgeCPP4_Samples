@@ -1,0 +1,89 @@
+/******************************************************************************
+* .FILE:         tbar2.rc                                                     *
+*                                                                             *
+* .DESCRIPTION:  Tool Bar Sample Program Version 2:    Resources              *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    IBM Open Class Library                                                   *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1997 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+******************************************************************************/
+#include <icconst.h>
+#include "tbar2.h"
+
+
+ICON ID_MAIN_WINDOW tbar2.ico
+
+MENU ID_MAIN_WINDOW
+BEGIN
+  SUBMENU "~File",           ID_FILE
+  BEGIN
+    MENUITEM "~Open...",     IC_ID_OPEN
+    MENUITEM "~Save as...",  IC_ID_SAVE
+  END
+  SUBMENU "~Edit",           ID_EDIT
+  BEGIN
+    MENUITEM "~Copy",        IC_ID_COPY
+    MENUITEM "Cu~t",         IC_ID_CUT
+    MENUITEM "~Paste",       IC_ID_PASTE
+  END
+  SUBMENU "~Options",        ID_OPTIONS
+  BEGIN
+    MENUITEM "~Toolbars...", ID_TOOLBARS
+    MENUITEM "~Font...",     ID_FONT
+  END
+END
+
+STRINGTABLE PRELOAD
+BEGIN
+  ID_MAIN_WINDOW                  , "Tool Bar Sample 2"
+  ID_FILE                         , "File"
+  ID_EDIT                         , "Edit"
+  ID_FONT                         , "Font"
+  ID_TOOLBARS                     , "Toolbars"
+  ID_LOCATION                     , "Location"
+  ID_TOP                          , "Top"
+  ID_LEFT                         , "Left"
+  ID_BOTTOM                       , "Bottom"
+  ID_RIGHT                        , "Right"
+  ID_FLOATING                     , "Floating"
+  ID_HIDDEN                       , "Hidden"
+  IC_ID_OPEN                      , "Open"
+  IC_ID_SAVE                      , "Save"
+  IC_ID_CUT                       , "Cut"
+  IC_ID_COPY                      , "Copy"
+  IC_ID_PASTE                     , "Paste"
+  IC_ID_BOLD                      , "Bold"
+  IC_ID_ITALIC                    , "Italic"
+  IC_ID_UNDERSCORE                , "Underscore"
+  ID_FONTCOMBO                    , "Select font"
+  ID_GROUP                        , "Group with other toolbars"
+  ID_VIEW                         , "View"
+  ID_BITMAP                       , "Bitmap"
+  ID_TEXT                         , "Text"
+  ID_BITMAP_AND_TEXT              , "Bitmap and text"
+  OFFSET_INFOTEXT+IC_ID_OPEN      , "Open on a file."
+  OFFSET_INFOTEXT+IC_ID_SAVE      , "Saves the document."
+  OFFSET_INFOTEXT+IC_ID_CUT       , "Removes the marked text and places it on the clipboard."
+  OFFSET_INFOTEXT+IC_ID_COPY      , "Copies the marked text to the clipboard."
+  OFFSET_INFOTEXT+IC_ID_PASTE     , "Pastes the text from the clipboard at the cursor."
+  OFFSET_INFOTEXT+IC_ID_BOLD      , "Changes the text to Bold."
+  OFFSET_INFOTEXT+IC_ID_ITALIC    , "Changes the text to Italic."
+  OFFSET_INFOTEXT+IC_ID_UNDERSCORE, "Changes the text to Underscore."
+  OFFSET_INFOTEXT+ID_FONTCOMBO    , "Combo-box to select a new font."
+  STR_MSGBOX_TITLE                , "Warning - File not found"
+  STR_FILE_NOT_FOUND              , "Unable to load the default text file from the current directory."
+END
+

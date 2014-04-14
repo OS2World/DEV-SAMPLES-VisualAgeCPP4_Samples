@@ -1,0 +1,6 @@
+public:
+  virtual IString valueAsString() const;
+  virtual OAMorphableSpinButton& setValue(const IString& aValueAsString);
+
+// Overridden from INumericSpinButton
+  virtual OAMorphableSpinButton& setValue(long aValue);

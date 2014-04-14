@@ -1,0 +1,43 @@
+// Feature source code generation begins here...
+public:
+  virtual const IString& companyName() const;
+  virtual OAContract& setCompanyName(const IString& aCompanyName );
+  virtual const IString& projectMgr() const;
+  virtual OAContract& setProjectMgr(const IString& aProjectMgr );
+  virtual const IString& deptName() const;
+  virtual OAContract& setDeptName(const IString& aDeptName );
+  virtual const IString& positionTitle() const;
+  virtual OAContract& setPositionTitle(const IString& aPositionTitle );
+  virtual const IString& startDate() const;
+  virtual OAContract& setStartDate(const IString& aStartDate );
+  virtual const IString& endDate() const;
+  virtual OAContract& setEndDate(const IString& aEndDate );
+  virtual const IString& contractorID() const;
+  virtual OAContract& setContractorID(const IString& aContractorID );
+  virtual const IString& accountNum() const;
+  virtual OAContract& setAccountNum(const IString& aAccountNum );
+
+  OAContract(const OAContract& aContract);
+
+  static const INotificationId _Import companyNameId;
+  static const INotificationId _Import projectMgrId;
+  static const INotificationId _Import deptNameId;
+  static const INotificationId _Import positionTitleId;
+  static const INotificationId _Import startDateId;
+  static const INotificationId _Import endDateId;
+  static const INotificationId _Import contractorIDId;
+  static const INotificationId _Import accountNumId;
+
+private:
+  IString iCompanyName;
+  IString iProjectMgr;
+  IString iDeptName;
+  IString iPositionTitle;
+  IString iStartDate;
+  IString iEndDate;
+  IString iContractorID;
+  IString iAccountNum;
+
+// Added after documentation went to press
+public:
+  void clear();

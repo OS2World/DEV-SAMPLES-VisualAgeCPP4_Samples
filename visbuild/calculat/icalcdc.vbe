@@ -1,0 +1,10 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ICalcDivisionChip,"Integer Divide Chip",interface
+//VBConstraints:  noGen
+//VBParents: ICalcOperator
+//VBIncludes: <icalcdc.hpp> _ICALCDC_
+//VBConstructor: ICalcDivisionChip()
+//VBComposerInfo: nonvisual
+//VBEndPartInfo: ICalcDivisionChip
+

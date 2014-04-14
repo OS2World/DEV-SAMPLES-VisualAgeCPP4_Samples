@@ -1,0 +1,95 @@
+/******************************************************************************
+* .FILE:         tabctl.rcx                                                   *
+*                                                                             *
+* .DESCRIPTION:  Tab Control Sample Program:  Resource File                   *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1998 - All Rights Reserved                       *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+******************************************************************************/
+#include "tabctl.h"
+
+ICON   WND_MAIN     tabctl.ico
+BITMAP BM_CHEETAH   cheetah.bmp
+
+STRINGTABLE
+BEGIN
+  WND_MAIN,                      "Tab Control Sample"
+  STR_ENROLL,                    "Enroll"
+  STR_DATA,                      "Statistics"
+  STR_PHOTO,                     "Photo"
+  WND_NAMESTATIC,                "To adopt a cheetah, please enter your name."
+  WND_FIRSTNAMESTATIC,           "First:"
+  WND_LASTNAMESTATIC,            "Last:"
+  WND_CHEETAHSTATIC,             "Choose the cheetah you would like to adopt."
+  ID_PREVIOUS,                   "Previous"
+  ID_NEXT,                       "Next"
+  STR_HTITLE,                    "Tab Control Sample Help"
+  STR_HELP_NOT_FOUND_TITLE,      "Help Error"
+  STR_HELP_NOT_FOUND,            "Help file not found.  Help is not available."
+  STR_ENROLL_ERROR_TITLE,        "Enrollment Error"
+  STR_ENROLL_ERROR_MSG,          "Please enter your name and select a cheetah."
+  WND_INFO_SPONSOR_LABEL,        "Sponsor name: "
+  WND_INFO_CHEETAH_LABEL,        "Cheetah name: "
+  WND_INFO_SEX_LABEL,            "Sex:"
+  WND_INFO_SEX_MALE_LABEL,       "Male"
+  WND_INFO_SEX_FEMALE_LABEL,     "Female"
+  WND_INFO_DOB_LABEL,            "Date of birth: "
+  WND_INFO_WEIGHT_LABEL,         "Weight(kg): "
+
+  // For the cheetah sex, use "0" for male and "1" for female.
+  // Cheetah index 0
+  WND_INFO_CHEETAH,              "Fluffy"
+  WND_INFO_DOB,                  "March 19, 1987"
+  WND_INFO_WEIGHT,               "191"
+  WND_INFO_SEX,                  "0"
+
+  // Cheetah index 1
+  WND_INFO_CHEETAH + 1,          "Mica"
+  WND_INFO_DOB + 1,              "June 20, 1992"
+  WND_INFO_WEIGHT + 1,           "134"
+  WND_INFO_SEX + 1,              "1"
+
+  // Cheetah index 2
+  WND_INFO_CHEETAH + 2,          "Sly"
+  WND_INFO_DOB + 2,              "March 7, 1984"
+  WND_INFO_WEIGHT + 2,           "220"
+  WND_INFO_SEX + 2,              "1"
+
+  // Cheetah index 3
+  WND_INFO_CHEETAH + 3,          "Spot"
+  WND_INFO_DOB + 3,              "November 25, 1996"
+  WND_INFO_WEIGHT + 3,           "155"
+  WND_INFO_SEX + 3,              "0"
+
+  // Cheetah index 4
+  WND_INFO_CHEETAH + 4,          "Baby"
+  WND_INFO_DOB + 4,              "May 25, 1998"
+  WND_INFO_WEIGHT + 4,           "36"
+  WND_INFO_SEX + 4,              "0"
+
+END
+
+HELPTABLE HELP_TABLE
+BEGIN
+  HELPITEM WND_MAIN, SUBTABLE_MAIN, 100                 
+END
+
+HELPSUBTABLE SUBTABLE_MAIN
+BEGIN
+  HELPSUBITEM WND_FIRSTNAME,   210                 
+  HELPSUBITEM WND_LASTNAME,    210
+  HELPSUBITEM WND_CHEETAHLIST, 220                 
+END

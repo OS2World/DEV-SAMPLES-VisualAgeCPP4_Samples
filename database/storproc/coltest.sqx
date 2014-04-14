@@ -1,0 +1,58 @@
+#include <iostream.h>
+#include <sqlenv.h>
+#include <sqlca.h>
+#include <sqlda.h>
+
+void main()
+{
+   EXEC SQL BEGIN DECLARE SECTION;
+      char   database[20]  = "SAMPLE";
+      char   table[20]     = "employee";
+      char   column[20]    = "salary";
+      char   procname[128] = "colstats";
+      long   count;
+      double avg;
+      double stddev;
+      short  database_ind,
+             table_ind,
+             column_ind,
+             count_ind,
+             avg_ind,
+             stddev_ind;
+   EXEC SQL END DECLARE SECTION;
+
+   struct sqlca sqlca;
+
+   EXEC SQL WHENEVER SQLERROR GOTO err;
+
+   EXEC SQL CONNECT TO :database ;
+
+   cerr << "Connected to " << database << endl;
+
+   EXEC SQL CALL :procname (:table    :table_ind,
+                            :column   :column_ind,
+                            :count    :count_ind,
+                            :avg      :avg_ind,
+                            :stddev   :stddev_ind);
+
+   cerr << "Stats for column " << column << endl
+        << " Count:              " << count  << endl
+        << " Average:            " << avg    << endl
+        << " Standard Deviation: " << stddev << endl;
+
+   EXEC SQL CONNECT RESET;
+
+   return;
+
+ err:
+   char eBuffer[1024];
+   char sBuffer[1024];
+   short Erc, rc;
+   Erc = sqlaintp (eBuffer, 1024, 80, &sqlca) ;
+   rc = sqlogstt (sBuffer, 1024, 80, sqlca.sqlstate);
+   cerr << "SQL Error" << endl
+        << "  SQLCODE: " << sqlca.sqlcode << endl
+        << eBuffer << endl
+        << sBuffer << endl;
+}
+

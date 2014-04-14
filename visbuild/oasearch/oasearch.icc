@@ -1,0 +1,78 @@
+//
+//   This is the configuration file for building the OASearch Sample
+//
+
+option
+       gen(enumsize, 4),
+       gen(rtti, yes),
+       lang(nokeyword,"false"),
+       lang(nokeyword,"true"),
+       lang(nokeyword,"bool"),
+       define(IC_LANG_BOOL,0),
+       define("IC_TRACE_DEVELOP"),
+       link(debug, yes),
+       link(linkwithsharedlib, yes),
+       link(linkwithmultithreadlib, yes),
+       link(pmtype,pm),
+       link(map, no),
+       incl(searchpath,".")
+
+{
+
+//
+// User Defined Visual Part Interface DLL
+//
+
+  option link(exportall)
+  {
+      target "oamorphw.dll"
+      {
+         option part(interface, yes)
+         {
+            source "oamorph.vbf"
+         }
+      }
+  }
+
+//
+// User Defined Visual Part DLL
+//
+
+   option link(exportall)
+   {
+      target "oamorph.dll"
+      {
+         source "oamorph.vbf"
+      }
+   }
+
+//
+// Main Application executable
+//
+
+   target "oasearch.exe"
+   {
+         source "oacontct.vbf",
+	         "oactrctr.vbf",
+      		"oaskill.vbf",
+		"oaskillb.vbf",
+		"oaclrcnf.vbf",
+		"oasavcnf.vbf",
+		"oactrpg1.vbf",
+		"oactrpg2.vbf",
+		"oactrpg3.vbf",
+		"oaconv.vbf",
+		"oactrv.vbf",
+		"oaskillv.vbf",
+		"oaconq.vbf",
+ 		"oactrq.vbf",
+		"oaskillq.vbf",	
+                "oamain.vbf",
+                "oasearch.vbf",
+                "oaconb.vbf",
+                "oactrb.vbf"
+
+   }
+
+}
+

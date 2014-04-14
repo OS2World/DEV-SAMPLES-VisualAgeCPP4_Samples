@@ -1,0 +1,6 @@
+public:
+  virtual OAContract& getContract(OAContract& aContract);
+  virtual OAContractBase& putContract(const OAContract& aContract);
+  virtual OAContractBase& primeData(IProfile& aDatabase);
+
+  static const INotificationId _Import queryFoundId;

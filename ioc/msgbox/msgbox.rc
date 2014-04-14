@@ -1,0 +1,79 @@
+/******************************************************************************
+* .FILE:         msgbox.h                                                     *
+*                                                                             *
+* .DESCRIPTION:  Message Box Sample Program:  Resource File                   *
+*                                                                             *
+* .CLASSES:                                                                   *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    IBM Open Class Library                                                   *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1997 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+******************************************************************************/
+#include "msgbox.h"
+
+ICON WND_MAIN msgbox.ico
+
+//**************************************************************************
+// string resources - Used as the messages in the message boxes            *
+//  symbolic name (ID) <-> text string                                     *
+//**************************************************************************
+STRINGTABLE
+  BEGIN
+    WND_MAIN,               "Message Box Sample"
+    MSGBOX_TITLE,           "Message Box"
+    STR_HELPT,              "Help for Message Box Help Button"
+    MSGBOX_OKCANCEL,        "okCancelButton, informationIcon"
+    MSGBOX_OKWARNING,       "okButton, warningIcon"
+    MSGBOX_CANCELERROR,     "cancelButton, errorIcon"
+    MSGBOX_YESNOCANCEL,     "yesNoCancelButton, queryIcon"
+    MSGBOX_YESNOCANCELHELP, "yesNoCancelButton with helpId, moveable, queryIcon"
+    MSGBOX_SYSMODAL,        "enterButton, systemModal, errorIcon"
+    MSGBOX_CONTINUE,        "Loop through the message boxes again?"
+    MSGBOX_END, "To end the program, press alt-F4 or\nselect Close from the system menu."
+    STR_HELP_NOT_FOUND, "Help file not found. Help is not available."
+    MSGBOX_HELP_NOT_FOUND_TITLE, "Help not found"
+
+
+    STR_TRACE_LINE,      "traceReply *"
+    STR_TRACE_REPLY,     "response = "
+    STR_TRACE_ENTER,     "enter"
+    STR_TRACE_OK,        "ok"
+    STR_TRACE_CANCEL,    "cancel"
+    STR_TRACE_ABORT,     "abort"
+    STR_TRACE_RETRY,     "retry"
+    STR_TRACE_IGNORE,    "ignore"
+    STR_TRACE_YES,       "yes"
+    STR_TRACE_NO,        "no"
+    STR_TRACE_UNKNOWN,   "unknown"
+    STR_TRACE_BAD,       "bad reply"
+
+    STR_SPACE,           " "
+
+    MSGBOX_SAMPLE_1,
+      "Message Box Sample 1 - okCancelButton and informationIcon"
+    MSGBOX_SAMPLE_2,
+      "Message Box Sample 2 - okButton and warningIcon"
+    MSGBOX_SAMPLE_3,
+      "Message Box Sample 3 - cancelButton and errorIcon"
+    MSGBOX_SAMPLE_4,
+      "Message Box Sample 4 - yesNoCancelButton and queryIcon"
+    MSGBOX_SAMPLE_5,
+      "Message Box Sample 5 - yesNoCancelButton, queryIcon, moveable, helpId"
+    MSGBOX_SAMPLE_6,
+      "Message Box Sample 6 - enterButton, systemModal, and errorIcon"
+    MSGBOX_SAMPLE_7,
+      "Message Box Sample 7 - exception (from generated IAccessError)"
+  END

@@ -1,0 +1,23 @@
+IString OAMorphableSpinButton::valueAsString() const
+{
+   // Take advantage of casting from long to string
+   return value();
+}
+
+OAMorphableSpinButton& OAMorphableSpinButton::setValue(const IString& aValueAsString) {
+  
+   if ( !( value() == aValueAsString.asInt() ) ) {
+     INumericSpinButton::setValue( aValueAsString.asInt() );
+   }
+
+  return *this;
+}
+
+OAMorphableSpinButton& OAMorphableSpinButton::setValue(long aValue) {
+
+   if ( !(value() == aValue) ) {
+     INumericSpinButton::setValue(aValue);
+   }
+
+  return *this;
+}

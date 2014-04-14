@@ -1,0 +1,380 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: ISuspectNotebook,,VB
+//VBGeneratedFiles: SspctNtb.cpp, SspctNtb.rc, SspctNtb.cp
+//VBDependsOnFiles: addrview.vbf, htspnbnv.vbf, isuspect.vbe, alsclmgr.vbe, arrclmgr.vbe, iarrest.vbe
+//VBParents: public IFrameWindow
+//VBIncludes: "SspctNtb.hpp" _ISUSPECTNOTEBOOK_
+//VBResourceDllName: rapstrg
+//VBConstructor: ISuspectNotebook(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle ( ), const char* title = 0)
+//VBComposerInfo: visual
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(false),genStrings(true),startingResId("20000")
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: suspect,(7101,"cppres"),ISuspect*,ISuspect* getSuspect() const,ISuspectNotebook& setSuspect(ISuspect* target),suspectId,Suspect,this
+//VBAttribute: resourceLibrary,(92,"cppres"),char*,const IResourceLibrary& resourceLibrary() const,ISuspectNotebook& setResourceLibrary(const char* resLibName = 0, IDynamicLinkLibrary::ESearchLocation searchLocation = IVBMain::defaultResourcePath()),resourceLibraryId
+//VBAttribute: defaultResourceLibrary,(93,"cppres"),char*,static const IResourceLibrary& defaultResourceLibrary(),static void setDefaultResourceLibrary(const char* resLibName = 0, IDynamicLinkLibrary::ESearchLocation searchLocation = IVBMain::defaultResourcePath()),,nosetting
+//VBSubpart: ISuspectNotebook,Arrests,IVSequence<IArrest*>*,p
+//VBSubpart: ISuspectNotebook,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,Notebook1,INotebook*,p
+//VBSubpart: Notebook1,VBNotebookPage1,IVBNotebookPage*,p
+//VBSubpart: VBNotebookPage1,Canvas1,ICanvas*,p
+//VBSubpart: Canvas1,Id_EF,IEntryField*,p
+//VBSubpart: Canvas1,FirstName_EF,IEntryField*,p
+//VBSubpart: Canvas1,LastName_EF,IEntryField*,p
+//VBSubpart: Canvas1,MO_MLE,IMultiLineEdit*,p
+//VBSubpart: Canvas1,Info_MLE,IMultiLineEdit*,p
+//VBSubpart: Canvas1,StaticText1,IStaticText*,p
+//VBSubpart: Canvas1,StaticText9,IStaticText*,p
+//VBSubpart: Canvas1,StaticText4,IStaticText*,p
+//VBSubpart: Canvas1,StaticText10,IStaticText*,p
+//VBSubpart: Notebook1,VBNotebookPage7,IVBNotebookPage*,p
+//VBSubpart: VBNotebookPage7,Canvas6,ICanvas*,p
+//VBSubpart: Canvas6,GroupBox5,IGroupBox*,p
+//VBSubpart: Canvas6,AddressView1,IAddressView*,p
+//VBSubpart: Notebook1,VBNotebookPage2,IVBNotebookPage*,p
+//VBSubpart: VBNotebookPage2,Canvas2,ICanvas*,p
+//VBSubpart: Canvas2,GroupBox1,IGroupBox*,p
+//VBSubpart: Canvas2,GroupBox3,IGroupBox*,p
+//VBSubpart: Canvas2,GroupBox4,IGroupBox*,p
+//VBSubpart: Canvas2,RadioButton1,IRadioButton*,p
+//VBSubpart: Canvas2,RadioButton2,IRadioButton*,p
+//VBSubpart: Canvas2,BirthDate_EF,IEntryField*,p
+//VBSubpart: Canvas2,Hair_CB,IComboBox*,p
+//VBSubpart: Canvas2,Eyes_CB,IComboBox*,p
+//VBSubpart: Canvas2,HeightSpinButton1,IHeightSpinButton*,p
+//VBSubpart: Canvas2,NumericSpinButton1,INumericSpinButton*,p
+//VBSubpart: Canvas2,StaticText8,IStaticText*,p
+//VBSubpart: Canvas2,StaticText7,IStaticText*,p
+//VBSubpart: Canvas2,StaticText6,IStaticText*,p
+//VBSubpart: Canvas2,StaticText13,IStaticText*,p
+//VBSubpart: Canvas2,StaticText5,IStaticText*,p
+//VBSubpart: Canvas2,StaticText11,IStaticText*,p
+//VBSubpart: Notebook1,VBNotebookPage8,IVBNotebookPage*,p
+//VBSubpart: VBNotebookPage8,Canvas7,ICanvas*,p
+//VBSubpart: Canvas7,GroupBox2,IGroupBox*,p
+//VBSubpart: Canvas7,Mole_CB,ICheckBox*,p
+//VBSubpart: Canvas7,Mole_MLE,IMultiLineEdit*,p
+//VBSubpart: Canvas7,Scar_CB,ICheckBox*,p
+//VBSubpart: Canvas7,Scar_MLE,IMultiLineEdit*,p
+//VBSubpart: Canvas7,Tattoo_CB,ICheckBox*,p
+//VBSubpart: Canvas7,Tattoo_MLE,IMultiLineEdit*,p
+//VBSubpart: Notebook1,VBNotebookPage3,IVBNotebookPage*,p
+//VBSubpart: VBNotebookPage3,SplitCanvas1,ISplitCanvas*,p
+//VBSubpart: SplitCanvas1,Left_BMP,IBitmapControl*,p
+//VBSubpart: SplitCanvas1,Front_BMP,IBitmapControl*,p
+//VBSubpart: SplitCanvas1,Right_BMP,IBitmapControl*,p
+//VBSubpart: Notebook1,VBNotebookPage4,IVBNotebookPage*,p
+//VBSubpart: VBNotebookPage4,Canvas3,ICanvas*,p
+//VBSubpart: Canvas3,CollectionViewListBox1,ICollectionViewListBox<IAlias*,IVSequence>*,p
+//VBSubpart: Notebook1,VBNotebookPage6,IVBNotebookPage*,p
+//VBSubpart: VBNotebookPage6,Canvas5,ICanvas*,p
+//VBSubpart: Canvas5,Charge_CB,IComboBox*,p
+//VBSubpart: Canvas5,Status_CB,IComboBox*,p
+//VBSubpart: Canvas5,StatusDate_EF,IEntryField*,p
+//VBSubpart: Canvas5,Update_PB,IPushButton*,p
+//VBSubpart: Canvas5,Remove_PB,IPushButton*,p
+//VBSubpart: Canvas5,StaticText16,IStaticText*,p
+//VBSubpart: Canvas5,StaticText17,IStaticText*,p
+//VBSubpart: Canvas5,StaticText18,IStaticText*,p
+//VBSubpart: Canvas5,StaticText19,IStaticText*,p
+//VBSubpart: Canvas5,ArrestList,IVBContainerControl<IArrest*>*,p
+//VBSubpart: ArrestList,ContainerColumn1,IContainerColumn*,p
+//VBSubpart: ArrestList,ContainerColumn2,IContainerColumn*,p
+//VBSubpart: ArrestList,ContainerColumn3,IContainerColumn*,p
+//VBSubpart: Canvas5,GraphicPushButton1,IGraphicPushButton*,p
+//VBSubpart: ISuspectNotebook,ArrestFactory,IArrest*,f
+//VBSubpart: ISuspectNotebook,SelectedArrest,IArrest*,v
+//VBSubpart: ISuspectNotebook,Suspect,ISuspect*,v
+//VBSubpart: ISuspectNotebook,ArrestClientMgr,IArrestClientMgr*,p
+//VBSubpart: ISuspectNotebook,AliasClientMgr,IAliasClientMgr*,p
+//VBSubpart: ISuspectNotebook,gender,IVBBooleanPart*,p
+//VBSubpart: ISuspectNotebook,actionResult of Conn35,IArrest*,v
+//VBConnection: AA,17,p,p,Suspect,firstName,FirstName_EF,text
+//VBConnection: AA,18,p,p,Suspect,lastName,LastName_EF,text
+//VBConnection: AA,23,p,p,Suspect,aliasList,CollectionViewListBox1,items
+//VBConnection: AA,42,p,p,Suspect,MO,MO_MLE,text
+//VBConnection: AA,52,p,p,Suspect,bookNumberAsString,Id_EF,text
+//VBConnection: AA,27,p,p,Suspect,hasMole,Mole_CB,selected
+//VBConnection: AA,28,p,p,Suspect,hasScar,Scar_CB,selected
+//VBConnection: AA,49,p,p,Suspect,hasTattoo,Tattoo_CB,selected
+//VBConnection: AA,40,p,p,Suspect,moleDesc,Mole_MLE,text
+//VBConnection: AA,51,p,p,Suspect,scarDesc,Scar_MLE,text
+//VBConnection: AA,62,p,p,Suspect,tattooDesc,Tattoo_MLE,text
+//VBConnection: AA,44,p,p,Suspect,weight,NumericSpinButton1,value
+//VBConnection: AA,54,p,p,Suspect,isMale,gender,value
+//VBConnection: EA,35,p,p,GraphicPushButton1,buttonClickEvent,ArrestFactory,new
+//VBConnection: EA,59,p,p,GraphicPushButton1,buttonClickEvent,Arrests,addAsFirst
+//VBConnection: EA,140,c,p,35,actionResult,actionResult of Conn35,this
+//VBConnection: AA,68,c,p,59,element,actionResult of Conn35,this
+//VBConnection: AA,61,p,p,ArrestFactory,statusDate,StatusDate_EF,text
+//VBConnection: AA,109,p,p,Suspect,eyeColor,Eyes_CB,selection
+//VBConnection: AA,119,p,p,Suspect,hairColor,Hair_CB,selection
+//VBConnection: AA,70,p,p,Suspect,birthDate,BirthDate_EF,text
+//VBConnection: AA,80,p,p,Suspect,info,Info_MLE,text
+//VBConnection: EA,57,p,p,,ready,ArrestClientMgr,getAllByBookNumber
+//VBConnection: EA,85,p,p,,ready,ArrestClientMgr,processResult
+//VBConnection: AA,58,c,p,57,bookNumber,Suspect,bookNumber
+//VBConnection: EA,88,c,p,57,actionResult,ArrestClientMgr,resultBuffer
+//VBConnection: EA,86,p,p,ArrestClientMgr,parsedResult,Suspect,arrestList
+//VBConnection: AA,67,c,p,86,aArrestList,ArrestClientMgr,resultListWrapper
+//VBConnection: AA,98,p,p,Suspect,address,AddressView1,anAddress
+//VBConnection: EA,139,p,p,,ready,AliasClientMgr,getAllByBookNumber
+//VBConnection: EA,65,p,p,,ready,AliasClientMgr,processResult
+//VBConnection: EC,94,p,p,,ready,,customLogic,"Prime the list of arrests.",void,(this->iArrests()->addAllFrom(*(this->iSuspect()->target()->arrestList()));
+//VB:)
+//VBConnection: AA,90,c,p,139,bookNumber,Suspect,bookNumber
+//VBConnection: EA,71,c,p,139,actionResult,AliasClientMgr,resultBuffer
+//VBConnection: EA,63,p,p,AliasClientMgr,parsedResult,Suspect,aliasList
+//VBConnection: AA,84,c,p,63,aAliasList,AliasClientMgr,resultListWrapper
+//VBConnection: EA,77,p,p,GraphicPushButton1,buttonClickEvent,ArrestList,selectedCollectionPosition
+//VBConnection: AA,100,p,p,Suspect,mugLeftAsHandle,Left_BMP,bitmap
+//VBConnection: AA,81,p,p,Suspect,mugRightAsHandle,Right_BMP,bitmap
+//VBConnection: AA,72,p,p,Suspect,mugFrontAsHandle,Front_BMP,bitmap
+//VBConnection: AA,91,p,p,Suspect,height,HeightSpinButton1,height
+//VBConnection: EC,115,p,p,Update_PB,buttonClickEvent,,customLogic,"Update the selected arrest object.",void,(IArrest *pArrest = this->iArrests()->elementAtPosition(
+//VB:                            this->iArrestList()->selectedCollectionPosition());
+//VB:if (pArrest)
+//VB:{
+//VB:   pArrest->setCharge(this->iCharge_CB()->selection());
+//VB:   pArrest->setStatus(this->iStatus_CB()->selection());
+//VB:   pArrest->setStatusDate(this->iStatusDate_EF()->text());
+//VB:}
+//VB:)
+//VBConnection: EC,78,p,p,SelectedArrest,this,,customLogic,"Prime the fields from the selected object.",void,(IArrest *pArrest =this->iSelectedArrest()->target();
+//VB:this->iCharge_CB()->select(pArrest->charge());
+//VB:this->iStatus_CB()->select(pArrest->status());
+//VB:this->iStatusDate_EF()->setText(pArrest->statusDate());)
+//VBConnection: AA,101,p,p,ArrestFactory,charge,Charge_CB,selection
+//VBConnection: AA,112,p,p,ArrestFactory,status,Status_CB,selection
+//VBConnection: EA,73,p,p,Remove_PB,buttonClickEvent,Arrests,removeAtPosition
+//VBConnection: AA,74,c,p,73,position,ArrestList,selectedCollectionPosition
+//VBConnection: AA,83,p,p,gender,value,RadioButton1,selected
+//VBConnection: EA,55,p,p,ArrestList,numberOfSelections,Update_PB,enable
+//VBConnection: EA,56,p,p,ArrestList,numberOfSelections,Remove_PB,enable
+//VBConnection: EA,87,p,p,,ready,ArrestList,hideDetailsViewTitles
+//VBConnection: AA,97,p,p,Arrests,this,ArrestList,items
+//VBConnection: AA,66,p,p,gender,valueEqualToDefault,RadioButton2,selected
+//VBConnection: AA,76,p,p,ArrestList,selectedItem,SelectedArrest,this
+//VBPartValue: ISuspectNotebook,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,client,partRef,Notebook1
+//VBPartValue: FrameWindow,framingSpec,position1,(76,57,611,535,76,116,611,535)
+//VBPartValue: FrameWindow,autoDeleteObject,boolean,false
+//VBPartValue: FrameWindow,title,string,"Suspect Information"
+//VBPartValue: Notebook1,style,bitflag,(true,INotebook::Style,(("IWindow","tabStop",true)))
+//VBPartValue: Notebook1,avlSetMinorTabSize,size,(100,30)
+//VBPartValue: Notebook1,avlSetMajorTabSize,size,(100,30)
+//VBPartValue: VBNotebookPage1,tabText,string,"General"
+//VBPartValue: VBNotebookPage1,attribute,bitflag,(false,INotebook::PageSettings::Attribute,(("INotebook::PageSettings","majorTab",true),("INotebook::PageSettings","autoPageSize",true)))
+//VBPartValue: Canvas1,minimumSize,minsize,(200,200,true)
+//VBPartValue: Canvas1,backgroundColor,color,(rgb,255,235,200)
+//VBPartValue: Id_EF,text,string,""
+//VBPartValue: Id_EF,style,bitflag,(true,IEntryField::Style,(("IEntryField","margin",true),("IEntryField","readOnly",true)))
+//VBPartValue: Id_EF,framingSpec,position1,(319,12,,,319,383,123,25)
+//VBPartValue: Id_EF,backgroundColor,color,(rgb,255,235,200)
+//VBPartValue: Id_EF,limit,integer,10
+//VBPartValue: Id_EF,foregroundColor,color,(name,darkBlue)
+//VBPartValue: FirstName_EF,foregroundColor,color,(name,darkBlue)
+//VBPartValue: FirstName_EF,style,bitflag,(true,IEntryField::Style,(("IEntryField","margin",false),("IEntryField","readOnly",true)))
+//VBPartValue: FirstName_EF,backgroundColor,color,(rgb,255,235,200)
+//VBPartValue: FirstName_EF,framingSpec,position1,(36,91,148,30,36,299,148,30)
+//VBPartValue: FirstName_EF,insertMode,boolean,false
+//VBPartValue: FirstName_EF,limit,integer,50
+//VBPartValue: FirstName_EF,font,font,(Courier Bold,14)
+//VBPartValue: LastName_EF,foregroundColor,color,(name,darkBlue)
+//VBPartValue: LastName_EF,style,bitflag,(true,IEntryField::Style,(("IEntryField","margin",false),("IEntryField","readOnly",true)))
+//VBPartValue: LastName_EF,backgroundColor,color,(rgb,255,235,200)
+//VBPartValue: LastName_EF,framingSpec,position1,(217,91,212,30,217,299,212,30)
+//VBPartValue: LastName_EF,insertMode,boolean,false
+//VBPartValue: LastName_EF,limit,integer,50
+//VBPartValue: LastName_EF,font,font,(Courier Bold,14)
+//VBPartValue: MO_MLE,style,bitflag,(true,IMultiLineEdit::Style,(("IMultiLineEdit","border",true),("IMultiLineEdit","readOnly",false),("IMultiLineEdit","ignoreTab",true),("IMultiLineEdit","wordWrap",true),("IWindow","tabStop",false)))
+//VBPartValue: MO_MLE,framingSpec,position1,(34,166,395,89,34,165,395,89)
+//VBPartValue: Info_MLE,style,bitflag,(true,IMultiLineEdit::Style,(("IMultiLineEdit","border",true),("IMultiLineEdit","readOnly",false),("IMultiLineEdit","ignoreTab",true),("IMultiLineEdit","wordWrap",true),("IWindow","tabStop",false)))
+//VBPartValue: Info_MLE,framingSpec,position1,(34,309,395,89,34,22,395,89)
+//VBPartValue: StaticText1,font,font,(Helvetica Bold Italic,14)
+//VBPartValue: StaticText1,text,string,"Information regarding"
+//VBPartValue: StaticText1,framingSpec,position1,(35,53,247,32,35,335,247,32)
+//VBPartValue: StaticText9,font,font,(Courier,10)
+//VBPartValue: StaticText9,text,string,"Id"
+//VBPartValue: StaticText9,framingSpec,position1,(285,21,,,285,379,24,20)
+//VBPartValue: StaticText4,text,string,"Modus operandi:"
+//VBPartValue: StaticText4,framingSpec,position1,(35,141,,,35,259,131,20)
+//VBPartValue: StaticText10,text,string,"Additional information:"
+//VBPartValue: StaticText10,framingSpec,position1,(35,282,,,35,118,185,20)
+//VBPartValue: VBNotebookPage7,tabText,string,"Address"
+//VBPartValue: VBNotebookPage7,attribute,bitflag,(false,INotebook::PageSettings::Attribute,(("INotebook::PageSettings","autoPageSize",true),("INotebook::PageSettings","majorTab",false),("INotebook::PageSettings","minorTab",true)))
+//VBPartValue: Canvas6,minimumSize,minsize,(200,200,true)
+//VBPartValue: Canvas6,backgroundColor,color,(rgb,255,235,200)
+//VBPartValue: GroupBox5,text,string,"Residence"
+//VBPartValue: GroupBox5,framingSpec,position1,(23,78,464,225,23,117,464,225)
+//VBPartValue: AddressView1,framingSpec,position1,(42,111,430,172,42,137,430,172)
+//VBPartValue: VBNotebookPage2,tabText,string,"Personal"
+//VBPartValue: VBNotebookPage2,attribute,bitflag,(false,INotebook::PageSettings::Attribute,(("INotebook::PageSettings","autoPageSize",true),("INotebook::PageSettings","majorTab",false),("INotebook::PageSettings","minorTab",true)))
+//VBPartValue: Canvas2,minimumSize,minsize,(200,200,true)
+//VBPartValue: Canvas2,backgroundColor,color,(rgb,255,235,200)
+//VBPartValue: GroupBox1,text,string,"Gender"
+//VBPartValue: GroupBox1,framingSpec,position1,(19,19,113,93,19,308,113,93)
+//VBPartValue: GroupBox3,text,string,"Color"
+//VBPartValue: GroupBox3,framingSpec,position1,(19,133,395,113,19,174,395,113)
+//VBPartValue: GroupBox4,text,string,"Build"
+//VBPartValue: GroupBox4,framingSpec,position1,(19,267,396,119,19,34,396,119)
+//VBPartValue: RadioButton1,selected,boolean,true
+//VBPartValue: RadioButton1,style,bitflag,(true,IRadioButton::Style,(("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: RadioButton1,text,string,"Male"
+//VBPartValue: RadioButton1,framingSpec,position1,(27,42,,,27,356,66,22)
+//VBPartValue: RadioButton2,style,bitflag,(true,IRadioButton::Style,(("IWindow","tabStop",true),("IWindow","group",false)))
+//VBPartValue: RadioButton2,text,string,"Female"
+//VBPartValue: RadioButton2,framingSpec,position1,(28,72,,,28,326,88,22)
+//VBPartValue: BirthDate_EF,style,bitflag,(true,IEntryField::Style,(("IWindow","tabStop",true),("IWindow","group",true)))
+//VBPartValue: BirthDate_EF,framingSpec,position1,(285,27,129,30,285,363,129,30)
+//VBPartValue: Hair_CB,style,bitflag,(true,IComboBox::Style,(("IWindow","tabStop",true),("IBaseComboBox","simpleType",false),("IBaseComboBox","dropDown",false),("IBaseComboBox","readOnlyDropDown",true),("IBaseComboBox","readOnlyDropDownType",true)))
+//VBPartValue: Hair_CB,insertMode,boolean,false
+//VBPartValue: Hair_CB,framingSpec,position1,(57,190,119,96,57,204,119,26)
+//VBPartValue: Hair_CB,initialContents,collection,(string,"none",string,"black",string,"blonde",string,"brown",string,"grey",string,"red")
+//VBPartValue: Eyes_CB,margin,boolean,true
+//VBPartValue: Eyes_CB,selection,integer,0
+//VBPartValue: Eyes_CB,style,bitflag,(true,IComboBox::Style,(("IWindow","tabStop",true),("IBaseComboBox","simpleType",false),("IBaseComboBox","dropDown",false),("IBaseComboBox","readOnlyDropDown",true),("IBaseComboBox","readOnlyDropDownType",true)))
+//VBPartValue: Eyes_CB,framingSpec,position1,(257,190,119,102,257,204,119,26)
+//VBPartValue: Eyes_CB,insertMode,boolean,false
+//VBPartValue: Eyes_CB,initialContents,collection,(string,"blue",string,"brown",string,"green",string,"hazel")
+//VBPartValue: HeightSpinButton1,framingSpec,position1,(132,285,209,45,132,90,209,45)
+//VBPartValue: NumericSpinButton1,style,bitflag,(true,INumericSpinButton::Style,(("IWindow","tabStop",true)))
+//VBPartValue: NumericSpinButton1,alignment,enum,(IBaseSpinButton::Alignment,"right")
+//VBPartValue: NumericSpinButton1,range,range,(40,600)
+//VBPartValue: NumericSpinButton1,framingSpec,position1,(139,344,97,30,139,46,97,24)
+//VBPartValue: NumericSpinButton1,value,integer,150
+//VBPartValue: StaticText8,text,string,"Eyes"
+//VBPartValue: StaticText8,framingSpec,position1,(255,158,,,255,242,38,20)
+//VBPartValue: StaticText7,text,string,"Hair"
+//VBPartValue: StaticText7,framingSpec,position1,(57,159,,,57,241,31,20)
+//VBPartValue: StaticText6,text,string,"Weight"
+//VBPartValue: StaticText6,framingSpec,position1,(48,350,,,48,50,57,20)
+//VBPartValue: StaticText13,text,string,"(in pounds)"
+//VBPartValue: StaticText13,framingSpec,position1,(252,348,,,252,52,94,20)
+//VBPartValue: StaticText5,text,string,"Height"
+//VBPartValue: StaticText5,framingSpec,position1,(48,298,,,48,102,51,20)
+//VBPartValue: StaticText11,text,string,"Birthdate"
+//VBPartValue: StaticText11,framingSpec,position1,(189,32,,,189,368,76,20)
+//VBPartValue: VBNotebookPage8,tabText,string,"Marks"
+//VBPartValue: VBNotebookPage8,attribute,bitflag,(false,INotebook::PageSettings::Attribute,(("INotebook::PageSettings","autoPageSize",true),("INotebook::PageSettings","majorTab",false),("INotebook::PageSettings","minorTab",true)))
+//VBPartValue: Canvas7,minimumSize,minsize,(200,200,true)
+//VBPartValue: Canvas7,backgroundColor,color,(rgb,255,235,200)
+//VBPartValue: GroupBox2,text,string,"Distinguishing Marks"
+//VBPartValue: GroupBox2,framingSpec,position1,(24,67,406,272,24,81,406,272)
+//VBPartValue: Mole_CB,style,bitflag,(true,ICheckBox::Style,(("IWindow","tabStop",true)))
+//VBPartValue: Mole_CB,text,string,"Mole"
+//VBPartValue: Mole_CB,framingSpec,position1,(35,104,,,35,294,66,22)
+//VBPartValue: Mole_MLE,style,bitflag,(true,IMultiLineEdit::Style,(("IMultiLineEdit","border",true),("IMultiLineEdit","readOnly",false),("IMultiLineEdit","ignoreTab",true),("IMultiLineEdit","wordWrap",true),("IWindow","tabStop",false)))
+//VBPartValue: Mole_MLE,framingSpec,position1,(127,104,285,44,127,272,285,44)
+//VBPartValue: Scar_CB,style,bitflag,(true,ICheckBox::Style,(("IWindow","tabStop",true)))
+//VBPartValue: Scar_CB,text,string,"Scar"
+//VBPartValue: Scar_CB,framingSpec,position1,(35,177,,,35,221,65,22)
+//VBPartValue: Scar_MLE,style,bitflag,(true,IMultiLineEdit::Style,(("IMultiLineEdit","border",true),("IMultiLineEdit","readOnly",false),("IMultiLineEdit","ignoreTab",true),("IMultiLineEdit","wordWrap",true),("IWindow","tabStop",false)))
+//VBPartValue: Scar_MLE,framingSpec,position1,(125,177,285,44,125,199,285,44)
+//VBPartValue: Tattoo_CB,style,bitflag,(true,ICheckBox::Style,(("IWindow","tabStop",true)))
+//VBPartValue: Tattoo_CB,text,string,"Tattoo"
+//VBPartValue: Tattoo_CB,framingSpec,position1,(35,256,,,35,142,85,22)
+//VBPartValue: Tattoo_MLE,style,bitflag,(true,IMultiLineEdit::Style,(("IMultiLineEdit","border",true),("IMultiLineEdit","readOnly",false),("IMultiLineEdit","ignoreTab",true),("IMultiLineEdit","wordWrap",true),("IWindow","tabStop",false)))
+//VBPartValue: Tattoo_MLE,framingSpec,position1,(125,256,285,44,125,120,285,44)
+//VBPartValue: VBNotebookPage3,tabText,string,"Mug Shots"
+//VBPartValue: VBNotebookPage3,attribute,bitflag,(false,INotebook::PageSettings::Attribute,(("INotebook::PageSettings","autoPageSize",true),("INotebook::PageSettings","majorTab",false),("INotebook::PageSettings","minorTab",true)))
+//VBPartValue: SplitCanvas1,minimumSize,minsize,(200,200,true)
+//VBPartValue: Left_BMP,resourceId,resourceid,(7,"rapres")
+//VBPartValue: Left_BMP,framingSpec,position1,(110,237,,,0,0,149,420)
+//VBPartValue: Front_BMP,resourceId,resourceid,(7,"rapres")
+//VBPartValue: Front_BMP,framingSpec,position1,(110,237,,,153,0,149,420)
+//VBPartValue: Right_BMP,resourceId,resourceid,(7,"rapres")
+//VBPartValue: Right_BMP,framingSpec,position1,(110,237,,,306,0,149,420)
+//VBPartValue: VBNotebookPage4,tabText,string,"Aliases"
+//VBPartValue: VBNotebookPage4,attribute,bitflag,(false,INotebook::PageSettings::Attribute,(("INotebook::PageSettings","majorTab",true),("INotebook::PageSettings","autoPageSize",true)))
+//VBPartValue: Canvas3,minimumSize,minsize,(200,200,true)
+//VBPartValue: Canvas3,backgroundColor,color,(rgb,255,235,200)
+//VBPartValue: CollectionViewListBox1,stringGenerator,code,((IStringGenerator<IAlias*>(new IStringGeneratorasString<IAlias*>)))
+//VBPartValue: CollectionViewListBox1,framingSpec,position1,(63,83,328,189,63,148,328,189)
+//VBPartValue: CollectionViewListBox1,foregroundColor,color,(name,black)
+//VBPartValue: CollectionViewListBox1,backgroundColor,color,(name,white)
+//VBPartValue: VBNotebookPage6,tabText,string,"Priors"
+//VBPartValue: VBNotebookPage6,attribute,bitflag,(false,INotebook::PageSettings::Attribute,(("INotebook::PageSettings","majorTab",true),("INotebook::PageSettings","autoPageSize",true)))
+//VBPartValue: Canvas5,minimumSize,minsize,(200,200,true)
+//VBPartValue: Canvas5,backgroundColor,color,(rgb,255,235,200)
+//VBPartValue: Charge_CB,autoScroll,boolean,true
+//VBPartValue: Charge_CB,selection,integer,5
+//VBPartValue: Charge_CB,style,bitflag,(true,IComboBox::Style,(("IWindow","tabStop",true),("IBaseComboBox","simpleType",false),("IBaseComboBox","dropDown",false),("IBaseComboBox","readOnlyDropDown",true),("IBaseComboBox","readOnlyDropDownType",true)))
+//VBPartValue: Charge_CB,framingSpec,position1,(17,38,,,17,356,285,26)
+//VBPartValue: Charge_CB,insertMode,boolean,false
+//VBPartValue: Charge_CB,initialContents,collection,(string,"arson",string,"accomplice_to_murder",string,"assault",string,"assault_w_deadly_weapon",string,"breaking_and_entering",string,"burglary",string,"DWI",string,"embezzlement",string,"fraud",string,"hijacking",string,"hit_and_run",string,"kidnapping",string,"manslaughter",string,"murder",string,"perjury",string,"trespassing",string,"vandalism",string,"wreckless_driving")
+//VBPartValue: Status_CB,autoScroll,boolean,true
+//VBPartValue: Status_CB,selection,integer,1
+//VBPartValue: Status_CB,style,bitflag,(true,IComboBox::Style,(("IWindow","tabStop",true),("IBaseComboBox","simpleType",false),("IBaseComboBox","dropDown",false),("IBaseComboBox","readOnlyDropDown",true),("IBaseComboBox","readOnlyDropDownType",true)))
+//VBPartValue: Status_CB,framingSpec,position1,(17,125,,,17,269,285,26)
+//VBPartValue: Status_CB,insertMode,boolean,false
+//VBPartValue: Status_CB,initialContents,collection,(string,"acquitted",string,"arrested",string,"arraigned",string,"convicted",string,"dropped",string,"escaped",string,"free_on_bond",string,"released",string,"released_on_parole",string,"under_suspicion",string,"wanted")
+//VBPartValue: StatusDate_EF,style,bitflag,(true,IEntryField::Style,(("IEntryField","autoScroll",true),("IEntryField","autoTab",true),("IEntryField","margin",true),("IEntryField","readOnly",false),("IWindow","tabStop",true)))
+//VBPartValue: StatusDate_EF,framingSpec,position1,(17,216,,,17,179,123,25)
+//VBPartValue: StatusDate_EF,limit,integer,10
+//VBPartValue: Update_PB,style,bitflag,(true,IPushButton::Style,(("IWindow","tabStop",true)))
+//VBPartValue: Update_PB,text,string,"Update"
+//VBPartValue: Update_PB,framingSpec,position1,(348,176,,,348,215,77,29)
+//VBPartValue: Update_PB,enabled,boolean,false
+//VBPartValue: Remove_PB,style,bitflag,(true,IPushButton::Style,(("IWindow","tabStop",true)))
+//VBPartValue: Remove_PB,text,string,"Remove"
+//VBPartValue: Remove_PB,framingSpec,position1,(348,240,,,348,151,86,29)
+//VBPartValue: Remove_PB,enabled,boolean,false
+//VBPartValue: StaticText16,text,string,"History"
+//VBPartValue: StaticText16,framingSpec,position1,(17,279,,,17,121,56,20)
+//VBPartValue: StaticText17,text,string,"Charge"
+//VBPartValue: StaticText17,framingSpec,position1,(17,9,,,17,391,58,20)
+//VBPartValue: StaticText18,text,string,"Status"
+//VBPartValue: StaticText18,framingSpec,position1,(17,98,,,17,302,52,20)
+//VBPartValue: StaticText19,text,string,"Status date"
+//VBPartValue: StaticText19,framingSpec,position1,(17,188,,,17,212,95,20)
+//VBPartValue: ArrestList,style,bitflag,(true,IContainerControl::Style,(("IContainerControl","pmCompatible",true),("IContainerControl","readOnly",true),("IContainerControl","autoPosition",true),("IContainerControl","extendedSelection",false),("IContainerControl","multipleSelection",false),("IContainerControl","singleSelection",true),("IContainerControl","noSharedObjects",true)))
+//VBPartValue: ArrestList,shadowText,string,"chargeAsString"
+//VBPartValue: ArrestList,framingSpec,position1,(17,304,415,110,17,6,415,110)
+//VBPartValue: ArrestList,viewType,enum,(IContainerControl::View,"showDetailsView")
+//VBPartValue: ContainerColumn1,framingSpec,position1,(42,45,,,-1,15,97,60)
+//VBPartValue: ContainerColumn1,shadowAttribute,shadowAttribute,(#text,)
+//VBPartValue: ContainerColumn1,displayWidth,integer,0
+//VBPartValue: ContainerColumn2,framingSpec,position1,(138,48,,,94,15,97,60)
+//VBPartValue: ContainerColumn2,shadowAttribute,shadowAttribute,("statusAsString",#string)
+//VBPartValue: ContainerColumn2,displayWidth,integer,0
+//VBPartValue: ContainerColumn3,framingSpec,position1,(184,43,,,189,15,93,60)
+//VBPartValue: ContainerColumn3,shadowAttribute,shadowAttribute,("statusDate",#string)
+//VBPartValue: ContainerColumn3,displayWidth,integer,0
+//VBPartValue: GraphicPushButton1,resourceId,resourceid,(2000,"rapres")
+//VBPartValue: GraphicPushButton1,framingSpec,position1,(360,83,null,null,360,291,46,46)
+//VBPartValue: SelectedArrest,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBPartValue: Suspect,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBPartValue: gender,defaultValue,boolean,false
+//VBPartValue: gender,value,boolean,true
+//VBConnValue: 77,collectionPosition,integer,1
+//VBPartLayout: main,ISuspectNotebook,(initWidgetSize,rectangle,(8,77,1020,745))
+//VBPartLayout: part,ArrestFactory,(framingSpec,position2,(723,240,40,40))
+//VBPartLayout: part,Arrests,(framingSpec,position2,(717,361,40,40))
+//VBPartLayout: connection,72,(midPoints,array,(point,(834,330)))
+//VBPartLayout: part,SelectedArrest,(framingSpec,position2,(720,430,58,58))
+//VBPartLayout: eventconnection,94,(midPoints,collection,(point,(520,16),point,(455,51)))
+//VBPartLayout: connection,44,(midPoints,array,(point,(558,400)))
+//VBPartLayout: eventconnection,59,(midPoints,array,(point,(588,292)))
+//VBPartLayout: connection,61,(midPoints,array,(point,(435,310)))
+//VBPartLayout: connection,109,(midPoints,array,(point,(555,241)))
+//VBPartLayout: connection,119,(midPoints,array,(point,(545,206)))
+//VBPartLayout: eventconnection,85,(midPoints,collection,(point,(844,704)))
+//VBPartLayout: connection,27,(midPoints,array,(point,(395,79)))
+//VBPartLayout: connection,49,(midPoints,array,(point,(434,236)))
+//VBPartLayout: connection,40,(midPoints,array,(point,(453,111)))
+//VBPartLayout: connection,51,(midPoints,array,(point,(466,188)))
+//VBPartLayout: part,Suspect,(framingSpec,position2,(758,144,48,48))
+//VBPartLayout: part,ArrestClientMgr,(framingSpec,position2,(799,290,40,40))
+//VBPartLayout: part,AliasClientMgr,(framingSpec,position2,(781,72,90,68))
+//VBPartLayout: connection,90,(midPoints,collection,(point,(765,33)))
+//VBPartLayout: eventconnection,63,(midPoints,collection,(point,(864,132)))
+//VBPartLayout: part,gender,(framingSpec,position2,(693,20,40,40))
+//VBPartLayout: eventconnection,115,(midPoints,collection,(point,(557,455)))
+//VBPartLayout: eventconnection,73,(midPoints,array,(point,(566,345)))
+//VBPartLayout: eventconnection,65,(midPoints,collection,(point,(868,20)))
+//VBPartLayout: connection,101,(midPoints,collection,(point,(526,145)))
+//VBPartLayout: part,actionResult of Conn35,(framingSpec,position2,(694,619,58,58))
+//VBEndPartInfo: ISuspectNotebook
+
+

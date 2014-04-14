@@ -1,0 +1,30 @@
+// Revision: 60 1.4 source/albert/graph2d/test/2dcombo/2dcombo.rcx, albert, ocdev, 970217 
+#include "2dcombo.h"
+
+MENU  WND_MAIN
+  BEGIN
+    SUBMENU   "~Samples"                     ,  ID_SAMPLES
+      BEGIN
+        MENUITEM  "~Area"                    ,  ID_AREA
+        MENUITEM  "~Loop"                    ,  ID_LOOP
+        MENUITEM  "~Bezier"                  ,  ID_BEZIER
+        MENUITEM  "C~urves"                  ,  ID_CONIC
+        MENUITEM  "~Nurb"                    ,  ID_NURB
+        MENUITEM  "~Transfer Modes"          ,  ID_TRANSFERMODE
+        MENUITEM  "~Image"                   ,  ID_IMAGE
+        MENUITEM  "~Bar Chart"               ,  ID_BARCHART
+        MENUITEM  "~Pie Chart"               ,  ID_PIECHART
+        MENUITEM  "~Text"                    ,  ID_TEXT
+        MENUITEM  "~Image Pattern"           ,  ID_PATTERN
+      END
+    SUBMENU   "~Coordinate System"           ,  ID_COORDSYS
+      BEGIN
+        MENUITEM  "~Upper Left"              ,  ID_UPPER
+        MENUITEM  "~Lower Left"              ,  ID_LOWER
+      END
+  END
+
+STRINGTABLE
+  BEGIN
+    WND_MAIN,   "2DCombo Graphics Sample"
+  END

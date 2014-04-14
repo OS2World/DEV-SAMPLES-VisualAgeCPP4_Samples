@@ -1,0 +1,76 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: OAQuerySkill,,VB
+//VBGeneratedFiles: OAQrySkl.cp, OAQrySkl.cpp
+//VBDependsOnFiles: oaskillv.vbf, oaskill.vbf, oaskillb.vbf
+//VBParents: public IFrameWindow
+//VBIncludes: "OAQrySkl.hpp" _OAQuerySkill_
+//VBConstructor: OAQuerySkill(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle(), const char* title = 0)
+//VBComposerInfo: visual
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(false),startingResId("")
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: skill,(7101,"cppres"),OASkill*,OASkill* getSkill() const,OAQuerySkill& setSkill(OASkill* target),skillId,Skill,this
+//VBSubpart: OAQuerySkill,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,MultiCellCanvas1,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas1,ClientArea,IMultiCellCanvas*,p
+//VBSubpart: ClientArea,StaticText1,IStaticText*,p
+//VBSubpart: ClientArea,EntryField1,IEntryField*,p
+//VBSubpart: MultiCellCanvas1,ButtonBar,ISetCanvas*,p
+//VBSubpart: ButtonBar,okPushButton,IPushButton*,p
+//VBSubpart: ButtonBar,cancelPushButton,IPushButton*,p
+//VBSubpart: ButtonBar,helpPushButton,IPushButton*,p
+//VBSubpart: OAQuerySkill,HelpWindow,IHelpWindow*,p
+//VBSubpart: OAQuerySkill,OASkillViewFac,OASkillView*,f
+//VBSubpart: OAQuerySkill,OASkillViewVar,OASkillView*,v
+//VBSubpart: OAQuerySkill,Skill,OASkill*,v
+//VBSubpart: OAQuerySkill,SkillList,IVSequence<OASkill*>*,p
+//VBSubpart: OAQuerySkill,SkillBase,OASkillBase*,p
+//VBSubpart: OAQuerySkill,NotFound,IMessageBox*,p
+//VBConnection: EA,5,p,p,cancelPushButton,buttonClickEvent,FrameWindow,close
+//VBConnection: AA,8,p,p,EntryField1,textLength,okPushButton,enabled
+//VBConnection: EA,1,p,p,SkillBase,queryFound,OASkillViewFac,new
+//VBConnection: EA,9,p,p,okPushButton,buttonClickEvent,SkillBase,getSkill
+//VBConnection: AA,13,p,p,SkillList,this,OASkillViewFac,skillList
+//VBConnection: AA,11,p,p,Skill,this,OASkillViewFac,skill
+//VBConnection: EA,3,p,p,OASkillViewFac,newEvent,OASkillViewVar,this
+//VBConnection: EA,15,p,p,OASkillViewFac,newEvent,OASkillViewVar,show
+//VBConnection: AA,21,p,p,EntryField1,text,Skill,skillName
+//VBConnection: AA,10,c,p,9,aList,SkillList,this
+//VBConnection: AA,31,c,p,9,aSkillName,Skill,skillName
+//VBConnection: EA,23,c,p,9,exceptionOccurred,NotFound,showException
+//VBConnection: EA,33,p,p,OASkillViewFac,newEvent,OASkillViewVar,setFocus
+//VBConnection: AA,14,p,p,OASkillViewFac,owner,FrameWindow,owner
+//VBConnection: EA,24,p,p,SkillBase,queryFound,FrameWindow,dismiss
+//VBPartValue: OAQuerySkill,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,client,partRef,MultiCellCanvas1
+//VBPartValue: FrameWindow,framingSpec,position1,(30,30,395,224,10,10,395,224)
+//VBPartValue: FrameWindow,helpId,integer,9999
+//VBPartValue: FrameWindow,title,string,"Request for Skill Information"
+//VBPartValue: MultiCellCanvas1,id,code,((IC_FRAME_CLIENT_ID))
+//VBPartValue: MultiCellCanvas1,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(2,,),colAttr(1,true,),ctlAttr("ButtonBar",2,2,1,1),ctlAttr("ClientArea",1,1,1,1))
+//VBPartValue: ClientArea,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(5,true,),colAttr(1,true,),colAttr(3,true,),ctlAttr("StaticText1",2,2,2,2),ctlAttr("EntryField1",4,4,2,2))
+//VBPartValue: StaticText1,text,string,"Enter a description of the skill below:"
+//VBPartValue: EntryField1,style,bitflag,(true,IEntryField::Style,(("IWindow","tabStop",true)))
+//VBPartValue: EntryField1,helpId,integer,10000
+//VBPartValue: ButtonBar,alignment,enum,(ISetCanvas::Alignment,"centerCenter")
+//VBPartValue: ButtonBar,packType,enum,(ISetCanvas::PackType,"expanded")
+//VBPartValue: okPushButton,style,bitflag,(true,IPushButton::Style,(("IPushButton","defaultButton",true),("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: okPushButton,text,string,"OK"
+//VBPartValue: cancelPushButton,text,string,"Cancel"
+//VBPartValue: helpPushButton,style,bitflag,(true,IPushButton::Style,(("IPushButton","help",true),("IButton","noPointerFocus",true)))
+//VBPartValue: helpPushButton,text,string,"Help"
+//VBPartValue: HelpWindow,style,bitflag,(true,IHelpWindow::Style,(("IHelpWindow","ipfCompatible",true)))
+//VBPartValue: HelpWindow,avlTitle,string,"VB Sample Help Window"
+//VBPartValue: HelpWindow,avlHelpLibraries,string,"oasearch.hlp"
+//VBPartValue: OASkillViewFac,autoDeleteObject,boolean,true
+//VBConnValue: 15,visible,boolean,true
+//VBPartLayout: main,OAQuerySkill,(initWidgetSize,rectangle,(366,279,1018,762))
+//VBPartLayout: part,HelpWindow,(framingSpec,position2,(465,28,40,40))
+//VBPartLayout: part,OASkillViewFac,(framingSpec,position2,(341,309,40,40))
+//VBPartLayout: part,OASkillViewVar,(framingSpec,position2,(466,292,48,48))
+//VBPartLayout: part,Skill,(framingSpec,position2,(461,128,58,58))
+//VBPartLayout: part,SkillBase,(framingSpec,position2,(242,319,40,40))
+//VBPartLayout: part,SkillList,(framingSpec,position2,(153,318,40,40))
+//VBPartLayout: part,NotFound,(framingSpec,position2,(57,316,40,40))
+//VBEndPartInfo: OAQuerySkill
+

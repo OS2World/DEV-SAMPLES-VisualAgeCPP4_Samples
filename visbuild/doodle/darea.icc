@@ -1,0 +1,22 @@
+
+option
+       gen(enumsize, 4),
+       gen(rtti, yes),
+       lang(nokeyword,"false"),
+       lang(nokeyword,"true"),
+       lang(nokeyword,"bool"),
+       lang(digraphs, no),
+       define(IC_LANG_BOOL,0),
+       define("IC_TRACE_DEVELOP"),
+       link(debug, yes),
+       link(linkwithsharedlib, yes),
+       link(linkwithmultithreadlib, yes),
+       link(map, no),
+       incl(searchpath, ".")
+{
+
+          target "darea.lib"
+         {
+            source "darea.cpp"
+        }
+}

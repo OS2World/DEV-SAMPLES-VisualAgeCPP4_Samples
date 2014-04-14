@@ -1,0 +1,138 @@
+/******************************************************************************
+**
+** Source File Name = colstats.sqx
+**
+** Licensed Materials - Property of IBM
+**
+** (C) COPYRIGHT International Business Machines Corp. 1995
+** All Rights Reserved.
+**
+** US Government Users Restricted Rights - Use, duplication or
+** disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+**
+**
+** PURPOSE: This sample program demonstrates stored procedures.
+**
+**          The colstats function will take a table name and column name
+**          received in the SQLDA and return the n, sum, average and
+**          standard deviation of the column.
+**
+**    EXTERNAL DEPENDENCIES :
+**       - Existing database for precompile purposes.
+**       - Precompile with the SQL precompiler (PREP in DB2)
+**       - Binding to a database (BIND in DB2)
+**       - Compiling and linking with the VisualAge for C++ compiler
+**
+*******************************************************************************/
+#include <memory.h>
+#include <string.h>
+#include <sqlenv.h>
+#include <sqlutil.h>
+
+// Parameter positions
+#define MIN_PARMS   3
+#define PARM_TABLE  0
+#define PARM_COLUMN 1
+#define PARM_COUNT  2
+#define PARM_AVG    3
+#define PARM_STDDEV 4
+
+// AIX requires C linkage to avoid mangled name problem
+#ifdef _AIX
+extern "C" {
+SQL_API_RC SQL_API_FN _Export colstats(void *reserved1,
+           void *reserved2,
+           struct sqlda   *inout_sqlda,
+           struct sqlca   *ca);
+};
+#endif
+
+SQL_API_RC SQL_API_FN _Export colstats(void *reserved1,
+           void *reserved2,
+           struct sqlda   *inout_sqlda,
+           struct sqlca   *ca)
+{
+   /* Declare a local SQLCA */
+   EXEC SQL INCLUDE SQLCA;
+
+   /* Declare Host Variables */
+   EXEC SQL BEGIN DECLARE SECTION;
+     char *  sqlStmt;
+     long    count;
+     double  avg;
+     double  stddev;
+   EXEC SQL END DECLARE SECTION;
+
+   /* Declare Miscellanous Variables */
+   int  numParms = inout_sqlda->sqld;
+
+   // We need at least one parameter to return info to
+   if ( numParms < MIN_PARMS )
+   {
+      return(SQLZ_DISCONNECT_PROC);
+   }
+
+   int stmtLen = strlen( inout_sqlda->sqlvar[PARM_TABLE].sqldata )
+               + 3*strlen( inout_sqlda->sqlvar[PARM_COLUMN].sqldata )
+               + 100;
+
+   sqlStmt = new char[ stmtLen ];
+   strcpy( sqlStmt, "select count(" );
+   strcat( sqlStmt, inout_sqlda->sqlvar[PARM_COLUMN].sqldata );
+   strcat( sqlStmt, "), avg(" );
+   strcat( sqlStmt, inout_sqlda->sqlvar[PARM_COLUMN].sqldata );
+   strcat( sqlStmt, "), stddev(" );
+   strcat( sqlStmt, inout_sqlda->sqlvar[PARM_COLUMN].sqldata );
+   strcat( sqlStmt, ") from " );
+   strcat( sqlStmt, inout_sqlda->sqlvar[PARM_TABLE].sqldata );
+
+   EXEC SQL WHENEVER SQLERROR GOTO ext;
+
+   EXEC SQL PREPARE S1 FROM :sqlStmt;
+
+   EXEC SQL DECLARE C1 CURSOR FOR S1;
+
+   EXEC SQL OPEN C1;
+
+   EXEC SQL FETCH C1 INTO :count, :avg, :stddev;
+
+   /* copy back results */
+   if ( numParms > PARM_COUNT )
+   {
+      memcpy( inout_sqlda->sqlvar[PARM_COUNT].sqldata,
+              &count,
+              inout_sqlda->sqlvar[PARM_COUNT].sqllen );
+   }
+   if ( numParms > PARM_AVG )
+   {
+      memcpy( inout_sqlda->sqlvar[PARM_AVG].sqldata,
+              &avg,
+              inout_sqlda->sqlvar[PARM_AVG].sqllen );
+   }
+   if ( numParms > PARM_STDDEV )
+   {
+      memcpy( inout_sqlda->sqlvar[PARM_STDDEV].sqldata,
+              &stddev,
+              inout_sqlda->sqlvar[PARM_STDDEV].sqllen );
+   }
+
+   /*-----------------------------------------------------------------*/
+   /* Return to caller                                                */
+   /*   -  Copy the SQLCA                                             */
+   /*   -  Update the output SQLDA.  Since there's no output to       */
+   /*      return, for the first 2 parameters,                        */
+   /*      we are setting the indicator values to -128 to             */
+   /*      return only a null value.                                  */
+   /*-----------------------------------------------------------------*/
+
+ext:
+   delete[] sqlStmt;
+   memcpy(ca, &sqlca, sizeof(struct sqlca));
+   if (inout_sqlda != NULL)
+   {
+      *(inout_sqlda->sqlvar[PARM_TABLE].sqlind) = -128;
+      *(inout_sqlda->sqlvar[PARM_COLUMN].sqlind) = -128;
+   }
+
+   return(SQLZ_DISCONNECT_PROC);
+}

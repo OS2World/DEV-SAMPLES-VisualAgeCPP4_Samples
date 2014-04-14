@@ -1,0 +1,158 @@
+const INotificationId _Export OAContractorBase::queryFoundId = "OAContractorBase::queryFound";
+
+OAContractor& OAContractorBase::getContractor(OAContractor& aContractor)
+{
+// Start data access code
+
+  IProfile *p = new IProfile("contrctr.ini");
+
+// Needed for Windows implementation
+
+   primeData(*p);
+
+
+// Refresh the value of contractor ID if not already done
+
+   if (!(aContractor.isIDvalid()))
+      aContractor.setContractorID();
+
+// Check for this contractor ID in the profile collection
+  IString iContractorID = aContractor.contractorID();
+
+  if (!p->containsKeyName("contractorID", iContractorID))
+  {
+    delete p;
+    throw IException("A record was not found for this contractor.");
+    return aContractor;
+  }
+
+// If other data exists for this contractor,
+// set the corresponding contractor attributes
+
+  if (p->containsKeyName("lastName", iContractorID))
+    aContractor.setLastName(p->elementWithKey("lastName", iContractorID));
+  if (p->containsKeyName("firstName", iContractorID))
+    aContractor.setFirstName(p->elementWithKey("firstName", iContractorID));
+  if (p->containsKeyName("middleInitial", iContractorID))
+    aContractor.setMiddleInitial(p->elementWithKey("middleInitial", iContractorID));
+  if (p->containsKeyName("homeStreet", iContractorID))
+    aContractor.setHomeStreet(p->elementWithKey("homeStreet", iContractorID));
+  if (p->containsKeyName("homeCity", iContractorID))
+    aContractor.setHomeCity(p->elementWithKey("homeCity", iContractorID));
+  if (p->containsKeyName("homeState", iContractorID))
+    aContractor.setHomeState(p->elementWithKey("homeState", iContractorID));
+  if (p->containsKeyName("homeZip", iContractorID))
+    aContractor.setHomeZip(p->elementWithKey("homeZip", iContractorID));
+  if (p->containsKeyName("phoneNumber", iContractorID))
+    aContractor.setPhoneNumber(p->elementWithKey("phoneNumber", iContractorID));
+  if (p->containsKeyName("startDate", iContractorID))
+    aContractor.setStartDate(p->elementWithKey("startDate", iContractorID));
+  if (p->containsKeyName("endDate", iContractorID))
+    aContractor.setEndDate(p->elementWithKey("endDate", iContractorID));
+  if (p->containsKeyName("accountNum", iContractorID))
+    aContractor.setAccountNum(p->elementWithKey("accountNum", iContractorID));
+
+// Call overloaded set member function using string parameter
+
+  if (p->containsKeyName("activeStatus", iContractorID))
+    aContractor.enableActiveStatus(p->elementWithKey("activeStatus", iContractorID));
+
+  delete p;
+
+// End data access code
+
+// Execute event to trigger instantiation of OAContractorView
+    notifyObservers(INotificationEvent(IInterest(*this, OAContractorBase::queryFoundId)));
+
+  return aContractor;
+}
+
+OAContractorBase& OAContractorBase::putContractor(OAContractor& aContractor)
+{
+// Start data entry code
+
+  IProfile *p = new IProfile("contrctr.ini");
+
+// Needed for Windows implementation
+
+   primeData(*p);
+
+
+// Refresh the value of contractor ID if not already done
+
+  if (!(aContractor.isIDvalid()) )
+     aContractor.setContractorID();
+
+  IString iContractorID = aContractor.contractorID();
+
+  p->addOrReplaceElementWithKey("contractorID", iContractorID, iContractorID);
+
+// If other data about this contractor exists, update it in the database
+
+  if (aContractor.lastName().length()>0)
+    p->addOrReplaceElementWithKey("lastName", aContractor.lastName(), iContractorID);
+  if (aContractor.firstName().length()>0)
+    p->addOrReplaceElementWithKey("firstName", aContractor.firstName(), iContractorID);
+  if (aContractor.middleInitial().length()>0)
+    p->addOrReplaceElementWithKey("middleInitial", aContractor.middleInitial(), iContractorID);
+  if (aContractor.homeStreet().length()>0)
+    p->addOrReplaceElementWithKey("homeStreet", aContractor.homeStreet(), iContractorID);
+  if (aContractor.homeCity().length()>0)
+    p->addOrReplaceElementWithKey("homeCity", aContractor.homeCity(), iContractorID);
+  if (aContractor.homeState().length()>0)
+    p->addOrReplaceElementWithKey("homeState", aContractor.homeState(), iContractorID);
+  if (aContractor.homeZip().length()>0)
+    p->addOrReplaceElementWithKey("homeZip", aContractor.homeZip(), iContractorID);
+  if (aContractor.phoneNumber().length()>0)
+    p->addOrReplaceElementWithKey("phoneNumber", aContractor.phoneNumber(), iContractorID);
+  if (aContractor.startDate().length()>0)
+    p->addOrReplaceElementWithKey("startDate", aContractor.startDate(), iContractorID);
+  if (aContractor.endDate().length()>0)
+    p->addOrReplaceElementWithKey("endDate", aContractor.endDate(), iContractorID);
+  if (aContractor.accountNum().length()>0)
+    p->addOrReplaceElementWithKey("accountNum", aContractor.accountNum(), iContractorID);
+  if (aContractor.isActiveStatus())
+  {
+    p->addOrReplaceElementWithKey("activeStatus", "yes", iContractorID);
+  }
+  else
+  {
+    p->addOrReplaceElementWithKey("activeStatus", "no", iContractorID);
+  }
+
+  delete p;
+
+// End data entry code
+
+  return *this;
+}
+
+// Prime profile instance in Windows with data
+
+OAContractorBase& OAContractorBase::primeData(IProfile & aDatabase) {
+
+
+  IString tempKey = "SusanGCarpenter";
+
+// Windows does not read from .ini files.
+// It uses a central registry,
+// so load initial contractor data into the registry.
+
+  aDatabase.addOrReplaceElementWithKey("contractorID","SusanGCarpenter",tempKey);
+  aDatabase.addOrReplaceElementWithKey("lastName","Carpenter",tempKey);
+  aDatabase.addOrReplaceElementWithKey("firstName","Susan",tempKey);
+  aDatabase.addOrReplaceElementWithKey("middleInitial","G",tempKey);
+  aDatabase.addOrReplaceElementWithKey("homeStreet","123 Sesame Street",tempKey);
+  aDatabase.addOrReplaceElementWithKey("homeCity","Raleigh",tempKey);
+  aDatabase.addOrReplaceElementWithKey("homeState","NC",tempKey);
+  aDatabase.addOrReplaceElementWithKey("homeZip","27506-1234",tempKey);
+  aDatabase.addOrReplaceElementWithKey("phoneNumber","919-555-1234",tempKey);
+  aDatabase.addOrReplaceElementWithKey("startDate","12/01/97",tempKey);
+  aDatabase.addOrReplaceElementWithKey("endDate","12/31/98",tempKey);
+  aDatabase.addOrReplaceElementWithKey("contractID","123456",tempKey);
+  aDatabase.addOrReplaceElementWithKey("activeStatus","no",tempKey);
+
+
+  return *this;
+}
+

@@ -1,0 +1,209 @@
+/******************************************************************************
+* .FILE:         adialog6.rc                                                  *
+*                                                                             *
+* .DESCRIPTION:  Hello World Sample Program Version 6: Resource Definitions   *
+*                                                                             *
+* .CLASSES:                                                                   *
+*                                                                             *
+* .COPYRIGHT:                                                                 *
+*    IBM Open Class Library                                                   *
+*    Licensed Material - Program-Property of IBM                              *
+*    (C) Copyright IBM Corp. 1992, 1997 - All Rights Reserved                 *
+*                                                                             *
+* .DISCLAIMER:                                                                *
+*   The following [enclosed] code is sample code created by IBM               *
+*   Corporation.  This sample code is not part of any standard IBM product    *
+*   and is provided to you solely for the purpose of assisting you in the     *
+*   development of your applications.  The code is provided 'AS IS',          *
+*   without warranty of any kind.  IBM shall not be liable for any damages    *
+*   arising out of your use of the sample code, even if they have been        *
+*   advised of the possibility of such damages.                               *
+*                                                                             *
+* .NOTE: WE RECOMMEND USING A FIXED SPACE FONT TO LOOK AT THE SOURCE          *
+*                                                                             *
+******************************************************************************/
+#include <icconst.h>
+#include "ahellow6.h"
+
+//**************************************************************************
+// icon and bitmap resources                                               *
+//   Relate symbolic name to file containing main window icon.             *
+//**************************************************************************
+ICON WND_MAIN ahellow6.ico
+
+//**************************************************************************
+// string resources                                                        *
+//   Relate symbolic names to literal text strings.                        *
+//**************************************************************************
+STRINGTABLE
+  BEGIN
+    STR_HELLO,  "Hello, World!!!"
+    WND_MAIN,   "Hello World Sample - Version 6"
+    WND_TEXTDIALOG, "Hello World Edit Dialog"
+    WND_HELLOPOPUP, "Hello Window Pop-up Menu"
+    WND_EARTHPOPUP, "Earth Window Pop-up Menu"
+    WND_NOTEBOOKFRAME, "Hello World Settings Notebook"
+
+    STR_INFO,   "Use Alt-F4 to Close Window"
+    MI_EDIT,    "Edit Menu"
+    MI_ALIGNMENT,"Alignment Menu"
+    MI_CENTER,  "Set Center Alignment"
+    MI_LEFT,    "Set Left Alignment"
+    MI_RIGHT,   "Set Right Alignment"
+    MI_TEXT,    "Display Edit Dialog"
+    MI_HELP,    "Help for Selected Item"
+    MI_FONT,    "Open Font Dialog"
+    MI_SETTINGS,"Settings Menu"
+    MI_READSETS,"Read Settings from Profile"
+    MI_OPENSETS,"Open Settings Notebook"
+    MI_SAVESETS,"Save Settings in Profile"
+    MI_TWINKLE, "Toggle Twinkling of Stars"
+    MI_BRIGHT,  "Make Stars Bright (when not twinkling)"
+    MI_DIM,     "Make Stars Dim (when not twinkling)"
+    SC_HELPEXTENDED, "Display General Help"
+    SC_HELPKEYS,"Display Keys Help"
+    SC_HELPINDEX,"Display Help Index"
+    STR_INFODLG,"Modal Edit Text Dialog Active"
+    STR_CENTER, "Center Alignment"
+    STR_LEFT,   "Left Alignment"
+    STR_RIGHT,  "Right Alignment"
+    STR_LEFTB,  "Left"
+    STR_CENTERB,"Center"
+    STR_RIGHTB, "Right"
+    STR_HELPB,  "Help"
+    STR_HTITLE, "C++ Hello World - Help Window"
+    STR_HELP_NOT_FOUND, "Help file not found. Help is not available."
+    STR_FONTDLGT,"C++ Hello World - Font Dialog"
+    STR_EARTHTAB,             "Earth"
+    STR_DATETIMETAB,          "Date/Time"
+    STR_EARTHPAGEHEADING      "Earth Window Settings"
+    STR_STARSHEADING,         "Star Settings"
+    STR_TWINKLEBOX,           "Twinkle"
+    STR_BRIGHTBOX,            "Bright"
+    STR_LAYERSHEADING,        "Atmosphere Layers"
+    STR_EARTHCOLORHEADING,    "Earth Color"
+    STR_CYAN,                 "Cyan"
+    STR_GREEN,                "Green"
+    STR_WHITE                 "White"
+    STR_YELLOW,               "Yellow"
+    STR_DATETIMEPAGEHEADING,  "Date and Time Settings"
+    STR_DATEHEADING,          "Date Format"
+    STR_DATELONGBOX,          "Long"
+    STR_DATESHORTBOX,         "Short"
+    STR_DATELONGEXAMPLE,      "ex: August 10, 1994"
+    STR_DATESHORTEXAMPLE,     "ex: 08/10/94"
+    STR_TIMEHEADING,          "Time Format"
+    STR_TIMELONGBOX,          "Long"
+    STR_TIMESHORTBOX,         "Short"
+    STR_TIMELONGEXAMPLE,      "ex: 01:37:59 pm"
+    STR_TIMESHORTEXAMPLE,     "ex: 13:37"
+    STR_APPLY,                "Apply"
+    STR_RESET,                "Reset"
+    STR_CLOSE,                "Close"
+    STR_READOK,               "Settings successfully read from profile."
+    STR_SAVEDOK,              "Settings successfully saved to profile."
+    DID_OK,     "OK"
+    DID_CANCEL, "Cancel"
+    DID_STATIC, "Edit Text:"
+    DID_ENTRY,  ""
+    // Change HI_COUNT in ahellow6.h to change number of HIs used.
+    HI_WORLD,      "Hello, World!"              //English
+    HI_WORLD+1,    "Hi, World!"                 //American
+    HI_WORLD+2,    "Howdy, World!"              //Southern American
+    HI_WORLD+3,    "Alo, Mundo!"                //Portuguese
+    HI_WORLD+4,    "Ola, Mondo!"                //Spanish
+    HI_WORLD+5,    "Hallo wereld!"              //Dutch
+    HI_WORLD+6,    "Hallo Welt!"                //German
+    HI_WORLD+7,    "Bonjour le monde!"          //French
+    HI_WORLD+8,    "Put your language here!"    //Add more items, too!
+    // Change HI_COUNT in ahellow6.h to change number of HIs used.
+  END
+
+//**************************************************************************
+// Menu bar for main window - used by IMenuBar Class                       *
+//   Define menu bar layout and relate symbolic names to menu item strings.*
+//**************************************************************************
+MENU WND_MAIN
+  BEGIN
+    SUBMENU "~Edit", MI_EDIT
+      BEGIN
+        SUBMENU "~Alignment", MI_ALIGNMENT
+          BEGIN
+            MENUITEM "~Left\tF7",   MI_LEFT
+            MENUITEM "~Center\tF8", MI_CENTER
+            MENUITEM "~Right\tF9",  MI_RIGHT
+          END
+        MENUITEM "~Text...", MI_TEXT
+        MENUITEM "~Font...", MI_FONT
+      END
+    SUBMENU "~Settings", MI_SETTINGS
+      BEGIN
+        MENUITEM "~Read from profile", MI_READSETS
+        MENUITEM "~Open ...",          MI_OPENSETS
+        MENUITEM "~Save to profile",   MI_SAVESETS
+      END
+    SUBMENU "~Help", MI_HELP, MIS_HELP
+      BEGIN
+        MENUITEM "~General help...",   SC_HELPEXTENDED, MIS_SYSCOMMAND
+        MENUITEM "~Keys help...",      SC_HELPKEYS, MIS_SYSCOMMAND
+        MENUITEM "Help ~index...",     SC_HELPINDEX, MIS_SYSCOMMAND
+      END
+  END
+
+//**************************************************************************
+// Pop-up menus for AHelloWindow - used by IPopUpMenu class                *
+//   Define pop-up menu layout and relate symbolic IDs to menu items.      *
+//**************************************************************************
+MENU WND_HELLOPOPUP
+  BEGIN
+    MENUITEM "~Left-align text",  MI_LEFT
+    MENUITEM "~Center text"    ,  MI_CENTER
+    MENUITEM "~Right-align text", MI_RIGHT
+  END
+MENU WND_EARTHPOPUP
+  BEGIN
+    MENUITEM "~Twinkling stars", MI_TWINKLE
+    MENUITEM SEPARATOR
+    MENUITEM "~Brighten stars",  MI_BRIGHT
+    MENUITEM "~Dim stars",  MI_DIM
+  END
+
+//**************************************************************************
+// Accelerator (key) table resources                                       *
+//   Relate accelerator keys to command IDs.                               *
+//**************************************************************************
+ACCELTABLE WND_MAIN
+  BEGIN
+    VK_F7,  MI_LEFT,   VIRTUALKEY
+    VK_F8,  MI_CENTER, VIRTUALKEY
+    VK_F9,  MI_RIGHT,  VIRTUALKEY
+  END
+
+//**************************************************************************
+// Help table resources - used by IHelpWindow class                        *
+//   Relate window IDs to help file IDs.                                   *
+//**************************************************************************
+HELPTABLE HELP_TABLE
+  BEGIN
+    HELPITEM WND_MAIN,        SUBTABLE_MAIN,   100
+    HELPITEM WND_TEXTDIALOG,  SUBTABLE_DIALOG, 200
+  END
+
+HELPSUBTABLE SUBTABLE_MAIN
+  BEGIN
+    HELPSUBITEM WND_HELLO, 100
+    HELPSUBITEM WND_LISTBOX,102
+    HELPSUBITEM MI_EDIT, 110
+    HELPSUBITEM MI_ALIGNMENT, 111
+    HELPSUBITEM MI_LEFT, 112
+    HELPSUBITEM MI_CENTER, 113
+    HELPSUBITEM MI_RIGHT, 114
+    HELPSUBITEM MI_TEXT, 199
+  END
+
+HELPSUBTABLE SUBTABLE_DIALOG
+  BEGIN
+    HELPSUBITEM DID_ENTRY, 201
+    HELPSUBITEM DID_OK, 202
+    HELPSUBITEM DID_CANCEL, 203
+  END

@@ -1,0 +1,11 @@
+void OAContractView::resetFields( ) {
+  fImpl->iAccountNumEF()->removeAll();
+  fImpl->iCompanyEF()->removeAll();
+  fImpl->iProjMgrEF()->removeAll();
+  fImpl->iDepartmentEF()->removeAll();
+  fImpl->iTitleEF()->removeAll();
+  fImpl->iStartDateEF()->removeAll();
+  fImpl->iEndDateEF()->removeAll();
+  fImpl->iContractorEF()->removeAll();
+  return;
+}

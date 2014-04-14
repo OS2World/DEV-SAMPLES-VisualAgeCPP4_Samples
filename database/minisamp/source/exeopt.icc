@@ -1,0 +1,53 @@
+// IBM VisualAge C++ Professional, Version 4.0
+// Licensed Materials - Property of IBM
+// (C) Copyright IBM Corp. 1995, 1998. All Rights Reserved.
+// US Government Users Restricted Rights - Use, duplication or disclosure restricted
+// by GSA ADP Schedule Contract with IBM Corp.
+//
+//  This is the common configuration file for Data Access Builder mini-samples
+//
+if $__TOS_AIX__
+{
+  if defined($DAB_INCLUDE)
+    option dab_include=incl(searchpath, $DAB_INCLUDE":/u/"$DB2INSTANCE"/sqllib/include" )
+  else
+    option dab_include=incl(searchpath, "/u/"$DB2INSTANCE"/sqllib/include" )
+  if defined($DAB_LIB)
+    option dab_lib=link(libsearchpath, $DAB_LIB":/u/"$DB2INSTANCE"/sqllib/lib" )
+  else
+    option dab_lib=link(libsearchpath, "/u/"$DB2INSTANCE"/sqllib/lib" )
+option exeopt=
+            link(linkwithsharedlib,yes)
+           ,link(linkwithmultithreadlib,yes)
+           ,link(map,no)
+           ,lang(nokeyword, "bool")
+           ,lang(nokeyword, "true")
+           ,lang(nokeyword, "false")
+           ,define(IC_LANG_BOOL, 0)
+           ,define(IC_DEVELOP)
+           ,gen(rtti,yes)
+           ,gen(enumsize,4)
+           ,define(IC_NEW_GRAPHICS,"1")
+           ,gen(profile,"yes")
+           ,defaults(xlC_r)
+           ,dab_include
+           ,dab_lib
+}
+else
+{
+option exeopt=
+            link(linkwithsharedlib,yes)
+           ,link(linkwithmultithreadlib,yes)
+           ,link(map,no)
+           ,link(debug)
+           ,lang(nokeyword, "bool")
+           ,lang(nokeyword, "true")
+           ,lang(nokeyword, "false")
+           ,define(IC_LANG_BOOL, 0)
+           ,define(IC_DEVELOP)
+           ,gen(rtti,yes)
+           ,gen(pack,4)
+           ,gen(enumsize,4)
+           ,define(IC_NEW_GRAPHICS,"1")
+           ,gen(profile,"yes")
+}

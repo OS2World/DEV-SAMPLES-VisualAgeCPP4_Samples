@@ -1,0 +1,35 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: OAClearConfirmation,,VB
+//VBGeneratedFiles: OAClearC.cp, OAClearC.cpp
+//VBParents: public IFrameWindow
+//VBIncludes: "OAClearC.hpp" _OAClearConfirmation_
+//VBConstructor: OAClearConfirmation(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle(), const char* title = 0)
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedEvent: yesPBButtonClickEvent,"Notification identifier provided to observers when the button control is clicked by the user.", yesPBButtonClickEventId,YesPB,buttonClickEvent
+//VBSubpart: OAClearConfirmation,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,MultiCellCanvas1,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas1,StaticText1,IStaticText*,p
+//VBSubpart: MultiCellCanvas1,SetCanvas1,ISetCanvas*,p
+//VBSubpart: SetCanvas1,YesPB,IPushButton*,p
+//VBSubpart: SetCanvas1,NoPB,IPushButton*,p
+//VBConnection: EA,5,p,p,NoPB,buttonClickEvent,FrameWindow,close
+//VBConnection: EA,1,p,p,YesPB,buttonClickEvent,FrameWindow,close
+//VBPartValue: OAClearConfirmation,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,client,partRef,MultiCellCanvas1
+//VBPartValue: FrameWindow,framingSpec,position1,(30,30,507,186,30,89,507,186)
+//VBPartValue: FrameWindow,title,string,"Confirmation for Clear Operation"
+//VBPartValue: MultiCellCanvas1,id,code,((IC_FRAME_CLIENT_ID))
+//VBPartValue: MultiCellCanvas1,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(3,true,),rowAttr(5,false,20),colAttr(1,true,),colAttr(3,true,),ctlAttr("StaticText1",2,2,2,2),ctlAttr("SetCanvas1",4,4,2,2))
+//VBPartValue: StaticText1,alignment,enum,(IStaticText::Alignment,"topLeftWrapped")
+//VBPartValue: StaticText1,text,string,"Do you want to clear information from all pages?"
+//VBPartValue: SetCanvas1,packType,enum,(ISetCanvas::PackType,"expanded")
+//VBPartValue: YesPB,style,bitflag,(true,IPushButton::Style,(("IPushButton","help",true),("IButton","noPointerFocus",true)))
+//VBPartValue: YesPB,text,string,"Yes"
+//VBPartValue: NoPB,style,bitflag,(true,IPushButton::Style,(("IPushButton","defaultButton",true),("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: NoPB,text,string,"No"
+//VBPartLayout: main,OAClearConfirmation,(initWidgetSize,rectangle,(432,75,1189,454))
+//VBEndPartInfo: OAClearConfirmation
+
+

@@ -1,0 +1,35 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ISuspect,,interface
+//VBConstraints:  noGen
+//VBParents: public IPerson
+//VBIncludes: "isuspect.hpp" _ISUSPECT_,"iperson.hpp" _IPERSON_,"iarrest.hpp" _IARREST_,"istring.hpp" _ISTRING_,"ivseq.h" _IVSEQ_
+//VBConstructor: ISuspect()
+//VBComposerInfo: nonvisual,2000,rapres
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBAttribute: arrestList,"a list of crimes the suspect has been charged with",IVSequence<IArrest*>*,IVSequence<IArrest*>* arrestList() const,ISuspect& setArrestList(IVSequence<IArrest*>* aArrestList),arrestListId,preferred
+//VBAttribute: bookNumber,"the number by which the suspect was originally booked",unsigned long,unsigned long bookNumber() const,ISuspect& setBookNumber(unsigned long aBookNumber),bookNumberId,preferred
+//VBAttribute: bookNumberAsString,"the book number as an IString",IString,IString bookNumberAsString() const,ISuspect& setBookNumberAsString(const IString& aBookNumber),bookNumberId
+//VBAttribute: hasMole,"indicates if the suspect has one or more moles",Boolean,Boolean hasMole() const,ISuspect& enableHasMole(Boolean enable = true),hasMoleId
+//VBAttribute: hasScar,"indicates if the suspect has one or more scars",Boolean,Boolean hasScar() const,ISuspect& enableHasScar(Boolean enable = true),hasScarId
+//VBAttribute: hasTattoo,"indicates if the suspect has one or more tattoos",Boolean,Boolean hasTattoo() const,ISuspect& enableHasTattoo(Boolean enable = true),hasTattooId
+//VBAttribute: lastSeenList,"a list of places the suspect has been seen",IVSequence<ILastSeen*>*,IVSequence<ILastSeen*>* lastSeenList() const,ISuspect& setLastSeenList(IVSequence<ILastSeen*>* aLastSeenList),lastSeenListId
+//VBAttribute: MO,"the suspect's mode of operandi (means by which commits crime)",IString,IString MO() const,ISuspect& setMO(const IString& aMO),MOId
+//VBAttribute: moleDesc,"description of suspect's moles including their location",IString,IString moleDesc() const,ISuspect& setMoleDesc(const IString& aMoleDesc),moleDescId
+//VBAttribute: mugFront,"the resource ID of the bitmap that represents the suspect's front mug shot",unsigned short,unsigned short mugFront() const,ISuspect& setMugFront(unsigned short aMugFront),mugFrontId
+//VBAttribute: mugFrontAsHandle,"the bit map handle of the front mug shot",IBitmapHandle,IBitmapHandle mugFrontAsHandle() const,,mugFrontId
+//VBAttribute: mugLeft,"the resource ID of the bitmap that represents the suspect's left mug shot",unsigned short,unsigned short mugLeft() const,ISuspect& setMugLeft(unsigned short aMugLeft),mugLeftId
+//VBAttribute: mugLeftAsHandle,"the bit map handle of the left mug shot",IBitmapHandle,IBitmapHandle mugLeftAsHandle() const,,mugLeftId
+//VBAttribute: mugRight,"the resource ID of the bitmap that represents the suspect's right mug shot",unsigned short,unsigned short mugRight() const,ISuspect& setMugRight(unsigned short aMugRight),mugRightId
+//VBAttribute: mugRightAsHandle,"the bit map handle of the right mug shot",IBitmapHandle,IBitmapHandle mugRightAsHandle() const,,mugRightId
+//VBAttribute: scarDesc,"description of suspect's scars including their location",IString,IString scarDesc() const,ISuspect& setScarDesc(const IString& aScarDesc),scarDescId
+//VBAttribute: tattooDesc,"description of suspect's tattoos including their location",IString,IString tattooDesc() const,ISuspect& setTattooDesc(const IString& aTattooDesc),tattooDescId
+//VBEndPartInfo: ISuspect
+
+
+//VBBeginEnumInfo: ISuspect::IMugAngle
+//VBIncludes: "isuspect.hpp" _ISUSPECT_
+//VBEnumerators: left=0,front=1,right=2
+//VBEndEnumInfo: ISuspect::IMugAngle
+
+

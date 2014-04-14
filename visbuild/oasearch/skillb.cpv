@@ -1,0 +1,143 @@
+// Feature source code generation begins here...
+
+const INotificationId _Export OASkillBase::queryFoundId = "OASkillBase::queryFound";
+
+OASkillBase& OASkillBase::putSkill(OASkill* aSkill)
+{
+  IProfile *p = new IProfile("skill.ini");
+  IString IDkey, yearkey;
+
+// Needed for Windows implementation
+
+   primeData(*p);
+
+
+// If skill is not in the database at all, set the key index this way
+
+  if (!p->containsApplication(aSkill->skillName()))
+     aSkill->setKey("1");
+
+  else {
+
+// Check to see if this record already exists for this contractor and set the key
+
+     unsigned long numRecs = p->numberOfKeys(aSkill->skillName());
+     IString tempID;
+     int flag = 0;
+     int i;
+
+     for (i=1; i <= (numRecs/2) ; i++) {
+
+        IDkey = "ID" + IString(i);
+        tempID = p->elementWithKey(IDkey, aSkill->skillName());
+
+        if (tempID == aSkill->contractorID()) {
+           aSkill->setKey(IString(i));
+
+           flag = 1;              // Set flag to indicate record was found
+           i = (numRecs/2) + 1;   // Terminate loop immediately
+        }
+     }
+
+// If this is a new entry for an existing skill, set the key index this way
+
+     if (flag == 0)
+        aSkill->setKey(IString(1 + (numRecs/2)));
+  }
+
+// Construct the database keys
+
+  IDkey = "ID" + aSkill->key();
+  yearkey = "year" + aSkill->key();
+
+// Add the skill (or replace existing skill records) in database
+
+  p->addOrReplaceElementWithKey(IDkey, aSkill->contractorID(), aSkill->skillName());
+  p->addOrReplaceElementWithKey(yearkey, aSkill->yearsExp(), aSkill->skillName());
+
+  delete p;
+  return *this;
+}
+
+OASkillBase& OASkillBase::getSkill(const IString& aSkillName, IVSequence<OASkill*>* aList)
+{
+  IProfile *p = new IProfile("skill.ini");
+
+// Needed for Windows implementation
+
+   primeData(*p);
+
+
+// Check for this skill name in the database
+
+  if (!p->containsApplication(aSkillName))
+  {
+  delete p;
+  throw IException("A record was not found for this skill description.");
+  return *this;
+  }
+
+// Otherwise, empty the skill list
+
+  if (!(aList->isEmpty()))
+    aList->removeAll();
+
+// Instantiate new skills and set them
+
+  unsigned long numRecs = p->numberOfKeys(aSkillName);
+  OASkill* tempSkill;
+  IString IDkey, yearkey;
+  int i;
+
+  for (i=1; i <= (numRecs/2); i++)
+    {
+     tempSkill = new OASkill;
+     tempSkill->setSkillName(aSkillName);
+
+     IDkey = "ID" + IString(i);
+     yearkey = "year" + IString(i);
+
+     if (p->containsKeyName(yearkey, aSkillName))
+       tempSkill->setYearsExp(p->elementWithKey(yearkey, aSkillName));
+     if (p->containsKeyName(IDkey, aSkillName))
+       tempSkill->setContractorID(p->elementWithKey(IDkey, aSkillName));
+
+     tempSkill->setKey(IString(i));
+
+// Add skill to skill list
+
+     aList->addAsLast(tempSkill);
+
+    }
+
+  delete p;
+
+// Execute event to trigger instantiation of OASkillView
+    notifyObservers(INotificationEvent(IInterest(*this, OASkillBase::queryFoundId)));
+
+  return *this;
+}
+
+// Feature source code generation ends here.
+
+// Prime profile instance in Windows with data
+
+OASkillBase & OASkillBase::primeData(IProfile & aDatabase) {
+
+
+// Windows does not read from .ini files.
+// It uses a central registry,
+// so load initial contract data into the registry.
+
+  aDatabase.addOrReplaceElementWithKey("ID1","SusanGCarpenter","Technical writing");
+  aDatabase.addOrReplaceElementWithKey("year1","15","Technical writing");
+
+  aDatabase.addOrReplaceElementWithKey("ID1","SusanGCarpenter","Testing");
+  aDatabase.addOrReplaceElementWithKey("year1","5","Testing");
+
+  aDatabase.addOrReplaceElementWithKey("ID1","SusanGCarpenter","C++ programming");
+  aDatabase.addOrReplaceElementWithKey("year1","1","C++ programming");
+
+
+  return *this;
+}

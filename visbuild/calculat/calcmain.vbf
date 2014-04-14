@@ -1,0 +1,21 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: CalculatorMain,,VB
+//VBGeneratedFiles: CalcMain.cpp
+//VBDependsOnFiles: calcmain.vbf
+//VBParents: public IVBMain
+//VBIncludes: "CalcMain.hpp" _CalculatorMain_
+//VBConstructor: CalculatorMain()
+//VBComposerInfo: nonvisual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBSubpart: CalculatorMain,IVBMain1,IVBMain*,p
+//VBSubpart: CalculatorMain,CalculatorView1,CalculatorView*,p
+//VBConnection: EA,0,p,p,,ready,CalculatorView1,show
+//VBPartValue: CalculatorMain,primaryPart,partRef,IVBMain1
+//VBPartValue: CalculatorView1,framingSpec,position1,(114,106,,,114,328,460,315)
+//VBPartLayout: main,CalculatorMain,(initWidgetSize,rectangle,(128,100,1152,921))
+//VBPartLayout: part,IVBMain1,(framingSpec,position2,(20,20))
+//VBEndPartInfo: CalculatorMain
+
+
+

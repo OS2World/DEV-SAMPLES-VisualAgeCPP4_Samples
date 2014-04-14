@@ -1,0 +1,107 @@
+option
+    link(debug, yes),
+    link(pmtype,PM),
+    link(linkwithmultithreadlib, yes),
+    link(linkwithsharedlib, yes),
+    link(extdictionary, no),
+    link(map, no),
+    gen(rtti, yes),
+    link(padding, no)
+{
+    target "ddeserv.exe"
+    {
+        option
+            lang(nokeyword, "bool"),
+            lang(nokeyword, "true"),
+            lang(nokeyword, "false"),
+            lang(staticinlinelinkage, no),
+            lang(staticconstlinkage, no),
+            define("_IOC_VERSION_40_", "1"),
+            define("IC_LANG_BOOL", "0"),
+            define("USE_IPF", "1"),
+            incl(searchpath,".")
+        {
+            option macros(global)
+            {
+                source type(hpp) "ilanglvl.hpp"
+                source type(hpp) "ipraglib.h"
+                source type(hpp) "ibasepl.hpp"
+                source type(hpp) "imsgtext.hpp"
+                source type(hpp) "iexcbase.hpp"
+                source type(hpp) "istream.hpp"
+                source type(hpp) "isynonym.hpp"
+                source type(hpp) "ibase.hpp"
+                source type(hpp) "igraphpl.hpp"
+                source type(hpp) "iuipl.hpp"
+                source type(hpp) "ibidiset.hpp"
+                source type(hpp) "ibitflag.hpp"
+                source type(hpp) "ievtdata.hpp"
+                source type(hpp) "istrenum.hpp"
+                source type(hpp) "iprimtyp.hpp"
+                source type(hpp) "ilonglng.hpp"
+                source type(hpp) "istrmio.hpp"
+                source type(hpp) "idatstrm.hpp"
+                source type(hpp) "ityperep.hpp"
+                source type(hpp) "imstrmbl.hpp"
+                source type(hpp) "igstream.hpp"
+                source type(hpp) "imrefcnt.hpp"
+                source type(hpp) "ibuffer.hpp"
+                source type(hpp) "istrtest.hpp"
+                source type(hpp) "istring.hpp"
+                source type(hpp) "ibhandle.hpp"
+                source type(hpp) "i2dghand.hpp"
+                source type(hpp) "ihandle.hpp"
+                source type(hpp) "ievent.hpp"
+                source type(hpp) "inotadr.hpp"
+                source type(hpp) "itrace.hpp"
+                source type(hpp) "ireslock.hpp"
+                source type(hpp) "iexcept.hpp"
+                source type(hpp) "irefcnt.hpp"
+                source type(hpp) "ingapp.hpp"
+                source type(hpp) "ingthrd.hpp"
+                source type(hpp) "inotify.hpp"
+                source type(hpp) "iintrst.hpp"
+                source type(hpp) "ipoint.hpp"
+                source type(hpp) "iwindow.hpp"
+                source type(hpp) "imngpres.hpp"
+                source type(hpp) "icontrol.hpp"
+                source type(hpp) "itextctl.hpp"
+                source type(hpp) "irect.hpp"
+                source type(hpp) "imle.hpp"
+                source type(hpp) "ibcolor.hpp"
+                source type(hpp) "icolor.hpp"
+                source type(hpp) "istattxt.hpp"
+                source type(hpp) "ireslib.hpp"
+                source type(hpp) "iapp.hpp"
+                source type(hpp) "iinfoa.hpp"
+                source type(hpp) "ilistbas.hpp"
+                source type(hpp) "ilistbox.hpp"
+                source type(hpp) "inotifev.hpp"
+                source type(hpp) "itxtstyl.hpp"
+                source type(hpp) "itxtiter.hpp"
+                source type(hpp) "itext.hpp"
+                source type(hpp) "icanvas.hpp"
+                source type(hpp) "isplitcv.hpp"
+                source type(hpp) "ifont.hpp"
+                source type(hpp) "imsgbox.hpp"
+                source type(hpp) "iddepl.hpp"
+                source type(hpp) "iddeevt.hpp"
+                source type(hpp) "icoordsy.hpp"
+                source type(hpp) "aserver.h"
+                source type(hpp) "icconsta.h"
+                source type(hpp) "icconst.h"
+                source type(hpp) "icmdevt.hpp"
+                source type(hpp) "iframe.hpp"
+                source type(hpp) "ihandler.hpp"
+                source type(hpp) "iddetsrv.hpp"
+                source type(hpp) "aserver.hpp"
+            }
+            source type(cpp) "aserver.cpp"
+            option res_rc_options("  -d __OS2__ -d IC_PM")
+            {
+                source type(rc) "aserver.rc"
+            }
+        }
+    }
+}
+

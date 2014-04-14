@@ -1,0 +1,6 @@
+LIBRARY lance 
+EXPORTS 
+    ;LMainWindow::LMainWindow()
+    __ct__11LMainWindowFv
+    ;LMainWindow::~LMainWindow()
+    __dt__11LMainWindowFv

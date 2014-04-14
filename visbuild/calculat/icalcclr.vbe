@@ -1,0 +1,10 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ICalcClearFunction,"Clear All Function",interface
+//VBConstraints:  noGen
+//VBParents: ICalcFunction
+//VBIncludes: <icalcclr.hpp> _ICLEARFUNC_
+//VBConstructor: ICalcClearFunction()
+//VBComposerInfo: nonvisual
+//VBEndPartInfo: ICalcClearFunction
+

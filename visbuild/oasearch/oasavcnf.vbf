@@ -1,0 +1,42 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: OASaveConfirmation,,VB
+//VBGeneratedFiles: OAsavec.cpp, OAsavec.cp
+//VBParents: public IFrameWindow
+//VBIncludes: "OAsavec.hpp" _OASaveConfirmation_
+//VBConstructor: OASaveConfirmation(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle(), const char* title = 0)
+//VBComposerInfo: visual
+//VBGeneratorValues: userHpp(false),userCpp(false),userH(false),userRC(false),startingResId("")
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedEvent: yesPBButtonClickEvent,(832,"cppres"), yesPBButtonClickEventId,YesPB,buttonClickEvent
+//VBPromotedEvent: noPBButtonClickEvent,(832,"cppres"), noPBButtonClickEventId,NoPB,buttonClickEvent
+//VBSubpart: OASaveConfirmation,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,MultiCellCanvas1,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas1,ButtonBar,ISetCanvas*,p
+//VBSubpart: ButtonBar,YesPB,IPushButton*,p
+//VBSubpart: ButtonBar,NoPB,IPushButton*,p
+//VBSubpart: ButtonBar,cancelPushButton,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,ClientArea,IMultiCellCanvas*,p
+//VBSubpart: ClientArea,StaticText1,IStaticText*,p
+//VBConnection: EA,5,p,p,NoPB,buttonClickEvent,FrameWindow,close
+//VBConnection: EA,2,p,p,cancelPushButton,buttonClickEvent,FrameWindow,close
+//VBConnection: EA,12,p,p,YesPB,buttonClickEvent,FrameWindow,close
+//VBPartValue: OASaveConfirmation,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,client,partRef,MultiCellCanvas1
+//VBPartValue: FrameWindow,framingSpec,position1,(30,30,415,177,10,10,415,177)
+//VBPartValue: FrameWindow,title,string,"Confirmation for Save Operation"
+//VBPartValue: MultiCellCanvas1,id,code,((IC_FRAME_CLIENT_ID))
+//VBPartValue: MultiCellCanvas1,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(2,,),colAttr(1,true,),ctlAttr("ButtonBar",2,2,1,1),ctlAttr("ClientArea",1,1,1,1))
+//VBPartValue: ButtonBar,packType,enum,(ISetCanvas::PackType,"expanded")
+//VBPartValue: YesPB,style,bitflag,(true,IPushButton::Style,(("IPushButton","defaultButton",true),("IWindow","group",true),("IWindow","tabStop",true)))
+//VBPartValue: YesPB,text,string,"Yes"
+//VBPartValue: NoPB,text,string,"No"
+//VBPartValue: cancelPushButton,text,string,"Cancel"
+//VBPartValue: ClientArea,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(3,true,),colAttr(1,true,),colAttr(3,true,),ctlAttr("StaticText1",2,2,2,2))
+//VBPartValue: StaticText1,alignment,enum,(IStaticText::Alignment,"centerLeft")
+//VBPartValue: StaticText1,text,string,"Do you want to save this information?"
+//VBPartLayout: main,OASaveConfirmation,(initWidgetSize,rectangle,(70,272,776,632))
+//VBPartLayout: eventconnection,5,(midPoints,collection,(point,(189,243)))
+//VBPartLayout: eventconnection,2,(midPoints,collection,(point,(281,227),point,(305,227)))
+//VBEndPartInfo: OASaveConfirmation
+

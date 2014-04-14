@@ -1,0 +1,65 @@
+//VBInitializeStream: 4.0.0
+
+//VBBeginPartInfo: EmployeeWindow,,VB
+//VBGeneratedFiles: EmplWind.cp, EmplWind.cpp
+//VBDependsOnFiles: EmplForm.vbf, Empl.vbe
+//VBParents: public IFrameWindow
+//VBIncludes: "EmplWind.hpp" _EmplWind_
+//VBConstructor: EmployeeWindow(unsigned long id, IWindow* parent, IWindow* owner, const IRectangle& rect, const IFrameWindow::Style& style = IFrameWindow::defaultStyle(), const char* title = 0)
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: theEmployee,"Query the target attribute.",Employee*,Employee* getTheEmployee() const,EmployeeWindow& setTheEmployee(Employee* target),theEmployeeId,theEmpl,this
+//VBSubpart: EmployeeWindow,FrameWindow,IFrameWindow*,p
+//VBSubpart: FrameWindow,MultiCellCanvas1,IMultiCellCanvas*,p
+//VBSubpart: MultiCellCanvas1,ClientArea,IMultiCellCanvas*,p
+//VBSubpart: ClientArea,emplForm,EmployeeForm*,p
+//VBSubpart: ClientArea,StaticText1,IStaticText*,p
+//VBSubpart: ClientArea,SetCanvas1,ISetCanvas*,p
+//VBSubpart: SetCanvas1,PushButton1,IPushButton*,p
+//VBSubpart: SetCanvas1,PushButton2,IPushButton*,p
+//VBSubpart: SetCanvas1,PushButton3,IPushButton*,p
+//VBSubpart: SetCanvas1,PushButton4,IPushButton*,p
+//VBSubpart: MultiCellCanvas1,ButtonBar,ISetCanvas*,p
+//VBSubpart: ButtonBar,cancelPushButton,IPushButton*,p
+//VBSubpart: EmployeeWindow,theEmpl,Employee*,v
+//VBSubpart: EmployeeWindow,MessageBox1,IMessageBox*,p
+//VBConnection: EA,5,p,p,cancelPushButton,buttonClickEvent,FrameWindow,close
+//VBConnection: AA,1,p,p,theEmpl,this,emplForm,targetAsEmployee
+//VBConnection: EA,2,p,p,PushButton1,buttonClickEvent,theEmpl,add
+//VBConnection: EA,3,p,p,PushButton2,buttonClickEvent,theEmpl,retrieve
+//VBConnection: EA,4,p,p,PushButton4,buttonClickEvent,theEmpl,del
+//VBConnection: EA,15,c,p,4,exceptionOccurred,MessageBox1,showException
+//VBConnection: EA,6,c,p,3,exceptionOccurred,MessageBox1,showException
+//VBConnection: EA,7,c,p,2,exceptionOccurred,MessageBox1,showException
+//VBConnection: EA,8,p,p,PushButton3,buttonClickEvent,theEmpl,update
+//VBConnection: EA,9,c,p,8,exceptionOccurred,MessageBox1,showException
+//VBConnection: EA,10,p,p,,ready,FrameWindow,show
+//VBConnection: EA,11,p,p,,ready,FrameWindow,setFocus
+//VBPartValue: EmployeeWindow,primaryPart,partRef,FrameWindow
+//VBPartValue: FrameWindow,client,partRef,MultiCellCanvas1
+//VBPartValue: FrameWindow,framingSpec,position1,(30,4,495,568,30,71,495,568)
+//VBPartValue: FrameWindow,title,string,"EmployeeWindow"
+//VBPartValue: MultiCellCanvas1,id,code,((IC_FRAME_CLIENT_ID))
+//VBPartValue: MultiCellCanvas1,canvasLayout,mclayout,(rowAttr(1,true,),rowAttr(2,,),colAttr(1,true,),ctlAttr("ButtonBar",2,2,1,1),ctlAttr("ClientArea",1,1,1,1))
+//VBPartValue: ClientArea,canvasLayout,mclayout,(rowAttr(3,,),colAttr(1,,),ctlAttr("emplForm",2,2,1,1),ctlAttr("StaticText1",1,1,1,1),ctlAttr("SetCanvas1",3,3,1,1))
+//VBPartValue: StaticText1,alignment,enum,(IStaticText::Alignment,"centerCenter")
+//VBPartValue: StaticText1,text,string,"Employee Record Update Panel"
+//VBPartValue: SetCanvas1,alignment,enum,(ISetCanvas::Alignment,"centerCenter")
+//VBPartValue: SetCanvas1,deckOrientation,enum,(ISetCanvas::DeckOrientation,"horizontal")
+//VBPartValue: SetCanvas1,deckCount,integer,1
+//VBPartValue: SetCanvas1,packType,enum,(ISetCanvas::PackType,"even")
+//VBPartValue: PushButton1,text,string,"Add"
+//VBPartValue: PushButton2,text,string,"Retrieve"
+//VBPartValue: PushButton3,text,string,"Update"
+//VBPartValue: PushButton4,text,string,"Delete"
+//VBPartValue: ButtonBar,minimumSize,minsize,(496,49,false)
+//VBPartValue: cancelPushButton,text,string,"Cancel"
+//VBPartValue: theEmpl,initializationType,enum,(IVBVariableClassBase::InitializationType,"targetInit")
+//VBPartLayout: main,EmployeeWindow,(initWidgetSize,rectangle,(48,66,919,681))
+//VBPartLayout: eventconnection,5,(midPoints,collection,(point,(160,436)))
+//VBPartLayout: part,theEmpl,(framingSpec,position2,(629,295,58,58))
+//VBPartLayout: part,MessageBox1,(framingSpec,position2,(637,155,48,48))
+//VBPartLayout: eventconnection,10,(midPoints,collection,(point,(17,319)))
+//VBEndPartInfo: EmployeeWindow
+
+

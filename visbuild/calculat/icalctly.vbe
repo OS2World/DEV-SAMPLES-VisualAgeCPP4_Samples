@@ -1,0 +1,16 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: ICalcTally,"Tally Chip",interface
+//VBConstraints:  noGen
+//VBParents: IStandardNotifier
+//VBIncludes: <icalctly.hpp> _ICALCTLY_
+//VBConstructor: ICalcTally()
+//VBComposerInfo: nonvisual
+//VBEvent: notEmpty,, notEmptyId,,preferred
+//VBAction: binaryOperation,,,int processBinaryOperator(IString opSymbol),preferred
+//VBAction: unaryOperation,,,int processUnaryOperator(IString opSymbol),preferred
+//VBAction: reset,,,int reset(),preferred
+//VBAttribute: buffer,"image of current display",IString,int buffer(),int setBuffer(IString buffer),bufferId,preferred
+//VBAttribute: nextTallyLine,"next line to display in tally",IString,int nextTallyLine(),int setNextTallyLine(IString nextTallyLine),nextTallyLineId,preferred
+//VBEndPartInfo: ICalcTally
+

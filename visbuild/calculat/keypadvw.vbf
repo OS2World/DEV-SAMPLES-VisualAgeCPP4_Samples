@@ -1,0 +1,71 @@
+//VBInitializeStream: 4.B.2
+
+//VBBeginPartInfo: KeypadView,,VB
+//VBGeneratedFiles: KeypadVw.cp, KeypadVw.cpp
+//VBDependsOnFiles: ikeypad.vbe
+//VBParents: public ICanvas
+//VBIncludes: "KeypadVw.hpp" _KeypadView_
+//VBConstructor: KeypadView(unsigned long id, IWindow* parent = IWindow::desktopWindow(), IWindow* owner = IWindow::desktopWindow(), const IRectangle& rect = IRectangle(), const ICanvas::Style& style = KeypadView::defaultStyle())
+//VBComposerInfo: visual
+//VBEvent: ready,(90,"cppres"), IVBMiscellaneousIds::readyId,,noconnect
+//VBPromotedAttribute: keypad,(7101,"cppres"),IKeypad*,IKeypad* getKeypad() const,KeypadView& setKeypad(IKeypad* target),keypadId,keypad,this
+//VBSubpart: KeypadView,Canvas,ICanvas*,p
+//VBSubpart: Canvas,PushButton1,IPushButton*,p
+//VBSubpart: Canvas,PushButton2,IPushButton*,p
+//VBSubpart: Canvas,PushButton3,IPushButton*,p
+//VBSubpart: Canvas,PushButton4,IPushButton*,p
+//VBSubpart: Canvas,PushButton5,IPushButton*,p
+//VBSubpart: Canvas,PushButton6,IPushButton*,p
+//VBSubpart: Canvas,PushButton7,IPushButton*,p
+//VBSubpart: Canvas,PushButton8,IPushButton*,p
+//VBSubpart: Canvas,PushButton9,IPushButton*,p
+//VBSubpart: Canvas,PushButton10,IPushButton*,p
+//VBSubpart: KeypadView,keypad,IKeypad*,v
+//VBConnection: EA,0,p,p,PushButton3,buttonClickEvent,keypad,digit
+//VBConnection: AA,1,c,p,0,digit,PushButton3,text
+//VBConnection: EA,2,p,p,PushButton2,buttonClickEvent,keypad,digit
+//VBConnection: AA,3,c,p,2,digit,PushButton2,text
+//VBConnection: EA,4,p,p,PushButton1,buttonClickEvent,keypad,digit
+//VBConnection: AA,5,c,p,4,digit,PushButton1,text
+//VBConnection: EA,6,p,p,PushButton6,buttonClickEvent,keypad,digit
+//VBConnection: AA,7,c,p,6,digit,PushButton6,text
+//VBConnection: EA,8,p,p,PushButton5,buttonClickEvent,keypad,digit
+//VBConnection: AA,9,c,p,8,digit,PushButton5,text
+//VBConnection: EA,10,p,p,PushButton4,buttonClickEvent,keypad,digit
+//VBConnection: AA,11,c,p,10,digit,PushButton4,text
+//VBConnection: EA,12,p,p,PushButton9,buttonClickEvent,keypad,digit
+//VBConnection: AA,13,c,p,12,digit,PushButton9,text
+//VBConnection: EA,14,p,p,PushButton8,buttonClickEvent,keypad,digit
+//VBConnection: AA,15,c,p,14,digit,PushButton8,text
+//VBConnection: EA,16,p,p,PushButton7,buttonClickEvent,keypad,digit
+//VBConnection: AA,17,c,p,16,digit,PushButton7,text
+//VBConnection: EA,18,p,p,PushButton10,buttonClickEvent,keypad,digit
+//VBConnection: AA,19,c,p,18,digit,PushButton10,text
+//VBPartValue: KeypadView,primaryPart,partRef,Canvas
+//VBPartValue: Canvas,framingSpec,position1,(30,30,155,185,30,135,155,185)
+//VBPartValue: PushButton1,text,string,"7"
+//VBPartValue: PushButton1,framingSpec,position1,(18,17,,,18,143,27,25)
+//VBPartValue: PushButton2,text,string,"8"
+//VBPartValue: PushButton2,framingSpec,position1,(63,17,,,63,143,27,25)
+//VBPartValue: PushButton3,text,string,"9"
+//VBPartValue: PushButton3,framingSpec,position1,(108,17,,,108,143,27,25)
+//VBPartValue: PushButton4,text,string,"4"
+//VBPartValue: PushButton4,framingSpec,position1,(18,59,,,18,101,27,25)
+//VBPartValue: PushButton5,text,string,"5"
+//VBPartValue: PushButton5,framingSpec,position1,(63,59,,,63,101,27,25)
+//VBPartValue: PushButton6,text,string,"6"
+//VBPartValue: PushButton6,framingSpec,position1,(108,59,,,108,101,27,25)
+//VBPartValue: PushButton7,text,string,"1"
+//VBPartValue: PushButton7,framingSpec,position1,(18,101,,,18,59,27,25)
+//VBPartValue: PushButton8,text,string,"2"
+//VBPartValue: PushButton8,framingSpec,position1,(63,101,,,63,59,27,25)
+//VBPartValue: PushButton9,text,string,"3"
+//VBPartValue: PushButton9,framingSpec,position1,(108,101,,,108,59,27,25)
+//VBPartValue: PushButton10,text,string,"0"
+//VBPartValue: PushButton10,framingSpec,position1,(63,143,,,63,17,27,25)
+//VBPartLayout: main,KeypadView,(paletteVisible,boolean,true,toolBarVisible,boolean,true,initWidgetSize,rectangle,(6,42,483,464))
+//VBPartLayout: part,keypad,(framingSpec,position2,(284,121,48,48))
+//VBEndPartInfo: KeypadView
+
+
+

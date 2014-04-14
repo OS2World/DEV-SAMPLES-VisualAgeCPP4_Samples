@@ -1,0 +1,19 @@
+#ifndef _RAPMAIN_RCV
+#define _RAPMAIN_RCV
+
+/*******************************************************************************
+* FILE NAME: rapmain.rcv                                                       *
+*                                                                              *
+* DESCRIPTION:                                                                 *
+*   Resource include file for all Visual Builder Generated resource files of   *
+*   the Police Rapsheet Sample Application.  All Resources are attached        *
+*   through the Application's Main class:                                      *
+*     rapmain                                                                  *
+*******************************************************************************/
+
+RCINCLUDE "RpMnView.rc"
+RCINCLUDE "ddrssVew.rc"
+RCINCLUDE "SspctCnr.rc"
+RCINCLUDE "SspctNtb.rc"
+
+#endif

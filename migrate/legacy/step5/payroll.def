@@ -1,0 +1,5 @@
+; DEF file to export payroll() function
+LIBRARY payroll
+EXPORTS
+	;payroll(char*)
+	payroll__FPc
